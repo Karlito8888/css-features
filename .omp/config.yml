@@ -1,0 +1,18 @@
+# Project settings read by omp (docs: omp://settings.md, layer 4).
+# Skills listed in the system prompt for this repo: its stack plus the ones its sessions
+# actually opened. A skill missing here is invisible, so add a family before relying on it.
+skills:
+  includeSkills:
+    - llms-txt
+    - ponytail*
+    - grilling
+    - grill-me
+    - diagnosing-bugs
+    - research
+    - find-docs
+    - icones
+    - playwright-cli
+    - crawl4ai
+    - writing-for-agents
+    - rapport-html
+    - admin-poste

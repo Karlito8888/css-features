@@ -1,0 +1,47 @@
+.demo-mq { display: grid; gap: 12px; }
+.demo-mq .hint { margin: 0; color: #555; font-size: 0.9rem; }
+
+.demo-mq .panel { padding: 16px; border-radius: 12px; background: #e5e7eb; color: #111827; text-align: center; }
+.demo-mq .now { margin: 0; font-size: 1.1rem; }
+.demo-mq output { font-weight: 700; font-family: ui-monospace, monospace; }
+.demo-mq .band { margin: 6px 0 0; font-size: 1.6rem; font-weight: 800; }
+.demo-mq .band::before { content: "No range matched"; }
+
+.demo-mq .rows { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.demo-mq .rows li { display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; align-items: center; padding: 8px 12px; border: 2px solid #d1d5db; border-radius: 10px; background: #fff; }
+.demo-mq .lamp { grid-row: span 2; width: 18px; height: 18px; border-radius: 50%; background: #d1d5db; }
+.demo-mq code { font-size: 0.9rem; overflow-wrap: anywhere; }
+.demo-mq .old { color: #6b7280; }
+.demo-mq .old::before { content: "old: "; }
+
+/* The four bands use the range syntax: a comparison, or a value between two bounds. */
+@media (width < 480px) {
+  .demo-mq .panel { background: #fecaca; }
+  .demo-mq .band::before { content: "Small"; }
+  .demo-mq .r1 { border-color: #dc2626; background: #fef2f2; }
+  .demo-mq .r1 .lamp { background: #dc2626; box-shadow: 0 0 10px #dc2626; }
+}
+@media (480px <= width < 720px) {
+  .demo-mq .panel { background: #fde68a; }
+  .demo-mq .band::before { content: "Medium"; }
+  .demo-mq .r2 { border-color: #d97706; background: #fffbeb; }
+  .demo-mq .r2 .lamp { background: #d97706; box-shadow: 0 0 10px #d97706; }
+}
+@media (720px <= width < 960px) {
+  .demo-mq .panel { background: #bbf7d0; }
+  .demo-mq .band::before { content: "Large"; }
+  .demo-mq .r3 { border-color: #16a34a; background: #f0fdf4; }
+  .demo-mq .r3 .lamp { background: #16a34a; box-shadow: 0 0 10px #16a34a; }
+}
+@media (width >= 960px) {
+  .demo-mq .panel { background: #bfdbfe; }
+  .demo-mq .band::before { content: "Extra large"; }
+  .demo-mq .r4 { border-color: #2563eb; background: #eff6ff; }
+  .demo-mq .r4 .lamp { background: #2563eb; box-shadow: 0 0 10px #2563eb; }
+}
+
+/* A browser without range syntax drops the query above, so the notice stays visible. */
+.demo-mq .unsupported { display: block; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@media (width >= 0px) {
+  .demo-mq .unsupported { display: none; }
+}

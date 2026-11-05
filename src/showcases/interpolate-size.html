@@ -1,0 +1,23 @@
+<div class="demo-is">
+  <p class="unsupported">This browser does not support interpolate-size, so both panels jump open.</p>
+  <p class="hint">Open both panels. Same CSS, same transition, one property apart.</p>
+  <label class="switch"><input type="checkbox" id="open"> Open both panels</label>
+  <div class="pair">
+    <section class="box numeric">
+      <h3><code>numeric-only</code> (default)</h3>
+      <div class="panel" id="panel-a">
+        <div class="inner">
+          <p>The height goes from 0 to auto. Auto is a keyword, not a number, so the browser has nothing to interpolate and the panel snaps.</p>
+        </div>
+      </div>
+    </section>
+    <section class="box smooth">
+      <h3><code>allow-keywords</code></h3>
+      <div class="panel" id="panel-b">
+        <div class="inner">
+          <p>The height goes from 0 to auto. With the keyword allowed, the browser computes the real content height and animates to it.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

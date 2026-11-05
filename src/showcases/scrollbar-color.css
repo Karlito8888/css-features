@@ -1,0 +1,34 @@
+.sc { max-width: 720px; margin: 0 auto; }
+.sc-title { margin: 0 0 4px; font-size: 1.2rem; }
+.sc-hint { margin: 0 0 14px; color: #44403c; font-size: 0.9rem; }
+
+.sc .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #fef3c7; color: #78350f; }
+@supports not (scrollbar-color: red blue) { .sc .unsupported { display: block; } }
+
+.sc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
+
+.sc-box {
+  height: 220px;
+  overflow-y: scroll;
+  padding: 4px 14px;
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--fg);
+  /* First color: thumb. Second color: track. */
+  scrollbar-color: var(--thumb) var(--track);
+  transition: scrollbar-color 0.4s;
+}
+.sc-box:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+.sc-box h2 { margin: 10px 0 8px; font-size: 1.1rem; }
+.sc-box p { margin: 0 0 40px; }
+
+.sc-grape { --bg: #f5f3ff; --fg: #2e1065; --thumb: #7c3aed; --track: #ddd6fe; }
+.sc-grape:hover { --thumb: #db2777; --track: #fce7f3; }
+.sc-mint { --bg: #ecfdf5; --fg: #064e3b; --thumb: #047857; --track: #a7f3d0; }
+.sc-mint:hover { --thumb: #0369a1; --track: #bae6fd; }
+.sc-night { --bg: #111827; --fg: #f9fafb; --thumb: #f59e0b; --track: #374151; }
+.sc-night:hover { --thumb: #34d399; --track: #064e3b; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-box { transition: none; }
+}

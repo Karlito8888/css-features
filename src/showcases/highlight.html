@@ -1,0 +1,16 @@
+<div class="demo-hl">
+  <p class="unsupported">Custom highlights are not supported in this browser. Searching will not mark the text.</p>
+  <div class="search" role="search">
+    <label for="q">Find in the text</label>
+    <input id="q" type="search" value="text" autocomplete="off" spellcheck="false">
+    <button id="prev" type="button">Previous</button>
+    <button id="next" type="button">Next</button>
+    <output id="count" aria-live="polite"></output>
+  </div>
+  <article id="doc">
+    <p>A custom highlight paints a range of text without touching the markup. The text stays a plain text node, so nothing is wrapped and nothing reflows.</p>
+    <p>Type a word above. Each match becomes a range, and every range joins one named highlight. The browser draws the highlight, and the page styles it with a single rule.</p>
+    <p>Use the buttons to move between matches. The current match belongs to a second highlight with a higher priority, so its color wins over the others.</p>
+  </article>
+  <p class="dom">Elements added to the article to draw the marks: <output id="added">0</output></p>
+</div>

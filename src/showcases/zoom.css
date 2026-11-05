@@ -1,0 +1,23 @@
+.demo-zoom { --z: 1; display: grid; gap: 12px; }
+
+.demo-zoom .control { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+.demo-zoom .control input { flex: 1; min-width: 0; accent-color: #be185d; }
+.demo-zoom .control input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+.demo-zoom output { min-width: 2.5rem; font-family: ui-monospace, monospace; }
+
+.demo-zoom .row h2 { margin: 0 0 6px; font-size: 0.95rem; font-weight: 600; color: #444; }
+.demo-zoom .row code { padding: 0 4px; border-radius: 4px; background: #fce7f3; }
+.demo-zoom .lane { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 9rem; padding: 8px; overflow: hidden; border-radius: 12px; background: #fdf2f8; }
+
+.demo-zoom .tile { display: grid; place-content: center; flex: none; width: 4rem; height: 4rem; border-radius: 10px; background: #f9a8d4; font-size: 1rem; font-weight: 700; text-align: center; }
+.demo-zoom .target { background: #be185d; color: #fff; }
+
+/* zoom scales the box and its layout: the neighbours are pushed aside. */
+.demo-zoom .zoomed .target { zoom: var(--z); }
+/* transform paints a scaled copy: nothing else moves. */
+.demo-zoom .scaled .target { transform: scale(var(--z)); }
+
+.demo-zoom .unsupported { display: none; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (zoom: 2) {
+  .demo-zoom .unsupported { display: block; }
+}

@@ -1,0 +1,35 @@
+<div class="demo-vfc">
+  <p class="unsupported" role="note">Vertical writing modes are not supported in this browser, so the controls stay horizontal.</p>
+  <div class="options">
+    <fieldset class="modes">
+      <legend>writing-mode</legend>
+      <label><input type="radio" name="wm" id="wm-h"> horizontal-tb</label>
+      <label><input type="radio" name="wm" id="wm-lr" checked> vertical-lr</label>
+      <label><input type="radio" name="wm" id="wm-rl"> vertical-rl</label>
+    </fieldset>
+    <label class="rtl"><input type="checkbox" id="rtl"> direction: rtl</label>
+  </div>
+  <p class="hint">Switch the mode, drag the slider and open the select.</p>
+  <div class="stage">
+    <div class="ctl">
+      <label for="volume">Volume</label>
+      <input type="range" id="volume" min="0" max="100" value="65">
+    </div>
+    <div class="ctl">
+      <label for="upload">Upload</label>
+      <progress id="upload" max="100" value="70">70%</progress>
+    </div>
+    <div class="ctl">
+      <label for="battery">Battery</label>
+      <meter id="battery" min="0" max="100" low="30" high="80" optimum="100" value="55">55%</meter>
+    </div>
+    <div class="ctl">
+      <label for="size">Size</label>
+      <select id="size">
+        <option>Small</option>
+        <option selected>Medium</option>
+        <option>Large</option>
+      </select>
+    </div>
+  </div>
+</div>

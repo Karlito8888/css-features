@@ -1,0 +1,34 @@
+.demo-subgrid { display: grid; gap: 14px; }
+.demo-subgrid .switch { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; cursor: pointer; }
+.demo-subgrid .switch input { width: 1.1rem; height: 1.1rem; accent-color: #0b7a75; }
+.demo-subgrid .switch input:focus-visible { outline: 3px solid #e0489b; outline-offset: 2px; }
+
+.demo-subgrid .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 16px;
+}
+
+/* Every card spans three rows of the parent grid. */
+.demo-subgrid .card {
+  grid-row: span 3;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 0;
+  padding: 16px;
+  border: 1px solid #b9dcd9;
+  border-radius: 12px;
+  background: #f1fbfa;
+}
+.demo-subgrid .card > * { margin: 0; padding: 10px 0; }
+.demo-subgrid .card h2 { padding: 10px 12px; border-radius: 8px; background: #0b7a75; color: #fff; font-size: 1.1rem; }
+.demo-subgrid .card p { border-bottom: 1px dashed #8bc4bf; }
+.demo-subgrid .card .price { font-size: 1.5rem; font-weight: 700; color: #0b5e5a; border-bottom: 0; }
+
+/* The card borrows its three rows from the parent, so cards in the same row line up. */
+.demo-subgrid:has(#use-subgrid:checked) .card { grid-template-rows: subgrid; }
+
+.demo-subgrid .unsupported { display: none; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (grid-template-rows: subgrid) {
+  .demo-subgrid .unsupported { display: block; }
+}

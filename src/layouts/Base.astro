@@ -1,0 +1,114 @@
+---
+import { Font } from "astro:assets";
+import Search from "../components/Search.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import { sources } from "../data";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const BRAND = "CSS Features";
+const REPO = "https://github.com/Karlito8888/css-features";
+const { title, description } = Astro.props;
+const fullTitle = title === BRAND ? BRAND : `${title} | ${BRAND}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/og.png", Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BRAND} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <Font cssVariable="--font-sans" preload={[{ weight: 400, style: "normal", subset: "latin" }]} />
+    <Font cssVariable="--font-mono" />
+    <script is:inline>
+      // Apply the stored theme before first paint; "auto" (no value) follows the system.
+      const theme = localStorage.getItem("theme");
+      if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="container bar">
+        <a class="brand" href="/" aria-label={`${BRAND}, home`}>
+          <span class="logo" aria-hidden="true">{"{}"}</span>
+          <span>{BRAND}</span>
+        </a>
+        <Search />
+        <div class="tools">
+          <ThemeToggle />
+          <a class="button icon" href={REPO} aria-label="Source code on GitHub">
+            <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" fill="currentColor">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Every definition on this site is quoted from the official sources:
+          the <a href="https://www.w3.org/Style/CSS/">W3C CSS specifications</a> through <a href="https://github.com/w3c/webref">webref</a> {sources.webref}
+          and <a href="https://github.com/w3c/browser-specs">browser-specs</a> {sources.webSpecs},
+          <a href="https://github.com/mdn/content">MDN</a> ({sources.mdn}),
+          <a href="https://github.com/mdn/browser-compat-data">MDN browser-compat-data</a> {sources.bcd}
+          and <a href="https://github.com/web-platform-dx/web-features">web-features</a> {sources.webFeatures} for Baseline and the Modern CSS gallery.
+        </p>
+        <p>
+          Licences: CSS specification text © W3C, <a href="https://www.w3.org/copyright/software-license/">W3C Software and Document License</a>;
+          webref and browser-specs <a href="https://opensource.org/license/mit">MIT</a>.
+          MDN prose <a href="https://creativecommons.org/licenses/by-sa/2.5/">CC BY-SA 2.5</a>, MDN code examples and browser-compat-data
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>, web-features
+          <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>.
+          This site's content is shared under CC BY-SA 2.5, its <a href={REPO}>source code</a> under MIT.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50; height: var(--header-h);
+    background: color-mix(in srgb, var(--bg) 85%, transparent);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar { height: 100%; display: flex; align-items: center; gap: 1rem; }
+  .brand { display: inline-flex; align-items: center; gap: 0.55rem; font-weight: 700; color: var(--fg); text-decoration: none; white-space: nowrap; }
+  .logo {
+    display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 9px;
+    font-family: var(--font-mono), monospace; font-size: 0.8rem; color: #fff;
+    background: linear-gradient(135deg, #1d4ed8, #0ea5e9 55%, #a855f7);
+  }
+  .tools { margin-left: auto; display: flex; gap: 0.5rem; }
+  .icon { padding: 0.4rem; }
+  .site-footer { border-top: 1px solid var(--border); background: var(--bg-soft); color: var(--muted); font-size: 0.85rem; padding: 1.5rem 0; margin-top: 4rem; }
+  .site-footer p { max-width: 75ch; }
+  @media (max-width: 40rem) {
+    .brand span:last-child { display: none; }
+  }
+</style>

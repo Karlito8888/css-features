@@ -1,0 +1,25 @@
+<div class="demo-gi">
+  <p class="unsupported">Your browser does not support gradient color interpolation, so the gradients below are not drawn.</p>
+
+  <p class="label">Same two colors, three color spaces</p>
+  <div class="bar srgb"><span>in srgb</span></div>
+  <div class="bar oklab"><span>in oklab</span></div>
+  <div class="bar oklch"><span>in oklch</span></div>
+
+  <p class="label">Pick two colors and a hue path</p>
+  <div class="controls">
+    <label>From <input type="color" id="a" value="#ff2d55"></label>
+    <label>To <input type="color" id="b" value="#00b4ff"></label>
+    <fieldset>
+      <legend>Hue path</legend>
+      <label><input type="radio" name="hue" id="h-shorter" checked> shorter</label>
+      <label><input type="radio" name="hue" id="h-longer"> longer</label>
+      <label><input type="radio" name="hue" id="h-increasing"> increasing</label>
+      <label><input type="radio" name="hue" id="h-decreasing"> decreasing</label>
+    </fieldset>
+  </div>
+  <div class="stage">
+    <div class="hero" role="img" aria-label="Linear gradient between the two chosen colors"></div>
+    <div class="wheel" role="img" aria-label="Color wheel made by one conic gradient"></div>
+  </div>
+</div>

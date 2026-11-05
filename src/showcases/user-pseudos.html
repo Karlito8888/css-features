@@ -1,0 +1,38 @@
+<div class="demo-user">
+  <p class="unsupported" role="status">This browser does not support :user-valid and :user-invalid, so only the left field below reacts.</p>
+  <form class="form" id="signup">
+    <p class="hint">Click into each field, type, then leave it. Compare the two email fields.</p>
+    <div class="row">
+      <div class="field old">
+        <label for="e1">Email, styled with <code>:invalid</code></label>
+        <input id="e1" type="email" required placeholder="you@example.com">
+        <p class="msg">Red from the first paint, before you typed anything.</p>
+      </div>
+      <div class="field new">
+        <label for="e2">Email, styled with <code>:user-invalid</code></label>
+        <input id="e2" type="email" required placeholder="you@example.com">
+        <p class="msg bad">Enter a valid email address.</p>
+        <p class="msg good">Looks good.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field new">
+        <label for="u">Username, 3 to 12 letters</label>
+        <input id="u" type="text" required minlength="3" maxlength="12" pattern="[A-Za-z]+" placeholder="ada">
+        <p class="msg bad">Use 3 to 12 letters, no digits.</p>
+        <p class="msg good">Available.</p>
+      </div>
+      <div class="field new">
+        <label for="a">Age, 18 or more</label>
+        <input id="a" type="number" required min="18" max="120" placeholder="18">
+        <p class="msg bad">You must be between 18 and 120.</p>
+        <p class="msg good">Thanks.</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button type="submit">Create account</button>
+      <button type="reset">Reset</button>
+      <p class="status" role="status"></p>
+    </div>
+  </form>
+</div>

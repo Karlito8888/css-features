@@ -1,0 +1,52 @@
+.demo-rf { display: grid; gap: 12px; }
+.demo-rf .hint { margin: 0; color: #555; font-size: 0.9rem; }
+
+.demo-rf .controls { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; padding: 8px 12px; border: 1px solid #c9c9d3; border-radius: 8px; }
+.demo-rf .controls legend { padding: 0 6px; font-family: ui-monospace, monospace; font-size: 0.85rem; color: #444; }
+.demo-rf .controls label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.demo-rf .controls input { accent-color: #0369a1; }
+
+/* The HTML order is A to F. The layout shows them scrambled. */
+.demo-rf .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "c a e"
+    "f b d";
+  gap: 10px;
+  reading-flow: normal;
+}
+.demo-rf .a { grid-area: a; }
+.demo-rf .b { grid-area: b; }
+.demo-rf .c { grid-area: c; }
+.demo-rf .d { grid-area: d; }
+.demo-rf .e { grid-area: e; }
+.demo-rf .f { grid-area: f; }
+
+.demo-rf:has(#rf-rows:checked) .grid { reading-flow: grid-rows; }
+.demo-rf:has(#rf-columns:checked) .grid { reading-flow: grid-columns; }
+/* Keep the HTML order, but move A to the last reading group. */
+.demo-rf:has(#rf-order:checked) .grid { reading-flow: source-order; }
+.demo-rf:has(#rf-order:checked) .a { reading-order: 1; }
+
+.demo-rf .grid button {
+  min-height: 5.5rem;
+  border: 2px solid #0369a1;
+  border-radius: 12px;
+  background: #e0f2fe;
+  color: #0c4a6e;
+  font: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.demo-rf button:focus-visible { outline: 4px solid #e0489b; outline-offset: 2px; background: #bae6fd; }
+
+.demo-rf .trail { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.demo-rf output { min-width: 10rem; font-family: ui-monospace, monospace; font-weight: 700; letter-spacing: 0.05em; }
+.demo-rf #reset { padding: 2px 10px; border: 1px solid #888; border-radius: 6px; background: #fff; font: inherit; cursor: pointer; }
+
+.demo-rf .unsupported { display: none; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (reading-flow: grid-rows) {
+  .demo-rf .unsupported { display: block; }
+}

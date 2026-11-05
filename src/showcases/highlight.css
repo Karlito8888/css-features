@@ -1,0 +1,38 @@
+.demo-hl { max-width: 760px; margin-inline: auto; color: #1b1b1b; }
+
+.demo-hl .unsupported {
+  display: none;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #78350f;
+}
+@supports not selector(::highlight(a)) {
+  .demo-hl .unsupported { display: block; }
+}
+
+.demo-hl .search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 14px; }
+.demo-hl .search label { font-weight: 600; }
+.demo-hl .search input { flex: 1 1 140px; min-width: 0; padding: 8px 10px; font: inherit; border: 1px solid #9ca3af; border-radius: 8px; }
+.demo-hl .search button { padding: 8px 12px; font: inherit; border: 1px solid #4f46e5; border-radius: 8px; background: #eef2ff; color: #312e81; cursor: pointer; }
+.demo-hl .search :focus-visible { outline: 3px solid #4f46e5; outline-offset: 1px; }
+.demo-hl output { font-variant-numeric: tabular-nums; color: #4b5563; }
+
+.demo-hl #doc { padding: 4px 18px; border-left: 4px solid #c7d2fe; line-height: 1.6; }
+
+/* Two named highlights, registered from script with CSS.highlights.set().
+   Only color, background-color, text-decoration and text-shadow are allowed here. */
+::highlight(search) {
+  background-color: #fde047;
+  color: #1b1b1b;
+}
+::highlight(current) {
+  background-color: #4f46e5;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.demo-hl .dom { margin: 12px 0 0; font-size: 0.9rem; color: #4b5563; }
+.demo-hl .dom output { font-weight: 700; color: #166534; }

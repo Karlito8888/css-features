@@ -1,0 +1,40 @@
+.demo-rel { --brand: #7c3aed; --turn: 0; max-width: 860px; margin: 0 auto; }
+.demo-rel .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (color: oklch(from red l c h)) {
+  .demo-rel .unsupported { display: block; }
+}
+
+.demo-rel .controls { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 8px; }
+.demo-rel .controls label { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.demo-rel input[type="color"] { width: 48px; height: 32px; padding: 0; border: 1px solid #888; border-radius: 6px; }
+.demo-rel :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-rel .label { margin: 14px 0 6px; font-size: 13px; font-weight: 600; }
+.demo-rel .row { display: flex; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.demo-rel .row li {
+  flex: 1; min-width: 0; height: 60px; padding: 6px; box-sizing: border-box;
+  display: flex; align-items: flex-end; border-radius: 8px; font-size: 11px;
+  /* Relative color: keep the brand's chroma and hue, only change lightness. */
+  --bg: oklch(from var(--brand) var(--l) c h);
+  background: var(--bg);
+  /* Text color derived from the swatch itself: dark when l > 0.65, light otherwise. */
+  color: oklch(from var(--bg) calc((l - 0.65) * -1000) 0 h);
+}
+.demo-rel .hues li {
+  /* Rotate the hue around the wheel, same lightness and chroma. */
+  --bg: oklch(from var(--brand) l c calc(h + var(--k) + var(--turn)));
+}
+
+.demo-rel .card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 8px;
+  margin-top: 16px; padding: 16px; border-radius: 12px; font-size: 14px;
+  background: oklch(from var(--brand) 0.96 0.03 h);
+  border: 2px solid oklch(from var(--brand) 0.8 calc(c * 0.5) h);
+  color: oklch(from var(--brand) 0.3 calc(c * 0.6) h);
+}
+.demo-rel .card button {
+  padding: 8px 18px; border: 0; border-radius: 999px; font: inherit; font-weight: 600; cursor: pointer;
+  background: var(--brand);
+  color: oklch(from var(--brand) calc((l - 0.65) * -1000) 0 h);
+}
+.demo-rel .card button:hover { background: oklch(from var(--brand) calc(l - 0.08) c h); }

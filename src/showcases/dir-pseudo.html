@@ -1,0 +1,20 @@
+<div class="demo-dir">
+  <p class="unsupported" role="status">This browser does not support :dir(), so the bubbles below keep one look for both directions.</p>
+  <div class="bar" role="group" aria-label="Direction of the chat">
+    <span>Chat direction</span>
+    <button type="button" data-dir="ltr" aria-pressed="true">LTR</button>
+    <button type="button" data-dir="rtl" aria-pressed="false">RTL</button>
+  </div>
+  <section class="chat" id="chat" dir="ltr" aria-label="Messages">
+    <p class="msg">This bubble inherits the direction.</p>
+    <p class="msg">So does this one. Use the buttons.</p>
+    <p class="msg" dir="auto">Hello, this one is detected as left to right.</p>
+    <p class="msg" dir="auto" lang="ar">مرحبا، هذه الرسالة تُقرأ من اليمين إلى اليسار.</p>
+    <p class="msg" dir="auto" lang="he">שלום, ההודעה הזאת נקראת מימין לשמאל.</p>
+    <p class="send"><a class="next" href="#next">Next</a></p>
+  </section>
+  <div class="compose">
+    <label for="draft">Type here, then try Arabic or Hebrew letters</label>
+    <textarea id="draft" dir="auto" rows="2">Hello</textarea>
+  </div>
+</div>

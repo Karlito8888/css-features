@@ -1,0 +1,26 @@
+<div class="demo-target">
+  <p class="unsupported" role="status">This browser does not support <code>::target-text</code>. Text fragment links still scroll, without the highlight.</p>
+  <div class="controls">
+    <fieldset>
+      <legend>Text fragment</legend>
+      <label><input type="radio" name="frag" id="frag-1" checked> slow tide</label>
+      <label><input type="radio" name="frag" id="frag-2"> copper lanterns</label>
+      <label><input type="radio" name="frag" id="frag-3"> last ferry</label>
+    </fieldset>
+    <fieldset>
+      <legend>::target-text style</legend>
+      <label><input type="radio" name="hl" id="hl-marker" checked> Marker</label>
+      <label><input type="radio" name="hl" id="hl-ink"> Ink</label>
+      <label><input type="radio" name="hl" id="hl-wave"> Wavy</label>
+    </fieldset>
+  </div>
+  <p class="address" aria-live="polite"><span class="bar"></span></p>
+  <article class="page">
+    <h2>Harbour notes</h2>
+    <p>The morning starts with the <mark class="hit m1">slow tide</mark> pulling nets across the quay, and the gulls argue over the first fish of the day.</p>
+    <p>By noon the market fills with voices. Children chase each other between stalls, and an old woman sells oranges from a basket older than the harbour wall.</p>
+    <p>At dusk the <mark class="hit m2">copper lanterns</mark> are lit one by one along the pier. Their light spills on the water and the bay turns the colour of tea.</p>
+    <p>Nobody hurries after dark. The <mark class="hit m3">last ferry</mark> leaves at ten, and the lamplighter walks home whistling the same song.</p>
+  </article>
+  <p class="note">A sandboxed frame cannot follow a <code>#:~:text=</code> link, so the marks above are painted by hand with the same colours. In your own page, the browser applies <code>::target-text</code> itself.</p>
+</div>

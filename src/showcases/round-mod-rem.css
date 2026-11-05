@@ -1,0 +1,44 @@
+.demo-rmr, .demo-rmr * { box-sizing: border-box; }
+.demo-rmr { --x: 60px; --step: 50px; max-width: 860px; margin: 0 auto; }
+.demo-rmr .hint { margin: 0 0 12px; }
+.demo-rmr .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (width: round(10px, 4px)) {
+  .demo-rmr .unsupported { display: block; }
+}
+
+.demo-rmr .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 600; }
+.demo-rmr .controls input { flex: 1; max-width: 420px; accent-color: #1d4ed8; }
+.demo-rmr .controls input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+.demo-rmr output { min-width: 6ch; font-variant-numeric: tabular-nums; }
+
+.demo-rmr .rulers { width: 300px; max-width: 100%; margin: 0 auto; }
+.demo-rmr .name { margin: 8px 0 3px; font-size: 0.8rem; }
+.demo-rmr .ruler {
+  position: relative;
+  height: 22px;
+  /* The origin is the middle, three ticks in: ticks fall on every multiple of the step. */
+  background:
+    repeating-linear-gradient(90deg, #94a3b8 0 1px, transparent 1px var(--step)) 0 0 / 100% 100% no-repeat,
+    linear-gradient(#e2e8f0, #e2e8f0) 0 50% / 100% 2px no-repeat;
+}
+
+.demo-rmr .dot { position: absolute; left: 50%; top: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px; border-radius: 50%; background: #1d4ed8; }
+.demo-rmr .dot.raw { background: #fff; box-shadow: inset 0 0 0 3px #1b1b1b; translate: var(--x); }
+.demo-rmr .dot.nearest { translate: round(nearest, var(--x), var(--step)); }
+.demo-rmr .dot.up { translate: round(up, var(--x), var(--step)); background: #be185d; }
+.demo-rmr .dot.down { translate: round(down, var(--x), var(--step)); background: #b45309; }
+.demo-rmr .dot.zero { translate: round(to-zero, var(--x), var(--step)); background: #15803d; }
+
+/* A bar from the tick to the value: its width is the remainder, so its far end lands on x. */
+.demo-rmr .span { position: absolute; left: 50%; top: 5px; height: 12px; border-radius: 3px; background: #7c3aed; }
+.demo-rmr .span.mod { translate: round(down, var(--x), var(--step)); width: mod(var(--x), var(--step)); }
+.demo-rmr .span.rem {
+  /* rem() takes the sign of x, so for negative values the bar starts left of the tick. */
+  translate: calc(round(to-zero, var(--x), var(--step)) + min(0px, rem(var(--x), var(--step))));
+  width: abs(rem(var(--x), var(--step)));
+  background: #0e7490;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .demo-rmr .dot, .demo-rmr .span { transition: translate 0.15s, width 0.15s; }
+}

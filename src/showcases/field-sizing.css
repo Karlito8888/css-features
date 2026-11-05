@@ -1,0 +1,38 @@
+.demo-fs { max-inline-size: 640px; }
+.demo-fs .unsupported { display: none; padding: 10px 14px; border-radius: 8px; background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+@supports not (field-sizing: content) { .demo-fs .unsupported { display: block; } }
+
+.demo-fs .mode { display: flex; gap: 16px; margin: 0 0 8px; padding: 6px 12px 8px; border: 1px solid #d4d4d8; border-radius: 8px; }
+.demo-fs .mode label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-family: ui-monospace, monospace; }
+.demo-fs .hint { margin: 0 0 14px; color: #52525b; }
+.demo-fs .sentence { margin: 0 0 10px; font-size: 1.25rem; }
+.demo-fs .sentence label { display: block; }
+
+.demo-fs input.inline, .demo-fs textarea {
+  box-sizing: border-box;
+  font: inherit;
+  color: #1b1b1b;
+  border: 2px solid #c7d2fe;
+  border-radius: 10px;
+  background: #eef2ff;
+}
+.demo-fs input.inline { padding: 2px 10px; }
+.demo-fs input.inline:focus-visible, .demo-fs textarea:focus-visible { outline: 3px solid #4f46e5; outline-offset: 2px; }
+
+/* The one property: the field is as big as what is typed in it. */
+.demo-fs input.inline { field-sizing: content; min-inline-size: 8ch; max-inline-size: 100%; }
+.demo-fs textarea {
+  field-sizing: content;
+  display: block;
+  min-inline-size: 8rem;
+  max-inline-size: 100%;
+  max-block-size: 8lh;
+  padding: 10px 14px;
+  resize: none;
+}
+
+.demo-fs .chat label { display: block; margin-block-end: 4px; font-weight: 600; }
+
+/* The default behaviour, for comparison. */
+.demo-fs:has(#mode-fixed:checked) input.inline { field-sizing: fixed; inline-size: 10rem; }
+.demo-fs:has(#mode-fixed:checked) textarea { field-sizing: fixed; inline-size: 14rem; block-size: 3lh; }

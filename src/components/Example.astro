@@ -1,0 +1,179 @@
+---
+import { Code } from "astro:components";
+import type { Example } from "../data";
+
+interface Props {
+  example: Example;
+  id: string;
+  label: string;
+  /** Hand-written showcase of a modern feature: browser-window bar and the feature's keys as chips. */
+  showcase?: { title: string; keys: { id: string; name: string; url: string; used: boolean }[] };
+}
+
+const { example, id, label, showcase } = Astro.props;
+const LANGS = [
+  { key: "html", shiki: "html", title: "HTML" },
+  { key: "css", shiki: "css", title: "CSS" },
+  { key: "js", shiki: "javascript", title: "JS" },
+] as const;
+// CSS first: this is a CSS site, the stylesheet is what the reader came for.
+const tabs = [LANGS[1], LANGS[0], LANGS[2]].filter((l) => example[l.key]);
+// Embedded as JSON for the client; escaping "<" keeps "</script>" inside the code from closing the tag.
+const source = JSON.stringify(example).replace(/</g, "\\u003c");
+const unused = showcase?.keys.some((k) => !k.used);
+---
+
+<div class:list={["example", { showcase }]} data-example={id} data-max-height={showcase ? 900 : undefined}>
+  <div class="preview">
+    {
+      showcase ? (
+        <div class="bar window">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="tab"><span>{showcase.title}</span></span>
+          <span class="hint">Written for this site</span>
+        </div>
+      ) : (
+        <div class="bar">
+          <span class="dot" aria-hidden="true"></span>
+          <span>Live preview</span>
+          <span class="hint">Example from MDN</span>
+        </div>
+      )
+    }
+    {
+      example.choices && (
+        <div class="choices" role="radiogroup" aria-label="Values to try">
+          {example.choices.map((choice, i) => (
+            <button type="button" role="radio" aria-checked={i === 0 ? "true" : "false"} data-choice={i} title="Apply this value to the example element">
+              <code>{choice}</code>
+            </button>
+          ))}
+        </div>
+      )
+    }
+    <div class="frame" data-frame data-label={label}></div>
+    {
+      showcase && (
+        <div class="chips">
+          <p>The features this demo is built on. Solid chips are used in its code, click one to read its definition.</p>
+          <ul>
+            {showcase.keys.map((k) => (
+              <li class:list={{ unused: !k.used }}><a href={k.url} title={k.used ? undefined : "Part of the feature, not used by this demo"}><code>{k.name}</code></a></li>
+            ))}
+          </ul>
+          {unused && <p class="unused-note">Dashed chips belong to the same feature but this demo does not use them.</p>}
+        </div>
+      )
+    }
+  </div>
+  <div class="code">
+    <div class="bar">
+      <div role="tablist" aria-label={`Code of the ${label} example`}>
+        {
+          tabs.map((t, i) => (
+            <button
+              type="button"
+              role="tab"
+              id={`${id}-tab-${t.key}`}
+              aria-controls={`${id}-panel-${t.key}`}
+              aria-selected={i === 0 ? "true" : "false"}
+              tabindex={i === 0 ? 0 : -1}
+            >
+              {t.title}
+            </button>
+          ))
+        }
+      </div>
+      <div class="actions">
+        <button type="button" class="button small" data-action="edit" aria-pressed="false">Edit</button>
+        <button type="button" class="button small" data-action="reset" hidden>Reset</button>
+        <button type="button" class="button small" data-action="copy">Copy</button>
+      </div>
+    </div>
+    {
+      tabs.map((t, i) => (
+        <div role="tabpanel" id={`${id}-panel-${t.key}`} aria-labelledby={`${id}-tab-${t.key}`} data-panel={t.key} hidden={i !== 0}>
+          <Code code={example[t.key] ?? ""} lang={t.shiki} themes={{ light: "github-light", dark: "github-dark" }} wrap />
+        </div>
+      ))
+    }
+  </div>
+  <script type="application/json" data-source set:html={source} />
+</div>
+
+<script>
+  import "../scripts/examples";
+</script>
+
+<style>
+  .example {
+    container-type: inline-size;
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+    background: var(--surface); margin: 1.5rem 0;
+    box-shadow: 0 20px 45px -30px color-mix(in srgb, var(--fg) 45%, transparent);
+  }
+  @media (max-width: 64rem) {
+    .example { grid-template-columns: minmax(0, 1fr); }
+    .code { border-left: 0 !important; border-top: 1px solid var(--border); }
+  }
+  .bar {
+    display: flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; padding: 0.4rem 0.75rem;
+    border-bottom: 1px solid var(--border); font-size: 0.8rem; font-weight: 600; color: var(--muted);
+  }
+  .dot { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--good); box-shadow: 0 0 0 3px color-mix(in srgb, var(--good) 25%, transparent); }
+  .hint { margin-left: auto; font-weight: 400; }
+  .preview { display: flex; flex-direction: column; background: var(--bg-soft); }
+  .frame { flex: 1; padding: 0.75rem; display: flex; }
+
+  /* MDN value choices: declarations the reader applies to the example element. */
+  .choices { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.6rem 0.75rem 0; }
+  .choices button {
+    font: inherit; cursor: pointer; padding: 0.15rem 0.2rem; border-radius: 8px;
+    background: var(--surface); border: 1px solid var(--border); color: var(--fg); text-align: left;
+  }
+  .choices button code { background: none; border: 0; font-size: 0.8rem; white-space: pre-wrap; }
+  .choices button:hover { border-color: var(--accent); }
+  .choices button[aria-checked="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+  .choices button[data-unsupported] { border-style: dashed; color: var(--muted); }
+  .choices button[data-unsupported]::after { content: " not supported here"; font-size: 0.72rem; font-style: italic; }
+
+  /* Showcase: full width, preview above the code, a browser-like window bar. */
+  .showcase { grid-template-columns: minmax(0, 1fr); }
+  .showcase .code { border-left: 0; border-top: 1px solid var(--border); }
+  .lights { display: inline-flex; gap: 0.35rem; }
+  .lights i { width: 0.7rem; height: 0.7rem; border-radius: 50%; background: #ff5f57; }
+  .lights i:nth-child(2) { background: #febc2e; }
+  .lights i:nth-child(3) { background: #28c840; }
+  .tab {
+    display: inline-flex; align-items: center; gap: 0.45rem; min-width: 0; max-width: 18rem;
+    padding: 0.3rem 0.8rem; border-radius: 9px 9px 0 0; margin-bottom: -0.45rem; align-self: flex-end;
+    background: var(--surface); border: 1px solid var(--border); border-bottom: 0; color: var(--fg); font-weight: 500;
+  }
+  .tab span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chips { padding: 0 0.9rem 0.9rem; }
+  .chips p { margin: 0 0 0.5rem; font-size: 0.85rem; color: var(--muted); }
+  .chips ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chips a { text-decoration: none; }
+  .chips a:hover code, .chips a:focus-visible code { border-color: var(--accent); color: var(--accent); }
+  .chips .unused code { border-style: dashed; border-color: var(--muted); opacity: 0.8; }
+  .chips .unused-note { margin: 0.5rem 0 0; font-size: 0.8rem; font-style: italic; }
+  @media (max-width: 40rem) {
+    .hint, .lights { display: none; }
+  }
+  .frame :global(iframe) {
+    width: 100%; height: 220px; border: 0; border-radius: 10px; background: #fff;
+    box-shadow: 0 0 0 1px var(--border);
+  }
+  .code { border-left: 1px solid var(--border); display: flex; flex-direction: column; min-width: 0; background: var(--code-bg); }
+  [role="tablist"] { display: flex; gap: 0.25rem; }
+  [role="tab"] {
+    font: inherit; font-size: 0.8rem; font-weight: 600; color: var(--muted); cursor: pointer;
+    background: none; border: 0; border-radius: 8px; padding: 0.3rem 0.65rem;
+  }
+  [role="tab"][aria-selected="true"] { color: var(--accent); background: var(--accent-soft); }
+  .actions { margin-left: auto; display: flex; gap: 0.35rem; }
+  .small { font-size: 0.75rem; padding: 0.2rem 0.65rem; }
+  [role="tabpanel"] { max-height: 32rem; overflow: auto; }
+  [role="tabpanel"] :global(pre) { margin: 0; padding: 1rem; font-size: 0.82rem; line-height: 1.6; }
+</style>

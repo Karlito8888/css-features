@@ -1,0 +1,50 @@
+<button class="button theme-toggle" type="button" data-theme-toggle data-current="auto" aria-label="Color theme: auto">
+  <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+    <g class="auto"><circle cx="12" cy="12" r="8"></circle><path d="M12 4a8 8 0 0 1 0 16Z" fill="currentColor"></path></g>
+    <g class="light"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></g>
+    <g class="dark"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"></path></g>
+  </svg>
+  <span data-label>Auto</span>
+</button>
+
+<script>
+  // Cycles auto (follows the system) -> light -> dark; the choice is kept in localStorage.
+  const ORDER = ["auto", "light", "dark"] as const;
+  type Theme = (typeof ORDER)[number];
+
+  const current = (): Theme => {
+    const stored = localStorage.getItem("theme");
+    return stored === "light" || stored === "dark" ? stored : "auto";
+  };
+
+  function apply(theme: Theme) {
+    if (theme === "auto") {
+      localStorage.removeItem("theme");
+      delete document.documentElement.dataset.theme;
+    } else {
+      localStorage.setItem("theme", theme);
+      document.documentElement.dataset.theme = theme;
+    }
+    for (const button of document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]")) {
+      button.dataset.current = theme;
+      button.setAttribute("aria-label", `Color theme: ${theme}`);
+      button.querySelector("[data-label]")!.textContent = theme[0].toUpperCase() + theme.slice(1);
+    }
+    document.dispatchEvent(new CustomEvent("themechange"));
+  }
+
+  apply(current());
+  for (const button of document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]")) {
+    button.addEventListener("click", () => apply(ORDER[(ORDER.indexOf(current()) + 1) % ORDER.length]));
+  }
+</script>
+
+<style>
+  .theme-toggle { min-width: 5.5rem; justify-content: center; }
+  g { display: none; }
+  [data-current="auto"] .auto, [data-current="light"] .light, [data-current="dark"] .dark { display: inline; }
+  @media (max-width: 40rem) {
+    [data-label] { display: none; }
+    .theme-toggle { min-width: 0; padding: 0.45rem; }
+  }
+</style>

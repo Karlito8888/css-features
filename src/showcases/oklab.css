@@ -1,0 +1,25 @@
+.demo-ok { --lightness: 0.72; max-width: 860px; margin: 0 auto; }
+.demo-ok .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (color: oklch(0.7 0.1 200)) {
+  .demo-ok .unsupported { display: block; }
+}
+
+.demo-ok .controls { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 8px; }
+.demo-ok .controls label { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.demo-ok :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-ok .label { margin: 14px 0 6px; font-size: 13px; font-weight: 600; }
+.demo-ok .row { display: flex; margin: 0; padding: 0; list-style: none; border-radius: 8px; overflow: hidden; }
+.demo-ok .row li { flex: 1; min-width: 0; height: 56px; }
+
+.demo-ok .hsl li { background: hsl(var(--h) 100% 50%); }
+/* In OkLCh, L is perceived lightness: equal L reads as equal brightness for every hue. */
+.demo-ok .lch li { background: oklch(var(--lightness) 0.15 var(--h)); }
+.demo-ok .lab li { background: oklab(var(--lightness) 0 var(--b)); }
+
+/* Grayscale makes the difference obvious: even steps for OkLCh, uneven for HSL. */
+.demo-ok:has(#gray:checked) .row { filter: grayscale(1); }
+.demo-ok .row { transition: filter 0.4s; }
+@media (prefers-reduced-motion: reduce) {
+  .demo-ok .row { transition: none; }
+}

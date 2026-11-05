@@ -1,0 +1,50 @@
+.demo-display { display: grid; gap: 12px; }
+
+.demo-display .controls { display: flex; flex-wrap: wrap; gap: 10px; }
+.demo-display fieldset { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; padding: 8px 12px; border: 1px solid #c9c9d3; border-radius: 8px; }
+.demo-display legend { padding: 0 6px; font-size: 0.85rem; color: #444; }
+.demo-display label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.demo-display input { accent-color: #7c3aed; }
+.demo-display input:focus-visible { outline: 3px solid #e0489b; outline-offset: 2px; }
+
+/* Two radios, two custom properties, one display declaration. */
+.demo-display { --outer: block; --inner: flex; }
+.demo-display:has(#o-inline:checked) { --outer: inline; }
+.demo-display:has(#i-flow:checked) { --inner: flow; }
+.demo-display:has(#i-flow-root:checked) { --inner: flow-root; }
+.demo-display:has(#i-grid:checked) { --inner: grid; }
+
+.demo-display .code {
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #1e1b3a;
+  color: #e9e5ff;
+  font-family: ui-monospace, monospace;
+}
+.demo-display:has(#o-block:checked):has(#i-flow:checked) .code::before { content: "display: block flow;"; }
+.demo-display:has(#o-block:checked):has(#i-flow-root:checked) .code::before { content: "display: block flow-root;"; }
+.demo-display:has(#o-block:checked):has(#i-flex:checked) .code::before { content: "display: block flex;"; }
+.demo-display:has(#o-block:checked):has(#i-grid:checked) .code::before { content: "display: block grid;"; }
+.demo-display:has(#o-inline:checked):has(#i-flow:checked) .code::before { content: "display: inline flow;"; }
+.demo-display:has(#o-inline:checked):has(#i-flow-root:checked) .code::before { content: "display: inline flow-root;"; }
+.demo-display:has(#o-inline:checked):has(#i-flex:checked) .code::before { content: "display: inline flex;"; }
+.demo-display:has(#o-inline:checked):has(#i-grid:checked) .code::before { content: "display: inline grid;"; }
+
+.demo-display .sample { margin: 0; padding: 14px; border-radius: 10px; background: #f5f3ff; line-height: 1.9; }
+.demo-display .box {
+  display: var(--outer) var(--inner);
+  gap: 6px;
+  grid-template-columns: repeat(2, auto);
+  padding: 6px;
+  border: 2px dashed #7c3aed;
+  border-radius: 8px;
+  background: #fff;
+  line-height: 1.4;
+}
+.demo-display .box i { padding: 2px 10px; border-radius: 6px; background: #7c3aed; color: #fff; font-style: normal; }
+
+.demo-display .unsupported { display: none; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (display: inline flex) {
+  .demo-display .unsupported { display: block; }
+}

@@ -1,0 +1,44 @@
+/* Palettes of the "Block Color" font: 0 is sunset, 1 is ocean. override-colors paints a third one. */
+@font-palette-values --sunset {
+  font-family: "Block Color";
+  base-palette: 0;
+}
+@font-palette-values --ocean {
+  font-family: "Block Color";
+  base-palette: 1;
+}
+@font-palette-values --mint {
+  font-family: "Block Color";
+  override-colors: 0 #064e3b, 1 #34d399, 2 #d1fae5;
+}
+
+/* font-palette is animatable: the colours of the glyphs blend between keyframes. */
+@keyframes cycle {
+  0%, 100% { font-palette: --sunset; }
+  33% { font-palette: --ocean; }
+  66% { font-palette: --mint; }
+}
+
+.demo-palette { --accent: #4f46e5; --mix: 40; max-width: 46rem; margin-inline: auto; }
+.demo-palette .hint { margin: 0 0 10px; color: #555; font-size: 0.9rem; }
+.demo-palette .card { margin: 0 0 12px; padding: 12px 18px 14px; border-radius: 14px; background: #0f172a; color: #e2e8f0; }
+
+.demo-palette .title { margin: 0; font-family: "Block Color", system-ui, sans-serif; font-size: clamp(2.6rem, 11vw, 5rem); font-weight: 400; line-height: 1.1; color: #e2e8f0; }
+.demo-palette .animated { font-palette: --sunset; animation: cycle 6s linear infinite; }
+.demo-palette .animated:hover { animation-play-state: paused; }
+.demo-palette .mixed { font-palette: palette-mix(in oklch, --ocean calc(var(--mix) * 1%), --sunset); }
+
+.demo-palette .caption { margin: 4px 0 0; color: #94a3b8; font-size: 0.85rem; }
+.demo-palette .slider { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 10px 0 0; }
+.demo-palette .slider label { font-size: 0.9rem; }
+.demo-palette .slider input { flex: 1 1 8rem; accent-color: #38bdf8; }
+.demo-palette .slider input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) { .demo-palette .animated { animation: none; } }
+
+.demo-palette .unsupported,
+.demo-palette .nofont { display: none; margin: 0 0 10px; padding: 8px 12px; border-radius: 8px; background: #fef3c7; color: #78350f; }
+.demo-palette.no-font .nofont { display: block; }
+@supports not (font-palette: --sunset) {
+  .demo-palette .unsupported { display: block; }
+}

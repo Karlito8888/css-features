@@ -1,0 +1,27 @@
+<div class="demo-ok">
+  <p class="unsupported">Your browser does not support oklab() and oklch(), so the swatches below cannot be drawn.</p>
+  <div class="controls">
+    <label><input type="checkbox" id="gray"> Show in grayscale</label>
+    <label>OkLCh lightness <input type="range" id="light" min="0.4" max="0.95" step="0.01" value="0.72"></label>
+  </div>
+
+  <p class="label">hsl(hue 100% 50%): twelve hues, one HSL lightness</p>
+  <ul class="row hsl" aria-label="HSL hues">
+    <li style="--h: 0"></li><li style="--h: 30"></li><li style="--h: 60"></li><li style="--h: 90"></li>
+    <li style="--h: 120"></li><li style="--h: 150"></li><li style="--h: 180"></li><li style="--h: 210"></li>
+    <li style="--h: 240"></li><li style="--h: 270"></li><li style="--h: 300"></li><li style="--h: 330"></li>
+  </ul>
+
+  <p class="label">oklch(L 0.15 hue): the same twelve hues, one perceived lightness</p>
+  <ul class="row lch" aria-label="OkLCh hues">
+    <li style="--h: 0"></li><li style="--h: 30"></li><li style="--h: 60"></li><li style="--h: 90"></li>
+    <li style="--h: 120"></li><li style="--h: 150"></li><li style="--h: 180"></li><li style="--h: 210"></li>
+    <li style="--h: 240"></li><li style="--h: 270"></li><li style="--h: 300"></li><li style="--h: 330"></li>
+  </ul>
+
+  <p class="label">oklab(L 0 b): the b axis runs from blue to yellow, a stays at 0</p>
+  <ul class="row lab" aria-label="Oklab b axis">
+    <li style="--b: -0.15"></li><li style="--b: -0.1"></li><li style="--b: -0.05"></li><li style="--b: 0"></li>
+    <li style="--b: 0.05"></li><li style="--b: 0.1"></li><li style="--b: 0.15"></li>
+  </ul>
+</div>

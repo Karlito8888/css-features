@@ -1,0 +1,37 @@
+<div class="demo-rel">
+  <p class="unsupported">Your browser does not support relative color syntax, so the palette below cannot be drawn.</p>
+  <div class="controls">
+    <label>Brand color <input type="color" id="brand" value="#7c3aed"></label>
+    <label>Turn the hue <input type="range" id="turn" min="0" max="360" value="0"></label>
+  </div>
+
+  <p class="label">Same hue and chroma, new lightness</p>
+  <ul class="row" aria-label="Lightness ramp">
+    <li style="--l: 0.95">.95</li>
+    <li style="--l: 0.85">.85</li>
+    <li style="--l: 0.75">.75</li>
+    <li style="--l: 0.65">.65</li>
+    <li style="--l: 0.55">.55</li>
+    <li style="--l: 0.45">.45</li>
+    <li style="--l: 0.35">.35</li>
+    <li style="--l: 0.25">.25</li>
+  </ul>
+
+  <p class="label">Same lightness and chroma, new hue</p>
+  <ul class="row hues" aria-label="Hue steps">
+    <li style="--k: 0">+0</li>
+    <li style="--k: 45">+45</li>
+    <li style="--k: 90">+90</li>
+    <li style="--k: 135">+135</li>
+    <li style="--k: 180">+180</li>
+    <li style="--k: 225">+225</li>
+    <li style="--k: 270">+270</li>
+    <li style="--k: 315">+315</li>
+  </ul>
+
+  <div class="card">
+    <strong>One color, a whole interface</strong>
+    <span>Background, border, text and button are all derived from the brand color.</span>
+    <button type="button">Button</button>
+  </div>
+</div>

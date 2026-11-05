@@ -1,0 +1,41 @@
+.demo-exp, .demo-exp * { box-sizing: border-box; }
+.demo-exp { --base: 1rem; --ratio: 1.25; max-width: 860px; margin: 0 auto; }
+.demo-exp .hint { margin: 0 0 12px; }
+.demo-exp .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (width: calc(pow(2, 3) * 1px)) {
+  .demo-exp .unsupported { display: block; }
+}
+
+.demo-exp .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-weight: 600; }
+.demo-exp .controls input { flex: 1; max-width: 420px; accent-color: #1d4ed8; }
+.demo-exp input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+.demo-exp output { min-width: 4ch; font-variant-numeric: tabular-nums; }
+
+/* A modular type scale: base * ratio^step. */
+.demo-exp .scale p { margin: 0; line-height: 1.15; font-weight: 700; font-size: calc(var(--base) * pow(var(--ratio), var(--n))); }
+
+.demo-exp .picker { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 16px 0 10px; padding: 0; border: 0; }
+.demo-exp .picker legend { padding: 0; margin-bottom: 6px; font-weight: 600; }
+.demo-exp .picker label { display: inline-flex; align-items: center; gap: 6px; font-family: ui-monospace, monospace; }
+.demo-exp .picker input { accent-color: #1d4ed8; }
+
+.demo-exp .chart { display: flex; align-items: flex-end; gap: 6px; height: 130px; padding: 8px; border-radius: 12px; background: #f1f5f9; }
+.demo-exp .chart span { flex: 1; min-height: 2px; border-radius: 4px 4px 0 0; background: #1d4ed8; transition: height 0.4s ease; }
+
+/* Each choice scales the function so that step 10 reaches the full height. */
+.demo-exp:has([value="pow"]:checked) .chart span { height: calc(pow(var(--i), 2) / pow(10, 2) * 100%); }
+.demo-exp:has([value="sqrt"]:checked) .chart span { height: calc(sqrt(var(--i)) / sqrt(10) * 100%); }
+.demo-exp:has([value="log"]:checked) .chart span { height: calc(log(var(--i)) / log(10) * 100%); }
+.demo-exp:has([value="exp"]:checked) .chart span { height: calc(exp(var(--i)) / exp(10) * 100%); }
+.demo-exp:has([value="hypot"]:checked) .chart span { height: calc(hypot(var(--i), 5) / hypot(10, 5) * 100%); }
+
+.demo-exp .formula { margin: 8px 0 0; font-family: ui-monospace, monospace; font-size: 0.9rem; }
+.demo-exp:has([value="pow"]:checked) .formula::before { content: "pow(i, 2) / pow(10, 2)"; }
+.demo-exp:has([value="sqrt"]:checked) .formula::before { content: "sqrt(i) / sqrt(10)"; }
+.demo-exp:has([value="log"]:checked) .formula::before { content: "log(i) / log(10)"; }
+.demo-exp:has([value="exp"]:checked) .formula::before { content: "exp(i) / exp(10)"; }
+.demo-exp:has([value="hypot"]:checked) .formula::before { content: "hypot(i, 5) / hypot(10, 5)"; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-exp .chart span { transition: none; }
+}

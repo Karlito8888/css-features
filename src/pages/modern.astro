@@ -1,0 +1,183 @@
+---
+import Example from "../components/Example.astro";
+import ModuleNav from "../components/ModuleNav.astro";
+import Base from "../layouts/Base.astro";
+import { BROWSERS, data, featureById, featureUrl, type Modern } from "../data";
+import { showcaseFor } from "../showcases";
+
+const month = (date: string) => new Date(date.replace("≤", "")).toLocaleDateString("en", { month: "long", year: "numeric", timeZone: "UTC" });
+const since = data.modernSince;
+const groups: { key: Modern["status"]; title: string; intro: string; items: Modern[] }[] = [
+  {
+    key: "low",
+    title: "Newly available",
+    intro: "Baseline newly available: supported by the latest version of every major browser. Safe to use with a fallback for older versions.",
+    items: data.modern.filter((m) => m.status === "low"),
+  },
+  {
+    key: false,
+    title: "Cutting edge",
+    intro: `Limited availability: shipped by some engines in ${since} or later, not yet by all. Use behind @supports, or for progressive enhancement.`,
+    items: data.modern.filter((m) => m.status === false),
+  },
+  {
+    key: "high",
+    title: `Widely available since ${since}`,
+    intro: "Baseline widely available: supported across browsers for at least 30 months. Use freely.",
+    items: data.modern.filter((m) => m.status === "high"),
+  },
+];
+const showcases = Object.fromEntries(data.modern.map((m) => [m.id, showcaseFor(m)]));
+const written = Object.values(showcases).filter(Boolean).length;
+const badge = (m: Modern) =>
+  m.status === "high"
+    ? { cls: "good", text: `Widely available since ${month(m.highDate!)}` }
+    : m.status === "low"
+      ? { cls: "good", text: `Newly available since ${month(m.lowDate!)}` }
+      : { cls: "warn", text: `Limited availability, moving since ${month(m.since)}` };
+const description = `${data.modern.length} modern CSS features with live demos: everything that reached Baseline, or shipped in a browser engine, in ${since} or later, from web-features, the W3C specifications and MDN.`;
+---
+
+<Base title="Modern CSS" description={description}>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">{data.modern.length} features · {written} demos written for this site · the rest illustrated by MDN</p>
+      <h1>Modern CSS,<br /><span class="gradient">live.</span></h1>
+      <p class="tagline">
+        Every CSS feature that reached Baseline, or shipped in a browser engine, in {since} or later, as
+        <a href="https://github.com/web-platform-dx/web-features">web-features</a> names and describes it. Each one renders below, in your browser,
+        with the code to edit and copy. Demos written for this site say so in their window bar; the others are MDN's own examples.
+      </p>
+      <nav class="jump" aria-label="Groups">
+        {groups.map((g) => <a href={`#${String(g.key)}`}>{g.title} <span>{g.items.length}</span></a>)}
+      </nav>
+    </div>
+  </section>
+
+  <div class="container layout">
+    <ModuleNav current={null} page="modern" />
+    <div class="body">
+      {
+        groups.map((g) => (
+          <section class="group" id={String(g.key)} aria-labelledby={`${String(g.key)}-title`}>
+            <h2 id={`${String(g.key)}-title`}>{g.title}</h2>
+            <p class="intro">{g.intro}</p>
+            {g.items.map((m) => {
+              const showcase = showcases[m.id];
+              const example = showcase?.example ?? (m.exampleOf ? featureById.get(m.exampleOf)!.example : null);
+              const b = badge(m);
+              return (
+                <article class="modern" id={m.id} aria-labelledby={`${m.id}-title`}>
+                  <header>
+                    <h3 id={`${m.id}-title`}><a href={`#${m.id}`}>{m.name}</a></h3>
+                    <div class="badges">
+                      <span class:list={["badge", b.cls]}>{b.text}</span>
+                      {m.group && <span class="badge group-badge">{m.group}</span>}
+                    </div>
+                  </header>
+                  <p class="lead"><span class="src">web-features</span> <Fragment set:html={m.description} /></p>
+                  {example && (
+                    <Example
+                      example={example}
+                      id={`modern-${m.id}`}
+                      label={m.name}
+                      showcase={showcase ? { title: m.name, keys: m.keys.map((id) => ({ id, name: featureById.get(id)!.name, url: featureUrl(featureById.get(id)!), used: showcase.used.has(id) })) } : undefined}
+                    />
+                  )}
+                  {!example && <p class="no-example">No demo written yet and no MDN example for this feature: read its definition through the links below.</p>}
+                  <div class="facts">
+                    {!showcase && m.keys.length > 0 && (
+                      <section class="card wide">
+                        <h4>In the reference</h4>
+                        <ul class="keys">
+                          {m.keys.map((id) => <li><a href={featureUrl(featureById.get(id)!)}><code>{featureById.get(id)!.name}</code></a></li>)}
+                        </ul>
+                        {m.exampleOf && <p class="note">The example above is MDN's example for <code>{featureById.get(m.exampleOf)!.name}</code>.</p>}
+                      </section>
+                    )}
+                    <section class="card">
+                      <h4>Browser support</h4>
+                      <table class="support">
+                        <caption class="visually-hidden">First browser version supporting the whole {m.name} feature</caption>
+                        <tbody>
+                          {Object.entries(BROWSERS).map(([key, name]) => (
+                            <tr>
+                              <th scope="row">{name}</th>
+                              <td class:list={{ no: m.support[key] === "No" }}>{m.support[key]}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      <p class="note">First version supporting the feature as a whole, from web-features. Parts of it may have shipped earlier: see each key in the reference.</p>
+                    </section>
+                    {m.spec.length > 0 && (
+                      <section class="card">
+                        <h4>Specification</h4>
+                        <ul class="specs">
+                          {m.spec.map((u) => <li><a href={u}>{u.replace(/^https?:\/\//, "").replace(/#.*$/, "")} ↗</a></li>)}
+                        </ul>
+                      </section>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </section>
+        ))
+      }
+    </div>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    position: relative; overflow: hidden; padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3.5rem); text-align: center;
+    background:
+      radial-gradient(60rem 30rem at 15% -10%, color-mix(in srgb, #a855f7 24%, transparent), transparent 60%),
+      radial-gradient(50rem 28rem at 90% 0%, color-mix(in srgb, #0ea5e9 22%, transparent), transparent 60%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .container { display: flex; flex-direction: column; align-items: center; }
+  .eyebrow { margin: 0 0 1rem; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+  h1 { margin: 0; font-size: clamp(2.6rem, 8vw, 5.2rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02; }
+  .gradient { background: linear-gradient(90deg, #a855f7, #0ea5e9 60%, #1d4ed8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tagline { max-width: 48rem; margin: 1.5rem auto 1.5rem; font-size: clamp(1.05rem, 2vw, 1.2rem); color: var(--muted); }
+  .jump { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+  .jump a { display: inline-flex; gap: 0.4rem; align-items: center; padding: 0.4rem 0.9rem; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); color: var(--fg); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  .jump a:hover { border-color: #a855f7; color: #a855f7; }
+  .jump span { font-weight: 400; color: var(--muted); }
+  .layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; padding-top: 2rem; }
+  @media (max-width: 64rem) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  }
+  .group { padding-top: 2rem; scroll-margin-top: calc(var(--header-h) + 1rem); }
+  h2 { margin: 0; font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 800; letter-spacing: -0.025em; }
+  .intro { color: var(--muted); max-width: 70ch; margin: 0.5rem 0 0; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+  .modern { padding: 3rem 0; border-bottom: 1px solid var(--border); scroll-margin-top: calc(var(--header-h) + 1rem); }
+  .modern:target h3 a { color: #a855f7; }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
+  h3 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; }
+  h3 a { color: inherit; text-decoration: none; }
+  .badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .group-badge { color: var(--muted); }
+  .src {
+    display: inline-block; vertical-align: 0.15em; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--muted); border: 1px solid var(--border); border-radius: 5px; padding: 0 0.35rem; margin-right: 0.25rem;
+  }
+  .lead { font-size: 1.15rem; font-weight: 500; margin: 1rem 0 0.4rem; max-width: 80ch; }
+  .no-example { color: var(--muted); font-style: italic; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; margin-top: 1.25rem; }
+  .card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; background: var(--surface); min-width: 0; }
+  .wide { grid-column: 1 / -1; }
+  h4 { margin: 0 0 0.75rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  .keys, .specs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .keys a { text-decoration: none; }
+  .keys a:hover code { border-color: var(--accent); color: var(--accent); }
+  .specs { flex-direction: column; gap: 0.3rem; font-size: 0.9rem; overflow-wrap: anywhere; }
+  .support { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .support th { text-align: left; font-weight: 500; padding: 0.25rem 0; }
+  .support td { text-align: right; font-family: var(--font-mono), monospace; font-size: 0.85rem; }
+  .support tr + tr { border-top: 1px solid var(--border); }
+  .support .no { color: var(--bad); }
+  .note { color: var(--muted); font-size: 0.8rem; margin: 0.75rem 0 0; }
+</style>

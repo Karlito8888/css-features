@@ -1,0 +1,74 @@
+.demo-cq { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.demo-cq .hint { margin: 0; color: #555; font-size: 0.9rem; }
+
+/* The dashed box is the container: a named query container on its inline axis. */
+.demo-cq .frame {
+  container: card / inline-size;
+  box-sizing: border-box;
+  width: 340px;
+  min-width: 240px;
+  max-width: 100%;
+  resize: horizontal;
+  overflow: auto;
+  padding: 10px;
+  border: 2px dashed #6a5af0;
+  border-radius: 14px;
+  background: #f4f2ff;
+}
+
+.demo-cq .card {
+  display: grid;
+  grid-template-areas: "art" "body" "buy";
+  gap: 12px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px #2a1f8a22;
+}
+.demo-cq .art {
+  grid-area: art;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background: radial-gradient(circle at 30% 30%, #ffe08a, transparent 40%), linear-gradient(135deg, #6a5af0, #e0489b);
+}
+.demo-cq .body { grid-area: body; display: grid; gap: 6px; align-content: start; }
+.demo-cq .buy { grid-area: buy; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+
+/* Container query units: 1cqi is 1% of the container width. */
+.demo-cq .title { margin: 0; font-size: clamp(1.1rem, 5cqi, 2rem); line-height: 1.15; }
+.demo-cq .text { margin: 0; color: #444; font-size: 0.95rem; }
+.demo-cq .specs { display: none; margin: 0; padding: 0; list-style: none; gap: 6px; flex-wrap: wrap; }
+.demo-cq .specs li { padding: 2px 10px; border-radius: 99px; background: #ece9ff; color: #3b2fb0; font-size: 0.85rem; }
+.demo-cq .price { font-size: 1.4rem; font-weight: 700; }
+.demo-cq button {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: #3b2fb0;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.demo-cq button:focus-visible { outline: 3px solid #e0489b; outline-offset: 2px; }
+
+.demo-cq .mode { justify-self: start; padding: 1px 8px; border-radius: 4px; background: #1b1b1b; color: #fff; font-size: 0.75rem; }
+.demo-cq .mode::before { content: "narrow layout"; }
+
+@container card (width >= 26rem) {
+  .demo-cq .card { grid-template-columns: 38% 1fr; grid-template-areas: "art body" "art buy"; }
+  .demo-cq .art { aspect-ratio: auto; min-height: 10rem; }
+  .demo-cq .specs { display: flex; }
+  .demo-cq .mode::before { content: "medium layout"; }
+}
+
+@container card (width >= 42rem) {
+  .demo-cq .card { grid-template-columns: 26% 1fr 11rem; grid-template-areas: "art body buy"; }
+  .demo-cq .buy { flex-direction: column; align-items: stretch; justify-content: center; text-align: center; }
+  .demo-cq .mode::before { content: "wide layout"; }
+}
+
+.demo-cq .unsupported { display: none; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (container-type: inline-size) {
+  .demo-cq .unsupported { display: block; }
+}

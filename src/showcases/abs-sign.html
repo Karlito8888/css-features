@@ -1,0 +1,14 @@
+<div class="demo-as">
+  <p class="unsupported">This browser does not support abs() and sign(), so the arrow and the bar do not react.</p>
+  <p class="hint">Drag the velocity left and right, and stop at zero. One number drives everything.</p>
+  <div class="controls">
+    <label for="v">Velocity</label>
+    <input type="range" id="v" min="-100" max="100" value="60">
+    <output id="out" for="v" aria-live="polite">60</output>
+  </div>
+  <div class="board">
+    <div class="arrow" aria-hidden="true"></div>
+    <div class="track" aria-hidden="true"><div class="bar"></div></div>
+    <p class="read"><code>sign()</code> is <b id="sign">1</b>, <code>abs()</code> is <b id="abs">60</b></p>
+  </div>
+</div>

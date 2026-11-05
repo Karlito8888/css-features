@@ -1,0 +1,37 @@
+/* color-scheme tells the browser which scheme is active. light-dark() reads it. */
+.demo-ld { color-scheme: light; max-width: 860px; margin: 0 auto; padding: 16px; border-radius: 16px; box-sizing: border-box;
+  background: light-dark(#e8ecf4, #0b0c10); color: light-dark(#1b1b1b, #f1f1f1); transition: background-color 0.3s, color 0.3s; }
+.demo-ld:has(#dark:checked) { color-scheme: dark; }
+
+.demo-ld .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (color: light-dark(red, blue)) {
+  .demo-ld .unsupported { display: block; }
+}
+
+.demo-ld .switch { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.demo-ld .switch input { position: absolute; opacity: 0; }
+.demo-ld .track { position: relative; width: 44px; height: 24px; border-radius: 999px; background: light-dark(#9aa3b5, #4338ca); transition: background-color 0.3s; }
+.demo-ld .track::after { content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: white; transition: transform 0.3s; }
+.demo-ld input:checked + .track::after { transform: translateX(20px); }
+.demo-ld input:focus-visible + .track { outline: 3px solid light-dark(#1d4ed8, #93c5fd); outline-offset: 3px; }
+
+.demo-ld .card { margin-top: 14px; padding: 18px; border-radius: 14px; border: 1px solid light-dark(#cbd2e1, #2b2f3b);
+  background: light-dark(#fff, #14161c); box-shadow: 0 8px 24px light-dark(rgb(30 40 80 / 0.12), rgb(0 0 0 / 0.6));
+  transition: background-color 0.3s, border-color 0.3s; }
+.demo-ld .card h2 { margin: 0 0 6px; font-size: 1.2rem; color: light-dark(#4338ca, #a5b4fc); }
+.demo-ld .card p { margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: light-dark(#3a3f4d, #c4c9d6); }
+.demo-ld code { padding: 1px 5px; border-radius: 4px; background: light-dark(#eef0f7, #232736); }
+
+.demo-ld .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 14px; padding: 0; list-style: none; }
+.demo-ld .chips li { padding: 6px 10px; border-radius: 8px; font: 12px ui-monospace, monospace; }
+.demo-ld .chips .a { background: light-dark(#fff, #14161c); color: light-dark(#1b1b1b, #f1f1f1); border: 1px dashed light-dark(#9aa3b5, #6b7280); }
+.demo-ld .chips .b { background: light-dark(#4338ca, #a5b4fc); color: light-dark(#fff, #14161c); }
+
+/* color-scheme also restyles the native controls. */
+.demo-ld .native { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: 14px; }
+.demo-ld .native label { display: flex; align-items: center; gap: 8px; }
+.demo-ld .native input, .demo-ld .native button { padding: 6px 10px; font: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-ld, .demo-ld .track, .demo-ld .track::after, .demo-ld .card { transition: none; }
+}

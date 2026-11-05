@@ -1,0 +1,26 @@
+.demo-accent { --accent: #e11d48; }
+.demo-accent .unsupported { display: none; padding: 10px 14px; border-radius: 8px; background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+@supports not (accent-color: red) { .demo-accent .unsupported { display: block; } }
+
+.demo-accent .picker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 0 0 14px; }
+.demo-accent .picker label { font-weight: 600; }
+.demo-accent #pick { inline-size: 56px; block-size: 36px; padding: 0; cursor: pointer; }
+.demo-accent #pick:focus-visible { outline: 3px solid #1b1b1b; outline-offset: 2px; }
+.demo-accent output { font-family: ui-monospace, monospace; }
+
+.demo-accent .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.demo-accent .panel { padding: 14px 16px; background: #fff; color: #1b1b1b; border: 1px solid #d4d4d8; border-radius: 14px; }
+.demo-accent .panel h2 { margin: 0 0 10px; font-size: 1rem; }
+.demo-accent .row { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; padding: 0; border: 0; }
+.demo-accent .radios { gap: 14px; }
+.demo-accent .radios label { display: inline-flex; align-items: center; gap: 6px; }
+.demo-accent .radios legend { float: left; padding: 0; margin-inline-end: 10px; }
+.demo-accent input:focus-visible { outline: 3px solid #1b1b1b; outline-offset: 2px; }
+
+/* One line recolors every native control. The first panel keeps the default. */
+.demo-accent .plain { accent-color: auto; }
+.demo-accent .tinted { accent-color: var(--accent); }
+
+/* The checkmark and the thumb stay readable on a dark scheme too. */
+.demo-accent .dark { color-scheme: dark; background: #18181b; color: #fafafa; border-color: #3f3f46; }
+.demo-accent .dark input:focus-visible { outline-color: #fafafa; }

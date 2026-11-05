@@ -1,0 +1,23 @@
+<div class="demo-display">
+  <div class="controls">
+    <fieldset>
+      <legend>Outside: how it sits among its neighbours</legend>
+      <label><input type="radio" name="outer" id="o-block" checked> block</label>
+      <label><input type="radio" name="outer" id="o-inline"> inline</label>
+    </fieldset>
+    <fieldset>
+      <legend>Inside: how it lays out its children</legend>
+      <label><input type="radio" name="inner" id="i-flow"> flow</label>
+      <label><input type="radio" name="inner" id="i-flow-root"> flow-root</label>
+      <label><input type="radio" name="inner" id="i-flex" checked> flex</label>
+      <label><input type="radio" name="inner" id="i-grid"> grid</label>
+    </fieldset>
+  </div>
+  <p class="code" aria-live="polite"></p>
+  <p class="sample">
+    Text before the box,
+    <span class="box"><i>One</i><i>Two</i><i>Three</i></span>
+    and text after it, long enough to show whether the box shares the line or takes its own.
+  </p>
+  <p class="unsupported">Two-value display is not supported in this browser, so the box keeps its default display.</p>
+</div>

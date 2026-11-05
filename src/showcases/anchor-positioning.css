@@ -1,0 +1,71 @@
+.demo-anchor { --ink: #1b1b1b; --brand: #4f46e5; }
+.demo-anchor .unsupported { display: none; padding: 10px 14px; border-radius: 8px; background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+@supports not (anchor-name: --a) { .demo-anchor .unsupported { display: block; } }
+
+.demo-anchor .side { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0 0 8px; padding: 6px 12px 8px; border: 1px solid #d4d4d8; border-radius: 8px; }
+.demo-anchor .side label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.demo-anchor .hint { margin: 0 0 8px; color: #52525b; font-size: 0.9rem; }
+
+/* The scroll box is the containing block the tooltips must stay inside. */
+.demo-anchor .box {
+  position: relative;
+  block-size: 210px;
+  overflow: auto;
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  background: linear-gradient(#f5f3ff, #fff);
+}
+.demo-anchor .box:focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; }
+.demo-anchor .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 64px 12px;
+  margin: 0;
+  padding: 18px 16px;
+  list-style: none;
+}
+
+/* One anchor name per chip: anchor-scope keeps each tooltip tied to its own chip. */
+.demo-anchor .item { anchor-scope: --tip; justify-self: start; }
+.demo-anchor .chip {
+  anchor-name: --tip;
+  padding: 8px 14px;
+  font: inherit;
+  color: #fff;
+  background: var(--brand);
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.demo-anchor .chip:focus-visible { outline: 3px solid #1b1b1b; outline-offset: 2px; }
+
+.demo-anchor .tip {
+  position: absolute;
+  position-anchor: --tip;
+  position-area: top;
+  position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline, --hug-start, --hug-end, --hug-start flip-block, --hug-end flip-block;
+  position-visibility: anchors-visible;
+  inline-size: max-content;
+  max-inline-size: 15rem;
+  margin: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #1f2430;
+  color: #fff;
+  font-size: 0.85rem;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.demo-anchor .chip:is(:hover, :focus-visible) + .tip { visibility: visible; opacity: 1; }
+
+/* Custom fallbacks: line the tooltip up with one edge of the chip instead of centering. */
+@position-try --hug-start { position-area: top span-right; }
+@position-try --hug-end { position-area: top span-left; }
+
+.demo-anchor:has(#side-right:checked) .tip { position-area: right; }
+.demo-anchor:has(#side-bottom:checked) .tip { position-area: bottom; }
+.demo-anchor:has(#side-left:checked) .tip { position-area: left; }
+
+@media (prefers-reduced-motion: reduce) { .demo-anchor .tip { transition: none; } }

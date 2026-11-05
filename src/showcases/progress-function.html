@@ -1,0 +1,18 @@
+<div class="demo-pg">
+  <p class="unsupported">This browser does not support progress(), so the bars and the text do not follow the controls.</p>
+  <p class="hint">Drag the slider, then drag the corner of the dashed box. progress() turns any value into a ratio from 0 to 1.</p>
+  <div class="controls">
+    <label for="v">Value</label>
+    <input type="range" id="v" min="0" max="100" value="50">
+    <output id="out" for="v">50</output>
+  </div>
+
+  <p class="label"><code>progress(value, 20, 80)</code>: 0 below 20, 1 above 80.</p>
+  <div class="meter"><div class="fill"></div></div>
+
+  <p class="label"><code>progress(100cqw, 200px, 480px)</code>: the width of the box, as a ratio.</p>
+  <div class="resizable">
+    <p class="grow">Resize me</p>
+    <div class="line"></div>
+  </div>
+</div>

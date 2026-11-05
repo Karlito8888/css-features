@@ -1,0 +1,16 @@
+<div class="demo-cs">
+  <p class="unsupported">This browser does not support calc-size(), so the panel stays closed.</p>
+  <p class="hint">Open the panel, then drag the factor. The height is the content height times the factor, and it animates.</p>
+  <div class="controls">
+    <label class="switch"><input type="checkbox" id="open"> Open</label>
+    <label class="factor">Factor <input type="range" id="factor" min="0.25" max="1.5" step="0.25" value="1"></label>
+    <output id="expr" for="factor open">height: calc-size(auto, size * 1)</output>
+  </div>
+  <section class="panel" aria-label="Panel with a computed height">
+    <div class="inner">
+      <h3>Content height</h3>
+      <p>The panel reads the natural height of what is inside it, multiplies it, and lands exactly there.</p>
+      <p>Below 1 the content is cut. Above 1 the panel keeps extra room. At every step the height stays a real, animatable length.</p>
+    </div>
+  </section>
+</div>

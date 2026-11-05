@@ -1,0 +1,20 @@
+<div class="demo-rf">
+  <fieldset class="controls">
+    <legend>reading-flow</legend>
+    <label><input type="radio" name="rf" id="rf-normal" checked> normal</label>
+    <label><input type="radio" name="rf" id="rf-rows"> grid-rows</label>
+    <label><input type="radio" name="rf" id="rf-columns"> grid-columns</label>
+    <label><input type="radio" name="rf" id="rf-order"> source-order + reading-order</label>
+  </fieldset>
+  <p class="hint">Click a card, then press Tab. Letters show the order in the HTML.</p>
+  <div class="grid">
+    <button type="button" class="a">A</button>
+    <button type="button" class="b">B</button>
+    <button type="button" class="c">C</button>
+    <button type="button" class="d">D</button>
+    <button type="button" class="e">E</button>
+    <button type="button" class="f">F</button>
+  </div>
+  <p class="trail">Focus order: <output id="trail">none yet</output> <button type="button" id="reset">Clear</button></p>
+  <p class="unsupported">reading-flow is not supported in this browser, so Tab always follows the HTML order.</p>
+</div>

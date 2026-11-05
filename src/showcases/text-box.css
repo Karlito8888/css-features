@@ -1,0 +1,32 @@
+.demo-textbox { max-width: 50rem; margin-inline: auto; }
+.demo-textbox .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 16px; }
+.demo-textbox .col { display: grid; justify-items: start; gap: 14px; padding: 14px; border: 2px solid #e2e8f0; border-radius: 14px; }
+.demo-textbox .col-trim { border-color: #4f46e5; }
+.demo-textbox h2 { margin: 0; font: 700 0.85rem ui-monospace, monospace; color: #334155; }
+
+/* The pink band is the content box: it shows exactly where the text box starts and ends. */
+.demo-textbox .tb {
+  margin: 0;
+  padding: 18px 28px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(#fda4af, #fda4af) content-box, #1e293b;
+  color: #1b1b1b;
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+  line-height: 1.6;
+}
+.demo-textbox .big { font-size: 4rem; letter-spacing: 0.04em; }
+.demo-textbox .btn { font-size: 1.4rem; cursor: pointer; }
+.demo-textbox .btn:hover { filter: brightness(1.1); }
+.demo-textbox .btn:focus-visible { outline: 3px solid #4f46e5; outline-offset: 3px; }
+
+/* Trim the leading above the capital letters and below the baseline. */
+.demo-textbox .col-trim .tb { text-box: trim-both cap alphabetic; }
+
+.demo-textbox .note { margin: 14px 0 0; color: #555; font-size: 0.9rem; }
+
+.demo-textbox .unsupported { display: none; margin: 0 0 12px; padding: 8px 12px; border-radius: 8px; background: #fef3c7; color: #78350f; }
+@supports not (text-box: trim-both cap alphabetic) {
+  .demo-textbox .unsupported { display: block; }
+}

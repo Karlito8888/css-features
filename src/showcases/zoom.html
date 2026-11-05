@@ -1,0 +1,24 @@
+<div class="demo-zoom">
+  <div class="control">
+    <label for="level">Zoom the middle box</label>
+    <input type="range" id="level" min="0.5" max="2" step="0.1" value="1">
+    <output for="level" id="value">1.0</output>
+  </div>
+  <section class="row" aria-labelledby="h-zoom">
+    <h2 id="h-zoom"><code>zoom</code>: the neighbours move over</h2>
+    <div class="lane zoomed">
+      <div class="tile">A</div>
+      <div class="tile target">Zoom</div>
+      <div class="tile">C</div>
+    </div>
+  </section>
+  <section class="row" aria-labelledby="h-scale">
+    <h2 id="h-scale"><code>transform: scale()</code>: the neighbours stay put</h2>
+    <div class="lane scaled">
+      <div class="tile">A</div>
+      <div class="tile target">Scale</div>
+      <div class="tile">C</div>
+    </div>
+  </section>
+  <p class="unsupported">zoom is not supported in this browser, so the first row does not change size.</p>
+</div>

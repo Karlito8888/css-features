@@ -1,0 +1,75 @@
+/* The radios only change two custom properties on .stage. They never touch the cards. */
+.demo-csq { --probe: on; display: grid; gap: 12px; }
+.demo-csq .stage { --theme: light; --compact: false; display: grid; gap: 12px; }
+.demo-csq .stage:has(#t-dark:checked) { --theme: dark; }
+.demo-csq .stage:has(#t-sunset:checked) { --theme: sunset; }
+.demo-csq .stage:has(#t-ocean:checked) { --theme: ocean; }
+.demo-csq .stage:has(#compact:checked) { --compact: true; }
+.demo-csq .pin { --theme: sunset; }
+
+.demo-csq .controls { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 8px 12px; border: 1px solid #c9c9d3; border-radius: 8px; }
+.demo-csq .controls legend { padding: 0 6px; font-size: 0.85rem; color: #444; font-family: ui-monospace, monospace; }
+.demo-csq .controls label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.demo-csq .controls input { accent-color: #4a3fd0; }
+.demo-csq .controls input:focus-visible { outline: 3px solid #e0489b; outline-offset: 2px; }
+
+.demo-csq .scene {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 14px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #eef0f6;
+  transition: background 0.3s;
+}
+.demo-csq .profile {
+  display: flex;
+  gap: 14px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff;
+  color: #1b1b1b;
+  box-shadow: 0 2px 8px #0002;
+  transition: background 0.3s, color 0.3s, padding 0.3s;
+}
+.demo-csq .avatar { flex: none; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #4a3fd0; color: #fff; font-weight: 700; }
+.demo-csq .info { display: grid; gap: 4px; justify-items: start; }
+.demo-csq h2 { margin: 0; font-size: 1.15rem; }
+.demo-csq .role { margin: 0; font-size: 0.85rem; opacity: 0.75; }
+.demo-csq .bio { margin: 4px 0; font-size: 0.9rem; }
+.demo-csq button { padding: 6px 14px; border: 0; border-radius: 8px; background: #4a3fd0; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.demo-csq button:focus-visible { outline: 3px solid #e0489b; outline-offset: 2px; }
+
+/* Each rule asks the nearest ancestor: what is your --theme? */
+@container style(--theme: dark) {
+  .demo-csq .scene { background: #0d0d16; }
+  .demo-csq .profile { background: #24243a; color: #f1f1ff; }
+  .demo-csq .avatar, .demo-csq button { background: #9d92ff; color: #14142a; }
+}
+@container style(--theme: sunset) {
+  .demo-csq .scene { background: #ffd9b8; }
+  .demo-csq .profile { background: #7a1f3d; color: #fff1e6; }
+  .demo-csq .avatar, .demo-csq button { background: #ffb347; color: #4a1024; }
+}
+@container style(--theme: ocean) {
+  .demo-csq .scene { background: #bfe7f2; }
+  .demo-csq .profile { background: #0b4f6c; color: #eafaff; }
+  .demo-csq .avatar, .demo-csq button { background: #5ee0c4; color: #06302f; }
+}
+@container style(--compact: true) {
+  .demo-csq .profile { padding: 8px 12px; align-items: center; }
+  .demo-csq .avatar { width: 36px; height: 36px; font-size: 0.8rem; }
+  .demo-csq .bio { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-csq .scene, .demo-csq .profile { transition: none; }
+}
+
+/* Style queries cannot be tested with @supports: this message hides itself when one matches. */
+.demo-csq .unsupported { display: block; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@container style(--probe: on) {
+  .demo-csq .unsupported { display: none; }
+}

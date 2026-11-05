@@ -1,0 +1,37 @@
+<div class="demo-nth">
+  <p class="unsupported" role="status">This browser does not support :nth-child() with "of", so the right list is not striped.</p>
+  <fieldset class="filter">
+    <legend>Show tasks</legend>
+    <label><input type="radio" name="f" id="f-all" checked> All</label>
+    <label><input type="radio" name="f" id="f-open"> Open</label>
+    <label><input type="radio" name="f" id="f-done"> Done</label>
+  </fieldset>
+  <div class="lists">
+    <section class="col plain" aria-labelledby="h-plain">
+      <h2 id="h-plain"><code>:nth-child(even)</code></h2>
+      <ul>
+        <li data-s="open">Write the intro</li>
+        <li data-s="done">Fix the footer</li>
+        <li data-s="done">Ship the logo</li>
+        <li data-s="open">Review pull request</li>
+        <li data-s="done">Rename the repo</li>
+        <li data-s="open">Update the docs</li>
+        <li data-s="open">Plan the release</li>
+        <li data-s="done">Close old issues</li>
+      </ul>
+    </section>
+    <section class="col better" aria-labelledby="h-of">
+      <h2 id="h-of"><code>:nth-child(even of …)</code></h2>
+      <ul>
+        <li data-s="open">Write the intro</li>
+        <li data-s="done">Fix the footer</li>
+        <li data-s="done">Ship the logo</li>
+        <li data-s="open">Review pull request</li>
+        <li data-s="done">Rename the repo</li>
+        <li data-s="open">Update the docs</li>
+        <li data-s="open">Plan the release</li>
+        <li data-s="done">Close old issues</li>
+      </ul>
+    </section>
+  </div>
+</div>

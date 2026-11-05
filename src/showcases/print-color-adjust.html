@@ -1,0 +1,36 @@
+<div class="demo-pca">
+  <p class="unsupported">Your browser does not support print-color-adjust, so it may drop backgrounds when printing.</p>
+  <label class="sim"><input type="checkbox" id="sim"> Simulate a print without background graphics</label>
+
+  <div class="panels">
+    <section class="panel economy">
+      <h2>economy</h2>
+      <ul class="bars" aria-label="Sales by quarter">
+        <li style="--w: 85%">Q1</li>
+        <li style="--w: 60%">Q2</li>
+        <li style="--w: 95%">Q3</li>
+      </ul>
+      <ul class="stripes" aria-label="Rows">
+        <li>Row one</li>
+        <li>Row two</li>
+        <li>Row three</li>
+      </ul>
+    </section>
+
+    <section class="panel exact">
+      <h2>exact</h2>
+      <ul class="bars" aria-label="Sales by quarter">
+        <li style="--w: 85%">Q1</li>
+        <li style="--w: 60%">Q2</li>
+        <li style="--w: 95%">Q3</li>
+      </ul>
+      <ul class="stripes" aria-label="Rows">
+        <li>Row one</li>
+        <li>Row two</li>
+        <li>Row three</li>
+      </ul>
+    </section>
+  </div>
+
+  <p class="note">Both panels look the same on screen. Press Ctrl+P (or Cmd+P) in the page and keep "Background graphics" off: browsers may then drop the left panel's backgrounds, leaving its pale title and bars hard to read. The right panel asks to keep them.</p>
+</div>

@@ -1,0 +1,66 @@
+.demo-text {
+  --grad: linear-gradient(90deg, #ff3d81, #ffb100, #22d3ee, #8b5cf6, #ff3d81);
+  max-width: 860px;
+  margin-inline: auto;
+}
+.demo-text:has(#g-sunset:checked) { --grad: linear-gradient(90deg, #f97316, #e11d48, #7c3aed, #f97316); }
+.demo-text:has(#g-ocean:checked) { --grad: linear-gradient(90deg, #0ea5e9, #14b8a6, #3b82f6, #0ea5e9); }
+.demo-text:has(#g-stripes:checked) { --grad: repeating-linear-gradient(45deg, #111827 0 12px, #f59e0b 12px 24px); }
+
+.demo-text .unsupported {
+  display: none;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #78350f;
+}
+@supports not (background-clip: text) {
+  .demo-text .unsupported { display: block; }
+}
+
+.demo-text .headline {
+  margin: 0.2em 0 0.3em;
+  padding-block-end: 0.12em; /* the background stops at the box: leave room for descenders */
+  font: 900 clamp(2.2rem, 9vw, 4.6rem) / 1.05 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+  color: #be185d; /* solid fallback, replaced below */
+}
+
+/* The background is painted only where the glyphs are. The text itself
+   becomes transparent so the gradient shows through. */
+@supports (background-clip: text) {
+  .demo-text .headline {
+    background: var(--grad);
+    background-size: 200% 100%;
+    background-clip: text;
+    color: transparent;
+    animation: demo-text-flow 6s linear infinite;
+  }
+}
+@keyframes demo-text-flow {
+  to { background-position: 200% 0; }
+}
+
+.demo-text .presets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: 0 0 14px;
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+.demo-text .presets legend { padding: 0 6px; font-size: 0.85rem; color: #4b5563; }
+.demo-text .presets input { margin: 0; accent-color: #4f46e5; }
+.demo-text .presets label { display: inline-flex; align-items: center; gap: 4px; margin-right: 6px; }
+
+.demo-text .field { display: grid; gap: 4px; margin: 0; max-width: 420px; }
+.demo-text .field input { padding: 8px 10px; font: inherit; border: 1px solid #9ca3af; border-radius: 8px; }
+.demo-text .field input:focus-visible { outline: 3px solid #4f46e5; outline-offset: 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-text .headline { animation: none; }
+}

@@ -1,0 +1,18 @@
+<div class="demo-has">
+  <p class="unsupported" role="status">This browser does not support :has(), so the parent styling below cannot work.</p>
+  <form class="panel">
+    <header>
+      <h2>Pick your add-ons</h2>
+      <label class="switch"><input type="checkbox" id="dark" role="switch"> Dark panel</label>
+    </header>
+    <fieldset class="grid">
+      <legend class="sr">Add-ons</legend>
+      <label class="card"><input type="checkbox" name="addon" value="backups"><span class="title">Backups</span><span class="sub">Nightly snapshots</span></label>
+      <label class="card"><input type="checkbox" name="addon" value="domains"><span class="title">Domains</span><span class="sub">Custom address</span></label>
+      <label class="card"><input type="checkbox" name="addon" value="analytics"><span class="title">Analytics</span><span class="sub">No cookies</span></label>
+      <label class="card"><input type="checkbox" name="addon" value="support"><span class="title">Support</span><span class="sub">Answers in a day</span></label>
+    </fieldset>
+    <p class="summary" aria-live="polite"><span class="none">Tick a card. The card, the grid, this line and the panel all react to a child.</span><span class="some"></span></p>
+    <button type="reset">Clear</button>
+  </form>
+</div>

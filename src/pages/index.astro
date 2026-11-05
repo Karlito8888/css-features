@@ -1,0 +1,149 @@
+---
+import Search from "../components/Search.astro";
+import Base from "../layouts/Base.astro";
+import { KINDS, allFeatures, data, featureById, featureCount, featureUrl, moduleUrl, sources, type Kind } from "../data";
+import { showcaseIds } from "../showcases";
+
+const examples = allFeatures.filter((f) => f.example).length;
+const kinds = Object.keys(KINDS) as Kind[];
+const count = (k: Kind) => allFeatures.filter((f) => f.kind === k).length;
+const kindPath = (k: Kind) => `/all-${k === "at-rule" ? "at-rules" : k === "property" ? "properties" : `${k}s`}/`;
+// The gallery's front row: features with a demo written for this site, newest first, then the rest.
+const front = [...data.modern].sort((a, b) => Number(showcaseIds.has(b.id)) - Number(showcaseIds.has(a.id))).slice(0, 12);
+const month = (date: string) => new Date(date.replace("≤", "")).toLocaleDateString("en", { month: "short", year: "numeric", timeZone: "UTC" });
+const modernLabel = (status: "high" | "low" | false) => (status === "high" ? "Widely available" : status === "low" ? "Newly available" : "Cutting edge");
+---
+
+<Base title="CSS Features" description={`Every CSS feature, ${featureCount} in all, with live editable examples, definitions and browser support quoted from the W3C specifications and MDN, and a Modern CSS gallery of ${data.modern.length} features.`}>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">{featureCount} features · {data.modules.length} specifications · {examples} live examples · {data.modern.length} modern features</p>
+      <h1>Every CSS feature,<br /><span class="gradient">alive.</span></h1>
+      <p class="tagline">
+        See each property, selector, at-rule, function and type render, edit its code, and read what the specification says about it.
+        Every definition is quoted from the W3C CSS specifications and MDN, nothing is paraphrased.
+      </p>
+      <Search large />
+      <p class="sources">Sources synced: webref {sources.webref}, MDN of {sources.mdn.split(" ")[0]}, web-features {sources.webFeatures}.</p>
+    </div>
+  </section>
+
+  <section class="container modern" aria-labelledby="modern-title">
+    <div class="modern-head">
+      <div>
+        <p class="eyebrow">The wow part</p>
+        <h2 id="modern-title">Modern CSS</h2>
+        <p>
+          {data.modern.length} features that reached Baseline, or shipped in a browser engine, in {data.modernSince} or later: container queries,
+          <code>:has()</code>, anchor positioning, view transitions, scroll-driven animations, <code>@scope</code>, <code>if()</code> and more.
+          Each one runs live, in your browser.
+        </p>
+      </div>
+      <a class="button cta" href="/modern/">Open the gallery →</a>
+    </div>
+    <ul class="grid modern-grid">
+      {
+        front.map((m) => (
+          <li class:list={["card", "modern-card", { demo: showcaseIds.has(m.id) }]}>
+            <a class="cover" href={`/modern/#${m.id}`}>
+              <span class:list={["number", m.status === false ? "edge" : ""]}>{modernLabel(m.status)} · {month(m.since)}</span>
+              <span class="title">{m.name}</span>
+              <span class="guide" set:html={m.description} />
+              <span class="count">{showcaseIds.has(m.id) ? "Demo written for this site" : "MDN example"}{m.group && ` · ${m.group}`}</span>
+            </a>
+            <ul class="tags">
+              {m.keys.slice(0, 5).map((id) => <li><a href={featureUrl(featureById.get(id)!)}><code>{featureById.get(id)!.name}</code></a></li>)}
+              {m.keys.length > 5 && <li class="more">+{m.keys.length - 5}</li>}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="container sections" aria-labelledby="kinds-title">
+    <h2 id="kinds-title">Browse by kind, A to Z</h2>
+    <ul class="grid kinds">
+      {
+        kinds.map((k) => (
+          <li class="card">
+            <a class="cover" href={kindPath(k)}>
+              <span class="number">Index</span>
+              <span class="title">{KINDS[k].plural}</span>
+              <span class="count">{count(k)} {count(k) > 1 ? KINDS[k].plural.toLowerCase() : KINDS[k].title.toLowerCase()}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="container sections" aria-labelledby="modules-title">
+    <h2 id="modules-title">Browse by specification</h2>
+    <p class="lead">The {data.modules.length} CSS modules the W3C publishes, each with every feature it defines, in the state webref last read it.</p>
+    <ul class="grid">
+      {
+        data.modules.map((m) => (
+          <li class="card">
+            <a class="cover" href={moduleUrl(m)}>
+              <span class="number">{m.release ? m.release.status : "Editor's Draft"}</span>
+              <span class="title">{m.title}</span>
+              <span class="count">{m.features.length} {m.features.length > 1 ? "features" : "feature"}</span>
+            </a>
+            <ul class="tags">
+              {m.features.slice(0, 8).map((f) => <li><a href={`${moduleUrl(m)}#${f.id}`}><code>{f.name}</code></a></li>)}
+              {m.features.length > 8 && <li class="more">+{m.features.length - 8}</li>}
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    position: relative; overflow: hidden; padding: clamp(3rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem); text-align: center;
+    background:
+      radial-gradient(60rem 30rem at 15% -10%, color-mix(in srgb, #1d4ed8 22%, transparent), transparent 60%),
+      radial-gradient(50rem 28rem at 90% 0%, color-mix(in srgb, #a855f7 20%, transparent), transparent 60%);
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .container { display: flex; flex-direction: column; align-items: center; }
+  .eyebrow { margin: 0 0 1rem; font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+  h1 { margin: 0; font-size: clamp(2.6rem, 8vw, 5.2rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02; }
+  .gradient { background: linear-gradient(90deg, #1d4ed8, #0ea5e9 40%, #a855f7); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .tagline { max-width: 44rem; margin: 1.5rem auto 2rem; font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--muted); }
+  .sources { margin: 1.25rem 0 0; font-size: 0.8rem; color: var(--muted); }
+  .modern { padding-top: 3rem; }
+  .modern-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; }
+  .modern-head .eyebrow { margin: 0; color: #a855f7; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.8rem; }
+  .modern-head h2 { margin: 0.2rem 0 0.5rem; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.03em; }
+  .modern-head p:last-child { margin: 0; color: var(--muted); max-width: 60ch; }
+  .cta { font-size: 1rem; padding: 0.6rem 1.2rem; border-color: #a855f7; color: #a855f7; font-weight: 600; }
+  .cta:hover { background: color-mix(in srgb, #a855f7 12%, transparent); }
+  .sections { padding-top: 3rem; }
+  .sections h2 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 0 0 0.5rem; }
+  .lead { color: var(--muted); margin: 0 0 1.25rem; max-width: 70ch; }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1rem; }
+  .kinds { grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr)); }
+  .card {
+    border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 1.2rem;
+    display: flex; flex-direction: column; gap: 0.9rem; transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 18px 40px -28px color-mix(in srgb, var(--fg) 60%, transparent); }
+  .modern-card.demo { background: linear-gradient(160deg, color-mix(in srgb, #a855f7 7%, var(--surface)), var(--surface) 60%); }
+  .modern-card:hover { border-color: #a855f7; }
+  .cover { display: grid; gap: 0.15rem; color: var(--fg); text-decoration: none; }
+  .number { font-size: 0.75rem; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; text-transform: uppercase; }
+  .modern-card .number { color: var(--good); }
+  .modern-card .number.edge { color: var(--warn); }
+  .title { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+  .guide { font-size: 0.85rem; line-height: 1.45; color: var(--muted); margin: 0.2rem 0 0.35rem; }
+  .count { font-size: 0.8rem; color: var(--muted); }
+  .tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .tags a { text-decoration: none; }
+  .tags code { font-size: 0.78rem; }
+  .tags a:hover code { border-color: var(--accent); color: var(--accent); }
+  .more { font-size: 0.78rem; color: var(--muted); align-self: center; }
+</style>

@@ -1,0 +1,197 @@
+---
+import Example from "./Example.astro";
+import { BROWSERS, KINDS, data, type Feature } from "../data";
+
+interface Props {
+  feature: Feature;
+}
+
+const { feature: f } = Astro.props;
+const modern = f.modern.map((id) => data.modern.find((m) => m.id === id)!);
+
+const month = (date: string) => {
+  const approx = date.startsWith("≤");
+  const d = new Date(date.replace("≤", ""));
+  return `${approx ? "≤ " : ""}${d.toLocaleDateString("en", { month: "long", year: "numeric", timeZone: "UTC" })}`;
+};
+// Wording from the web-features README: widely available, newly available, limited availability.
+const baseline = f.baseline && {
+  high: { cls: "good", text: "Baseline: widely available", since: f.baseline.highDate },
+  low: { cls: "good", text: "Baseline: newly available", since: f.baseline.lowDate },
+  false: { cls: "warn", text: "Limited availability", since: null },
+}[String(f.baseline.status) as "high" | "low" | "false"];
+const definition =
+  f.definition &&
+  (
+    [
+      ["Initial", f.definition.initial],
+      ["Applies to", f.definition.appliesTo],
+      ["Inherited", f.definition.inherited],
+      ["Percentages", f.definition.percentages],
+      ["Computed value", f.definition.computedValue],
+      ["Canonical order", f.definition.canonicalOrder],
+      ["Animation type", f.definition.animationType],
+    ] as [string, string | null][]
+  ).filter((row): row is [string, string] => !!row[1]);
+---
+
+<article class="feature" id={f.id} aria-labelledby={`${f.id}-title`}>
+  <header>
+    <h3 id={`${f.id}-title`}>
+      <a href={`#${f.id}`}><code>{f.name}</code></a>
+    </h3>
+    <div class="badges">
+      <span class="badge kind">{KINDS[f.kind].title}</span>
+      {baseline && <span class:list={["badge", baseline.cls]}>{baseline.text}{baseline.since && <span class="since">since {month(baseline.since)}</span>}</span>}
+      {!f.compat && <span class="badge warn">Not in any browser yet</span>}
+      {f.status.deprecated && <span class="badge bad">Deprecated</span>}
+      {f.status.experimental && <span class="badge warn">Experimental</span>}
+      {!f.status.standardTrack && <span class="badge warn">Non-standard</span>}
+      {modern.map((m) => <a class="badge modern" href={`/modern/#${m.id}`}>Modern CSS: {m.name}</a>)}
+    </div>
+  </header>
+
+  {f.legacyAliasOf && <p class="banner"><strong>Legacy alias.</strong> <span class="src">Spec</span> This is a legacy name for <code>{f.legacyAliasOf}</code>; the spec keeps it for compatibility only.</p>}
+  {f.prose && <p class="lead"><span class="src">Spec</span> {f.prose}</p>}
+  {f.mdn?.summary && <p class:list={[f.prose ? "summary" : "lead"]}><span class="src">MDN</span> <Fragment set:html={f.mdn.summary} /></p>}
+  {!f.prose && !f.mdn && <p class="summary muted">No prose in the spec's definition and no MDN page yet: the spec link below is the only description.</p>}
+
+  {f.example && <Example example={f.example} id={f.id} label={f.name} />}
+
+  <div class="facts">
+    {
+      f.syntax && (
+        <section class="card wide">
+          <h4>Syntax</h4>
+          <pre class="syntax"><code>{f.syntax}</code></pre>
+          <p class="note">Formal grammar from the specification, as webref extracts it: the latest level's definition, sometimes ahead of what browsers implement.</p>
+        </section>
+      )
+    }
+    {
+      definition && definition.length > 0 && (
+        <section class="card">
+          <h4>Definition</h4>
+          <dl class="model">
+            {definition.map(([label, value]) => (
+              <>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </>
+            ))}
+            {f.longhands.length > 0 && (
+              <>
+                <dt>Longhands</dt>
+                <dd>{f.longhands.map((l, i) => <>{i > 0 && ", "}<a href={`#${l.replace(/^-/, "prefix-")}`}><code>{l}</code></a></>)}</dd>
+              </>
+            )}
+          </dl>
+        </section>
+      )
+    }
+    {
+      f.support && (
+        <section class="card">
+          <h4>Browser support</h4>
+          <table class="support">
+            <caption class="visually-hidden">First browser version supporting {f.name}</caption>
+            <tbody>
+              {Object.entries(BROWSERS).map(([key, name]) => (
+                <tr>
+                  <th scope="row">{name}</th>
+                  <td class:list={{ no: f.support![key].startsWith("No") }}>{f.support![key]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <p class="note">First version with support, from MDN browser-compat-data.</p>
+        </section>
+      )
+    }
+    {
+      f.descriptors.length > 0 && (
+        <section class="card wide">
+          <h4>Descriptors</h4>
+          <dl class="attrs">
+            {f.descriptors.map((d) => (
+              <div>
+                <dt><a href={d.href}><code>{d.name}</code></a></dt>
+                <dd>
+                  {d.syntax && <code class="grammar">{d.syntax}</code>}
+                  {d.initial && <span class="value">Initial: <code>{d.initial}</code></span>}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )
+    }
+    {
+      f.for.length > 0 && (
+        <section class="card">
+          <h4>Defined for</h4>
+          <p class="scope">{f.for.map((s, i) => <>{i > 0 && ", "}<code>{s}</code></>)}</p>
+          <p class="note">This feature only appears in the context of these properties, functions or types.</p>
+        </section>
+      )
+    }
+  </div>
+
+  <p class="links">
+    <a href={f.spec}>Specification ↗</a>
+    {f.extended.map((u) => <a href={u}>Extended in {u.replace(/^https?:\/\/[^/]+\//, "").split("/")[0]} ↗</a>)}
+    {f.mdn && <a href={f.mdn.url}>MDN reference ↗</a>}
+  </p>
+</article>
+
+<style>
+  .feature { padding: 3rem 0; border-bottom: 1px solid var(--border); scroll-margin-top: calc(var(--header-h) + 1rem); }
+  .feature:target h3 a { color: var(--accent); }
+  header { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
+  h3 { margin: 0; font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+  h3 a { color: inherit; text-decoration: none; }
+  h3 code { font-family: var(--font-mono), monospace; background: none !important; border: 0 !important; padding: 0 !important; font-size: 1em !important; }
+  .badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .badge.kind { color: var(--muted); }
+  .badge.modern { color: #a855f7; text-decoration: none; }
+  .badge.modern:hover { background: color-mix(in srgb, #a855f7 12%, transparent); }
+  .since { font-weight: 400; }
+  .src {
+    display: inline-block; vertical-align: 0.15em; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--muted); border: 1px solid var(--border); border-radius: 5px; padding: 0 0.35rem; margin-right: 0.25rem;
+  }
+  .lead { font-size: 1.2rem; font-weight: 500; margin: 1rem 0 0.4rem; }
+  .summary { color: var(--muted); max-width: 80ch; margin: 0.4rem 0; }
+  .muted { color: var(--muted); }
+  .banner {
+    margin: 1rem 0; padding: 0.8rem 1rem; border-radius: 12px; border: 1px solid color-mix(in srgb, var(--warn) 40%, transparent);
+    background: color-mix(in srgb, var(--warn) 8%, transparent);
+  }
+  .banner strong { color: var(--warn); }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 1rem; margin-top: 1.25rem; }
+  .card { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; background: var(--surface); min-width: 0; }
+  .wide { grid-column: 1 / -1; }
+  h4 { margin: 0 0 0.75rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+  .syntax { margin: 0; padding: 0.75rem 1rem; border-radius: 10px; background: var(--code-bg); font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .syntax code { background: none; border: 0; padding: 0; font-size: 1em; }
+  .model { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; margin: 0; font-size: 0.92rem; }
+  .model dt { color: var(--muted); }
+  .model dd { margin: 0; overflow-wrap: anywhere; }
+  .support { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .support th { text-align: left; font-weight: 500; padding: 0.25rem 0; }
+  .support td { text-align: right; font-family: var(--font-mono), monospace; font-size: 0.85rem; }
+  .support tr + tr { border-top: 1px solid var(--border); }
+  .support .no { color: var(--bad); }
+  .attrs { margin: 0; display: grid; gap: 0.1rem; font-size: 0.92rem; }
+  .attrs > div { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: 1rem; padding: 0.55rem 0; border-top: 1px solid var(--border); }
+  .attrs > div:first-child { border-top: 0; }
+  .attrs dd { margin: 0; }
+  .grammar { display: block; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .value { display: block; color: var(--muted); font-size: 0.85rem; margin-top: 0.15rem; }
+  .scope { margin: 0; display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  @media (max-width: 40rem) {
+    .attrs > div { grid-template-columns: 1fr; gap: 0.2rem; }
+  }
+  .note { color: var(--muted); font-size: 0.8rem; margin: 0.75rem 0 0; }
+  .links { display: flex; flex-wrap: wrap; gap: 1.25rem; margin: 1.25rem 0 0; font-weight: 500; }
+</style>

@@ -1,0 +1,58 @@
+.demo-rect { max-width: 860px; margin-inline: auto; color: #1b1b1b; }
+.demo-rect .hint { margin: 0 0 14px; color: #4b5563; }
+
+.demo-rect .unsupported {
+  display: none;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #78350f;
+}
+@supports not (clip-path: xywh(0 0 10px 10px)) {
+  .demo-rect .unsupported { display: block; }
+}
+
+.demo-rect .trio { display: flex; flex-wrap: wrap; gap: 20px; }
+.demo-rect figure { margin: 0; width: 240px; max-width: 100%; }
+.demo-rect figcaption { margin-top: 8px; font-size: 0.85rem; line-height: 1.4; }
+.demo-rect code { display: block; font-weight: 700; color: #4338ca; }
+
+.demo-rect .frame {
+  width: 220px;
+  height: 150px;
+  max-width: 100%;
+  border: 1px dashed #6b7280;
+  background: repeating-conic-gradient(#e5e7eb 0 25%, #fff 0 50%) 0 0 / 16px 16px;
+}
+.demo-rect .scene {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 72% 34%, #fff7c2 0 11%, #fbbf24 12% 17%, transparent 18%),
+    linear-gradient(transparent 68%, #166534 68%),
+    linear-gradient(#1e3a8a, #ec4899 75%);
+  transition: clip-path 0.6s ease;
+}
+
+/* Same rectangle three ways, with the same rounded corners. */
+.demo-rect .s-inset { clip-path: inset(20px 40px 30px 20px round 14px); }
+.demo-rect .s-rect { clip-path: rect(20px 180px 120px 20px round 14px); }
+.demo-rect .s-xywh { clip-path: xywh(20px 20px 160px 100px round 14px); }
+
+/* Reveal: each syntax animates to the full box in its own terms. auto in
+   rect() means the edge of the box: 0 for top and left, 100% for the others. */
+.demo-rect .s-inset:hover,
+.demo-rect:has(#full:checked) .s-inset { clip-path: inset(0 0 0 0 round 0); }
+.demo-rect .s-rect:hover,
+.demo-rect:has(#full:checked) .s-rect { clip-path: rect(auto auto auto auto round 0); }
+.demo-rect .s-xywh:hover,
+.demo-rect:has(#full:checked) .s-xywh { clip-path: xywh(0 0 100% 100% round 0); }
+
+.demo-rect .reveal { margin: 18px 0 0; display: flex; gap: 8px; align-items: center; }
+.demo-rect .reveal input { width: 1.1rem; height: 1.1rem; accent-color: #4f46e5; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-rect .scene { transition: none; }
+}

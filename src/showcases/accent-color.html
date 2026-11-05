@@ -1,0 +1,45 @@
+<div class="demo-accent">
+  <p class="unsupported" role="note">accent-color is not supported in this browser, so the controls keep their default color.</p>
+  <div class="picker">
+    <label for="pick">Pick an accent color</label>
+    <input type="color" id="pick" value="#e11d48">
+    <output for="pick" id="hex">#e11d48</output>
+  </div>
+  <div class="panels">
+    <section class="panel plain" aria-labelledby="h-auto">
+      <h2 id="h-auto">auto</h2>
+      <label class="row"><input type="checkbox" checked> Notifications</label>
+      <fieldset class="row radios">
+        <legend>Plan</legend>
+        <label><input type="radio" name="plan-a" checked> Free</label>
+        <label><input type="radio" name="plan-a"> Pro</label>
+      </fieldset>
+      <label class="row">Volume <input type="range" value="60"></label>
+      <label class="row">Upload <progress value="65" max="100">65%</progress></label>
+    </section>
+
+    <section class="panel tinted" aria-labelledby="h-light">
+      <h2 id="h-light">Your color</h2>
+      <label class="row"><input type="checkbox" checked> Notifications</label>
+      <fieldset class="row radios">
+        <legend>Plan</legend>
+        <label><input type="radio" name="plan-b" checked> Free</label>
+        <label><input type="radio" name="plan-b"> Pro</label>
+      </fieldset>
+      <label class="row">Volume <input type="range" value="60"></label>
+      <label class="row">Upload <progress value="65" max="100">65%</progress></label>
+    </section>
+
+    <section class="panel tinted dark" aria-labelledby="h-dark">
+      <h2 id="h-dark">Your color, dark</h2>
+      <label class="row"><input type="checkbox" checked> Notifications</label>
+      <fieldset class="row radios">
+        <legend>Plan</legend>
+        <label><input type="radio" name="plan-c" checked> Free</label>
+        <label><input type="radio" name="plan-c"> Pro</label>
+      </fieldset>
+      <label class="row">Volume <input type="range" value="60"></label>
+      <label class="row">Upload <progress value="65" max="100">65%</progress></label>
+    </section>
+  </div>
+</div>

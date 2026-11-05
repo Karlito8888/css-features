@@ -1,0 +1,81 @@
+.demo-open { max-width: 46rem; margin: 0 auto; }
+.demo-open .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not selector(:open) {
+  .demo-open .unsupported { display: block; }
+}
+
+.demo-open .hint { margin: 0 0 14px; color: #5b5b66; }
+.demo-open .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 14px; }
+
+.demo-open .card {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 7.5rem;
+  padding: 14px 16px;
+  border: 2px solid #d4d4dc;
+  border-radius: 14px;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.demo-open h2 { margin: 0; font-size: 0.95rem; font-family: ui-monospace, monospace; }
+
+/* The badge reads the state of whatever control the card contains. */
+.demo-open .card::after {
+  content: "closed";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: #ececf2;
+  color: #5b5b66;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.demo-open .card:has(:open) { border-color: #0d9488; background: #f0fdfa; box-shadow: 0 10px 24px -14px #0d9488; }
+.demo-open .card:has(:open)::after { content: "open"; background: #0d9488; color: #fff; }
+
+.demo-open summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; align-items: center; gap: 8px; }
+.demo-open summary::before { content: ""; width: 0.5rem; height: 0.5rem; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform 0.2s; }
+.demo-open details:open > summary { color: #0f766e; }
+.demo-open details:open > summary::before { transform: rotate(45deg); }
+.demo-open details p { margin: 8px 0 0; }
+
+.demo-open select, .demo-open input, .demo-open button {
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border: 2px solid #b8b8c4;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+}
+.demo-open select:open, .demo-open input:open { border-color: #0d9488; background: #ccfbf1; }
+.demo-open button { border-color: #0f766e; background: #0f766e; color: #fff; font-weight: 600; cursor: pointer; justify-self: start; }
+.demo-open :focus-visible { outline: 3px solid #0f766e; outline-offset: 2px; }
+
+.demo-open dialog {
+  position: static;
+  margin: 0;
+  width: auto;
+  padding: 10px 14px;
+  border: 2px solid #0d9488;
+  border-radius: 12px;
+  background: #fff;
+  color: #1b1b1b;
+}
+.demo-open dialog:open { animation: pop 0.25s ease-out; }
+.demo-open dialog p { margin: 0 0 8px; }
+.demo-open dialog button { padding: 4px 14px; }
+
+@keyframes pop { from { opacity: 0; transform: scale(0.9); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-open .card, .demo-open summary::before { transition: none; }
+  .demo-open dialog:open { animation: none; }
+}
+
+.demo-open .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }

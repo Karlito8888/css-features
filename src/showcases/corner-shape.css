@@ -1,0 +1,79 @@
+.demo-corner { max-width: 860px; margin-inline: auto; color: #1e1b4b; }
+.demo-corner .hint { margin: 0 0 14px; color: #4b5563; }
+
+.demo-corner .unsupported {
+  display: none;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #78350f;
+}
+@supports not (corner-shape: bevel) {
+  .demo-corner .unsupported { display: block; }
+}
+
+.demo-corner .cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 16px;
+}
+.demo-corner .card {
+  display: grid;
+  place-content: center;
+  min-height: 96px;
+  padding: 8px;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c7d2fe, #fbcfe8);
+  border: 4px solid #1e1b4b;
+  border-radius: 32px; /* corner-shape needs a radius to bend */
+  box-shadow: 6px 6px 0 rgb(30 27 75 / 0.25);
+  transition: border-radius 0.35s ease;
+}
+.demo-corner .card:hover { border-radius: 52px; }
+
+/* The shape of each corner. Border, background and shadow follow it. */
+.demo-corner .c-round { corner-shape: round; }
+.demo-corner .c-squircle { corner-shape: squircle; }
+.demo-corner .c-bevel { corner-shape: bevel; }
+.demo-corner .c-scoop { corner-shape: scoop; }
+.demo-corner .c-notch { corner-shape: notch; }
+.demo-corner .c-mixed {
+  corner-top-left-shape: bevel;
+  corner-top-right-shape: scoop;
+  corner-bottom-right-shape: squircle;
+  corner-bottom-left-shape: notch;
+}
+
+.demo-corner .lab {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  margin-top: 22px;
+}
+.demo-corner .controls { display: grid; gap: 6px; flex: 1 1 260px; }
+.demo-corner .controls .read { margin: 0; font-family: ui-monospace, monospace; font-size: 0.9rem; }
+.demo-corner .controls input { width: 100%; accent-color: #4f46e5; }
+.demo-corner .scale { margin: 4px 0 0; color: #4b5563; font-size: 0.85rem; }
+.demo-corner .swatch {
+  display: grid;
+  place-content: center;
+  flex: 1 1 220px;
+  min-height: 150px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #4f46e5, #db2777);
+  border-radius: 48px;
+  corner-shape: superellipse(1.5);
+  box-shadow: 8px 8px 0 rgb(30 27 75 / 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-corner .card { transition: none; }
+}

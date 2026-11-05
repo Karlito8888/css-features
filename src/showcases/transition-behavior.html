@@ -1,0 +1,21 @@
+<div class="demo-behavior">
+  <p class="unsupported">This browser does not support transition-behavior: allow-discrete. Both cards disappear at once.</p>
+  <label class="switch">
+    <input type="checkbox" id="hide-cards">
+    <span>Hide both cards</span>
+  </label>
+  <div class="pair">
+    <div class="slot">
+      <div class="card normal">
+        <strong>normal</strong>
+        <span>display flips at the first frame, nothing is left to fade.</span>
+      </div>
+    </div>
+    <div class="slot">
+      <div class="card smart">
+        <strong>allow-discrete</strong>
+        <span>display waits for the end of the fade.</span>
+      </div>
+    </div>
+  </div>
+</div>

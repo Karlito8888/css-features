@@ -1,0 +1,43 @@
+.demo-behavior { max-width: 52rem; margin: 0 auto; }
+
+.demo-behavior .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #fef3c7; color: #78350f; }
+@supports not (transition-behavior: allow-discrete) {
+  .demo-behavior .unsupported { display: block; }
+}
+
+.demo-behavior .switch { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; padding: 8px 16px; border-radius: 999px; background: #eef2ff; color: #3730a3; font-weight: 600; cursor: pointer; }
+.demo-behavior .switch:has(:focus-visible) { outline: 3px solid #a5b4fc; outline-offset: 2px; }
+.demo-behavior .switch input { width: 18px; height: 18px; accent-color: #4f46e5; }
+
+.demo-behavior .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.demo-behavior .slot { min-height: 170px; padding: 8px; border: 2px dashed #cbd5e1; border-radius: 16px; }
+
+.demo-behavior .card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 150px;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  /* display is discrete: with the default behavior it flips at the very first frame. */
+  transition: opacity 0.8s, scale 0.8s, display 0.8s;
+
+  @starting-style {
+    opacity: 0;
+    scale: 0.85;
+  }
+}
+.demo-behavior .card strong { font-size: 1.1rem; }
+.demo-behavior .card.smart { background: linear-gradient(135deg, #059669, #0ea5e9); transition-behavior: allow-discrete; }
+
+.demo-behavior:has(#hide-cards:checked) .card {
+  opacity: 0;
+  scale: 0.85;
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-behavior .card { transition-duration: 0.01s; }
+}

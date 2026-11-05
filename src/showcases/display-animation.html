@@ -1,0 +1,26 @@
+<div class="demo-display">
+  <p class="unsupported">This browser cannot animate display or content-visibility. Notices and the menu switch without a transition.</p>
+  <div class="cols">
+    <section class="col">
+      <h2><code>display</code></h2>
+      <ul class="toasts" id="toasts">
+        <li class="toast"><span>Backup finished</span><button type="button" aria-label="Dismiss: Backup finished">Dismiss</button></li>
+        <li class="toast"><span>New message from Ada</span><button type="button" aria-label="Dismiss: New message from Ada">Dismiss</button></li>
+        <li class="toast"><span>Update ready to install</span><button type="button" aria-label="Dismiss: Update ready to install">Dismiss</button></li>
+      </ul>
+      <button type="button" id="restore" class="ghost">Restore the notices</button>
+    </section>
+    <section class="col">
+      <h2><code>content-visibility</code></h2>
+      <div class="menu-wrap">
+        <button type="button" id="menu-button" aria-expanded="false" aria-controls="menu">Menu</button>
+        <div class="menu" id="menu">
+          <button type="button">Rename</button>
+          <button type="button">Duplicate</button>
+          <button type="button">Move to folder</button>
+          <button type="button">Delete</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

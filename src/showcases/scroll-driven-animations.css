@@ -1,0 +1,52 @@
+.sda { max-width: 640px; margin: 0 auto; }
+
+.sda .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #fef3c7; color: #78350f; }
+@supports not (animation-timeline: scroll()) { .sda .unsupported { display: block; } }
+
+.sda-scroller {
+  height: 380px;
+  overflow-y: auto;
+  border: 2px solid #c4b5fd;
+  border-radius: 16px;
+  background: #f5f3ff;
+}
+.sda-scroller:focus-visible { outline: 3px solid #5b21b6; outline-offset: 2px; }
+
+.sda-head { position: sticky; top: 0; z-index: 1; padding: 14px 18px 0; background: linear-gradient(#ddd6fe, #ddd6fe) bottom / 100% 8px no-repeat, #ede9fe; }
+.sda-head h1 { margin: 0 0 12px; font-size: 1.1rem; }
+
+.sda-bar { height: 8px; margin: 0 -18px; background: linear-gradient(90deg, #7c3aed, #ec4899); }
+
+.sda-list { margin: 0; padding: 16px 18px 40px; list-style: none; display: grid; gap: 150px; }
+.sda-card { display: flex; gap: 14px; align-items: center; padding: 16px 18px; border-radius: 14px; background: #fff; box-shadow: 0 6px 20px rgb(76 29 149 / 0.15); }
+.sda-card:nth-child(even) { flex-direction: row-reverse; text-align: right; }
+.sda-card h2 { margin: 0 0 4px; font-size: 1rem; }
+.sda-card p { margin: 0; color: #44403c; font-size: 0.9rem; }
+.sda-num { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: #6d28d9; color: #fff; font-weight: 700; }
+
+@supports (animation-timeline: scroll()) {
+  /* scroll(): progress follows how far the nearest scroll container is scrolled. */
+  .sda-bar {
+    transform-origin: 0 50%;
+    animation: sda-grow linear both;
+    animation-timeline: scroll(nearest block);
+  }
+  /* view(): progress follows the card crossing the scrollport. */
+  .sda-card {
+    animation: sda-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 100%;
+  }
+  .sda-card:nth-child(even) { --sda-from: 90px; --sda-r: 4deg; }
+  .sda-card:nth-child(odd) { --sda-from: -90px; --sda-r: -4deg; }
+}
+
+@keyframes sda-grow { from { scale: 0 1; } to { scale: 1 1; } }
+@keyframes sda-reveal {
+  from { opacity: 0; translate: var(--sda-from) 0; rotate: var(--sda-r); scale: 0.85; }
+  to { opacity: 1; translate: 0 0; rotate: 0deg; scale: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sda-card { animation: none; }
+}

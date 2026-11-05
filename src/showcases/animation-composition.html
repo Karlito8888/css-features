@@ -1,0 +1,18 @@
+<div class="demo-ac">
+  <p class="unsupported">This browser does not support animation-composition, so all three bars behave like replace.</p>
+  <p class="hint">Same keyframes, same starting transform. The dashed bar is the underlying value, the solid bar is animated.</p>
+  <div class="lanes">
+    <figure class="lane replace">
+      <div class="track"><span class="ghost"></span><span class="bar"></span></div>
+      <figcaption><code>replace</code>: the keyframe wins, the rotation is lost</figcaption>
+    </figure>
+    <figure class="lane add">
+      <div class="track"><span class="ghost"></span><span class="bar"></span></div>
+      <figcaption><code>add</code>: the keyframe is appended, it slides along the tilted axis</figcaption>
+    </figure>
+    <figure class="lane accumulate">
+      <div class="track"><span class="ghost"></span><span class="bar"></span></div>
+      <figcaption><code>accumulate</code>: the values are summed, the rotation stays</figcaption>
+    </figure>
+  </div>
+</div>

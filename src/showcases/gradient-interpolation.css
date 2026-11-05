@@ -1,0 +1,36 @@
+.demo-gi { --a: #ff2d55; --b: #00b4ff; --hue: shorter; max-width: 860px; margin: 0 auto; }
+.demo-gi .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (background: linear-gradient(in oklch, red, blue)) {
+  .demo-gi .unsupported { display: block; }
+}
+.demo-gi :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-gi .label { margin: 14px 0 6px; font-size: 13px; font-weight: 600; }
+
+/* Default interpolation is premultiplied sRGB, which dulls the middle. Name a space with "in". */
+.demo-gi .bar { display: flex; align-items: center; height: 40px; margin-bottom: 6px; padding: 0 12px; border-radius: 8px;
+  font: 600 12px ui-monospace, monospace; color: white; text-shadow: 0 1px 2px rgb(0 0 0 / 0.7); }
+.demo-gi .srgb  { background: linear-gradient(to right in srgb,  #0057ff, #ffd400); }
+.demo-gi .oklab { background: linear-gradient(to right in oklab, #0057ff, #ffd400); }
+.demo-gi .oklch { background: linear-gradient(to right in oklch, #0057ff, #ffd400); }
+
+.demo-gi .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-bottom: 10px; font-size: 14px; }
+.demo-gi .controls label { display: inline-flex; align-items: center; gap: 6px; }
+.demo-gi input[type="color"] { width: 48px; height: 32px; padding: 0; border: 1px solid #888; border-radius: 6px; }
+.demo-gi fieldset { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0; padding: 4px 10px 6px; border: 1px solid #bbb; border-radius: 8px; }
+.demo-gi legend { padding: 0 4px; font-size: 12px; }
+
+.demo-gi:has(#h-longer:checked)     { --hue: longer; }
+.demo-gi:has(#h-increasing:checked) { --hue: increasing; }
+.demo-gi:has(#h-decreasing:checked) { --hue: decreasing; }
+
+.demo-gi .stage { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.demo-gi .hero {
+  flex: 1; min-width: 220px; height: 96px; border-radius: 12px;
+  background: linear-gradient(to right in oklch var(--hue) hue, var(--a), var(--b));
+}
+/* Two equal hues with "longer" make one full turn: a hue wheel in a single declaration. */
+.demo-gi .wheel {
+  width: 96px; height: 96px; border-radius: 50%;
+  background: conic-gradient(in oklch longer hue, oklch(0.75 0.16 0), oklch(0.75 0.16 0));
+}

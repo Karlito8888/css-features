@@ -1,0 +1,53 @@
+<div class="demo-wsc">
+  <p class="unsupported" role="status">This browser does not support <code>white-space-collapse</code>. All boxes collapse spaces the default way.</p>
+  <p class="field">
+    <label for="source">Type spaces and line breaks here</label>
+    <textarea id="source" rows="6" spellcheck="false">Spaces     collapse.
+    Indented line.
+Line two
+
+A long run of spaces:                    end of the run.</textarea>
+  </p>
+  <div class="grid">
+    <section class="box">
+      <h2>collapse</h2>
+      <div class="out collapse">Spaces     collapse.
+    Indented line.
+Line two
+
+A long run of spaces:                    end of the run.</div>
+    </section>
+    <section class="box">
+      <h2>preserve</h2>
+      <div class="out preserve">Spaces     collapse.
+    Indented line.
+Line two
+
+A long run of spaces:                    end of the run.</div>
+    </section>
+    <section class="box">
+      <h2>preserve-breaks</h2>
+      <div class="out preserve-breaks">Spaces     collapse.
+    Indented line.
+Line two
+
+A long run of spaces:                    end of the run.</div>
+    </section>
+    <section class="box">
+      <h2>preserve-spaces</h2>
+      <div class="out preserve-spaces">Spaces     collapse.
+    Indented line.
+Line two
+
+A long run of spaces:                    end of the run.</div>
+    </section>
+    <section class="box">
+      <h2>break-spaces</h2>
+      <div class="out break-spaces">Spaces     collapse.
+    Indented line.
+Line two
+
+A long run of spaces:                    end of the run.</div>
+    </section>
+  </div>
+</div>

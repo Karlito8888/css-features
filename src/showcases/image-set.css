@@ -1,0 +1,41 @@
+.demo-set {
+  /* Two inline SVG files. The 2x one is drawn on a 480 by 280 canvas, twice the size of the 1x one. */
+  --img-1x: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='140' viewBox='0 0 240 140'><rect width='240' height='140' fill='%23c7d2fe'/><circle cx='120' cy='70' r='52' fill='%236366f1'/><text x='120' y='88' font-family='sans-serif' font-size='52' font-weight='700' text-anchor='middle' fill='white'>1x</text></svg>");
+  --img-2x: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='480' height='280' viewBox='0 0 480 280'><defs><pattern id='p' width='12' height='12' patternUnits='userSpaceOnUse'><circle cx='6' cy='6' r='1.6' fill='%23be185d'/></pattern></defs><rect width='480' height='280' fill='%23fde68a'/><rect width='480' height='280' fill='url(%23p)'/><circle cx='240' cy='140' r='104' fill='%23db2777'/><circle cx='240' cy='140' r='88' fill='none' stroke='white' stroke-width='2' stroke-dasharray='4 6'/><text x='240' y='176' font-family='sans-serif' font-size='104' font-weight='700' text-anchor='middle' fill='white'>2x</text></svg>");
+  max-width: 860px;
+  margin-inline: auto;
+  color: #1b1b1b;
+}
+
+.demo-set .unsupported {
+  display: none;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #78350f;
+}
+@supports not (background-image: image-set(linear-gradient(red, blue) 1x)) {
+  .demo-set .unsupported { display: block; }
+}
+
+.demo-set .status { margin: 0 0 14px; }
+.demo-set output { font-weight: 700; color: #4338ca; }
+.demo-set .row { display: flex; flex-wrap: wrap; gap: 16px; }
+.demo-set figure { margin: 0; width: 240px; max-width: 100%; }
+.demo-set figcaption { margin-top: 6px; font-size: 0.85rem; line-height: 1.35; }
+.demo-set code { font-weight: 700; color: #4338ca; }
+
+.demo-set .art {
+  aspect-ratio: 240 / 140;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* One image per pixel density. The browser takes the closest match. */
+.demo-set .picked { background-image: image-set(var(--img-1x) 1x, var(--img-2x) 2x); }
+.demo-set .only-1x { background-image: var(--img-1x); }
+.demo-set .only-2x { background-image: var(--img-2x); }

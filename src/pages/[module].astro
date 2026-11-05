@@ -1,0 +1,68 @@
+---
+import FeatureBlock from "../components/FeatureBlock.astro";
+import ModuleNav from "../components/ModuleNav.astro";
+import Base from "../layouts/Base.astro";
+import { KINDS, data, type Kind, type Module } from "../data";
+
+export function getStaticPaths() {
+  return data.modules.map((module) => ({ params: { module: module.slug }, props: { module } }));
+}
+
+interface Props {
+  module: Module;
+}
+
+const { module } = Astro.props;
+const names = module.features.map((f) => f.name);
+const description = `${module.title}: ${names.slice(0, 20).join(", ")}${names.length > 20 ? ` and ${names.length - 20} more` : ""}. Definitions, syntax, browser support and live examples, from the W3C specification and MDN.`;
+const counts = (Object.keys(KINDS) as Kind[]).map((k) => [k, module.features.filter((f) => f.kind === k).length] as const).filter(([, n]) => n);
+const modern = [...new Set(module.features.flatMap((f) => f.modern))].map((id) => data.modern.find((m) => m.id === id)!);
+const shipped = module.features.filter((f) => f.compat).length;
+---
+
+<Base title={module.title} description={description}>
+  <div class="container layout">
+    <ModuleNav current={module} />
+    <div class="body">
+      <header class="intro">
+        <p class="eyebrow">{module.release ? module.release.status : "Editor's Draft"} · <code>{module.series}</code></p>
+        <h1>{module.title}</h1>
+        <p>
+          {counts.map(([k, n], i) => <>{i > 0 && ", "}{n} {n > 1 ? KINDS[k].plural.toLowerCase() : KINDS[k].title.toLowerCase()}</>)} defined by this
+          specification, {shipped === module.features.length ? "all" : `${shipped} of them`} known to at least one browser
+          {shipped < module.features.length && <> (the others are badged <em>Not in any browser yet</em>)</>}.
+        </p>
+        {
+          modern.length > 0 && (
+            <p class="modern-links">
+              Modern CSS features in this module: {modern.map((m, i) => <>{i > 0 && ", "}<a href={`/modern/#${m.id}`}>{m.name}</a></>)}.
+            </p>
+          )
+        }
+        <p class="spec-links">
+          <a class="spec" href={module.spec}>Read the Editor's Draft ↗</a>
+          {module.release && <a class="spec" href={module.release.url}>W3C {module.release.status} ↗</a>}
+        </p>
+      </header>
+      <h2 class="detail">{module.features.length > 1 ? "Each feature in detail" : "The feature in detail"}</h2>
+      {module.features.map((feature) => <FeatureBlock feature={feature} />)}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; padding-top: 2rem; }
+  @media (max-width: 64rem) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  }
+  .intro { padding: 1rem 0 1.5rem; border-bottom: 1px solid var(--border); }
+  .eyebrow { margin: 0; color: var(--accent); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .eyebrow code { text-transform: none; letter-spacing: 0; font-weight: 500; }
+  h1 { margin: 0.2rem 0 0.75rem; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+  .intro p { color: var(--muted); max-width: 70ch; font-size: 1.05rem; }
+  .modern-links a { color: #a855f7; }
+  .spec-links { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+  .spec { font-weight: 600; }
+  h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 800; letter-spacing: -0.02em; }
+  .detail { padding-top: 3rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+</style>

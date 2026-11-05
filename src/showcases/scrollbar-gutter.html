@@ -1,0 +1,29 @@
+<div class="sg">
+  <p class="unsupported" role="note">Your browser does not support scrollbar-gutter. The boxes below behave like the first one.</p>
+  <h1 class="sg-title">Does the content jump?</h1>
+  <label class="sg-toggle"><input type="checkbox"> Add more text</label>
+  <p class="sg-hint">Watch the blue bar. Systems with overlay scrollbars show no difference.</p>
+  <div class="sg-grid">
+    <div class="sg-box sg-auto" tabindex="0" role="region" aria-label="scrollbar-gutter auto">
+      <h2><code>auto</code></h2>
+      <div class="sg-ruler">Full width</div>
+      <p class="sg-more">More text pushes the box past its height.</p>
+      <p class="sg-more">The scrollbar appears and takes space.</p>
+      <p class="sg-more">The blue bar gets narrower.</p>
+    </div>
+    <div class="sg-box sg-stable" tabindex="0" role="region" aria-label="scrollbar-gutter stable">
+      <h2><code>stable</code></h2>
+      <div class="sg-ruler">Full width</div>
+      <p class="sg-more">More text pushes the box past its height.</p>
+      <p class="sg-more">The scrollbar appears and takes space.</p>
+      <p class="sg-more">The blue bar keeps its width.</p>
+    </div>
+    <div class="sg-box sg-both" tabindex="0" role="region" aria-label="scrollbar-gutter stable both-edges">
+      <h2><code>stable both-edges</code></h2>
+      <div class="sg-ruler">Full width</div>
+      <p class="sg-more">More text pushes the box past its height.</p>
+      <p class="sg-more">The scrollbar appears and takes space.</p>
+      <p class="sg-more">Both sides stay symmetric.</p>
+    </div>
+  </div>
+</div>

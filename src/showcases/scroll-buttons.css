@@ -1,0 +1,69 @@
+.sb { max-width: 640px; margin: 0 auto; }
+.sb-hint { margin: 0 0 10px; color: #44403c; font-size: 0.9rem; }
+
+.sb .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #fef3c7; color: #78350f; }
+@supports not selector(::scroll-button(left)) { .sb .unsupported { display: block; } }
+
+.sb-carousel {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  anchor-name: --sb-carousel;
+}
+
+.sb-carousel li {
+  flex: 0 0 100%;
+  height: 240px;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 4px;
+  border-radius: 18px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  scroll-snap-align: start;
+}
+.sb-n { font-size: 3.5rem; line-height: 1; }
+.sb-carousel li:nth-child(1) { background: linear-gradient(135deg, #115e59, #0e7490); }
+.sb-carousel li:nth-child(2) { background: linear-gradient(135deg, #1e293b, #64748b); }
+.sb-carousel li:nth-child(3) { background: linear-gradient(135deg, #9f1239, #e11d48); }
+.sb-carousel li:nth-child(4) { background: linear-gradient(135deg, #78350f, #b45309); }
+.sb-carousel li:nth-child(5) { background: linear-gradient(135deg, #9a3412, #c2410c); }
+
+/* Setting content generates the buttons; * styles all four directions at once. */
+.sb-carousel::scroll-button(*) {
+  position: absolute;
+  position-anchor: --sb-carousel;
+  align-self: anchor-center;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 2px solid rgb(255 255 255 / 0.85);
+  border-radius: 50%;
+  background: #111827;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: scale 0.15s, opacity 0.15s;
+}
+.sb-carousel::scroll-button(left) { content: "\2039"; left: calc(anchor(left) + 10px); }
+.sb-carousel::scroll-button(right) { content: "\203A"; right: calc(anchor(right) + 10px); }
+
+.sb-carousel::scroll-button(*):hover { scale: 1.1; }
+.sb-carousel::scroll-button(*):focus-visible { outline: 3px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 6px #1d4ed8; }
+.sb-carousel::scroll-button(*):disabled { opacity: 0.3; cursor: default; scale: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sb-carousel { scroll-behavior: auto; }
+  .sb-carousel::scroll-button(*) { transition: none; }
+}

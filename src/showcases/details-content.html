@@ -1,0 +1,16 @@
+<div class="demo-details">
+  <p class="unsupported" role="note">::details-content is not supported in this browser, so the panels open without animation.</p>
+  <p class="hint">Click a question. Only one panel stays open.</p>
+  <details name="faq" open>
+    <summary>What is animated here?</summary>
+    <p>Only the panel body. The summary stays put while its content grows from zero height.</p>
+  </details>
+  <details name="faq">
+    <summary>Why does one panel close the other?</summary>
+    <p>The three panels share the same name attribute, so opening one closes the others.</p>
+  </details>
+  <details name="faq">
+    <summary>Do I need JavaScript?</summary>
+    <p>No. The panel opens and closes with the plain details element, and the animation is one CSS transition on its content.</p>
+  </details>
+</div>

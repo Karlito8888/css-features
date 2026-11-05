@@ -1,0 +1,44 @@
+.demo-as, .demo-as * { box-sizing: border-box; }
+.demo-as { --v: 60; max-width: 860px; margin: 0 auto; }
+.demo-as .hint { margin: 0 0 12px; }
+.demo-as .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (width: abs(-1px)) {
+  .demo-as .unsupported { display: block; }
+}
+
+.demo-as .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; font-weight: 600; }
+.demo-as .controls input { flex: 1; max-width: 420px; accent-color: #1d4ed8; }
+.demo-as .controls input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+.demo-as output { min-width: 4ch; font-variant-numeric: tabular-nums; }
+
+.demo-as .board { padding: 18px; border-radius: 12px; background: #f1f5f9; }
+
+/* sign() is -1, 0 or 1: as a scale it flips the arrow, and at 0 it makes it vanish. */
+.demo-as .arrow {
+  width: 120px;
+  height: 56px;
+  margin: 0 auto 18px;
+  clip-path: polygon(0 28%, 58% 28%, 58% 0, 100% 50%, 58% 100%, 58% 72%, 0 72%);
+  scale: sign(var(--v)) 1;
+  /* The hue also follows the sign: orange left, green right. */
+  background: hsl(calc(92 + sign(var(--v)) * 68) 70% 38%);
+}
+
+/* The bar starts at the middle. abs() is its length, sign() decides which side it grows to. */
+.demo-as .track { position: relative; height: 30px; border-radius: 15px; background: #e2e8f0; overflow: hidden; }
+.demo-as .track::after { content: ""; position: absolute; left: 50%; top: 0; width: 2px; height: 100%; background: #1b1b1b; }
+.demo-as .bar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: calc(abs(var(--v)) * 0.5%);
+  translate: calc(min(sign(var(--v)), 0) * 100%) 0;
+  background: hsl(calc(92 + sign(var(--v)) * 68) 70% 38%);
+}
+
+.demo-as .read { margin: 14px 0 0; text-align: center; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .demo-as .arrow { transition: scale 0.25s; }
+}

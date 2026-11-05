@@ -1,0 +1,83 @@
+.demo-display { max-width: 52rem; margin: 0 auto; }
+
+.demo-display .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #fef3c7; color: #78350f; }
+@supports not (transition-behavior: allow-discrete) {
+  .demo-display .unsupported { display: block; }
+}
+
+.demo-display .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+.demo-display .col { min-height: 270px; padding: 14px 16px; border-radius: 16px; background: #f1f5f9; }
+.demo-display h2 { margin: 0 0 12px; font-size: 1rem; color: #334155; }
+
+.demo-display button { font: inherit; font-weight: 600; padding: 8px 16px; border: 0; border-radius: 999px; background: #4f46e5; color: #fff; cursor: pointer; }
+.demo-display button:hover { background: #4338ca; }
+.demo-display button.ghost { background: #e0e7ff; color: #3730a3; }
+.demo-display button:focus-visible { outline: 3px solid #a5b4fc; outline-offset: 2px; }
+
+/* display: a notice leaves with a fade, then really goes to display: none. */
+.demo-display .toasts { margin: 0 0 6px; padding: 0; list-style: none; }
+.demo-display .toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 52px;
+  margin-bottom: 8px;
+  padding: 0 12px 0 16px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(15 23 42 / 0.15);
+  transition: opacity 0.45s, translate 0.45s, height 0.45s, margin-bottom 0.45s, display 0.45s allow-discrete;
+
+  @starting-style {
+    opacity: 0;
+    translate: -40px 0;
+    height: 0;
+    margin-bottom: 0;
+  }
+}
+.demo-display .toast.gone {
+  display: none;
+  opacity: 0;
+  translate: 60px 0;
+  height: 0;
+  margin-bottom: 0;
+}
+.demo-display .toast button { padding: 5px 12px; font-size: 0.85rem; background: #e0e7ff; color: #3730a3; }
+
+/* content-visibility is discrete too: the menu stays rendered until its fade is over. */
+.demo-display .menu-wrap { position: relative; }
+.demo-display .menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(14rem, 100%);
+  padding: 6px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgb(15 23 42 / 0.25);
+  content-visibility: hidden;
+  opacity: 0;
+  translate: 0 -10px;
+  scale: 0.96;
+  transform-origin: top left;
+  pointer-events: none;
+  transition: opacity 0.35s, translate 0.35s, scale 0.35s, content-visibility 0.35s allow-discrete;
+}
+.demo-display .menu.open {
+  content-visibility: visible;
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  pointer-events: auto;
+}
+.demo-display .menu button { text-align: left; padding: 9px 12px; border-radius: 8px; background: transparent; color: #1e293b; font-weight: 500; }
+.demo-display .menu button:hover { background: #eef2ff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-display .toast,
+  .demo-display .menu { transition-duration: 0.01s; }
+}

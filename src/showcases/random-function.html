@@ -1,0 +1,18 @@
+<div class="demo-rnd">
+  <p class="unsupported">This browser does not support random(), so the pieces and squares are not scattered.</p>
+  <p class="hint">Every piece has the same rule and a different look. Reroll to create new elements: each gets new values.</p>
+  <div class="controls">
+    <button type="button" id="reroll">Reroll</button>
+  </div>
+  <div class="stage" id="stage" aria-hidden="true"></div>
+  <div class="rows">
+    <div>
+      <p class="label"><code>random(8px, 30px)</code>: each element rolls its own size</p>
+      <div class="row own" id="own" aria-hidden="true"></div>
+    </div>
+    <div>
+      <p class="label"><code>random(--same, 8px, 30px)</code>: one shared name, one shared roll</p>
+      <div class="row same" id="same" aria-hidden="true"></div>
+    </div>
+  </div>
+</div>

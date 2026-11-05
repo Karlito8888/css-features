@@ -1,0 +1,27 @@
+.demo-mix { --a: #0057ff; --b: #ffd400; max-width: 860px; margin: 0 auto; }
+.demo-mix .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (color: color-mix(in srgb, red, blue)) {
+  .demo-mix .unsupported { display: block; }
+}
+
+.demo-mix .controls { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 8px; }
+.demo-mix .controls label { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.demo-mix input[type="color"] { width: 48px; height: 32px; padding: 0; border: 1px solid #888; border-radius: 6px; }
+.demo-mix :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-mix .label { margin: 14px 0 6px; font-size: 13px; font-weight: 600; }
+.demo-mix .row { display: flex; gap: 0; margin: 0 0 6px; padding: 0; list-style: none; border-radius: 8px; overflow: hidden; }
+.demo-mix .row li {
+  flex: 1; min-width: 0; height: 52px; padding: 6px; box-sizing: border-box;
+  display: flex; align-items: flex-end; font-size: 11px; font-weight: 600;
+  color: white; text-shadow: 0 1px 2px rgb(0 0 0 / 0.6);
+  /* --p is the share of A. The rest of the 100% goes to B. */
+  background: color-mix(in srgb, var(--a) var(--p), var(--b));
+}
+.demo-mix .oklab li { background: color-mix(in oklab, var(--a) var(--p), var(--b)); }
+.demo-mix .oklch li { background: color-mix(in oklch, var(--a) var(--p), var(--b)); }
+
+/* Mixing with white or black gives tints and shades. */
+.demo-mix .tints li {
+  background: color-mix(in oklab, color-mix(in oklab, var(--a), white var(--w)), black var(--k));
+}

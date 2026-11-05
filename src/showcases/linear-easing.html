@@ -1,0 +1,33 @@
+<div class="demo-linear">
+  <p class="unsupported">This browser does not support the linear() easing function. The three balls below fall with the same plain curve.</p>
+  <div class="bar">
+    <button type="button" id="drop">Drop the balls</button>
+    <span>Same distance, same duration, three curves.</span>
+  </div>
+  <div class="lanes">
+    <figure class="lane ease-out">
+      <svg class="graph" viewBox="0 0 120 60" role="img" aria-label="Graph of the ease-out curve">
+        <line x1="0" y1="12" x2="120" y2="12" class="goal"/>
+        <polyline points="0,60 5,56.7 10,53.5 15,50.5 20,47.5 25,44.6 30,41.8 35,39.2 40,36.6 45,34.1 50,31.6 55,29.3 60,27.1 65,25 70,23.1 75,21.2 80,19.5 85,17.9 90,16.5 95,15.2 100,14.1 105,13.2 110,12.6 115,12.2 120,12"/>
+      </svg>
+      <div class="stage"><span class="floor"></span><span class="ball"></span></div>
+      <figcaption><code>ease-out</code></figcaption>
+    </figure>
+    <figure class="lane bounce">
+      <svg class="graph" viewBox="0 0 120 60" role="img" aria-label="Graph of the bounce curve">
+        <line x1="0" y1="12" x2="120" y2="12" class="goal"/>
+        <polyline points="0,60 2,59.9 4,59.6 6,59.1 8,58.4 10,57.5 12,56.4 14,55.1 16,53.5 18,51.8 20,49.9 22,47.8 24,45.5 26,43 28,40.2 30,37.3 32,34.2 34,30.9 36,27.3 38,23.6 40,19.7 42,15.5 44,12.4 46,14.5 48,16.3 50,18 52,19.4 54,20.7 56,21.7 58,22.6 60,23.3 62,23.7 64,23.9 66,24 68,23.8 70,23.5 72,22.9 74,22.2 76,21.2 78,20 80,18.7 82,17.1 84,15.3 86,13.4 88,12.4 90,13.3 92,14 94,14.6 96,14.9 98,15 100,14.9 102,14.6 104,14.1 106,13.5 108,12.6 110,12.2 112,12.6 114,12.7 116,12.7 118,12.4 120,12"/>
+      </svg>
+      <div class="stage"><span class="floor"></span><span class="ball"></span></div>
+      <figcaption>Bounce <code>linear()</code></figcaption>
+    </figure>
+    <figure class="lane spring">
+      <svg class="graph" viewBox="0 0 120 60" role="img" aria-label="Graph of the spring curve">
+        <line x1="0" y1="12" x2="120" y2="12" class="goal"/>
+        <polyline points="0,60 3.3,48.6 6.7,36.2 10,24.8 13.3,15.6 16.7,9.1 20,5.1 23.3,3.4 26.7,3.5 30,4.6 33.3,6.4 36.7,8.3 40,10 43.3,11.4 46.7,12.5 50,13.1 53.3,13.3 56.7,13.3 60,13.1 63.3,12.9 66.7,12.6 70,12.3 73.3,12.1 76.7,11.9 80,11.8 83.3,11.8 86.7,11.8 90,11.8 93.3,11.9 96.7,11.9 100,12 103.3,12 106.7,12 110,12 113.3,12 116.7,12 120,12"/>
+      </svg>
+      <div class="stage"><span class="floor"></span><span class="ball"></span></div>
+      <figcaption>Spring <code>linear()</code></figcaption>
+    </figure>
+  </div>
+</div>

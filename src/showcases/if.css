@@ -1,0 +1,64 @@
+.demo-if, .demo-if * { box-sizing: border-box; }
+.demo-if { max-width: 860px; margin: 0 auto; }
+.demo-if .hint { margin: 0 0 14px; }
+.demo-if .unsupported { display: none; margin: 0 0 14px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (width: if(media(all): 1px; else: 2px)) {
+  .demo-if .unsupported { display: block; }
+}
+
+.demo-if .board { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+
+.demo-if .card {
+  /* if() picks a value from the first style() test that matches. */
+  --accent: if(
+    style(--status: done): #15803d;
+    style(--status: active): #1d4ed8;
+    style(--status: blocked): #b91c1c;
+    else: #64748b
+  );
+  --wash: if(
+    style(--status: done): #dcfce7;
+    style(--status: active): #dbeafe;
+    style(--status: blocked): #fee2e2;
+    else: #f1f5f9
+  );
+  display: grid;
+  gap: 12px;
+  border-radius: 14px;
+  background: var(--wash);
+  border: 3px var(--accent);
+  border-style: if(style(--status: blocked): dashed; else: solid);
+  /* A media() test works the same way. */
+  padding: if(media(width < 600px): 12px; else: 20px);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.demo-if .name { font-size: 1.25rem; }
+
+.demo-if .badge { justify-self: start; padding: 2px 12px; border-radius: 999px; background: var(--accent); color: #fff; font-weight: 600; }
+.demo-if .badge::after {
+  content: if(
+    style(--status: done): "Done";
+    style(--status: active): "In progress";
+    style(--status: blocked): "Blocked";
+    else: "To do"
+  );
+}
+
+.demo-if .bar { height: 10px; border-radius: 5px; background: #fff; border: 1px solid #94a3b8; overflow: hidden; }
+.demo-if .bar::before {
+  content: "";
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  width: if(style(--status: done): 100%; style(--status: active): 55%; style(--status: blocked): 30%; else: 0%);
+  transition: width 0.4s;
+}
+
+.demo-if label { display: grid; gap: 4px; font-size: 0.9rem; }
+.demo-if select { font: inherit; padding: 6px 8px; border-radius: 8px; border: 1px solid #64748b; background: #fff; color: #1b1b1b; }
+.demo-if select:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-if .card, .demo-if .bar::before { transition: none; }
+}

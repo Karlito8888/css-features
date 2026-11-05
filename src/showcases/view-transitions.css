@@ -1,0 +1,42 @@
+.demo-vt, .demo-vt * { box-sizing: border-box; }
+.demo-vt { max-width: 860px; margin: 0 auto; }
+.demo-vt .hint { margin: 0 0 12px; }
+.demo-vt .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (view-transition-name: a) {
+  .demo-vt .unsupported { display: block; }
+}
+
+.demo-vt .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+.demo-vt .controls button { font: inherit; font-weight: 600; padding: 8px 16px; border: 2px solid #1b1b1b; border-radius: 8px; background: #fff; color: #1b1b1b; cursor: pointer; }
+.demo-vt .controls button:hover { background: #eef2ff; }
+.demo-vt button:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-vt .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+.demo-vt .cards.list { grid-template-columns: 1fr; }
+.demo-vt .cards li { height: 84px; border-radius: 14px; overflow: hidden; }
+.demo-vt .cards.list li { height: 52px; }
+.demo-vt .cards li button { display: block; width: 100%; height: 100%; border: 0; color: #fff; font: inherit; font-size: 1.1rem; font-weight: 700; cursor: pointer; background: inherit; text-align: center; }
+.demo-vt .cards.list li button { text-align: left; padding-inline: 20px; }
+
+.demo-vt #card-a { background: #b45309; view-transition-name: card-a; }
+.demo-vt #card-b { background: #be185d; view-transition-name: card-b; }
+.demo-vt #card-c { background: #1d4ed8; view-transition-name: card-c; }
+.demo-vt #card-d { background: #0e7490; view-transition-name: card-d; }
+.demo-vt #card-e { background: #b91c1c; view-transition-name: card-e; }
+.demo-vt #card-f { background: #15803d; view-transition-name: card-f; }
+
+/* The page itself does not animate: only the named cards fly to their new place. */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; }
+
+/* Every card gets its own group. It moves and resizes from the old box to the new one. */
+::view-transition-group(*) { animation-duration: 0.55s; animation-timing-function: cubic-bezier(0.3, 1.2, 0.5, 1); }
+
+/* The image pair holds the old and the new snapshot of a card, cross-faded while it moves. */
+::view-transition-image-pair(*) { isolation: isolate; }
+::view-transition-old(*) { animation-duration: 0.25s; }
+::view-transition-new(*) { animation-duration: 0.55s; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation-duration: 0.01s; }
+}

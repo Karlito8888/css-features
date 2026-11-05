@@ -1,0 +1,22 @@
+.demo-vfc .unsupported { display: none; padding: 10px 14px; border-radius: 8px; background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+@supports not (writing-mode: vertical-lr) { .demo-vfc .unsupported { display: block; } }
+
+.demo-vfc .options { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; }
+.demo-vfc .modes { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; padding: 6px 12px 8px; border: 1px solid #d4d4d8; border-radius: 8px; }
+.demo-vfc .options label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-family: ui-monospace, monospace; font-size: 0.9rem; }
+.demo-vfc .hint { margin: 10px 0 12px; color: #52525b; }
+
+.demo-vfc .stage { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px; }
+.demo-vfc .ctl { padding: 12px 14px; background: #f5f3ff; border: 1px solid #c7d2fe; border-radius: 12px; }
+/* Logical margins follow the writing mode: the gap is always between label and control. */
+.demo-vfc .ctl label { display: block; margin-block-end: 6px; font-weight: 600; }
+
+/* The mode is set on each control box. Range, progress, meter and select turn with it. */
+.demo-vfc:has(#wm-h:checked) .ctl { writing-mode: horizontal-tb; }
+.demo-vfc:has(#wm-lr:checked) .ctl { writing-mode: vertical-lr; }
+.demo-vfc:has(#wm-rl:checked) .ctl { writing-mode: vertical-rl; }
+.demo-vfc:has(#rtl:checked) .ctl { direction: rtl; }
+
+.demo-vfc input[type="range"], .demo-vfc progress, .demo-vfc meter { inline-size: 170px; accent-color: #4f46e5; }
+.demo-vfc select { inline-size: 120px; font: inherit; padding: 4px 8px; }
+.demo-vfc :is(input, select):focus-visible { outline: 3px solid #1b1b1b; outline-offset: 2px; }

@@ -1,0 +1,44 @@
+.demo-pg, .demo-pg * { box-sizing: border-box; }
+.demo-pg { --v: 50; max-width: 860px; margin: 0 auto; }
+.demo-pg .hint { margin: 0 0 12px; }
+.demo-pg .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (width: calc(progress(5, 0, 10) * 1px)) {
+  .demo-pg .unsupported { display: block; }
+}
+
+.demo-pg .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; font-weight: 600; }
+.demo-pg .controls input { flex: 1; max-width: 420px; accent-color: #1d4ed8; }
+.demo-pg .controls input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+.demo-pg output { min-width: 3ch; font-variant-numeric: tabular-nums; }
+
+.demo-pg .label { margin: 0 0 8px; font-size: 0.9rem; }
+
+.demo-pg .meter { height: 34px; margin-bottom: 26px; border-radius: 17px; background: #e2e8f0; overflow: hidden; }
+.demo-pg .fill {
+  height: 100%;
+  /* progress() returns a plain number from 0 to 1: multiply it to get the unit you need. */
+  width: calc(progress(var(--v), 20, 80) * 100%);
+  background: hsl(calc(220 - progress(var(--v), 20, 80) * 200) 80% 45%);
+  border-radius: 17px;
+}
+
+.demo-pg .resizable {
+  container-type: inline-size;
+  resize: horizontal;
+  overflow: auto;
+  width: 320px;
+  min-width: 140px;
+  max-width: 100%;
+  padding: 12px 16px;
+  border: 2px dashed #64748b;
+  border-radius: 12px;
+}
+.demo-pg .grow {
+  margin: 0 0 8px;
+  font-weight: 700;
+  line-height: 1.1;
+  /* The same function, now measuring a length: the size follows the width of the box. */
+  font-size: calc(1rem + progress(100cqw, 200px, 480px) * 2.4rem);
+  color: hsl(calc(220 - progress(100cqw, 200px, 480px) * 200) 80% 38%);
+}
+.demo-pg .line { height: 10px; border-radius: 5px; background: #1d4ed8; width: calc(progress(100cqw, 200px, 480px) * 100%); min-width: 6px; }

@@ -1,0 +1,33 @@
+<div class="demo-anchor">
+  <p class="unsupported" role="note">Anchor positioning is not supported in this browser, so the tooltips cannot be placed next to their chips.</p>
+  <fieldset class="side">
+    <legend>Preferred side</legend>
+    <label><input type="radio" name="side" id="side-top" checked> Top</label>
+    <label><input type="radio" name="side" id="side-right"> Right</label>
+    <label><input type="radio" name="side" id="side-bottom"> Bottom</label>
+    <label><input type="radio" name="side" id="side-left"> Left</label>
+  </fieldset>
+  <p class="hint">Hover or focus a chip, then scroll inside the box so a chip meets an edge: the tooltip flips.</p>
+  <div class="box" tabindex="0" role="region" aria-label="Scrollable list of chips">
+    <ul class="grid">
+      <li class="item"><button type="button" class="chip" aria-describedby="t1">Margin</button><span class="tip" id="t1" role="tooltip">Space outside the border</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t2">Border</button><span class="tip" id="t2" role="tooltip">The line around the box</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t3">Padding</button><span class="tip" id="t3" role="tooltip">Space inside the border</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t4">Content</button><span class="tip" id="t4" role="tooltip">Where the text and images live</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t5">Inset</button><span class="tip" id="t5" role="tooltip">Offsets from the containing block</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t6">Anchor</button><span class="tip" id="t6" role="tooltip">The element a tooltip sticks to</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t7">Fallback</button><span class="tip" id="t7" role="tooltip">Plan B when there is no room</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t8">Flip</button><span class="tip" id="t8" role="tooltip">Mirror to the other side</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t9">Span</button><span class="tip" id="t9" role="tooltip">Cover several grid tiles</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t10">Scope</button><span class="tip" id="t10" role="tooltip">Keeps one anchor name per chip</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t11">Tether</button><span class="tip" id="t11" role="tooltip">Follows the chip while scrolling</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t12">Grid</button><span class="tip" id="t12" role="tooltip">Three by three tiles around the anchor</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t13">Center</button><span class="tip" id="t13" role="tooltip">The tile where the anchor sits</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t14">Overflow</button><span class="tip" id="t14" role="tooltip">What the fallbacks try to avoid</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t15">Viewport</button><span class="tip" id="t15" role="tooltip">The last resort boundary</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t16">Popover</button><span class="tip" id="t16" role="tooltip">Pairs well with anchors</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t17">Menu</button><span class="tip" id="t17" role="tooltip">A common anchored widget</span></li>
+      <li class="item"><button type="button" class="chip" aria-describedby="t18">Tooltip</button><span class="tip" id="t18" role="tooltip">You are looking at one</span></li>
+    </ul>
+  </div>
+</div>

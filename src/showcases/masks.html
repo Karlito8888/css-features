@@ -1,0 +1,34 @@
+<div class="demo-mask">
+  <p class="unsupported">CSS masks are not supported in this browser. The panels below show unmasked.</p>
+  <div class="panels">
+    <section class="panel">
+      <h2>Fade the edges</h2>
+      <p class="hint">Scroll the list. A gradient mask hides its ends.</p>
+      <div class="fade" tabindex="0" role="region" aria-label="Scrollable list with faded edges">
+        <ul>
+          <li>Alpine blue</li>
+          <li>Berry pink</li>
+          <li>Citrus yellow</li>
+          <li>Dusk violet</li>
+          <li>Ember orange</li>
+          <li>Forest green</li>
+          <li>Glacier teal</li>
+          <li>Harbor navy</li>
+          <li>Iris purple</li>
+          <li>Jade green</li>
+        </ul>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Combine two masks</h2>
+      <fieldset>
+        <legend class="hint">Pick a mask-composite value.</legend>
+        <input id="op-add" type="radio" name="op" checked><label for="op-add">add</label>
+        <input id="op-sub" type="radio" name="op"><label for="op-sub">subtract</label>
+        <input id="op-int" type="radio" name="op"><label for="op-int">intersect</label>
+        <input id="op-exc" type="radio" name="op"><label for="op-exc">exclude</label>
+      </fieldset>
+      <div class="venn" role="img" aria-label="Two overlapping circles cut out of a colorful box"></div>
+    </section>
+  </div>
+</div>

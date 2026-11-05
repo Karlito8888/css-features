@@ -1,0 +1,44 @@
+.demo-rnd, .demo-rnd * { box-sizing: border-box; }
+.demo-rnd { max-width: 860px; margin: 0 auto; }
+.demo-rnd .hint { margin: 0 0 12px; }
+.demo-rnd .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (width: random(1px, 2px)) {
+  .demo-rnd .unsupported { display: block; }
+}
+
+.demo-rnd .controls { margin-bottom: 12px; }
+.demo-rnd button { font: inherit; font-weight: 600; padding: 8px 16px; border: 2px solid #1b1b1b; border-radius: 8px; background: #fff; color: #1b1b1b; cursor: pointer; }
+.demo-rnd button:hover { background: #eef2ff; }
+.demo-rnd button:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-rnd .stage { position: relative; height: 220px; overflow: hidden; border-radius: 12px; background: #0f172a; }
+
+/* Each piece is a separate element, and random() rolls once per element and per property. */
+.demo-rnd .stage span {
+  position: absolute;
+  left: random(0%, 96%);
+  top: random(0%, 88%);
+  width: random(8px, 22px);
+  height: random(8px, 22px);
+  border-radius: random(0%, 50%);
+  rotate: random(0deg, 360deg);
+  background: hsl(random(0, 360) 85% 60%);
+  animation: pop 0.5s ease-out backwards;
+  animation-delay: random(0s, 0.7s);
+}
+
+@keyframes pop {
+  from { scale: 0; translate: 0 -40px; opacity: 0; }
+}
+
+.demo-rnd .rows { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 20px; margin-top: 14px; }
+.demo-rnd .label { margin: 0 0 6px; font-size: 0.85rem; }
+.demo-rnd .row { display: flex; align-items: flex-end; gap: 4px; height: 66px; }
+.demo-rnd .row span { flex: none; height: 20px; border-radius: 4px; background: #1d4ed8; }
+.demo-rnd .own span { width: random(8px, 30px); height: random(20px, 60px); }
+/* One shared name: every square, and both properties, read the same roll. */
+.demo-rnd .same span { width: random(--same, 8px, 30px); height: random(--same, 20px, 60px); background: #be185d; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-rnd .stage span { animation: none; }
+}

@@ -1,0 +1,24 @@
+<div class="demo-fn">
+  <p class="unsupported">This browser does not support @function, so the swatches below have no color.</p>
+  <p class="hint">Drag the sliders. Two custom functions compute the gaps and the colors.</p>
+  <div class="controls">
+    <div class="ctl">
+      <label for="in-n">Spacing step</label>
+      <output id="out-n" for="in-n">3</output>
+      <input id="in-n" type="range" min="0" max="6" step="1" value="3">
+    </div>
+    <div class="ctl">
+      <label for="in-amt">Tint amount</label>
+      <output id="out-amt" for="in-amt">12%</output>
+      <input id="in-amt" type="range" min="4" max="20" step="1" value="12">
+    </div>
+  </div>
+  <ul class="stage" id="stage">
+    <li class="swatch" style="--i: 0"></li>
+    <li class="swatch" style="--i: 1"></li>
+    <li class="swatch" style="--i: 2"></li>
+    <li class="swatch" style="--i: 3"></li>
+    <li class="swatch" style="--i: 4"></li>
+    <li class="swatch default">Default</li>
+  </ul>
+</div>

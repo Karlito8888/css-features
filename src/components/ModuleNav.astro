@@ -1,0 +1,66 @@
+---
+import { KINDS, data, moduleUrl, type Kind, type Module } from "../data";
+
+interface Props {
+  current: Module | null;
+  /** The current page when it is not a module: "modern" or a kind index. */
+  page?: "modern" | Kind;
+}
+const { current, page } = Astro.props;
+const kinds = Object.keys(KINDS) as Kind[];
+---
+
+<nav class="sidebar" aria-label="Features and modules">
+  <details open>
+    <summary>Navigation</summary>
+    {
+      current && (
+        <>
+          <h2>On this page</h2>
+          <ol class="features">
+            {current.features.map((f) => (
+              <li><a href={`#${f.id}`}><code>{f.name}</code></a></li>
+            ))}
+          </ol>
+        </>
+      )
+    }
+    <h2>Explore</h2>
+    <ol class="sections">
+      <li><a class="modern" href="/modern/" aria-current={page === "modern" ? "page" : undefined}>Modern CSS</a></li>
+      {kinds.map((k) => <li><a href={`/all-${k === "at-rule" ? "at-rules" : k === "property" ? "properties" : `${k}s`}/`} aria-current={page === k ? "page" : undefined}>All {KINDS[k].plural.toLowerCase()}</a></li>)}
+    </ol>
+    <h2>Modules</h2>
+    <ol class="sections">
+      {data.modules.map((m) => <li><a href={moduleUrl(m)} aria-current={m === current ? "page" : undefined}>{m.title}</a></li>)}
+    </ol>
+  </details>
+</nav>
+
+<script>
+  // Collapsed by default on small screens, where the sidebar sits above the content.
+  const details = document.querySelector<HTMLDetailsElement>(".sidebar details");
+  if (details && matchMedia("(max-width: 64rem)").matches) details.open = false;
+</script>
+
+<style>
+  .sidebar {
+    position: sticky; top: calc(var(--header-h) + 1.5rem); align-self: start;
+    max-height: calc(100dvh - var(--header-h) - 3rem); overflow: auto; padding-right: 0.5rem; font-size: 0.9rem;
+  }
+  summary { display: none; }
+  h2 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin: 1.25rem 0 0.5rem; }
+  h2:first-of-type { margin-top: 0; }
+  ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.1rem; }
+  .features { max-height: 40dvh; overflow: auto; }
+  a { display: block; padding: 0.2rem 0.55rem; border-radius: 7px; color: var(--fg); text-decoration: none; overflow-wrap: anywhere; }
+  a:hover { background: var(--bg-soft); }
+  a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .modern { color: #a855f7; font-weight: 600; }
+  code { background: none !important; border: 0 !important; padding: 0 !important; font-size: 0.82rem; }
+  @media (max-width: 64rem) {
+    .sidebar { position: static; max-height: none; border: 1px solid var(--border); border-radius: var(--radius); padding: 0.75rem 1rem; }
+    summary { display: list-item; cursor: pointer; font-weight: 600; }
+    details[open] summary { margin-bottom: 0.75rem; }
+  }
+</style>

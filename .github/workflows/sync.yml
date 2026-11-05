@@ -1,0 +1,35 @@
+name: Sync sources
+on:
+  schedule: [{ cron: "0 6 * * 1" }]
+  workflow_dispatch:
+permissions: { contents: write, pull-requests: write }
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with: { node-version: 24 }
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run sync
+      # data/sources.json changes on nearly every run (package versions, MDN commit): only a change
+      # to the feature data is worth a pull request.
+      - name: Open a pull request when the feature data changed
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          if git diff --quiet -- data/features.json; then
+            echo "Feature data unchanged."
+            exit 0
+          fi
+          bun run check
+          branch="sync/$(date -u +%Y-%m-%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add data/
+          git commit -m "chore(data): sync official sources"
+          git push origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "chore(data): sync official sources $(date -u +%Y-%m-%d)" \
+            --body "Weekly \`bun run sync\`. The build passed on this data. Merging deploys the site."

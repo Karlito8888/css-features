@@ -1,0 +1,47 @@
+.demo-dir { max-width: 40rem; margin: 0 auto; }
+.demo-dir .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not selector(:dir(rtl)) {
+  .demo-dir .unsupported { display: block; }
+}
+
+.demo-dir .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; font-weight: 600; }
+.demo-dir .bar span { margin-inline-end: 6px; }
+.demo-dir .bar button {
+  padding: 6px 16px;
+  border: 2px solid #0f766e;
+  border-radius: 999px;
+  background: transparent;
+  color: #0f766e;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.demo-dir .bar button[aria-pressed="true"] { background: #0f766e; color: #fff; }
+.demo-dir button:focus-visible, .demo-dir a:focus-visible { outline: 3px solid #0f766e; outline-offset: 2px; }
+
+.demo-dir .chat { display: flex; flex-direction: column; gap: 10px; padding: 16px; border: 1px solid #d4d4dc; border-radius: 16px; background: #f7f8fa; }
+.demo-dir .msg { margin: 0; max-inline-size: 82%; width: fit-content; padding: 10px 14px; border-radius: 16px; line-height: 1.5; }
+
+/* :dir() reads the real direction of each element, even when it is inherited or set with dir="auto". */
+.demo-dir .msg:dir(ltr) { margin-right: auto; border-bottom-left-radius: 4px; background: #d9e8ff; color: #10264a; }
+.demo-dir .msg:dir(rtl) { margin-left: auto; border-bottom-right-radius: 4px; background: #ffe6b8; color: #4a2f00; }
+
+.demo-dir .send { margin: 0; }
+.demo-dir .next { color: #0f766e; font-weight: 700; }
+.demo-dir .next:dir(ltr)::after { content: " \2192"; }
+.demo-dir .next:dir(rtl)::after { content: " \2190"; }
+
+.demo-dir .compose { display: grid; gap: 4px; margin-top: 12px; }
+.demo-dir .compose label { font-weight: 600; }
+.demo-dir textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 12px;
+  border: 2px solid #b8b8c4;
+  border-radius: 10px;
+  font: inherit;
+  resize: vertical;
+}
+.demo-dir textarea:focus-visible { outline: 3px solid #0f766e; outline-offset: 2px; }
+.demo-dir textarea:dir(rtl) { border-color: #b45309; background: #fffaf0; }
+.demo-dir textarea:dir(ltr) { border-color: #2563eb; background: #f5f9ff; }

@@ -1,0 +1,35 @@
+<div class="demo-csq">
+  <p class="unsupported">Container style queries are not supported in this browser, so the cards stay in the light theme.</p>
+  <div class="stage">
+    <fieldset class="controls">
+      <legend>Set --theme on the container</legend>
+      <label><input type="radio" name="theme" id="t-light" checked> light</label>
+      <label><input type="radio" name="theme" id="t-dark"> dark</label>
+      <label><input type="radio" name="theme" id="t-sunset"> sunset</label>
+      <label><input type="radio" name="theme" id="t-ocean"> ocean</label>
+      <label class="check"><input type="checkbox" id="compact"> --compact: true</label>
+    </fieldset>
+    <div class="scene">
+      <article class="profile">
+        <div class="avatar" aria-hidden="true">MO</div>
+        <div class="info">
+          <h2>Maya Okafor</h2>
+          <p class="role">Design engineer</p>
+          <p class="bio">Builds interfaces that adapt to their surroundings, with no extra classes.</p>
+          <button type="button">Follow</button>
+        </div>
+      </article>
+      <div class="pin">
+        <article class="profile">
+          <div class="avatar" aria-hidden="true">LP</div>
+          <div class="info">
+            <h2>Leo Park</h2>
+            <p class="role">Pinned to sunset</p>
+            <p class="bio">This card sits in a wrapper that sets its own theme, so the switch above does not reach it.</p>
+            <button type="button">Follow</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

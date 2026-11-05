@@ -1,0 +1,54 @@
+.demo-trig, .demo-trig * { box-sizing: border-box; }
+.demo-trig { --rot: 0deg; --dx: 1px; --dy: 0px; max-width: 860px; margin: 0 auto; }
+.demo-trig .hint { margin: 0 0 12px; }
+.demo-trig .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (width: calc(sin(30deg) * 1px)) {
+  .demo-trig .unsupported { display: block; }
+}
+
+.demo-trig .controls { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-weight: 600; }
+.demo-trig .controls input { flex: 1; max-width: 420px; accent-color: #1d4ed8; }
+.demo-trig .controls input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+.demo-trig output { min-width: 6ch; font-variant-numeric: tabular-nums; }
+
+.demo-trig .ring { --r: 110px; position: relative; width: 300px; max-width: 100%; height: 280px; margin: 0 auto; }
+.demo-trig .dot {
+  /* The angle of each dot: its share of the circle plus the slider. */
+  --a: calc(var(--i) * 30deg + var(--rot));
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-radius: 50%;
+  background: hsl(calc(var(--i) * 30) 75% 45%);
+  /* cos() gives the horizontal share of the radius, sin() the vertical one. */
+  translate: calc(cos(var(--a)) * var(--r)) calc(sin(var(--a)) * var(--r));
+}
+
+/* atan2(y, x) is the angle of the pointer seen from the middle: the arrow turns to it. */
+.demo-trig .arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 70px;
+  height: 22px;
+  margin: -11px 0 0 -35px;
+  background: #1b1b1b;
+  clip-path: polygon(0 30%, 60% 30%, 60% 0, 100% 50%, 60% 100%, 60% 70%, 0 70%);
+  rotate: atan2(var(--dy), var(--dx));
+}
+
+.demo-trig .wave { display: flex; justify-content: space-between; align-items: center; height: 80px; margin-top: 8px; padding-inline: 4px; border-radius: 12px; background: #f1f5f9; }
+.demo-trig .wave span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1d4ed8;
+  translate: 0 calc(sin(var(--i) * 24deg + var(--rot)) * 28px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .demo-trig .arrow { transition: rotate 0.1s; }
+}

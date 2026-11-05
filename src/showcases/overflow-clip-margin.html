@@ -1,0 +1,21 @@
+<div class="ocm">
+  <p class="unsupported" role="note">Your browser does not support overflow-clip-margin. Both boxes clip at their edge.</p>
+  <h1 class="ocm-title">How far may content spill out?</h1>
+  <fieldset class="ocm-picks">
+    <legend>overflow-clip-margin</legend>
+    <label><input type="radio" name="margin" id="ocm-0" checked> 0px</label>
+    <label><input type="radio" name="margin" id="ocm-12"> 12px</label>
+    <label><input type="radio" name="margin" id="ocm-24"> 24px</label>
+    <label><input type="radio" name="margin" id="ocm-40"> 40px</label>
+  </fieldset>
+  <div class="ocm-grid">
+    <figure class="ocm-card">
+      <div class="ocm-frame ocm-hidden"><div class="ocm-spin"></div></div>
+      <figcaption><code>overflow: hidden</code></figcaption>
+    </figure>
+    <figure class="ocm-card">
+      <div class="ocm-frame ocm-clip"><div class="ocm-spin"></div></div>
+      <figcaption><code>overflow: clip</code> with a margin</figcaption>
+    </figure>
+  </div>
+</div>

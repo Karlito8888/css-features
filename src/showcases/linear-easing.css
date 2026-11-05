@@ -1,0 +1,58 @@
+.demo-linear {
+  --ease-out: ease-out;
+  /* linear() joins its points with straight lines: enough points draw any curve. */
+  --bounce: linear(0, 0.01 3.6%, 0.04 7.3%, 0.09 10.9%, 0.16 14.5%, 0.25 18.2%, 0.36 21.8%, 0.49 25.5%, 0.64 29.1%, 0.81 32.7%, 1 36.4%, 0.891 40.9%, 0.813 45.5%, 0.766 50%, 0.75 54.5%, 0.766 59.1%, 0.813 63.6%, 0.891 68.2%, 1 72.7%, 0.965 75.8%, 0.944 78.8%, 0.938 81.8%, 0.944 84.8%, 0.965 87.9%, 1 90.9%, 0.988 93.2%, 0.984 95.5%, 0.988 97.7%, 1);
+  /* Values above 1 overshoot the end value. */
+  --spring: linear(0, 0.237, 0.495, 0.732, 0.925, 1.061, 1.143, 1.178, 1.177, 1.153, 1.117, 1.077, 1.041, 1.012, 0.991, 0.978, 0.973, 0.973, 0.976, 0.982, 0.988, 0.994, 0.998, 1.001, 1.003, 1.004, 1.004, 1.004, 1.003, 1.002, 1.001, 1, 1, 0.999, 0.999, 0.999, 1);
+  --fall: 150px;
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.demo-linear .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #fef3c7; color: #78350f; }
+@supports not (transition-timing-function: linear(0, 1)) {
+  .demo-linear .unsupported { display: block; }
+  .demo-linear { --bounce: ease-out; --spring: ease-out; }
+}
+
+.demo-linear .bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-bottom: 14px; }
+.demo-linear .bar span { color: #475569; font-size: 0.95rem; }
+.demo-linear button { font: inherit; font-weight: 600; padding: 8px 18px; border: 0; border-radius: 999px; background: #4f46e5; color: #fff; cursor: pointer; }
+.demo-linear button:hover { background: #4338ca; }
+.demo-linear button:focus-visible { outline: 3px solid #a5b4fc; outline-offset: 2px; }
+
+.demo-linear .lanes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.demo-linear .lane { margin: 0; padding: 10px; border-radius: 14px; background: #f1f5f9; text-align: center; }
+.demo-linear .lane figcaption { margin-top: 8px; font-size: 0.9rem; font-weight: 600; color: #334155; }
+.demo-linear .lane code { font-size: 0.85em; }
+
+.demo-linear .graph { display: block; width: 100%; max-width: 180px; margin: 0 auto; background: #fff; border-radius: 8px; }
+.demo-linear .graph polyline { fill: none; stroke: #4f46e5; stroke-width: 2; stroke-linejoin: round; }
+.demo-linear .graph .goal { stroke: #94a3b8; stroke-dasharray: 3 3; }
+
+.demo-linear .stage { position: relative; height: 230px; margin-top: 10px; }
+.demo-linear .floor { position: absolute; inset-inline: 0; top: 186px; border-top: 2px dashed #94a3b8; }
+.demo-linear .ball {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  margin-left: -18px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fda4af, #e11d48);
+  translate: 0 0;
+  transition: translate 1.4s var(--ease);
+}
+.demo-linear .bounce .ball { background: radial-gradient(circle at 35% 30%, #a5b4fc, #4338ca); }
+.demo-linear .spring .ball { background: radial-gradient(circle at 35% 30%, #6ee7b7, #047857); }
+
+.demo-linear .ease-out { --ease: var(--ease-out); }
+.demo-linear .bounce { --ease: var(--bounce); }
+.demo-linear .spring { --ease: var(--spring); }
+
+.demo-linear.dropped .ball { translate: 0 var(--fall); }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-linear .ball { transition-duration: 0.01s; }
+}

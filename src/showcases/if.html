@@ -1,0 +1,45 @@
+<div class="demo-if">
+  <p class="unsupported">This browser does not support the if() function, so the cards stay unstyled.</p>
+  <p class="hint">Change a status. Each card restyles itself from its own <code>--status</code>.</p>
+  <ul class="board">
+    <li class="card" style="--status: done">
+      <strong class="name">Build</strong>
+      <span class="badge"></span>
+      <span class="bar"></span>
+      <label>Status
+        <select>
+          <option value="todo">To do</option>
+          <option value="active">In progress</option>
+          <option value="blocked">Blocked</option>
+          <option value="done" selected>Done</option>
+        </select>
+      </label>
+    </li>
+    <li class="card" style="--status: active">
+      <strong class="name">Review</strong>
+      <span class="badge"></span>
+      <span class="bar"></span>
+      <label>Status
+        <select>
+          <option value="todo">To do</option>
+          <option value="active" selected>In progress</option>
+          <option value="blocked">Blocked</option>
+          <option value="done">Done</option>
+        </select>
+      </label>
+    </li>
+    <li class="card" style="--status: blocked">
+      <strong class="name">Deploy</strong>
+      <span class="badge"></span>
+      <span class="bar"></span>
+      <label>Status
+        <select>
+          <option value="todo">To do</option>
+          <option value="active">In progress</option>
+          <option value="blocked" selected>Blocked</option>
+          <option value="done">Done</option>
+        </select>
+      </label>
+    </li>
+  </ul>
+</div>

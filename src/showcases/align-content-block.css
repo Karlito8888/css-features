@@ -1,0 +1,36 @@
+.demo-ac { display: grid; gap: 12px; }
+.demo-ac .hint { margin: 0; color: #555; font-size: 0.9rem; }
+
+.demo-ac .controls { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0; padding: 8px 12px; border: 1px solid #c9c9d3; border-radius: 8px; }
+.demo-ac .controls legend { padding: 0 6px; font-family: ui-monospace, monospace; font-size: 0.85rem; color: #444; }
+.demo-ac .controls label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.demo-ac .controls input { accent-color: #c2410c; }
+.demo-ac .controls input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+/* A block container (display: block), not flex or grid. */
+.demo-ac .box {
+  --ac: center;
+  display: block;
+  box-sizing: border-box;
+  height: 16rem;
+  min-height: 9rem;
+  max-height: 24rem;
+  resize: vertical;
+  overflow: auto;
+  padding: 12px 20px;
+  border: 2px solid #c2410c;
+  border-radius: 12px;
+  background: repeating-linear-gradient(#fff7ed 0 24px, #ffedd5 24px 48px);
+  align-content: var(--ac);
+}
+.demo-ac:has(#ac-start:checked) .box { --ac: start; }
+.demo-ac:has(#ac-end:checked) .box { --ac: end; }
+.demo-ac .box h2 { margin: 0 0 4px; font-size: 1.2rem; }
+.demo-ac .box p { margin: 0; }
+.demo-ac code { padding: 0 4px; border-radius: 4px; background: #fed7aa; }
+
+.demo-ac .unsupported { display: none; margin: 0; padding: 8px 12px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+.demo-ac .unsupported[data-off] { display: block; }
+@supports not (align-content: center) {
+  .demo-ac .unsupported { display: block; }
+}

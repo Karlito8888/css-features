@@ -1,0 +1,63 @@
+/* Two custom functions: the name starts with --, the parameters are typed, and result is the return value. */
+@function --space(--n <number>: 1) returns <length> {
+  result: calc(var(--n) * 0.5rem);
+}
+
+@function --tint(--color <color>, --amount <percentage>: 25%) returns <color> {
+  result: color-mix(in oklab, var(--color), white var(--amount));
+}
+
+.demo-fn, .demo-fn * { box-sizing: border-box; }
+.demo-fn { max-width: 860px; margin: 0 auto; }
+.demo-fn .hint { margin: 0 0 14px; }
+/* The message shows by default. --hide() returns none, so only a browser that runs @function hides it. Elsewhere the second display is a parse error and block stays. */
+@function --hide() {
+  result: none;
+}
+.demo-fn .unsupported { display: block; display: --hide(); margin: 0 0 14px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not at-rule(@function) {
+  .demo-fn .unsupported { display: block; }
+}
+
+.demo-fn .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 24px; margin-bottom: 16px; }
+.demo-fn .ctl { display: grid; gap: 6px; font-weight: 600; }
+.demo-fn output { font-weight: 400; font-variant-numeric: tabular-nums; }
+.demo-fn input[type="range"] { width: 100%; accent-color: #4338ca; }
+.demo-fn input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-fn .stage {
+  --brand: oklch(0.5 0.2 275);
+  --n: 3;
+  --amt: 12;
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: --space(var(--n));
+  padding: --space(var(--n));
+  border: 2px dashed #94a3b8;
+  border-radius: 16px;
+  transition: gap 0.25s, padding 0.25s;
+}
+
+.demo-fn .swatch {
+  flex: 1 1 60px;
+  min-height: 120px;
+  border-radius: 12px;
+  /* --i is 0 to 4: each swatch is one more step lighter than the one before. */
+  background: --tint(var(--brand), calc(var(--i) * var(--amt) * 1%));
+  transition: background-color 0.25s;
+}
+
+/* No second argument: --amount falls back to its default, 25%. */
+.demo-fn .swatch.default {
+  display: grid;
+  place-items: center;
+  background: --tint(var(--brand));
+  color: #111;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-fn .stage, .demo-fn .swatch { transition: none; }
+}

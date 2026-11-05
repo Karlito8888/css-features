@@ -1,0 +1,55 @@
+<div class="demo-mix">
+  <p class="unsupported">Your browser does not support color-mix(), so the ramps below cannot be drawn.</p>
+  <div class="controls">
+    <label>Color A <input type="color" id="a" value="#0057ff"></label>
+    <label>Color B <input type="color" id="b" value="#ffd400"></label>
+  </div>
+
+  <p class="label">A to B, mixed in three color spaces</p>
+  <ul class="row" aria-label="sRGB mix">
+    <li style="--p: 100%">srgb</li>
+    <li style="--p: 87.5%"></li>
+    <li style="--p: 75%"></li>
+    <li style="--p: 62.5%"></li>
+    <li style="--p: 50%"></li>
+    <li style="--p: 37.5%"></li>
+    <li style="--p: 25%"></li>
+    <li style="--p: 12.5%"></li>
+    <li style="--p: 0%"></li>
+  </ul>
+  <ul class="row oklab" aria-label="Oklab mix">
+    <li style="--p: 100%">oklab</li>
+    <li style="--p: 87.5%"></li>
+    <li style="--p: 75%"></li>
+    <li style="--p: 62.5%"></li>
+    <li style="--p: 50%"></li>
+    <li style="--p: 37.5%"></li>
+    <li style="--p: 25%"></li>
+    <li style="--p: 12.5%"></li>
+    <li style="--p: 0%"></li>
+  </ul>
+  <ul class="row oklch" aria-label="OkLCh mix">
+    <li style="--p: 100%">oklch</li>
+    <li style="--p: 87.5%"></li>
+    <li style="--p: 75%"></li>
+    <li style="--p: 62.5%"></li>
+    <li style="--p: 50%"></li>
+    <li style="--p: 37.5%"></li>
+    <li style="--p: 25%"></li>
+    <li style="--p: 12.5%"></li>
+    <li style="--p: 0%"></li>
+  </ul>
+
+  <p class="label">Tints and shades of A: mix with white or black</p>
+  <ul class="row tints" aria-label="Tints and shades of A">
+    <li style="--w: 80%; --k: 0%"></li>
+    <li style="--w: 60%; --k: 0%"></li>
+    <li style="--w: 40%; --k: 0%"></li>
+    <li style="--w: 20%; --k: 0%"></li>
+    <li style="--w: 0%; --k: 0%">A</li>
+    <li style="--w: 0%; --k: 20%"></li>
+    <li style="--w: 0%; --k: 40%"></li>
+    <li style="--w: 0%; --k: 60%"></li>
+    <li style="--w: 0%; --k: 80%"></li>
+  </ul>
+</div>

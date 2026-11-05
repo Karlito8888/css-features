@@ -1,0 +1,98 @@
+.demo-nesting .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not selector(&) {
+  .demo-nesting .unsupported { display: block; }
+}
+
+/* One block, no repeated selectors: children, states, variants and media queries nest. */
+.demo-nesting {
+  max-width: 52rem;
+  margin: 0 auto;
+
+  h2 { margin: 0; font-size: 1.2rem; }
+  .hint { margin: 2px 0 14px; color: #5b5b66; }
+
+  .notes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @media (width < 640px) {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+
+  .note {
+    --tone: #2563eb;
+    display: grid;
+    align-content: start;
+    gap: 8px;
+    padding: 14px 16px;
+    border: 1px solid #e2e2ea;
+    border-top: 5px solid var(--tone);
+    border-radius: 12px;
+    background: #fff;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+
+    /* &.warn is the same element with a second class */
+    &.warn { --tone: #b45309; }
+    &.error { --tone: #b91c1c; }
+
+    &:hover, &:has(:focus-visible) {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px -12px var(--tone);
+    }
+
+    /* A parent reacting to a starred child, still nested */
+    &:has(.star input:checked) { background: color-mix(in srgb, var(--tone) 10%, #fff); border-color: var(--tone); }
+
+    h3 { margin: 0; font-size: 1rem; color: var(--tone); }
+    p { margin: 0; }
+
+    a {
+      color: var(--tone);
+      font-weight: 600;
+
+      &:hover { text-decoration-thickness: 3px; }
+      &:focus-visible { outline: 3px solid var(--tone); outline-offset: 2px; border-radius: 3px; }
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+
+      .btn {
+        padding: 6px 14px;
+        border: 2px solid var(--tone);
+        border-radius: 999px;
+        background: transparent;
+        color: var(--tone);
+        font: inherit;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover, &:focus-visible { background: var(--tone); color: #fff; outline-offset: 2px; }
+        &:active { transform: scale(0.95); }
+      }
+
+      .star {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+
+        input { accent-color: var(--tone); width: 1.1rem; height: 1.1rem; margin: 0; }
+        span { transition: transform 0.2s; }
+        input:checked + span { font-weight: 700; transform: scale(1.12); }
+        &:has(:focus-visible) { outline: 3px solid var(--tone); outline-offset: 2px; border-radius: 4px; }
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .note, .star span { transition: none; }
+    .note:hover { transform: none; }
+  }
+}

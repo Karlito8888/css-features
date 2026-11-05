@@ -1,0 +1,41 @@
+<div class="demo-boxes">
+  <p class="unsupported">The SVG geometry boxes (fill-box, stroke-box, view-box) are not supported in this browser. The shapes below show unclipped.</p>
+  <p class="hint">The same <code>ellipse(50% 50%)</code> on the same rectangle. Only the reference box changes.</p>
+  <div class="trio">
+    <figure>
+      <svg viewBox="0 0 200 120" role="img" aria-label="A rectangle with a thick stroke, clipped by an ellipse that fits the fill box">
+        <rect class="box" x="30" y="30" width="140" height="60"></rect>
+        <rect class="ghost" x="30" y="30" width="140" height="60"></rect>
+        <rect class="shape fb" x="30" y="30" width="140" height="60"></rect>
+      </svg>
+      <figcaption><code>fill-box</code> the shape only</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 200 120" role="img" aria-label="The same rectangle clipped by an ellipse that fits the stroke box">
+        <rect class="box" x="20" y="20" width="160" height="80"></rect>
+        <rect class="ghost" x="30" y="30" width="140" height="60"></rect>
+        <rect class="shape sb" x="30" y="30" width="140" height="60"></rect>
+      </svg>
+      <figcaption><code>stroke-box</code> the shape and its stroke</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 200 120" role="img" aria-label="The same rectangle clipped by an ellipse that fits the whole viewport">
+        <rect class="box" x="0.5" y="0.5" width="199" height="119"></rect>
+        <rect class="ghost" x="30" y="30" width="140" height="60"></rect>
+        <rect class="shape vb" x="30" y="30" width="140" height="60"></rect>
+      </svg>
+      <figcaption><code>view-box</code> the whole SVG viewport</figcaption>
+    </figure>
+  </div>
+
+  <fieldset class="pick">
+    <legend>Same idea on an HTML card</legend>
+    <label><input id="b-margin" type="radio" name="box" checked> margin-box</label>
+    <label><input id="b-border" type="radio" name="box"> border-box</label>
+    <label><input id="b-padding" type="radio" name="box"> padding-box</label>
+    <label><input id="b-content" type="radio" name="box"> content-box</label>
+  </fieldset>
+  <div class="stage">
+    <div class="card">Margin, border, padding and content are four different boxes.</div>
+  </div>
+</div>

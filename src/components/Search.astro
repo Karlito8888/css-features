@@ -1,0 +1,160 @@
+---
+import { featureCount } from "../data";
+
+interface Props {
+  large?: boolean;
+}
+const { large = false } = Astro.props;
+const id = large ? "hero-search" : "site-search";
+---
+
+<div class:list={["search", { large }]} data-search>
+  <label for={id} class="visually-hidden">Search CSS features</label>
+  <svg class="glass" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path>
+  </svg>
+  <input
+    id={id}
+    type="search"
+    role="combobox"
+    aria-autocomplete="list"
+    aria-expanded="false"
+    aria-controls={`${id}-results`}
+    placeholder={large ? `Search ${featureCount} features, e.g. grid, :has, @container, oklch` : `Search ${featureCount} features`}
+    autocomplete="off"
+    spellcheck="false"
+  />
+  <kbd aria-hidden="true">/</kbd>
+  <ul id={`${id}-results`} role="listbox" aria-label="Matching features" hidden></ul>
+</div>
+
+<script>
+  type Entry = { names: string[]; text: string; section: string; url: string };
+  let index: Promise<Entry[]> | null = null;
+  // Our own build output (src/pages/search.json.ts), so its shape is known.
+  const load = () => (index ??= fetch("/search.json").then((r) => r.json() as Promise<Entry[]>));
+
+  /** Exact name first, then name prefix, then name substring, then description. Names are compared without their :, @, <> and () decorations. */
+  const bare = (name: string) => name.toLowerCase().replace(/^::?|^@|^<|>$|\(\)$/g, "");
+  function rank(entry: Entry, term: string): number {
+    const names = entry.names.map(bare);
+    if (names.includes(term)) return 0;
+    if (names.some((n) => n.startsWith(term))) return 1;
+    if (names.some((n) => n.includes(term))) return 2;
+    return entry.text.toLowerCase().includes(term) ? 3 : -1;
+  }
+
+  for (const root of document.querySelectorAll<HTMLElement>("[data-search]")) {
+    const input = root.querySelector("input")!;
+    const list = root.querySelector("ul")!;
+    let results: Entry[] = [];
+    let active = -1;
+
+    const close = () => {
+      list.hidden = true;
+      input.setAttribute("aria-expanded", "false");
+      input.removeAttribute("aria-activedescendant");
+      active = -1;
+    };
+
+    const highlight = (i: number) => {
+      active = i;
+      for (const [n, li] of [...list.children].entries()) li.setAttribute("aria-selected", String(n === i));
+      if (i >= 0) {
+        input.setAttribute("aria-activedescendant", list.children[i].id);
+        list.children[i].scrollIntoView({ block: "nearest" });
+      }
+    };
+
+    async function update() {
+      const term = bare(input.value.trim());
+      if (!term) return close();
+      const entries = await load();
+      results = entries
+        .map((e) => [e, rank(e, term)] as const)
+        .filter(([, r]) => r >= 0)
+        .sort((a, b) => a[1] - b[1])
+        .slice(0, 8)
+        .map(([e]) => e);
+      list.replaceChildren(
+        ...(results.length
+          ? results.map((e, i) => {
+              const li = document.createElement("li");
+              li.id = `${input.id}-option-${i}`;
+              li.setAttribute("role", "option");
+              const a = document.createElement("a");
+              a.href = e.url;
+              a.tabIndex = -1;
+              const name = document.createElement("code");
+              name.textContent = e.names.join(" ");
+              const meta = document.createElement("span");
+              meta.textContent = `${e.text} · ${e.section}`;
+              a.append(name, meta);
+              li.append(a);
+              return li;
+            })
+          : [Object.assign(document.createElement("li"), { className: "empty", textContent: "No feature matches." })]),
+      );
+      list.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+      highlight(results.length ? 0 : -1);
+    }
+
+    input.addEventListener("focus", () => void load(), { once: true });
+    input.addEventListener("input", update);
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        if (results.length) highlight((active + (e.key === "ArrowDown" ? 1 : -1) + results.length) % results.length);
+      } else if (e.key === "Enter" && active >= 0) {
+        e.preventDefault();
+        location.href = results[active].url;
+        close();
+        input.blur();
+      } else if (e.key === "Escape") {
+        close();
+      }
+    });
+    root.addEventListener("focusout", (e) => {
+      if (!root.contains(e.relatedTarget as Node | null)) close();
+    });
+    list.addEventListener("click", () => close());
+  }
+
+  document.addEventListener("keydown", (e) => {
+    const target = e.target as HTMLElement;
+    if (e.key !== "/" || target.closest("input, textarea, select, [contenteditable], .cm-editor")) return;
+    e.preventDefault();
+    const inputs = [...document.querySelectorAll<HTMLInputElement>("[data-search] input")];
+    (inputs.find((i) => i.id === "hero-search") ?? inputs[0])?.focus();
+  });
+</script>
+
+<style>
+  .search { position: relative; flex: 1; max-width: 30rem; margin-inline: auto; }
+  .search input {
+    width: 100%; font: inherit; font-size: 0.9rem; color: var(--fg);
+    background: var(--bg-soft); border: 1px solid var(--border); border-radius: 999px;
+    padding: 0.5rem 2.5rem 0.5rem 2.4rem;
+  }
+  .search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
+  .glass { position: absolute; left: 0.9rem; top: 50%; translate: 0 -50%; color: var(--muted); pointer-events: none; }
+  kbd { position: absolute; right: 0.8rem; top: 50%; translate: 0 -50%; pointer-events: none; }
+  .large { max-width: 40rem; width: 100%; }
+  .large input { font-size: 1.1rem; padding: 0.95rem 3rem 0.95rem 3rem; background: var(--surface); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--fg) 25%, transparent); }
+  .large .glass { left: 1.2rem; width: 22px; height: 22px; }
+  ul {
+    position: absolute; z-index: 60; inset-inline: 0; top: calc(100% + 0.4rem); margin: 0; padding: 0.35rem;
+    list-style: none; max-height: min(26rem, 70vh); overflow: auto;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: 0 18px 40px -12px color-mix(in srgb, #000 35%, transparent);
+  }
+  li a { display: grid; gap: 0.1rem; padding: 0.5rem 0.7rem; border-radius: 8px; color: var(--fg); text-decoration: none; }
+  li[aria-selected="true"] a, li a:hover { background: var(--accent-soft); }
+  li code { font-weight: 600; color: var(--accent); }
+  li span { font-size: 0.8rem; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .empty { padding: 0.6rem 0.8rem; color: var(--muted); font-size: 0.9rem; }
+  @media (max-width: 40rem) {
+    kbd { display: none; }
+  }
+</style>

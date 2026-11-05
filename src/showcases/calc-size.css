@@ -1,0 +1,32 @@
+.demo-cs, .demo-cs * { box-sizing: border-box; }
+.demo-cs { --k: 1; max-width: 860px; margin: 0 auto; }
+.demo-cs .hint { margin: 0 0 12px; }
+.demo-cs .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (height: calc-size(auto, size)) {
+  .demo-cs .unsupported { display: block; }
+}
+
+.demo-cs .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-bottom: 14px; }
+.demo-cs .switch, .demo-cs .factor { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+.demo-cs input[type="checkbox"] { width: 20px; height: 20px; accent-color: #1d4ed8; }
+.demo-cs input[type="range"] { accent-color: #1d4ed8; }
+.demo-cs input:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+.demo-cs output { font-family: ui-monospace, monospace; font-size: 0.9rem; }
+
+.demo-cs .panel {
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #dbeafe;
+  box-shadow: inset 0 0 0 2px #1d4ed8;
+  transition: height 0.6s ease;
+}
+/* calc-size() does maths on the keyword auto: the content height times the factor. */
+.demo-cs:has(#open:checked) .panel { height: calc-size(auto, size * var(--k)); }
+.demo-cs .inner { padding: 4px 18px 8px; }
+.demo-cs .inner h3 { margin: 12px 0 0; }
+.demo-cs .inner p { margin: 10px 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-cs .panel { transition: none; }
+}

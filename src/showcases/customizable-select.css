@@ -1,0 +1,85 @@
+/* The frame height follows the page, so reserve room for the open picker. */
+.demo-select {
+  --indigo: #4f46e5; --rose: #be123c; --teal: #0f766e; --amber: #b45309; --slate: #475569;
+  --accent: var(--indigo);
+  min-height: 400px;
+}
+.demo-select .unsupported { display: none; padding: 10px 14px; border-radius: 8px; background: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; }
+@supports not (appearance: base-select) { .demo-select .unsupported { display: block; } }
+
+.demo-select .field { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 12px 0 8px; }
+.demo-select label { font-weight: 600; }
+
+/* Opt in on the select and on its picker. */
+.demo-select select,
+.demo-select select::picker(select) { appearance: base-select; }
+
+.demo-select select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-inline-size: 200px;
+  padding: 8px 12px;
+  font: inherit;
+  color: #1b1b1b;
+  background: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+.demo-select select:hover { box-shadow: 0 2px 10px rgb(0 0 0 / 0.15); }
+.demo-select select:focus-visible { outline: 3px solid #1b1b1b; outline-offset: 2px; }
+.demo-select select::picker-icon { margin-inline-start: auto; color: var(--accent); transition: rotate 0.2s; }
+.demo-select select:open::picker-icon { rotate: 180deg; }
+
+.demo-select select::picker(select) {
+  margin-block: 6px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgb(0 0 0 / 0.25);
+  opacity: 0;
+  translate: 0 -8px;
+  transition: opacity 0.2s, translate 0.2s, overlay 0.2s allow-discrete, display 0.2s allow-discrete;
+}
+.demo-select select::picker(select):popover-open { opacity: 1; translate: 0; }
+@starting-style { .demo-select select::picker(select):popover-open { opacity: 0; translate: 0 -8px; } }
+
+.demo-select option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.demo-select option:hover, .demo-select option:focus-visible { background: #eef2ff; }
+.demo-select option:checked { font-weight: 700; }
+.demo-select option::checkmark { order: 1; margin-inline-start: auto; color: var(--accent); }
+.demo-select selectedcontent { display: flex; align-items: center; gap: 10px; }
+
+/* The swatch is cloned into the button, so color it by class, not through the option. */
+.demo-select .swatch { display: inline-block; flex: none; inline-size: 1.1em; block-size: 1.1em; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.2); }
+.demo-select .indigo { background: var(--indigo); }
+.demo-select .rose { background: var(--rose); }
+.demo-select .teal { background: var(--teal); }
+.demo-select .amber { background: var(--amber); }
+.demo-select .slate { background: var(--slate); }
+
+/* The card reads the choice with :has(), no script. */
+.demo-select:has(option[value="rose"]:checked) { --accent: var(--rose); }
+.demo-select:has(option[value="teal"]:checked) { --accent: var(--teal); }
+.demo-select:has(option[value="amber"]:checked) { --accent: var(--amber); }
+.demo-select:has(option[value="slate"]:checked) { --accent: var(--slate); }
+
+.demo-select .hint { margin: 0 0 14px; color: #52525b; font-size: 0.9rem; }
+.demo-select .card { max-inline-size: 320px; padding: 14px 18px; border: 1px solid #d4d4d8; border-block-start: 8px solid var(--accent); border-radius: 12px; transition: border-color 0.3s; }
+.demo-select .card h2 { margin: 0 0 4px; font-size: 1.1rem; }
+.demo-select .card p { margin: 0 0 10px; }
+.demo-select .pill { display: inline-block; padding: 3px 12px; color: #fff; background: var(--accent); border-radius: 999px; font-size: 0.85rem; transition: background 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-select select, .demo-select select::picker-icon, .demo-select select::picker(select), .demo-select .card, .demo-select .pill { transition: none; }
+}

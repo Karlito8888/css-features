@@ -1,0 +1,16 @@
+<div class="demo-start">
+  <p class="unsupported">This browser does not support @starting-style. Cards and the dialog appear without a transition.</p>
+  <div class="bar">
+    <button type="button" id="add-card">Add a card</button>
+    <button type="button" id="clear-cards" class="ghost">Clear</button>
+    <button type="button" id="open-dialog" class="ghost">Open the dialog</button>
+  </div>
+  <ul class="cards" id="cards"></ul>
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <h2 id="dialog-title">Starting from nothing</h2>
+    <p>This dialog was hidden a moment ago. It grows from its starting style.</p>
+    <form method="dialog">
+      <button type="submit" id="close-dialog">Close</button>
+    </form>
+  </dialog>
+</div>

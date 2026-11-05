@@ -1,0 +1,36 @@
+.demo-wrap { --accent: #4f46e5; max-width: 46rem; margin-inline: auto; }
+.demo-wrap .hint { margin: 0 0 10px; color: #555; font-size: 0.9rem; }
+
+/* The box is resizable: the three headings re-wrap as it changes width. */
+.demo-wrap .stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  box-sizing: border-box;
+  width: 21rem;
+  min-width: 11rem;
+  max-width: 100%;
+  padding: 14px;
+  overflow: hidden;
+  resize: horizontal;
+  border: 2px dashed #9ca3af;
+  border-radius: 14px;
+  background: #f8f8fc;
+}
+.demo-wrap .sample { padding: 10px 12px; background: #fff; border-radius: 10px; border-left: 5px solid var(--accent); }
+.demo-wrap .sample h2 { margin: 0 0 4px; color: var(--accent); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; }
+.demo-wrap .title { margin: 0; font-size: 1.55rem; font-weight: 700; line-height: 1.2; }
+
+.demo-wrap .title-wrap { text-wrap: wrap; }
+.demo-wrap .title-balance { text-wrap: balance; }
+/* text-wrap is a shorthand: this sets only the mode half. */
+.demo-wrap .title-nowrap {
+  text-wrap-mode: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.demo-wrap .unsupported { display: none; margin: 0 0 10px; padding: 8px 12px; border-radius: 8px; background: #fef3c7; color: #78350f; }
+@supports not (text-wrap: balance) {
+  .demo-wrap .unsupported { display: block; }
+}

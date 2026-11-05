@@ -1,0 +1,38 @@
+<div class="demo-scope">
+  <p class="unsupported" role="status">This browser does not support @scope, so the styles below are not applied.</p>
+  <div class="tiles">
+    <section class="tile" aria-labelledby="t1">
+      <h2 id="t1">Closest scope wins</h2>
+      <div class="light box">
+        <p>Light, level 1</p>
+        <div class="dark box">
+          <p>Dark, level 2</p>
+          <div class="light box">
+            <p>Light, level 3</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tile" aria-labelledby="t2">
+      <h2 id="t2">Same card, two scopes, one lower limit</h2>
+      <label class="toggle"><input type="checkbox" id="limit"> Show the lower limit</label>
+      <div class="pair">
+        <article class="ocean card">
+          <h3>Ocean</h3>
+          <p>Styled by its scope. <a href="#a">A scoped link</a></p>
+          <div class="slot">
+            <p>Slot content. <a href="#b">An untouched link</a></p>
+          </div>
+        </article>
+        <article class="sunset card">
+          <h3>Sunset</h3>
+          <p>Same rules, other colors. <a href="#c">A scoped link</a></p>
+          <div class="slot">
+            <p>Slot content. <a href="#d">An untouched link</a></p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>

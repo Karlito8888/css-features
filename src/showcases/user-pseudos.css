@@ -1,0 +1,48 @@
+.demo-user { max-width: 46rem; margin: 0 auto; }
+.demo-user .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not selector(:user-invalid) {
+  .demo-user .unsupported { display: block; }
+}
+
+.demo-user .form { padding: 18px; border: 1px solid #d4d4dc; border-radius: 16px; background: #fafafc; }
+.demo-user .hint { margin: 0 0 14px; color: #5b5b66; }
+.demo-user .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 16px; margin-bottom: 14px; }
+.demo-user .field { display: grid; gap: 4px; align-content: start; }
+.demo-user label { font-weight: 600; }
+.demo-user code { padding: 1px 5px; border-radius: 5px; background: #ececf2; font-weight: 400; }
+
+.demo-user input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  border: 2px solid #b8b8c4;
+  border-radius: 10px;
+  background: #fff;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.demo-user input:focus-visible { outline: 3px solid #4338ca; outline-offset: 2px; }
+
+.demo-user .msg { display: none; margin: 0; font-size: 0.875rem; }
+.demo-user .bad { color: #b91c1c; }
+.demo-user .good { color: #15803d; }
+
+/* Old way: :invalid matches an empty required field the moment the page loads. */
+.demo-user .old input:invalid { border-color: #dc2626; background: #fef2f2; }
+.demo-user .old input:invalid ~ .msg { display: block; color: #b91c1c; }
+
+/* New way: these wait until the user has interacted with the field. */
+.demo-user input:user-invalid { border-color: #dc2626; background: #fef2f2; }
+.demo-user input:user-invalid ~ .bad { display: block; }
+.demo-user input:user-valid { border-color: #16a34a; background: #f0fdf4; }
+.demo-user input:user-valid ~ .good { display: block; }
+
+.demo-user .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.demo-user button { padding: 9px 20px; border: 2px solid #4338ca; border-radius: 999px; background: #4338ca; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.demo-user button[type="reset"] { background: transparent; color: #4338ca; }
+.demo-user button:focus-visible { outline: 3px solid #4338ca; outline-offset: 2px; }
+.demo-user .status { margin: 0; color: #15803d; font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-user input { transition: none; }
+}

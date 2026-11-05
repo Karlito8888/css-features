@@ -1,0 +1,25 @@
+<div class="demo-rmr">
+  <p class="unsupported">This browser does not support round(), mod() and rem(), so only the raw value moves.</p>
+  <p class="hint">Drag the value, also into the negatives. Ticks are 50px apart.</p>
+  <div class="controls">
+    <label for="x">Value</label>
+    <input type="range" id="x" min="-150" max="150" value="60">
+    <output id="out" for="x">60px</output>
+  </div>
+  <div class="rulers">
+    <p class="name">The raw value</p>
+    <div class="ruler"><span class="dot raw"></span></div>
+    <p class="name"><code>round(nearest, x, 50px)</code></p>
+    <div class="ruler"><span class="dot nearest"></span></div>
+    <p class="name"><code>round(up, x, 50px)</code></p>
+    <div class="ruler"><span class="dot up"></span></div>
+    <p class="name"><code>round(down, x, 50px)</code></p>
+    <div class="ruler"><span class="dot down"></span></div>
+    <p class="name"><code>round(to-zero, x, 50px)</code></p>
+    <div class="ruler"><span class="dot zero"></span></div>
+    <p class="name"><code>mod(x, 50px)</code>: the distance above the tick below</p>
+    <div class="ruler"><span class="span mod"></span></div>
+    <p class="name"><code>rem(x, 50px)</code>: the distance from the tick nearer zero</p>
+    <div class="ruler"><span class="span rem"></span></div>
+  </div>
+</div>

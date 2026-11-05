@@ -1,0 +1,39 @@
+.demo-bf { --blur: 14px; --sat: 160%; max-width: 860px; margin: 0 auto; }
+.demo-bf .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (backdrop-filter: blur(1px)) {
+  .demo-bf .unsupported { display: block; }
+}
+.demo-bf :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-bf .scene {
+  position: relative; display: grid; place-items: center; height: 320px; overflow: hidden; border-radius: 16px;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371 40%, #3ad8c6 70%, #5b5bff);
+}
+.demo-bf .blob { position: absolute; border-radius: 50%; animation: bf-drift 9s ease-in-out infinite alternate; }
+.demo-bf .b1 { width: 170px; height: 170px; left: 8%;  top: 8%;    background: #7c3aed; }
+.demo-bf .b2 { width: 130px; height: 130px; right: 10%; bottom: 8%; background: #ffe600; animation-delay: -3s; }
+.demo-bf .b3 { width: 90px;  height: 90px;  right: 28%; top: 6%;    background: #ff2d95; animation-delay: -6s; }
+@keyframes bf-drift { to { transform: translate(60px, 40px) scale(1.15); } }
+
+.demo-bf .word {
+  position: absolute; inset: 0; display: grid; place-items: center; margin: 0; padding: 0 12px;
+  font: 900 clamp(2rem, 9vw, 5rem) / 1 system-ui, sans-serif; text-align: center; color: #1b1b3a; opacity: 0.85;
+}
+
+/* The glass: a translucent fill plus a filter on whatever is painted behind it. */
+.demo-bf .glass {
+  position: relative; box-sizing: border-box; width: min(360px, calc(100% - 32px)); padding: 18px 20px; border-radius: 20px;
+  border: 1px solid rgb(255 255 255 / 0.6); background: rgb(255 255 255 / 0.28);
+  backdrop-filter: blur(var(--blur)) saturate(var(--sat));
+  box-shadow: 0 10px 30px rgb(0 0 40 / 0.25); color: #0b0b2a;
+}
+.demo-bf .glass h2 { margin: 0 0 6px; font-size: 1.25rem; }
+.demo-bf .glass p { margin: 0; font-size: 14px; line-height: 1.45; }
+
+.demo-bf .controls { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 12px; }
+.demo-bf .ctl { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.demo-bf output { min-width: 4ch; font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-bf .blob { animation: none; }
+}

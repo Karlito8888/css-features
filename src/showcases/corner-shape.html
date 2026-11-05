@@ -1,0 +1,22 @@
+<div class="demo-corner">
+  <p class="unsupported">corner-shape is not supported in this browser. The shapes below fall back to plain round corners.</p>
+  <p class="hint">Same border-radius on every card. Hover a card to grow its radius.</p>
+  <ul class="cards">
+    <li class="card c-round">round</li>
+    <li class="card c-squircle">squircle</li>
+    <li class="card c-bevel">bevel</li>
+    <li class="card c-scoop">scoop</li>
+    <li class="card c-notch">notch</li>
+    <li class="card c-mixed">four longhands</li>
+  </ul>
+  <div class="lab">
+    <div class="controls">
+      <p class="read"><label for="k">superellipse</label>(<output id="kv" for="k">1.5</output>)</p>
+      <input id="k" type="range" min="-3" max="3" step="0.1" value="1.5">
+      <p class="read"><label for="r">border-radius</label>: <output id="rv" for="r">48</output>px</p>
+      <input id="r" type="range" min="0" max="90" step="1" value="48">
+      <p class="scale">-1 scoop, 0 bevel, 1 round, 2 squircle</p>
+    </div>
+    <div class="swatch">Drag the sliders</div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="demo-pop">
+  <p class="unsupported" role="note">The popover attribute is not supported in this browser, so these buttons will do nothing.</p>
+  <p class="hint">Press a button. Click outside or press Escape to close a popover.</p>
+  <div class="row">
+    <button type="button" class="btn" id="menu-btn" popovertarget="menu">Menu</button>
+    <button type="button" class="btn" popovertarget="sheet">Open sheet</button>
+    <button type="button" class="btn alt" popovertarget="note">Pin a note</button>
+  </div>
+
+  <div id="menu" popover>
+    <button type="button" class="item">Rename</button>
+    <button type="button" class="item">Duplicate</button>
+    <button type="button" class="item">Share</button>
+  </div>
+
+  <div id="sheet" popover role="dialog" aria-labelledby="sheet-title">
+    <h2 id="sheet-title">Sheet</h2>
+    <p>The page behind is dimmed and blurred by the backdrop.</p>
+    <button type="button" class="btn" popovertarget="sheet" popovertargetaction="hide">Close</button>
+  </div>
+
+  <div id="note" popover="manual" role="note" aria-label="Pinned note">
+    <p>Pinned. It ignores outside clicks and Escape.</p>
+    <button type="button" class="btn alt" popovertarget="note" popovertargetaction="hide">Unpin</button>
+  </div>
+</div>

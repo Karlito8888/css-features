@@ -1,0 +1,64 @@
+.demo-boxes { max-width: 860px; margin-inline: auto; color: #1b1b1b; }
+.demo-boxes .hint { margin: 0 0 12px; color: #4b5563; }
+.demo-boxes code { font-weight: 700; color: #4338ca; }
+
+.demo-boxes .unsupported {
+  display: none;
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  background: #fef3c7;
+  color: #78350f;
+}
+@supports not (clip-path: ellipse(50% 50%) fill-box) {
+  .demo-boxes .unsupported { display: block; }
+}
+
+.demo-boxes .trio { display: flex; flex-wrap: wrap; gap: 16px; }
+.demo-boxes figure { margin: 0; width: 250px; max-width: 100%; }
+.demo-boxes svg { display: block; width: 100%; background: #f3f4f6; border-radius: 8px; }
+.demo-boxes figcaption { margin-top: 4px; font-size: 0.85rem; }
+
+.demo-boxes rect { stroke-width: 20; }
+.demo-boxes .box { fill: none; stroke: #6b7280; stroke-width: 1; stroke-dasharray: 5 3; }
+.demo-boxes .ghost { fill: #818cf8; stroke: #db2777; opacity: 0.2; }
+.demo-boxes .shape { fill: #4f46e5; stroke: #db2777; }
+
+/* One shape, three reference boxes. The dashed outline is the box used. */
+.demo-boxes .fb { clip-path: ellipse(50% 50%) fill-box; }
+.demo-boxes .sb { clip-path: ellipse(50% 50%) stroke-box; }
+.demo-boxes .vb { clip-path: ellipse(50% 50%) view-box; }
+
+.demo-boxes .pick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: center;
+  margin: 18px 0 0;
+  padding: 6px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+.demo-boxes .pick legend { padding: 0 6px; font-size: 0.85rem; color: #4b5563; }
+.demo-boxes .pick input { accent-color: #4f46e5; margin: 0; }
+.demo-boxes .pick label { display: inline-flex; align-items: center; gap: 4px; margin-right: 6px; font-family: ui-monospace, monospace; font-size: 0.9rem; }
+
+.demo-boxes .stage { padding: 6px 0 0; }
+.demo-boxes .card {
+  max-width: 320px;
+  margin: 18px;
+  padding: 14px;
+  border: 12px dashed #db2777;
+  border-radius: 28px;
+  background: #e0e7ff;
+  box-shadow: 0 0 0 10px #a5b4fc;
+  outline: 4px solid #f59e0b;
+  outline-offset: 8px;
+}
+
+/* A geometry box alone is the clip, rounded corners included. */
+.demo-boxes:has(#b-margin:checked) .card { clip-path: margin-box; }
+.demo-boxes:has(#b-border:checked) .card { clip-path: border-box; }
+.demo-boxes:has(#b-padding:checked) .card { clip-path: padding-box; }
+.demo-boxes:has(#b-content:checked) .card { clip-path: content-box; }

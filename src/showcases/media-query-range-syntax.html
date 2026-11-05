@@ -1,0 +1,14 @@
+<div class="demo-mq">
+  <p class="unsupported">Range syntax in media queries is not supported in this browser, so no row below lights up.</p>
+  <div class="panel">
+    <p class="now">Window width: <output id="w">0px</output></p>
+    <p class="band"></p>
+  </div>
+  <p class="hint">Resize the browser window. Each row shows the new range syntax and the old way to write the same test.</p>
+  <ul class="rows">
+    <li class="r1"><span class="lamp"></span><code class="new">(width &lt; 480px)</code><code class="old">(max-width: 479.98px)</code></li>
+    <li class="r2"><span class="lamp"></span><code class="new">(480px &lt;= width &lt; 720px)</code><code class="old">(min-width: 480px) and (max-width: 719.98px)</code></li>
+    <li class="r3"><span class="lamp"></span><code class="new">(720px &lt;= width &lt; 960px)</code><code class="old">(min-width: 720px) and (max-width: 959.98px)</code></li>
+    <li class="r4"><span class="lamp"></span><code class="new">(width &gt;= 960px)</code><code class="old">(min-width: 960px)</code></li>
+  </ul>
+</div>

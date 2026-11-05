@@ -1,0 +1,31 @@
+.demo-is, .demo-is * { box-sizing: border-box; }
+.demo-is { max-width: 860px; margin: 0 auto; }
+.demo-is .hint { margin: 0 0 12px; }
+.demo-is .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (interpolate-size: allow-keywords) {
+  .demo-is .unsupported { display: block; }
+}
+
+.demo-is .switch { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 14px; font-weight: 600; cursor: pointer; }
+.demo-is .switch input { width: 20px; height: 20px; accent-color: #1d4ed8; }
+.demo-is .switch:has(input:focus-visible) { outline: 3px solid #1d4ed8; outline-offset: 4px; border-radius: 4px; }
+
+.demo-is .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; align-items: start; }
+.demo-is .box { border: 2px solid #1b1b1b; border-radius: 12px; overflow: hidden; }
+.demo-is .box h3 { margin: 0; padding: 12px 14px; font-size: 1rem; background: #e5e7eb; }
+.demo-is .smooth h3 { background: #dbeafe; }
+
+/* Opt in for this subtree: height may now animate between a length and a keyword such as auto. */
+.demo-is .smooth { interpolate-size: allow-keywords; }
+.demo-is .numeric { interpolate-size: numeric-only; }
+
+.demo-is .panel { height: 0; overflow: hidden; transition: height 0.6s ease; }
+.demo-is .inner { padding: 4px 14px 2px; }
+.demo-is .inner p { margin: 10px 0; }
+
+/* The same rule opens both panels. */
+.demo-is:has(#open:checked) .panel { height: auto; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-is .panel { transition: none; }
+}

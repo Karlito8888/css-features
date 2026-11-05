@@ -1,0 +1,22 @@
+<div class="demo-rect">
+  <p class="unsupported">rect() and xywh() are not supported in this browser. The three scenes show whole, unclipped.</p>
+  <p class="hint">Three syntaxes, one rectangle. The checkered area is the box that is clipped away.</p>
+  <div class="trio">
+    <figure>
+      <div class="frame"><div class="scene s-inset"></div></div>
+      <figcaption><code>inset(20px 40px 30px 20px)</code> offsets from each edge</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><div class="scene s-rect"></div></div>
+      <figcaption><code>rect(20px 180px 120px 20px)</code> top, right, bottom, left, all from the top left</figcaption>
+    </figure>
+    <figure>
+      <div class="frame"><div class="scene s-xywh"></div></div>
+      <figcaption><code>xywh(20px 20px 160px 100px)</code> x, y, width, height</figcaption>
+    </figure>
+  </div>
+  <p class="reveal">
+    <input id="full" type="checkbox">
+    <label for="full">Reveal the whole scene (or hover a scene)</label>
+  </p>
+</div>

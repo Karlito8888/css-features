@@ -1,0 +1,30 @@
+<div class="demo-exp">
+  <p class="unsupported">This browser does not support pow(), sqrt(), log() and exp(), so the sizes and bars stay flat.</p>
+  <p class="hint">Change the ratio: every size is the base times a power of it. Pick a function: the bars are redrawn by it.</p>
+
+  <div class="controls">
+    <label for="ratio">Ratio</label>
+    <input type="range" id="ratio" min="1.1" max="1.6" step="0.05" value="1.25">
+    <output id="out" for="ratio">1.25</output>
+  </div>
+  <div class="scale">
+    <p style="--n: 4">Step 4</p>
+    <p style="--n: 3">Step 3</p>
+    <p style="--n: 2">Step 2</p>
+    <p style="--n: 1">Step 1</p>
+    <p style="--n: 0">Step 0</p>
+  </div>
+
+  <fieldset class="picker">
+    <legend>Bar height for step 1 to 10</legend>
+    <label><input type="radio" name="fn" value="pow" checked> pow</label>
+    <label><input type="radio" name="fn" value="sqrt"> sqrt</label>
+    <label><input type="radio" name="fn" value="log"> log</label>
+    <label><input type="radio" name="fn" value="exp"> exp</label>
+    <label><input type="radio" name="fn" value="hypot"> hypot</label>
+  </fieldset>
+  <div class="chart" aria-hidden="true">
+    <span style="--i: 1"></span><span style="--i: 2"></span><span style="--i: 3"></span><span style="--i: 4"></span><span style="--i: 5"></span><span style="--i: 6"></span><span style="--i: 7"></span><span style="--i: 8"></span><span style="--i: 9"></span><span style="--i: 10"></span>
+  </div>
+  <p class="formula"></p>
+</div>

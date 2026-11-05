@@ -1,0 +1,25 @@
+.demo-cc { max-width: 860px; margin: 0 auto; }
+.demo-cc .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not (color: contrast-color(red)) {
+  .demo-cc .unsupported { display: block; }
+}
+.demo-cc :focus-visible { outline: 3px solid #1d4ed8; outline-offset: 2px; }
+
+.demo-cc .picker { --bg: #2a9d8f; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.demo-cc .picker label { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+.demo-cc input[type="color"] { width: 48px; height: 32px; padding: 0; border: 1px solid #888; border-radius: 6px; }
+.demo-cc .live {
+  flex: 1; min-width: 200px; margin: 0; padding: 14px 16px; border-radius: 10px; font-size: 1.1rem; font-weight: 700;
+  background: var(--bg);
+  /* One declaration: the browser picks white or black for the best contrast. */
+  color: contrast-color(var(--bg));
+}
+
+.demo-cc .label { margin: 16px 0 6px; font-size: 13px; font-weight: 600; }
+.demo-cc .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.demo-cc .grid li {
+  display: flex; justify-content: space-between; gap: 8px; padding: 14px 12px; border: 1px solid #0003; border-radius: 10px;
+  font-size: 14px; font-weight: 600; background: var(--bg);
+}
+.demo-cc .fixed { color: white; }
+.demo-cc .auto { color: contrast-color(var(--bg)); }

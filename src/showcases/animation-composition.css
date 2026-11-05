@@ -1,0 +1,40 @@
+.demo-ac, .demo-ac * { box-sizing: border-box; }
+.demo-ac { max-width: 860px; margin: 0 auto; }
+.demo-ac .hint { margin: 0 0 12px; }
+.demo-ac .unsupported { display: none; margin: 0 0 12px; padding: 10px 12px; border: 2px dashed #b45309; border-radius: 8px; background: #fffbeb; }
+@supports not (animation-composition: add) {
+  .demo-ac .unsupported { display: block; }
+}
+
+.demo-ac .lanes { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.demo-ac .lane { margin: 0; }
+.demo-ac .track { position: relative; height: 150px; border-radius: 12px; background: #f1f5f9; overflow: hidden; }
+.demo-ac figcaption { margin-top: 8px; font-size: 0.9rem; }
+
+.demo-ac .bar, .demo-ac .ghost {
+  position: absolute;
+  left: 16px;
+  top: 20px;
+  width: 64px;
+  height: 20px;
+  border-radius: 10px;
+  /* The underlying value: shared by the three bars. */
+  transform: translateX(20px) rotate(45deg);
+}
+.demo-ac .ghost { border: 2px dashed #64748b; }
+.demo-ac .bar { background: #1d4ed8; animation: slide 2.4s ease-in-out infinite alternate; }
+.demo-ac .bar::after { content: ""; position: absolute; right: 5px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: #fff; }
+
+/* The keyframe only moves the bar along x. How it meets the underlying transform is up to animation-composition. */
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(110px); }
+}
+
+.demo-ac .replace .bar { animation-composition: replace; }
+.demo-ac .add .bar { animation-composition: add; }
+.demo-ac .accumulate .bar { animation-composition: accumulate; }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-ac .bar { animation-play-state: paused; }
+}

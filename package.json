@@ -1,0 +1,28 @@
+{
+  "name": "css-features",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "bun scripts/sync.ts",
+    "validate": "bun scripts/validate-showcases.ts",
+    "dev": "astro dev --port 4341",
+    "build": "astro build",
+    "preview": "astro preview --port 4341",
+    "check": "astro check && astro build"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.12",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/theme-one-dark": "^6.1.3",
+    "astro": "^7.4.5",
+    "codemirror": "^6.0.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@types/bun": "^1.4.4",
+    "typescript": "6"
+  }
+}

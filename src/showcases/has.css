@@ -1,0 +1,104 @@
+.demo-has {
+  --ink: #1b1b1b;
+  --muted: #5b5b66;
+  --paper: #ffffff;
+  --line: #d4d4dc;
+  --accent: #6d28d9;
+  --tint: #f3edff;
+}
+
+.demo-has .unsupported { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 8px; background: #fff3cd; color: #5c4400; }
+@supports not selector(:has(a)) {
+  .demo-has .unsupported { display: block; }
+}
+
+.demo-has .panel {
+  counter-reset: picked; /* every ticked card adds 1, see .summary */
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+  color: var(--ink);
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* The parent reacts to a child it contains: a switch deep inside re-themes the whole panel. */
+.demo-has .panel:has(#dark:checked) {
+  --ink: #f1eefc;
+  --muted: #b9b4d4;
+  --paper: #17132e;
+  --line: #3d3669;
+  --accent: #b69cff;
+  --tint: #2a2255;
+}
+
+.demo-has header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; }
+.demo-has h2 { margin: 0; font-size: 1.15rem; }
+.demo-has .switch { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); cursor: pointer; }
+.demo-has input { accent-color: var(--accent); width: 1.1rem; height: 1.1rem; margin: 0; }
+
+.demo-has .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+  padding: 12px;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  transition: border-color 0.2s, background 0.2s;
+}
+/* The fieldset itself changes as soon as ANY card inside it is ticked. */
+.demo-has .grid:has(:checked) { border-style: solid; border-color: var(--accent); }
+
+.demo-has .card {
+  position: relative;
+  display: grid;
+  gap: 2px;
+  padding: 12px 40px 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper);
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.demo-has .card input { position: absolute; top: 12px; right: 12px; }
+.demo-has .title { font-weight: 700; }
+.demo-has .sub { color: var(--muted); font-size: 0.875rem; }
+.demo-has .card:hover { transform: translateY(-2px); }
+
+.demo-has .card:has(:checked) {
+  border-color: var(--accent);
+  background: var(--tint);
+  box-shadow: 0 6px 18px -8px var(--accent);
+  counter-increment: picked;
+}
+.demo-has .card:has(:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.demo-has .summary { margin: 0 0 14px; color: var(--muted); }
+.demo-has .some { display: none; color: var(--ink); font-weight: 600; }
+.demo-has .some::before { content: counter(picked) " of 4 selected"; }
+.demo-has .panel:has(.card :checked) .none { display: none; }
+.demo-has .panel:has(.card :checked) .some { display: inline; }
+
+.demo-has button {
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--paper);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.demo-has button:focus-visible, .demo-has .switch:has(:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+/* Nothing ticked: the button has nothing to clear. */
+.demo-has .panel:not(:has(.card :checked)) button { opacity: 0.45; }
+
+.demo-has .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-has .panel, .demo-has .grid, .demo-has .card { transition: none; }
+  .demo-has .card:hover { transform: none; }
+}

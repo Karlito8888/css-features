@@ -1,0 +1,4 @@
+#example-element {
+  width: min(100%, 240px);
+  height: 150px;
+}

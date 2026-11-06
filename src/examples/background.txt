@@ -1,0 +1,11 @@
+background: linear-gradient(135deg, var(--a1), var(--a2));
+
+background: radial-gradient(circle at 25% 20%, var(--a4), transparent 55%), radial-gradient(circle at 80% 85%, var(--a3), transparent 50%), var(--a1);
+
+background: conic-gradient(from 180deg at 50% 100%, var(--a1), var(--a3), var(--a5), var(--a4), var(--a2), var(--a1));
+
+background: radial-gradient(circle, var(--a2) 0 3px, transparent 4px) 0 0 / 24px 24px, var(--card);
+
+background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--a1) 25%, transparent) 0 10px, transparent 10px 20px), var(--card);
+
+background: linear-gradient(var(--a3), var(--a3)) left / 10px 100% no-repeat, var(--card);

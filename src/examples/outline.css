@@ -1,0 +1,25 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  width: min(100%, 420px);
+}
+.n {
+  display: grid;
+  place-items: center;
+  min-height: 88px;
+  border: 1.5px dashed var(--muted);
+  border-radius: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+#example-element {
+  min-height: 88px;
+}
+.legend {
+  margin: 20px 0 0;
+  max-width: 280px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}

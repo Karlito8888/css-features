@@ -1,0 +1,9 @@
+background-color: var(--a3);
+
+background-color: oklch(70% 0.19 150);
+
+background-color: rgb(236 72 153 / 0.4);
+
+background-color: color-mix(in oklch, var(--a1), var(--a4) 50%);
+
+background-color: light-dark(#fde68a, #78350f);

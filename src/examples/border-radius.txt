@@ -1,0 +1,11 @@
+border-radius: 0;
+
+border-radius: 16px;
+
+border-radius: 999px;
+
+border-radius: 50%;
+
+border-radius: 48px 8px;
+
+border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;

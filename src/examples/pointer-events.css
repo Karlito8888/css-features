@@ -1,0 +1,71 @@
+.stack {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--card);
+}
+
+button {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.under {
+  padding: 12px 26px;
+  border: 0;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--grad);
+}
+
+.under:hover {
+  transform: scale(1.12);
+  box-shadow: 0 10px 24px -8px var(--a2);
+}
+
+#example-element {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+  border: 2px dashed var(--a2);
+  border-radius: 22px;
+  background: color-mix(in oklab, var(--a2) 14%, transparent);
+}
+
+#example-element:hover {
+  border-style: solid;
+  background: color-mix(in oklab, var(--a2) 30%, transparent);
+}
+
+#example-element::before {
+  content: var(--note, "");
+  position: absolute;
+  inset: 10px 14px auto;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.chip {
+  padding: 4px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 12px;
+  background: var(--card);
+  pointer-events: var(--chip, inherit);
+}
+
+.chip:hover {
+  border-color: var(--a2);
+}

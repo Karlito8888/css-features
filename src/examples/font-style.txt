@@ -1,0 +1,7 @@
+font-style: italic;
+
+font-style: oblique;
+
+font-style: oblique 25deg;
+
+font-style: normal;

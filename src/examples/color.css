@@ -1,0 +1,33 @@
+#example-element {
+  width: min(100%, 520px);
+  border-inline-start: 8px solid currentColor;
+}
+
+#example-element h2 {
+  margin: 12px 0 8px;
+  font-size: 26px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+#example-element p {
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.pill {
+  display: inline-block;
+  padding: 2px 12px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  background: color-mix(in oklab, currentColor 14%, transparent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 999px;
+  background: currentColor;
+}

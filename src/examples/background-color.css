@@ -1,0 +1,23 @@
+/* A checkerboard behind the box makes transparency visible. */
+.stage {
+  width: min(100%, 520px);
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: conic-gradient(var(--line) 25%, transparent 0 50%, var(--line) 0 75%, transparent 0) 0 0 / 20px 20px, var(--card);
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+  border-radius: 14px;
+}
+
+.label {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--card);
+  font-size: 14px;
+  font-weight: 700;
+}

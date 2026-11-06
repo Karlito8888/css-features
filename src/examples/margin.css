@@ -1,0 +1,33 @@
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: min(100%, 420px);
+  background: repeating-linear-gradient(135deg, color-mix(in oklab, var(--a4) 50%, transparent) 0 5px, transparent 5px 10px);
+  outline: 1.5px dashed var(--a4);
+}
+.n {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  background: var(--card);
+  border: 1.5px dashed var(--muted);
+  color: var(--muted);
+  font-size: 12px;
+}
+#example-element {
+  min-height: 64px;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.legend span {
+  width: 22px;
+  height: 14px;
+  background: repeating-linear-gradient(135deg, color-mix(in oklab, var(--a4) 50%, transparent) 0 5px, transparent 5px 10px);
+  outline: 1.5px dashed var(--a4);
+}

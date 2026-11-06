@@ -1,0 +1,27 @@
+#example-element {
+  width: min(100%, 520px);
+}
+
+/* dashed edges show the block the text is aligned in */
+#example-element h2,
+#example-element p {
+  margin: 0 0 8px;
+  padding: 4px 10px;
+  border-inline: 1.5px dashed color-mix(in oklab, var(--a1) 55%, transparent);
+}
+
+#example-element h2 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+#example-element p {
+  font-weight: 400;
+}
+
+#example-element .meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}

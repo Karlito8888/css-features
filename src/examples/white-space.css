@@ -1,0 +1,6 @@
+#example-element {
+  width: min(100%, 520px);
+  overflow-x: auto;
+  font: 500 13px/1.6 ui-monospace, Menlo, Consolas, monospace;
+  padding: 18px 20px;
+}

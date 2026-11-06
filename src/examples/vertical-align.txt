@@ -1,0 +1,11 @@
+vertical-align: baseline;
+
+vertical-align: middle;
+
+vertical-align: top;
+
+vertical-align: bottom;
+
+vertical-align: super;
+
+vertical-align: -0.4em;

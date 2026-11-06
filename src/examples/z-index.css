@@ -1,0 +1,45 @@
+.stage {
+  position: relative;
+  isolation: isolate;
+  width: min(100%, 300px);
+  height: 210px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--card);
+}
+
+h2 {
+  margin: 0;
+  padding: 14px 16px;
+  color: var(--ink);
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.tile {
+  position: absolute;
+  place-items: start;
+  width: 130px;
+  height: 90px;
+  min-height: 0;
+  padding: 8px 10px;
+}
+
+.a {
+  top: 72px;
+  left: 14px;
+  z-index: 2;
+}
+
+#example-element {
+  top: 44px;
+  left: 66px;
+}
+
+.c {
+  top: 108px;
+  left: 124px;
+  z-index: 4;
+}

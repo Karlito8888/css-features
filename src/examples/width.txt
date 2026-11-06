@@ -1,0 +1,11 @@
+width: auto;
+
+width: 50%;
+
+width: 12rem;
+
+width: fit-content;
+
+width: min-content;
+
+width: clamp(10rem, 40%, 20rem);

@@ -1,0 +1,11 @@
+transform: rotate(15deg);
+
+transform: scale(1.5);
+
+transform: translate(60px, -40px);
+
+transform: skew(-15deg, 5deg);
+
+transform: translate(40px, 30px) rotate(20deg) scale(1.2);
+
+transform: perspective(400px) rotateY(50deg);

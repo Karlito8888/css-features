@@ -1,0 +1,15 @@
+.card {
+  display: flow-root;
+  width: min(100%, 420px);
+  font-size: 15px;
+}
+
+p {
+  margin: 0;
+}
+
+#example-element {
+  width: 84px;
+  height: 84px;
+  min-height: 0;
+}

@@ -1,0 +1,9 @@
+border-top: 4px solid var(--a1);
+
+border-top: 2px solid var(--a2);
+
+border-top: 3px dashed var(--a2);
+
+border-top: 8px double var(--a3);
+
+border-top: 0;

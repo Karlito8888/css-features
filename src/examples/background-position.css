@@ -1,0 +1,11 @@
+/* One 64px motif, placed inside the padding box of a dashed frame. */
+#example-element {
+  width: min(100%, 520px);
+  height: 200px;
+  border: 2px dashed color-mix(in oklab, var(--ink) 30%, transparent);
+  border-radius: 20px;
+  background-color: var(--card);
+  background-image: radial-gradient(circle closest-side, var(--a4) 0 40%, var(--a2) 42% 96%, transparent 100%);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+}

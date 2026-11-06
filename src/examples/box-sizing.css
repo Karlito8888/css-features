@@ -1,0 +1,32 @@
+.demo {
+  display: grid;
+  width: min(100%, 340px);
+  gap: 10px;
+  justify-items: center;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.frame {
+  width: min(100% - 48px, 300px);
+  border: 2px dashed color-mix(in oklab, var(--a1) 55%, transparent);
+  border-radius: 6px;
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  padding: 14px;
+  border: 6px solid var(--a1);
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  background:
+    var(--grad) content-box,
+    color-mix(in oklab, var(--a1) 14%, transparent);
+}

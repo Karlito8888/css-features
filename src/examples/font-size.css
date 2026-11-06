@@ -1,0 +1,26 @@
+#example-element {
+  width: min(100%, 520px);
+  overflow-wrap: anywhere;
+}
+
+#example-element h2 {
+  margin: 0 0 0.4em;
+  font-size: 1.3em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+#example-element p {
+  margin: 0 0 1em;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.4em 1em;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  background: var(--grad);
+}

@@ -1,0 +1,9 @@
+/* A gradient has no size of its own: background-size decides how big each tile is. */
+#example-element {
+  width: min(100%, 520px);
+  height: 200px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background-color: var(--card);
+  background-image: radial-gradient(circle closest-side, var(--a2) 0 38%, var(--a1) 40% 72%, transparent 74%);
+}

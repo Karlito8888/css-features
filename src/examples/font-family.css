@@ -1,0 +1,23 @@
+#example-element {
+  width: min(100%, 520px);
+  overflow-wrap: anywhere;
+}
+
+#example-element h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+#example-element p {
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+
+#example-element .glyphs {
+  margin: 0;
+  color: var(--muted);
+  font-size: 22px;
+  letter-spacing: 0.04em;
+}

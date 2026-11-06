@@ -1,0 +1,34 @@
+.stage {
+  display: flow-root;
+  width: min(100%, 300px);
+  min-height: 120px;
+  padding: 10px;
+  border: 2px dashed var(--line);
+  border-radius: 22px;
+}
+
+.stage::before {
+  display: block;
+  margin-bottom: 6px;
+  content: "parent";
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#example-element {
+  padding: 12px;
+}
+
+#example-element .tile {
+  min-height: 40px;
+  margin: 3px;
+  padding: 0 14px;
+}
+
+.fl {
+  float: right;
+  width: 84px;
+  font-size: 13px;
+}

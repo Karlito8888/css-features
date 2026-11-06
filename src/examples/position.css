@@ -1,0 +1,42 @@
+.demo {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 300px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.scroller {
+  position: relative;
+  height: 210px;
+  padding: 12px;
+  overflow: auto;
+  border: 2px dashed color-mix(in oklab, var(--a1) 55%, transparent);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+.row {
+  height: 34px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background: var(--line);
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  width: min(62%, 200px);
+  height: 44px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  background: var(--grad);
+  box-shadow: 0 8px 22px -10px color-mix(in oklab, var(--a1) 70%, transparent);
+}

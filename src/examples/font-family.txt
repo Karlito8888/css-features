@@ -1,0 +1,9 @@
+font-family: system-ui, sans-serif;
+
+font-family: ui-serif, Georgia, serif;
+
+font-family: ui-monospace, Menlo, Consolas, monospace;
+
+font-family: ui-rounded, system-ui, sans-serif;
+
+font-family: cursive;

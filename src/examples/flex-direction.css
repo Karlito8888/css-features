@@ -1,0 +1,22 @@
+#example-element {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  width: min(100%, 380px);
+  height: 230px;
+  padding: 14px;
+}
+.tile {
+  min-height: 0;
+  width: 48px;
+  height: 44px;
+  font-size: 18px;
+}
+.tile:nth-child(2) {
+  width: 64px;
+  height: 52px;
+}
+.tile:nth-child(3) {
+  width: 80px;
+  height: 60px;
+}

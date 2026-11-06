@@ -1,0 +1,18 @@
+transition: transform 0.8s ease-out;
+transform: translateX(70cqw);
+border-radius: 50%;
+
+transition: all 1.2s linear;
+transform: translateX(20cqw) rotate(90deg);
+border-radius: 8px;
+opacity: 0.65;
+
+transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+transform: translateX(48cqw);
+border-radius: 14px;
+
+transition: transform 1.5s steps(6, end);
+transform: translateX(60cqw);
+
+transition: transform 0.6s ease-in 0.6s;
+transform: translateX(6cqw) scale(1.25);

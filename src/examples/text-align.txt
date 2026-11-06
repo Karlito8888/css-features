@@ -1,0 +1,10 @@
+text-align: start;
+
+text-align: center;
+
+text-align: end;
+
+text-align: justify;
+
+text-align: justify;
+text-align-last: center;

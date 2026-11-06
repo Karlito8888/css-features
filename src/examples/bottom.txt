@@ -1,0 +1,9 @@
+bottom: 0;
+
+bottom: 24px;
+
+bottom: 50%;
+
+bottom: 8rem;
+
+bottom: -20px;

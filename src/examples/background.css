@@ -1,0 +1,17 @@
+#example-element {
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  min-height: 200px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.label {
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--card);
+  box-shadow: 0 6px 18px -8px rgb(15 23 42 / 0.5);
+  font-size: 14px;
+  font-weight: 700;
+}

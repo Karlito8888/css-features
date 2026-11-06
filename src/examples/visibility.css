@@ -1,0 +1,31 @@
+.card {
+  width: min(100%, 360px);
+  padding: 10px 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+th,
+td {
+  height: 40px;
+  padding: 0 8px;
+}
+
+td {
+  border-top: 1px solid var(--line);
+}
+
+#example-element {
+  background: color-mix(in oklab, var(--a1) 16%, transparent);
+}

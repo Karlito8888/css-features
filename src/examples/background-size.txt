@@ -1,0 +1,9 @@
+background-size: 32px 32px;
+
+background-size: 64px 64px;
+
+background-size: 96px 48px;
+
+background-size: 25% 50%;
+
+background-size: auto;

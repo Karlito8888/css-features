@@ -1,0 +1,10 @@
+#example-element {
+  display: grid;
+  place-items: center;
+  width: min(100%, 220px);
+  height: 130px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+  font-weight: 700;
+}

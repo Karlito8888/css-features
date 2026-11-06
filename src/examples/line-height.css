@@ -1,0 +1,22 @@
+#example-element {
+  width: min(100%, 520px);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.6;
+  background: var(--grad);
+}
+
+.text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  /* 1lh is the computed line-height of the paragraph: one band per line box */
+  background: repeating-linear-gradient(to bottom, color-mix(in oklab, var(--a1) 16%, transparent) 0 1lh, transparent 1lh 2lh);
+}

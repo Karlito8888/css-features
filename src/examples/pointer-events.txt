@@ -1,0 +1,9 @@
+pointer-events: auto;
+--note: "auto: the overlay catches the pointer";
+
+pointer-events: none;
+--note: "none: the pointer goes through to the button";
+
+pointer-events: none;
+--chip: auto;
+--note: "none, but the badge opts back in with auto";

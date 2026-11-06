@@ -1,0 +1,13 @@
+box-sizing: content-box;
+width: 100%;
+
+box-sizing: border-box;
+width: 100%;
+
+box-sizing: content-box;
+width: 140px;
+height: 100px;
+
+box-sizing: border-box;
+width: 140px;
+height: 100px;

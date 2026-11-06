@@ -1,0 +1,10 @@
+max-height: none;
+
+max-height: 160px;
+overflow: auto;
+
+max-height: 50%;
+overflow: auto;
+
+max-height: 4lh;
+overflow: hidden;

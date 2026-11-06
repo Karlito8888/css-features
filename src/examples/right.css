@@ -1,0 +1,23 @@
+.frame {
+  position: relative;
+  display: grid;
+  place-items: end center;
+  width: min(100%, 300px);
+  height: 204px;
+  padding: 10px 12px;
+  border: 2px dashed color-mix(in oklab, var(--a1) 55%, transparent);
+  border-radius: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: repeating-linear-gradient(90deg, transparent 0 19px, var(--line) 19px 20px);
+}
+
+#example-element {
+  position: absolute;
+  top: 16px;
+  width: 96px;
+  height: 56px;
+  min-height: 0;
+}

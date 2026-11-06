@@ -1,0 +1,47 @@
+.demo {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 300px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.frame {
+  height: 244px;
+  border: 2px dashed color-mix(in oklab, var(--a1) 55%, transparent);
+  border-radius: 18px;
+  background: repeating-linear-gradient(180deg, transparent 0 19px, var(--line) 19px 20px);
+}
+
+#example-element {
+  width: 78%;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  box-shadow: 0 18px 40px -24px rgb(15 23 42 / 0.45);
+}
+
+h3 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 34px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  height: 26px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  line-height: 25px;
+}

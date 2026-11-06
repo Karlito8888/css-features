@@ -1,0 +1,9 @@
+max-width: none;
+
+max-width: 100%;
+
+max-width: 60%;
+
+max-width: 11rem;
+
+max-width: min-content;

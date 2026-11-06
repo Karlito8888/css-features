@@ -1,0 +1,9 @@
+padding-top: 0;
+
+padding-top: 12px;
+
+padding-top: 32px;
+
+padding-top: 96px;
+
+padding-top: 20%;

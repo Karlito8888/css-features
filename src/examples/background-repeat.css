@@ -1,0 +1,10 @@
+/* The box is not a whole number of 60px tiles wide or tall, so space and round have work to do. */
+#example-element {
+  width: min(100%, 520px);
+  height: 190px;
+  border: 2px dashed color-mix(in oklab, var(--ink) 30%, transparent);
+  border-radius: 20px;
+  background-color: var(--card);
+  background-image: radial-gradient(circle closest-side, var(--a4) 0 30%, var(--a2) 32% 90%, transparent 92%);
+  background-size: 60px 60px;
+}

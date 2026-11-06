@@ -1,0 +1,47 @@
+#example-element li { display: flex; align-items: center; gap: 12px; }
+#example-element li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 13px;
+  background: var(--a5);
+}
+
+#example-element { counter-reset: step; }
+#example-element li { counter-increment: step; display: flex; gap: 12px; }
+#example-element li::before {
+  content: counter(step, decimal-leading-zero);
+  color: var(--a1);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+#example-element li { display: flex; justify-content: space-between; align-items: center; }
+#example-element li::after {
+  content: attr(data-tag);
+  padding: 1px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  background: var(--grad);
+}
+
+#example-element { quotes: "“" "”"; }
+#example-element li { font-style: italic; }
+#example-element li::before { content: open-quote; color: var(--a2); font-weight: 800; }
+#example-element li::after { content: close-quote; color: var(--a2); font-weight: 800; }
+
+#example-element li { display: flex; align-items: center; gap: 14px; }
+#example-element li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  rotate: 45deg;
+  background: var(--grad);
+}

@@ -1,0 +1,24 @@
+#example-element {
+  width: min(100%, 360px);
+  border: 1.5px dashed var(--muted);
+  border-radius: 16px;
+  background: repeating-linear-gradient(135deg, color-mix(in oklab, var(--a4) 50%, transparent) 0 5px, transparent 5px 10px), var(--card);
+  background-clip: padding-box;
+}
+#example-element .tile {
+  min-height: 56px;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.legend span {
+  width: 22px;
+  height: 14px;
+  background: repeating-linear-gradient(135deg, color-mix(in oklab, var(--a4) 50%, transparent) 0 5px, transparent 5px 10px);
+  outline: 1.5px dashed var(--a4);
+}

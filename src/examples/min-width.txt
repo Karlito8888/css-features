@@ -1,0 +1,7 @@
+min-width: 0;
+
+min-width: 50%;
+
+min-width: 12rem;
+
+min-width: 100%;

@@ -1,0 +1,10 @@
+margin-right: 0;
+
+margin-right: 16px;
+
+margin-right: 32px;
+
+margin-right: 20%;
+
+margin-right: auto;
+width: 60%;

@@ -1,0 +1,19 @@
+#example-element {
+  width: min(100%, 300px);
+  text-align: center;
+}
+
+#example-element:hover {
+  transform: translateY(-4px);
+}
+
+.tile {
+  min-height: 110px;
+  font-size: 22px;
+}
+
+p {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}

@@ -1,0 +1,17 @@
+#example-element {
+  display: flex;
+  gap: 4px;
+  width: min(100%, 380px);
+  padding: 14px;
+}
+.tile {
+  flex: none;
+  width: 40px;
+  min-height: 72px;
+}
+.tile:nth-child(2) {
+  width: 52px;
+}
+.tile:nth-child(3) {
+  width: 64px;
+}

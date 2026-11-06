@@ -1,0 +1,12 @@
+margin: 0;
+
+margin: 16px;
+
+margin: 8px 32px;
+
+margin: 0 auto;
+width: 60%;
+
+margin: 24px 12px 0 48px;
+
+margin: 10% 20%;

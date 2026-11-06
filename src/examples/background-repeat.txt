@@ -1,0 +1,11 @@
+background-repeat: repeat;
+
+background-repeat: repeat-x;
+
+background-repeat: repeat-y;
+
+background-repeat: no-repeat;
+
+background-repeat: space;
+
+background-repeat: round;

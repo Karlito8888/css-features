@@ -1,0 +1,17 @@
+#example-element {
+  width: min(100%, 520px);
+  margin: 0;
+  padding: 10px 24px;
+  list-style: none;
+}
+
+#example-element li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#example-element li:last-child {
+  border-bottom: 0;
+}

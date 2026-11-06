@@ -3,8 +3,9 @@
  * no dependency): each one at 330 px and 900 px wide, light and dark, with every value choice applied.
  * Fails on a page error, a missing #example-element, horizontal overflow, or a supported choice
  * that changes nothing (the computed values it declares, or for a rule block the computed style of
- * every element, equal those of another supported choice). Choices this Chrome does not support
- * are listed, not failed. Writes one contact sheet per example for a human look: a row per
+ * every element, equal those of another supported choice). Choices this Chrome does not support,
+ * and rule blocks whose selector only matches on interaction (INTERACTIVE), are listed, not
+ * failed. Writes one contact sheet per example for a human look: a row per
  * choice, at 330 px light, 330 px dark and 600 px light (about the desktop preview width).
  *
  * Run: bun scripts/check-examples.ts [id...]   (no id: every example)
@@ -29,6 +30,8 @@ const BATCH = 20;
 /** Frame height of the measuring harness, and of each row of the contact sheet. */
 const MEASURE_HEIGHT = 640;
 const SHEET_HEIGHT = 480;
+/** Pseudo-classes that never match in a still frame without the reader acting on the page. */
+const INTERACTIVE = /:(hover|active|focus|focus-visible|focus-within|visited|target|target-current|user-invalid|user-valid|autofill|fullscreen|picture-in-picture|playing|paused|seeking|buffering|stalled|muted|volume-locked|popover-open|modal|interest-source|interest-target|snapped(-[a-z]+)?|active-view-transition(-type)?)(?![\w-])/;
 
 type Row = { choice: number; supported: boolean; value: string; overflow: number };
 type Result = { key: string; errors: string[]; rows: Row[] };
@@ -138,6 +141,8 @@ for (let start = 0; start < ids.length; start += BATCH) {
   for (const id of batch) {
     const problems = new Set<string>();
     const unsupported = new Set<number>();
+    const interactive = new Set<number>();
+    const texts = examples.get(id)!.choices ?? [];
     for (const f of FRAMES) {
       const key = `${id} ${f.width}px ${f.dark ? "dark" : "light"}`;
       const r = results.find((r) => r.key === key);
@@ -150,12 +155,21 @@ for (let start = 0; start < ids.length; start += BATCH) {
       for (const row of r.rows) {
         if (!row.supported) unsupported.add(row.choice + 1);
         if (row.overflow > 0) problems.add(`${key}: choice ${row.choice + 1} overflows by ${row.overflow}px`);
+        // A rule that only matches on interaction cannot change a still frame: listed, not failed.
+        if (row.choice >= 0 && INTERACTIVE.test(texts[row.choice] ?? "")) {
+          interactive.add(row.choice + 1);
+          continue;
+        }
         const twin = supported.find((o) => o.choice < row.choice && row.supported && row.value && o.value === row.value);
         if (twin) problems.add(`${key}: choice ${row.choice + 1} ${twin.choice < 0 ? "changes nothing" : `computes like choice ${twin.choice + 1}`}`);
       }
     }
     failures += problems.size ? 1 : 0;
-    const note = unsupported.size ? ` (not supported by this Chrome: choice ${[...unsupported].join(", ")})` : "";
+    const notes = [
+      unsupported.size && `not supported by this Chrome: choice ${[...unsupported].join(", ")}`,
+      interactive.size && `matches only on interaction: choice ${[...interactive].join(", ")}`,
+    ].filter(Boolean);
+    const note = notes.length ? ` (${notes.join("; ")})` : "";
     console.log(`${problems.size ? "✗" : "✓"} ${id}${note}`);
     for (const p of problems) console.log(`    ${p}`);
 

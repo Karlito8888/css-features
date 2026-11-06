@@ -1,0 +1,9 @@
+rule: 1px solid var(--muted);
+
+rule: 3px dashed var(--a2);
+
+rule: 6px double var(--a1);
+
+rule: 4px dotted var(--a4);
+
+rule: 2px solid var(--a1), 2px dashed var(--a2);

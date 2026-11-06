@@ -1,0 +1,7 @@
+row-rule-color: currentcolor;
+
+row-rule-color: var(--a4);
+
+row-rule-color: var(--a5);
+
+row-rule-color: var(--a3), var(--a4);

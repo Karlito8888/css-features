@@ -1,0 +1,9 @@
+column-rule-inset-cap: 0;
+
+column-rule-inset-cap: 10px;
+
+column-rule-inset-cap: 24px 0;
+
+column-rule-inset-cap: 0 24px;
+
+column-rule-inset-cap: -14px;

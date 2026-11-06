@@ -1,0 +1,3 @@
+column-rule-break: none;
+
+column-rule-break: intersection;

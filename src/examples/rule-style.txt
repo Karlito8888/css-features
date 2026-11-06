@@ -1,0 +1,11 @@
+rule-style: none;
+
+rule-style: solid;
+
+rule-style: dashed;
+
+rule-style: dotted;
+
+rule-style: double;
+
+rule-style: solid, dotted;

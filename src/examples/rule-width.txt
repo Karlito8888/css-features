@@ -1,0 +1,7 @@
+rule-width: 1px;
+
+rule-width: 6px;
+
+rule-width: 12px;
+
+rule-width: 2px, 12px;

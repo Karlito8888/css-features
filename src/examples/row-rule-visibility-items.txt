@@ -1,0 +1,5 @@
+row-rule-visibility-items: all;
+
+row-rule-visibility-items: around;
+
+row-rule-visibility-items: between;

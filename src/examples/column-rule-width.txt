@@ -1,0 +1,7 @@
+column-rule-width: thin;
+
+column-rule-width: 6px;
+
+column-rule-width: 12px;
+
+column-rule-width: 2px, 12px;

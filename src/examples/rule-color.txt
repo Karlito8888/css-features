@@ -1,0 +1,7 @@
+rule-color: currentcolor;
+
+rule-color: var(--a1);
+
+rule-color: var(--a4);
+
+rule-color: var(--a2), var(--a5);

@@ -1,0 +1,9 @@
+rule-inset-start: 0;
+
+rule-inset-start: 10px;
+
+rule-inset-start: 20px;
+
+rule-inset-start: -10px;
+
+rule-inset-start: overlap-join;

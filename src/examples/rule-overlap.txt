@@ -1,0 +1,3 @@
+rule-overlap: row-over-column;
+
+rule-overlap: column-over-row;

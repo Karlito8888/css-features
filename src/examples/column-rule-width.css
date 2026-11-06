@@ -1,0 +1,14 @@
+/* Style and color are fixed here: only the width changes. */
+#example-element {
+  width: min(100%, 420px);
+  padding: 14px;
+  column-count: 3;
+  column-gap: 24px;
+  column-rule-style: solid;
+  column-rule-color: var(--a1);
+  font-size: 12px;
+  line-height: 1.45;
+}
+p {
+  margin: 0 0 0.7em;
+}

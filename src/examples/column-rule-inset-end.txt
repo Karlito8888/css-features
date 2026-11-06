@@ -1,0 +1,9 @@
+column-rule-inset-end: 0;
+
+column-rule-inset-end: 10px;
+
+column-rule-inset-end: 20px;
+
+column-rule-inset-end: -10px;
+
+column-rule-inset-end: overlap-join;

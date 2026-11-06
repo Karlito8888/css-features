@@ -1,0 +1,7 @@
+row-rule-width: 1px;
+
+row-rule-width: 6px;
+
+row-rule-width: 12px;
+
+row-rule-width: 2px, 12px;

@@ -1,0 +1,11 @@
+row-rule-style: none;
+
+row-rule-style: solid;
+
+row-rule-style: dashed;
+
+row-rule-style: dotted;
+
+row-rule-style: double;
+
+row-rule-style: solid, dotted;

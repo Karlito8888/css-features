@@ -1,0 +1,35 @@
+/* Both rules are wide and run through each other: only which one is painted on top where they cross changes. */
+.demo {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  width: min(100%, 340px);
+}
+
+#example-element {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  column-rule: 16px solid var(--a1);
+  row-rule: 16px solid var(--a2);
+}
+
+.tile {
+  min-width: 0;
+  min-height: 44px;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hint code {
+  color: var(--ink);
+}

@@ -1,0 +1,11 @@
+rule-inset: 10px;
+
+rule-inset: 0 / 10px;
+
+rule-inset: 10px / 0;
+
+rule-inset: -10px;
+
+rule-inset: overlap-join;
+
+rule-inset: 24px 0 / 0 18px;

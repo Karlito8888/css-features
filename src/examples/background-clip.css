@@ -1,0 +1,10 @@
+#example-element {
+  padding: 24px 40px;
+  border: 14px dashed color-mix(in oklab, var(--ink) 30%, transparent);
+  border-radius: 32px;
+  color: #fff;
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: conic-gradient(from 200deg at 35% 45%, var(--a1), var(--a2), var(--a4), var(--a3), var(--a1));
+}

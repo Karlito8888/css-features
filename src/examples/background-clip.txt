@@ -1,0 +1,11 @@
+background-clip: border-box;
+
+background-clip: padding-box;
+
+background-clip: content-box;
+
+background-clip: text;
+color: transparent;
+
+background-clip: border-area;
+color: var(--ink);

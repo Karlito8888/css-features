@@ -9,7 +9,7 @@ const FILES = import.meta.glob<string>("./showcases/*.{html,css,js}", { query: "
 export type Showcase = { example: Example; used: Set<string> };
 
 /** A pattern that finds a feature where CSS authors write it: `name:` for properties, `@name` for at-rules, the selector text, `name(` for functions. */
-function keyPattern(id: string): RegExp {
+export function keyPattern(id: string): RegExp {
   const f = featureById.get(id)!;
   const esc = f.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   switch (f.kind) {

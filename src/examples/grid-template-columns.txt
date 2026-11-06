@@ -1,0 +1,9 @@
+grid-template-columns: repeat(3, 1fr);
+
+grid-template-columns: 2fr 1fr;
+
+grid-template-columns: 80px 1fr 80px;
+
+grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+
+grid-template-columns: max-content 1fr;

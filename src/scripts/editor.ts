@@ -5,13 +5,9 @@ import { javascript } from "@codemirror/lang-javascript";
 import { Compartment } from "@codemirror/state";
 import { oneDark } from "@codemirror/theme-one-dark";
 import { basicSetup, EditorView } from "codemirror";
+import { isDark, onThemeChange } from "./theme";
 
 const LANGUAGES = { html, css, js: javascript };
-
-const isDark = () => {
-  const forced = document.documentElement.dataset.theme;
-  return forced ? forced === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-};
 
 const base = EditorView.theme({
   "&": { fontSize: "0.85rem", backgroundColor: "var(--code-bg)" },
@@ -37,9 +33,7 @@ export function createEditor(parent: HTMLElement, lang: keyof typeof LANGUAGES, 
       }),
     ],
   });
-  const retheme = () => view.dispatch({ effects: theme.reconfigure(isDark() ? oneDark : []) });
-  document.addEventListener("themechange", retheme);
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", retheme);
+  onThemeChange(() => view.dispatch({ effects: theme.reconfigure(isDark() ? oneDark : []) }));
   return {
     set(value: string) {
       view.dispatch({ changes: { from: 0, to: view.state.doc.length, insert: value } });

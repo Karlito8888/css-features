@@ -1,4 +1,5 @@
 import type { Editor } from "./editor";
+import { isDark, onThemeChange } from "./theme";
 
 // Live examples: each preview is a sandboxed iframe (opaque origin, no access to this page),
 // rendered when it scrolls near the viewport. "Edit" swaps the highlighted code for CodeMirror.
@@ -22,6 +23,17 @@ section.hidden{display:none}
 *{box-sizing:border-box}`;
 const TABBED_CSS = `body{background:#fff;font:400 1rem/1.1876 Inter,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;color:#15141a;font-size:0.9rem;line-height:1.5;padding:2rem 1rem 1rem;margin:0;min-width:min-content}`;
 const SHOWCASE_CSS = "body{margin:16px;font-family:system-ui,sans-serif;color:#1b1b1b;background:#fff}";
+// Reference examples written for this site: a stage that follows the site theme, a palette and
+// a few shared classes (.tile, .card) so each example only writes what its feature needs.
+const WRITTEN_CSS = `:root{--ink:light-dark(#0f172a,#e6e8ee);--muted:light-dark(#596275,#98a1b3);--stage:light-dark(#f4f6fb,#0d1017);--card:light-dark(#fff,#161b26);--line:light-dark(#dde2ec,#2a3242);--a1:#6366f1;--a2:#ec4899;--a3:#06b6d4;--a4:#f59e0b;--a5:#10b981;--grad:linear-gradient(135deg,var(--a1),var(--a2))}
+*{box-sizing:border-box}
+body{margin:0;min-height:320px;display:grid;place-items:center;padding:28px;font:500 16px/1.5 Inter,system-ui,sans-serif;color:var(--ink);background:radial-gradient(60% 80% at 15% 0%,color-mix(in oklab,var(--a1) 16%,transparent),transparent),radial-gradient(50% 70% at 100% 100%,color-mix(in oklab,var(--a2) 14%,transparent),transparent),var(--stage)}
+#example-element{transition:all .4s cubic-bezier(.2,.8,.2,1)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 26px;box-shadow:0 18px 40px -24px rgb(15 23 42/.45)}
+.tile{display:grid;place-items:center;min-height:72px;border-radius:14px;color:#fff;font-weight:700;background:var(--grad);box-shadow:0 8px 22px -10px color-mix(in oklab,var(--a1) 70%,transparent)}
+.tile:nth-child(4n+2){--grad:linear-gradient(135deg,var(--a3),var(--a1))}
+.tile:nth-child(4n+3){--grad:linear-gradient(135deg,var(--a4),var(--a2))}
+.tile:nth-child(4n+4){--grad:linear-gradient(135deg,var(--a5),var(--a3))}`;
 
 /**
  * Runs inside a preview with value choices. Serialized with toString(), so it must not use
@@ -49,13 +61,12 @@ function choiceAgent(id: string, choices: string[]) {
   parent.postMessage({ example: id, port: true, unsupported: choices.map((c) => !supported(c)) }, "*", [channel.port2]);
 }
 
-function srcdoc(source: Source, id: string, showcase: boolean): string {
+function srcdoc(source: Source, id: string, base: string): string {
   const html = source.html ?? "";
   const fullDocument = /<html[\s>]|<!doctype/i.test(html);
   // The preview reports its height tagged with its example id so the page can size the frame.
   const resize = `<script>new ResizeObserver(() => parent.postMessage({ previewHeight: Math.ceil(document.documentElement.getBoundingClientRect().height), example: ${JSON.stringify(id)} }, "*")).observe(document.documentElement);<\/script>`;
   const agent = source.choices ? `<script>(${choiceAgent.toString()})(${JSON.stringify(id)}, ${JSON.stringify(source.choices)});<\/script>` : "";
-  const base = showcase ? SHOWCASE_CSS : source.choices ? CHOICE_CSS : TABBED_CSS;
   return (
     (fullDocument ? "" : `<!doctype html><meta charset="utf-8"><style>${base}</style>`) +
     (source.css ? `<style>${source.css}</style>` : "") +
@@ -79,6 +90,7 @@ function setup(root: HTMLElement) {
   const original: Source = JSON.parse(root.querySelector("[data-source]")!.textContent!);
   const current: Source = { ...original };
   const showcase = root.classList.contains("showcase");
+  const written = root.classList.contains("written");
   const frameHost = root.querySelector<HTMLElement>("[data-frame]")!;
   const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
   const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
@@ -96,8 +108,16 @@ function setup(root: HTMLElement) {
   let port: MessagePort | null = null;
   const render = () => {
     port = null;
-    if (frame) frame.srcdoc = srcdoc(current, id, showcase);
+    const base = showcase
+      ? SHOWCASE_CSS
+      : written
+        ? `:root{color-scheme:${isDark() ? "dark" : "light"}}${WRITTEN_CSS}`
+        : current.choices
+          ? CHOICE_CSS
+          : TABBED_CSS;
+    if (frame) frame.srcdoc = srcdoc(current, id, base);
   };
+  if (written) onThemeChange(render);
 
   new IntersectionObserver(
     (entries, observer) => {

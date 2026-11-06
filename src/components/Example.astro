@@ -8,9 +8,11 @@ interface Props {
   label: string;
   /** Hand-written showcase of a modern feature: browser-window bar and the feature's keys as chips. */
   showcase?: { title: string; keys: { id: string; name: string; url: string; used: boolean }[] };
+  /** Reference example written for this site (src/examples/) rather than quoted from MDN. */
+  written?: boolean;
 }
 
-const { example, id, label, showcase } = Astro.props;
+const { example, id, label, showcase, written } = Astro.props;
 const LANGS = [
   { key: "html", shiki: "html", title: "HTML" },
   { key: "css", shiki: "css", title: "CSS" },
@@ -23,7 +25,7 @@ const source = JSON.stringify(example).replace(/</g, "\\u003c");
 const unused = showcase?.keys.some((k) => !k.used);
 ---
 
-<div class:list={["example", { showcase }]} data-example={id} data-max-height={showcase ? 900 : undefined}>
+<div class:list={["example", { showcase, written }]} data-example={id} data-max-height={showcase ? 900 : undefined}>
   <div class="preview">
     {
       showcase ? (
@@ -36,7 +38,7 @@ const unused = showcase?.keys.some((k) => !k.used);
         <div class="bar">
           <span class="dot" aria-hidden="true"></span>
           <span>Live preview</span>
-          <span class="hint">Example from MDN</span>
+          <span class="hint">{written ? "Written for this site" : "Example from MDN"}</span>
         </div>
       )
     }

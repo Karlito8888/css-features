@@ -1,6 +1,7 @@
 ---
 import Example from "./Example.astro";
 import { BROWSERS, KINDS, data, type Feature } from "../data";
+import { writtenExample } from "../examples";
 
 interface Props {
   feature: Feature;
@@ -8,6 +9,8 @@ interface Props {
 
 const { feature: f } = Astro.props;
 const modern = f.modern.map((id) => data.modern.find((m) => m.id === id)!);
+const written = writtenExample(f.id);
+const example = written ?? f.example;
 
 const month = (date: string) => {
   const approx = date.startsWith("≤");
@@ -56,7 +59,7 @@ const definition =
   {f.mdn?.summary && <p class:list={[f.prose ? "summary" : "lead"]}><span class="src">MDN</span> <Fragment set:html={f.mdn.summary} /></p>}
   {!f.prose && !f.mdn && <p class="summary muted">No prose in the spec's definition and no MDN page yet: the spec link below is the only description.</p>}
 
-  {f.example && <Example example={f.example} id={f.id} label={f.name} />}
+  {example && <Example example={example} id={f.id} label={f.name} written={!!written} />}
 
   <div class="facts">
     {

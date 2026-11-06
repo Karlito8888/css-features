@@ -1,0 +1,6 @@
+#example-element {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 560px);
+  padding: 14px;
+}

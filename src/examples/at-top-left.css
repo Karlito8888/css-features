@@ -1,0 +1,64 @@
+/* A diagram of one printed page: the 16 margin boxes around the page area, the one of this rule highlighted. */
+.demo {
+  width: min(100%, 330px);
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 18px 14px;
+}
+
+.sheet {
+  display: grid;
+  grid-template: "tlc tl tc tr trc" 20px "lt body body body rt" 1fr "lm body body body rm" 1fr "lb body body body rb" 1fr "blc bl bc br brc" 20px / 20px 1fr 1fr 1fr 20px;
+  width: 190px;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--stage);
+}
+
+.sheet > span {
+  border: 1px dashed var(--line);
+}
+
+.sheet .hit {
+  border: 2px solid var(--a1);
+  background: color-mix(in oklab, var(--a1) 30%, var(--stage));
+}
+
+.tlc { grid-area: tlc; }
+.tl { grid-area: tl; }
+.tc { grid-area: tc; }
+.tr { grid-area: tr; }
+.trc { grid-area: trc; }
+.lt { grid-area: lt; }
+.lm { grid-area: lm; }
+.lb { grid-area: lb; }
+.rt { grid-area: rt; }
+.rm { grid-area: rm; }
+.rb { grid-area: rb; }
+.blc { grid-area: blc; }
+.bl { grid-area: bl; }
+.bc { grid-area: bc; }
+.br { grid-area: br; }
+.brc { grid-area: brc; }
+
+.body {
+  grid-area: body;
+  background: repeating-linear-gradient(var(--line) 0 2px, transparent 2px 8px) 50% 40% / 80% 80% no-repeat;
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

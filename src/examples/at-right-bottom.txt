@@ -1,0 +1,20 @@
+@page {
+  @right-bottom {
+    content: counter(page);
+  }
+}
+
+@page {
+  @right-bottom {
+    content: "Page " counter(page) " of " counter(pages);
+    writing-mode: vertical-rl;
+  }
+}
+
+@page {
+  @right-bottom {
+    content: "6 November 2026";
+    writing-mode: vertical-rl;
+    font-size: 9pt;
+  }
+}

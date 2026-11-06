@@ -1,0 +1,19 @@
+@page {
+  @bottom-left-corner {
+    content: counter(page);
+    font-weight: 700;
+  }
+}
+
+@page {
+  @bottom-left-corner {
+    content: "©";
+  }
+}
+
+@page {
+  @bottom-left-corner {
+    content: "§";
+    font-size: 14pt;
+  }
+}

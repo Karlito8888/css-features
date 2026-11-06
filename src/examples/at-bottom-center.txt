@@ -1,0 +1,24 @@
+@page {
+  @bottom-center {
+    content: counter(page);
+  }
+}
+
+@page {
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+@page {
+  @bottom-center {
+    content: "example.com/report";
+    font-size: 9pt;
+  }
+}
+
+@page {
+  @bottom-center {
+    content: "- " counter(page) " -";
+  }
+}

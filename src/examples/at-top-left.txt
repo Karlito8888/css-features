@@ -1,0 +1,25 @@
+@page {
+  @top-left {
+    content: "Annual report 2026";
+  }
+}
+
+@page {
+  @top-left {
+    content: "Confidential";
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+@page {
+  @top-left {
+    content: "6 November 2026";
+    font-style: italic;
+    font-size: 9pt;
+  }
+}
+
+@page :left {
+  @top-left { content: "Annual report 2026"; }
+}

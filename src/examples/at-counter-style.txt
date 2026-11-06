@@ -1,0 +1,35 @@
+@counter-style demo {
+  system: cyclic;
+  symbols: "◆" "◇";
+  suffix: " ";
+}
+
+@counter-style demo {
+  system: numeric;
+  symbols: "٠" "١" "٢" "٣" "٤" "٥" "٦" "٧" "٨" "٩";
+  negative: "−";
+  suffix: ".  ";
+}
+
+@counter-style demo {
+  system: extends decimal;
+  pad: 3 "0";
+  negative: "(" ")";
+  prefix: "№ ";
+  suffix: " · ";
+}
+
+@counter-style demo {
+  system: fixed 0;
+  symbols: "zero" "one" "two" "three";
+  fallback: lower-roman;
+  suffix: ": ";
+}
+
+@counter-style demo {
+  system: additive;
+  additive-symbols: 5 "V", 4 "IV", 1 "I";
+  range: 1 infinite;
+  fallback: upper-alpha;
+  suffix: ") ";
+}

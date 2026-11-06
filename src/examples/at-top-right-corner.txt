@@ -1,0 +1,21 @@
+@page {
+  @top-right-corner {
+    content: counter(page);
+    font-weight: 700;
+  }
+}
+
+@page {
+  @top-right-corner {
+    content: "2026";
+    font-size: 9pt;
+  }
+}
+
+@page {
+  @top-right-corner {
+    content: "Rev. 3";
+    font-size: 7pt;
+    text-transform: uppercase;
+  }
+}

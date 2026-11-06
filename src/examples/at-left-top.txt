@@ -1,0 +1,21 @@
+@page {
+  @left-top {
+    content: counter(page);
+  }
+}
+
+@page {
+  @left-top {
+    content: "Annual report 2026";
+    writing-mode: vertical-rl;
+  }
+}
+
+@page {
+  @left-top {
+    content: "Chapter 1";
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}

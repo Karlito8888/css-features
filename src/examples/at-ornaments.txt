@@ -1,0 +1,14 @@
+@font-feature-values "Shape Alternates" {
+  @ornaments { stack: 1; }
+}
+#example-element { font-variant-alternates: ornaments(stack); }
+
+@font-feature-values "Shape Alternates" {
+  @ornaments { twin: 2; }
+}
+#example-element { font-variant-alternates: ornaments(twin); }
+
+@font-feature-values "Shape Alternates" {
+  @ornaments { tiny: 3; }
+}
+#example-element { font-variant-alternates: ornaments(tiny); }

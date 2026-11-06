@@ -1,0 +1,14 @@
+@font-feature-values "Shape Alternates" {
+  @stylistic { hollow: 1; }
+}
+#example-element { font-variant-alternates: stylistic(hollow); }
+
+@font-feature-values "Shape Alternates" {
+  @stylistic { dotted: 2; }
+}
+#example-element { font-variant-alternates: stylistic(dotted); }
+
+@font-feature-values "Shape Alternates" {
+  @stylistic { small: 3; }
+}
+#example-element { font-variant-alternates: stylistic(small); }

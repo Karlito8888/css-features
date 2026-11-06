@@ -1,0 +1,25 @@
+@page {
+  size: A5 landscape;
+  margin: 1.5cm;
+}
+
+@page {
+  size: letter;
+  margin: 1in 0.75in;
+}
+
+@page :left {
+  margin-left: 3cm;
+}
+@page :right {
+  margin-right: 3cm;
+}
+
+@page {
+  marks: crop cross;
+  bleed: 3mm;
+}
+
+@page {
+  @bottom-center { content: "Page " counter(page) " of " counter(pages); }
+}

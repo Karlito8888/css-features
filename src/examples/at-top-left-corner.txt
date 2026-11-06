@@ -1,0 +1,21 @@
+@page {
+  @top-left-corner {
+    content: counter(page);
+    font-weight: 700;
+  }
+}
+
+@page {
+  @top-left-corner {
+    content: "§";
+    font-size: 14pt;
+  }
+}
+
+@page {
+  @top-left-corner {
+    content: "Draft";
+    text-transform: uppercase;
+    font-size: 7pt;
+  }
+}

@@ -1,0 +1,14 @@
+@font-feature-values "Shape Alternates" {
+  @styleset { hollow: 1; }
+}
+#example-element { font-variant-alternates: styleset(hollow); }
+
+@font-feature-values "Shape Alternates" {
+  @styleset { dotted: 2; }
+}
+#example-element { font-variant-alternates: styleset(dotted); }
+
+@font-feature-values "Shape Alternates" {
+  @styleset { small: 3; }
+}
+#example-element { font-variant-alternates: styleset(small); }

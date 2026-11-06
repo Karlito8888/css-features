@@ -1,0 +1,14 @@
+@font-feature-values "Shape Alternates" {
+  @annotation { boxed: 1; }
+}
+#example-element { font-variant-alternates: annotation(boxed); }
+
+@font-feature-values "Shape Alternates" {
+  @annotation { hollow-box: 2; }
+}
+#example-element { font-variant-alternates: annotation(hollow-box); }
+
+@font-feature-values "Shape Alternates" {
+  @annotation { cutout: 3; }
+}
+#example-element { font-variant-alternates: annotation(cutout); }

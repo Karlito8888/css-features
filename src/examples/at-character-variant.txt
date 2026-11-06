@@ -1,0 +1,19 @@
+@font-feature-values "Shape Alternates" {
+  @character-variant { hollow-a: 1 1; }
+}
+#example-element { font-variant-alternates: character-variant(hollow-a); }
+
+@font-feature-values "Shape Alternates" {
+  @character-variant { dotted-b: 2 2; }
+}
+#example-element { font-variant-alternates: character-variant(dotted-b); }
+
+@font-feature-values "Shape Alternates" {
+  @character-variant { small-c: 3 3; }
+}
+#example-element { font-variant-alternates: character-variant(small-c); }
+
+@font-feature-values "Shape Alternates" {
+  @character-variant { hollow-a: 1 1; small-c: 3 3; }
+}
+#example-element { font-variant-alternates: character-variant(hollow-a, small-c); }

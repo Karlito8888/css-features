@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Brand";
+  src: local("Arial"), local("Helvetica"), local("Liberation Sans"), local("Noto Sans"), local("DejaVu Sans");
+}
+
+@font-face {
+  font-family: "Brand";
+  src: local("Courier New"), local("Menlo"), local("Liberation Mono"), local("DejaVu Sans Mono");
+}
+
+@font-face {
+  font-family: "Brand";
+  src: local("Courier New"), local("Menlo"), local("Liberation Mono"), local("DejaVu Sans Mono");
+  unicode-range: U+0030-0039;
+}
+
+@font-face {
+  font-family: "Brand";
+  src: local("Arial"), local("Helvetica"), local("Liberation Sans"), local("Noto Sans"), local("DejaVu Sans");
+  size-adjust: 70%;
+  line-gap-override: 40%;
+}

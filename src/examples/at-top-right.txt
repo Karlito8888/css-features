@@ -1,0 +1,23 @@
+@page {
+  @top-right {
+    content: counter(page);
+  }
+}
+
+@page {
+  @top-right {
+    content: "Page " counter(page) " of " counter(pages);
+  }
+}
+
+@page {
+  @top-right {
+    content: "6 November 2026";
+    font-style: italic;
+    font-size: 9pt;
+  }
+}
+
+@page :right {
+  @top-right { content: "Annual report 2026"; }
+}

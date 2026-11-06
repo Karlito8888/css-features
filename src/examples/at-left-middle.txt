@@ -1,0 +1,23 @@
+@page {
+  @left-middle {
+    content: "Annual report 2026";
+    writing-mode: vertical-rl;
+  }
+}
+
+@page {
+  @left-middle {
+    content: "Draft";
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-size: 20pt;
+    letter-spacing: 0.2em;
+  }
+}
+
+@page {
+  @left-middle {
+    content: counter(page);
+    font-weight: 700;
+  }
+}

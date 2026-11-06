@@ -1,0 +1,16 @@
+@page {
+  @bottom-right {
+    content: counter(page);
+  }
+}
+
+@page {
+  @bottom-right {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 9pt;
+  }
+}
+
+@page :right {
+  @bottom-right { content: counter(page); }
+}

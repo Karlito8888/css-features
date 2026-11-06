@@ -1,0 +1,14 @@
+@font-feature-values "Shape Alternates" {
+  @swash { tail: 1; }
+}
+#example-element { font-variant-alternates: swash(tail); }
+
+@font-feature-values "Shape Alternates" {
+  @swash { lead: 2; }
+}
+#example-element { font-variant-alternates: swash(lead); }
+
+@font-feature-values "Shape Alternates" {
+  @swash { wings: 3; }
+}
+#example-element { font-variant-alternates: swash(wings); }

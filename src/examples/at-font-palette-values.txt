@@ -1,0 +1,24 @@
+@font-palette-values --light {
+  font-family: "Shape Palette";
+  base-palette: light;
+}
+#example-element { font-palette: --light; }
+
+@font-palette-values --dark {
+  font-family: "Shape Palette";
+  base-palette: dark;
+}
+#example-element { font-palette: --dark; }
+
+@font-palette-values --custom {
+  font-family: "Shape Palette";
+  override-colors: 0 #e11d48, 2 #22d3ee;
+}
+#example-element { font-palette: --custom; }
+
+@font-palette-values --mixed {
+  font-family: "Shape Palette";
+  base-palette: 2;
+  override-colors: 1 #38bdf8;
+}
+#example-element { font-palette: --mixed; }

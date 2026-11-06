@@ -1,0 +1,18 @@
+@font-feature-values "Shape Alternates" {
+  @swash { fancy: 1; }
+}
+#example-element { font-variant-alternates: swash(fancy); }
+
+@font-feature-values "Shape Alternates" {
+  @character-variant { hollow-a: 1 1; }
+  @swash { tail: 1; }
+}
+#example-element { font-variant-alternates: character-variant(hollow-a) swash(tail); }
+
+@font-feature-values "Shape Alternates" {
+  @swash { wide: 1; }
+}
+@font-feature-values "Shape Alternates" {
+  @swash { wide: 3; }
+}
+#example-element { font-variant-alternates: swash(wide); }

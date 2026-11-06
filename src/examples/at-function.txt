@@ -1,0 +1,21 @@
+@function --fluid(--min <length>, --max <length>) returns <length> {
+  result: clamp(var(--min), 30vw, var(--max));
+}
+#example-element { width: --fluid(6rem, 14rem); }
+
+@function --ratio(--w <length>, --r <number>: 0.5) returns <length> {
+  result: calc(var(--w) * var(--r));
+}
+#example-element { width: 12rem; height: --ratio(12rem); }
+
+@function --glow(--c <color>) {
+  --soft: color-mix(in oklab, var(--c) 45%, transparent);
+  result: 0 0 0 4px var(--soft), 0 14px 30px var(--c);
+}
+#example-element { box-shadow: --glow(var(--a3)); }
+
+@function --roomy() {
+  result: 4px;
+  @media (width > 500px) { result: 24px; }
+}
+#example-element { border-radius: --roomy(); padding: --roomy(); }

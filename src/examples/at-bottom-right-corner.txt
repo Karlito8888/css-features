@@ -1,0 +1,19 @@
+@page {
+  @bottom-right-corner {
+    content: counter(page);
+    font-weight: 700;
+  }
+}
+
+@page {
+  @bottom-right-corner {
+    content: "©";
+  }
+}
+
+@page {
+  @bottom-right-corner {
+    content: "2026";
+    font-size: 9pt;
+  }
+}

@@ -1,0 +1,73 @@
+/* Three printed pages: a portrait one, a landscape one and one with a margin box. The dashed frame is the page area inside the margins. */
+.demo {
+  width: min(100%, 330px);
+}
+
+#example-element {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin: 0;
+  padding: 18px 14px 12px;
+}
+
+.pg {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.wide {
+  flex: 4;
+}
+
+.pg code {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.sheet {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--stage);
+}
+
+.p {
+  aspect-ratio: 3 / 4;
+}
+
+.l {
+  aspect-ratio: 4 / 3;
+}
+
+.area {
+  position: absolute;
+  inset: 12%;
+  border: 1px dashed var(--a1);
+  background: repeating-linear-gradient(var(--line) 0 2px, transparent 2px 8px) 50% 40% / 80% 70% no-repeat;
+}
+
+.foot {
+  position: absolute;
+  inset: auto 30% 3% 30%;
+  height: 7%;
+  border: 2px solid var(--a1);
+  background: color-mix(in oklab, var(--a1) 30%, var(--stage));
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

@@ -1,0 +1,24 @@
+.demo {
+  width: min(100%, 330px);
+}
+
+#example-element {
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 18px 22px;
+  font: 400 22px/normal "Brand", serif;
+  overflow-wrap: anywhere;
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

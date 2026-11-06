@@ -1,0 +1,22 @@
+@page {
+  @right-middle {
+    content: "Annual report 2026";
+    writing-mode: vertical-rl;
+  }
+}
+
+@page {
+  @right-middle {
+    content: "Confidential";
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+@page {
+  @right-middle {
+    content: counter(page);
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,19 @@
+@page {
+  @top-center {
+    content: "Annual report 2026";
+    font-weight: 700;
+  }
+}
+
+@page {
+  @top-center {
+    content: "Page " counter(page);
+  }
+}
+
+@page {
+  @top-center { content: "Annual report 2026"; }
+}
+@page :first {
+  @top-center { content: none; }
+}

@@ -1,0 +1,48 @@
+#example-element {
+  width: min(100%, 300px);
+  height: 130px;
+  padding: 0;
+  columns: 1;
+  column-gap: 0;
+  overflow-x: auto;
+  font-size: 14px;
+}
+
+#example-element::scroll-marker-group {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+#example-element section {
+  padding: 16px 18px;
+}
+
+#example-element section + section {
+  break-before: column;
+}
+
+#example-element h3,
+#example-element p {
+  margin: 0 0 6px;
+}
+
+#example-element p {
+  color: var(--muted);
+}
+
+.cap {
+  width: min(100%, 300px);
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.cap code {
+  color: var(--ink);
+}

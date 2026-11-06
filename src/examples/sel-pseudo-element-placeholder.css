@@ -1,0 +1,35 @@
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 320px);
+  font-size: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 5em 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+input,
+textarea {
+  min-width: 0;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  font: inherit;
+  background: var(--stage);
+  resize: none;
+}
+
+.cap {
+  max-width: 300px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+}

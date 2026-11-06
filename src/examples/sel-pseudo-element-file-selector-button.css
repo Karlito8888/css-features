@@ -1,0 +1,32 @@
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 320px);
+  font-size: 14px;
+}
+
+input[type="file"] {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  font: inherit;
+  background: var(--stage);
+}
+
+.cap {
+  max-width: 300px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+}

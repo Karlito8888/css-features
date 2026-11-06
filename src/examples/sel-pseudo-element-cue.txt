@@ -1,0 +1,11 @@
+video::cue { color: #fff; background: color-mix(in oklab, var(--a1) 85%, transparent); font-size: 15px; }
+#example-element { --note: "video::cue, the whole cue box"; }
+
+video::cue { color: #fff; background: none; font-weight: 700; text-shadow: 0 0 6px var(--a2), 0 0 14px var(--a2); }
+#example-element { --note: "video::cue with no box, only a glow"; }
+
+video::cue(b) { color: var(--a4); font-weight: 800; text-decoration: underline; }
+#example-element { --note: "video::cue(b), bold text inside cues"; }
+
+video::cue(v[voice="Ada"]) { color: var(--a3); font-style: italic; }
+#example-element { --note: "video::cue(v[voice=\"Ada\"]), one speaker"; }

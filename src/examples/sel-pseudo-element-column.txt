@@ -1,0 +1,12 @@
+#example-element { scroll-marker-group: after; }
+#example-element::column::scroll-marker { content: ""; display: block; width: 12px; height: 12px; border-radius: 50%; background: color-mix(in oklab, var(--muted) 45%, transparent); }
+#example-element::column::scroll-marker:target-current { background: var(--a1); }
+
+#example-element { scroll-marker-group: before; }
+#example-element::column::scroll-marker { content: ""; display: block; width: 28px; height: 6px; border-radius: 3px; background: color-mix(in oklab, var(--muted) 45%, transparent); }
+#example-element::column::scroll-marker:target-current { background: var(--a2); }
+
+#example-element { scroll-marker-group: after; scroll-snap-type: x mandatory; }
+#example-element::column { scroll-snap-align: start; }
+#example-element::column::scroll-marker { content: counter(page); counter-increment: page; padding: 2px 10px; border-radius: 999px; font-size: 12px; text-decoration: none; color: var(--ink); background: var(--card); border: 1px solid var(--line); }
+#example-element::column::scroll-marker:target-current { color: #fff; background: var(--a3); }

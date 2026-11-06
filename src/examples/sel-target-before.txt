@@ -1,0 +1,11 @@
+#example-element { scroll-marker-group: after; border-color: var(--a5); }
+.tile::scroll-marker:target-before { color: #fff; border-color: transparent; background: var(--a5); }
+
+#example-element { scroll-marker-group: after; border-color: var(--a3); }
+.tile::scroll-marker:target-before { content: "✓"; border-color: var(--a3); color: color-mix(in oklab, var(--a3) 60%, var(--ink)); }
+
+#example-element { scroll-marker-group: after; border-color: var(--muted); }
+.tile::scroll-marker:target-before { opacity: .4; }
+
+#example-element { scroll-marker-group: after; border-color: var(--a1); }
+.tile::scroll-marker:target-before { scale: .7; border-color: var(--a1); }

@@ -1,0 +1,8 @@
+select::field-content { color: color-mix(in oklab, var(--a1) 65%, var(--ink)); font-weight: 700; }
+select { border-color: var(--a1); }
+
+select::field-content { font-size: .8em; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+select { border-color: var(--a3); }
+
+select::field-content { color: color-mix(in oklab, var(--a2) 65%, var(--ink)); font-style: italic; }
+select { border-color: var(--a2); }

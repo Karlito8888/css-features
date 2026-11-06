@@ -1,0 +1,38 @@
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 320px);
+  font-size: 14px;
+}
+
+select {
+  appearance: base-select;
+  width: 100%;
+  height: 148px;
+  padding: 4px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  color: var(--ink);
+  font: inherit;
+  background: var(--stage);
+}
+
+option {
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.cap {
+  max-width: 300px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+}

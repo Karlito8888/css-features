@@ -1,0 +1,11 @@
+option::checkmark { color: color-mix(in oklab, var(--a5) 70%, var(--ink)); font-weight: 700; }
+select { border-color: var(--a5); }
+
+option::checkmark { content: "★"; color: var(--a2); }
+select { border-color: var(--a2); }
+
+option::checkmark { order: 1; margin-inline-start: auto; color: color-mix(in oklab, var(--a3) 60%, var(--ink)); }
+select { border-color: var(--a3); }
+
+option::checkmark { content: "✓"; display: grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 50%; color: #fff; font-size: .8em; background: var(--grad); }
+select { border-color: var(--a1); }

@@ -1,0 +1,14 @@
+#example-element { scroll-marker-group: after; border-color: var(--a1); }
+#example-element::scroll-marker-group { display: flex; justify-content: center; align-items: center; gap: 8px; padding-top: 14px; }
+
+#example-element { scroll-marker-group: before; border-color: var(--a2); }
+#example-element::scroll-marker-group { display: flex; justify-content: center; align-items: center; gap: 8px; width: 130px; margin: 0 auto 14px; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+
+#example-element { scroll-marker-group: after; border-color: var(--a3); }
+#example-element::scroll-marker-group { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 6px; padding-top: 14px; }
+.tile::scroll-marker { width: auto; height: 6px; border-radius: 3px; }
+
+#example-element { scroll-marker-group: after; border-color: var(--a5); }
+#example-element::scroll-marker-group { position: fixed; position-anchor: --carousel; bottom: calc(anchor(bottom) + 12px); left: anchor(left); right: anchor(right); display: flex; justify-content: center; gap: 8px; }
+.tile::scroll-marker { background: rgb(255 255 255 / .55); }
+.tile::scroll-marker:target-current { background: #fff; }

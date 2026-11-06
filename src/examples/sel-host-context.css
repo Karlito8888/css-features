@@ -1,0 +1,24 @@
+#example-element {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  width: min(100%, 340px);
+  padding: 16px;
+  font-size: 14px;
+}
+
+#example-element section {
+  padding: 6px 8px;
+  border-radius: 12px;
+}
+
+.cap {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}

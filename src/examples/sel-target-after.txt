@@ -1,0 +1,11 @@
+#example-element { scroll-marker-group: after; border-color: var(--a4); }
+.tile::scroll-marker:target-after { border: 2px dashed var(--a4); color: var(--muted); }
+
+#example-element { scroll-marker-group: after; border-color: var(--muted); }
+.tile::scroll-marker:target-after { opacity: .4; }
+
+#example-element { scroll-marker-group: after; border-color: var(--a3); }
+.tile::scroll-marker:target-after { width: 10px; height: 10px; border-color: transparent; color: transparent; font-size: 0; background: var(--muted); }
+
+#example-element { scroll-marker-group: after; border-color: var(--a2); }
+.tile::scroll-marker:target-after { color: transparent; border-color: transparent; background: repeating-linear-gradient(45deg, var(--line) 0 4px, transparent 4px 8px); }

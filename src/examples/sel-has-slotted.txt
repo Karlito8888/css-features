@@ -1,0 +1,5 @@
+x-note { --filled-color: var(--a1); }
+
+x-note { --filled-color: var(--a2); --empty-color: var(--a4); }
+
+x-note { --filled-color: var(--a5); --empty-color: var(--a3); }

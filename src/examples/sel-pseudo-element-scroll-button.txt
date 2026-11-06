@@ -1,0 +1,17 @@
+#example-element { border-color: var(--a1); }
+#example-element::scroll-button(left), #example-element::scroll-button(right) { position: fixed; position-anchor: --carousel; top: anchor(center); translate: 0 -50%; width: 34px; height: 34px; border: 0; border-radius: 50%; color: #fff; font-size: 20px; background: var(--a1); cursor: pointer; }
+#example-element::scroll-button(left) { content: "‹" / "Previous"; left: calc(anchor(left) + 8px); }
+#example-element::scroll-button(right) { content: "›" / "Next"; right: calc(anchor(right) + 8px); }
+#example-element::scroll-button(left):disabled, #example-element::scroll-button(right):disabled { opacity: .35; cursor: default; }
+
+#example-element { border-color: var(--a2); }
+#example-element::scroll-button(left), #example-element::scroll-button(right) { margin: 14px 4px 0; padding: 6px 16px; border: 1px solid var(--a2); border-radius: 999px; color: var(--ink); font: inherit; font-size: 13px; font-weight: 600; background: var(--card); cursor: pointer; }
+#example-element::scroll-button(left) { content: "← Previous"; }
+#example-element::scroll-button(right) { content: "Next →"; }
+#example-element::scroll-button(left):disabled, #example-element::scroll-button(right):disabled { opacity: .4; cursor: default; }
+
+#example-element { border-color: var(--a5); }
+#example-element::scroll-button(left), #example-element::scroll-button(right) { position: fixed; position-anchor: --carousel; top: calc(anchor(top) + 2px); bottom: calc(anchor(bottom) + 2px); width: 40px; padding: 0; border: 0; color: #fff; font-size: 26px; cursor: pointer; }
+#example-element::scroll-button(left) { content: "‹" / "Previous"; left: calc(anchor(left) + 2px); border-radius: 16px 0 0 16px; background: linear-gradient(to right, rgb(15 23 42 / .6), transparent); }
+#example-element::scroll-button(right) { content: "›" / "Next"; right: calc(anchor(right) + 2px); border-radius: 0 16px 16px 0; background: linear-gradient(to left, rgb(15 23 42 / .6), transparent); }
+#example-element::scroll-button(left):disabled, #example-element::scroll-button(right):disabled { opacity: 0; cursor: default; }

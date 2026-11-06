@@ -1,0 +1,55 @@
+#example-element {
+  width: min(100%, 320px);
+  font-size: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 4.5em 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+select,
+select::picker(select) {
+  appearance: base-select;
+}
+
+select {
+  min-width: 0;
+  align-items: center;
+  padding: 7px 10px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  font: inherit;
+  background: var(--stage);
+}
+
+select::picker(select) {
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  background: var(--card);
+}
+
+option {
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.cap {
+  max-width: 300px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+}

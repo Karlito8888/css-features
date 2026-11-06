@@ -1,0 +1,7 @@
+.night { background: color-mix(in oklab, var(--a1) 24%, var(--card)); }
+
+.night { background: var(--grad); padding: 12px 16px; }
+
+.compact { display: flex; flex-wrap: wrap; gap: 4px; outline: 2px dashed var(--a3); outline-offset: 3px; }
+
+.night, .compact { outline: 2px solid var(--a2); outline-offset: 3px; }

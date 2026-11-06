@@ -1,0 +1,37 @@
+.post {
+  & h3 {
+    color: var(--a2);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+.post {
+  &.featured {
+    border-color: var(--a1);
+    background: var(--hit);
+  }
+}
+
+.post {
+  & + & {
+    border-left: 6px solid var(--a3);
+    background: color-mix(in oklab, var(--a3) 14%, var(--card));
+  }
+}
+
+.post {
+  .dark & {
+    border-color: var(--a4);
+    background: var(--ink);
+    color: var(--card);
+  }
+}
+
+.post {
+  &:hover {
+    border-color: var(--a2);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px -12px var(--a2);
+  }
+}

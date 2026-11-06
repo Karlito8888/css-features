@@ -1,0 +1,14 @@
+user-card::part(avatar) { border-radius: 12px; outline: 3px solid var(--a2); outline-offset: 3px; }
+#example-element { --note: "::part(avatar)"; }
+
+user-card::part(label) { text-transform: uppercase; letter-spacing: 0.06em; }
+#example-element { --note: "::part(label), shared by name and role"; }
+
+user-card::part(label name) { color: var(--a2); font-size: 17px; }
+#example-element { --note: "::part(label name), both tokens needed"; }
+
+user-card.pro::part(badge) { color: #fff; border-color: transparent; background: var(--grad); }
+#example-element { --note: "user-card.pro::part(badge), one card only"; }
+
+user-card::part(role)::before { content: "★ "; color: var(--a4); }
+#example-element { --note: "::part(role)::before"; }

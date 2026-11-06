@@ -1,0 +1,11 @@
+#example-element { scroll-marker-group: after; }
+.tile::scroll-marker:target-current { background: var(--a1); }
+
+#example-element { scroll-marker-group: after; }
+.tile::scroll-marker:target-current { width: 28px; border-radius: 5px; background: var(--a2); }
+
+#example-element { scroll-marker-group: after; }
+.tile::scroll-marker:target-current { scale: 1.5; background: var(--a3); box-shadow: 0 0 0 3px color-mix(in oklab, var(--a3) 35%, transparent); }
+
+#example-element { scroll-marker-group: after; }
+.tile::scroll-marker:target-current { rotate: 45deg; border-radius: 2px; scale: 1.3; background: var(--a4); }

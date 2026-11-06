@@ -1,0 +1,11 @@
+dialog { --tint: var(--a1); }
+dialog::backdrop { background: color-mix(in oklab, var(--tint) 45%, transparent); }
+
+dialog { --tint: var(--a3); }
+dialog::backdrop { background: color-mix(in oklab, var(--tint) 16%, transparent); backdrop-filter: blur(6px); }
+
+dialog { --tint: var(--a2); }
+dialog::backdrop { background: radial-gradient(circle at 50% 45%, transparent 18%, color-mix(in oklab, var(--tint) 75%, transparent)); }
+
+dialog { --tint: var(--a4); }
+dialog::backdrop { background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--tint) 40%, transparent) 0 12px, transparent 12px 24px); }

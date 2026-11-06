@@ -1,0 +1,53 @@
+<div id="example-element" class="card">
+  <x-chip>
+    <template shadowrootmode="open">
+        <style>
+          :host { display: inline-block; padding: 3px 12px; border: 2px solid var(--a1); border-radius: 999px; background: var(--card); color: var(--ink); font-size: 13px; font-weight: 700; }
+          :host-context(.night) { border-color: var(--a4); background: var(--ink); color: var(--card); }
+          :host-context(.compact) { padding: 0 8px; font-size: 11px; }
+        </style>
+      <slot></slot>
+    </template>
+    Plain
+  </x-chip>
+  <section class="night">
+    <div>
+      <x-chip>
+        <template shadowrootmode="open">
+            <style>
+              :host { display: inline-block; padding: 3px 12px; border: 2px solid var(--a1); border-radius: 999px; background: var(--card); color: var(--ink); font-size: 13px; font-weight: 700; }
+              :host-context(.night) { border-color: var(--a4); background: var(--ink); color: var(--card); }
+              :host-context(.compact) { padding: 0 8px; font-size: 11px; }
+            </style>
+          <slot></slot>
+        </template>
+        Night
+      </x-chip>
+    </div>
+  </section>
+  <section class="compact">
+    <x-chip>
+      <template shadowrootmode="open">
+          <style>
+            :host { display: inline-block; padding: 3px 12px; border: 2px solid var(--a1); border-radius: 999px; background: var(--card); color: var(--ink); font-size: 13px; font-weight: 700; }
+            :host-context(.night) { border-color: var(--a4); background: var(--ink); color: var(--card); }
+            :host-context(.compact) { padding: 0 8px; font-size: 11px; }
+          </style>
+        <slot></slot>
+      </template>
+      Compact
+    </x-chip>
+    <x-chip>
+      <template shadowrootmode="open">
+          <style>
+            :host { display: inline-block; padding: 3px 12px; border: 2px solid var(--a1); border-radius: 999px; background: var(--card); color: var(--ink); font-size: 13px; font-weight: 700; }
+            :host-context(.night) { border-color: var(--a4); background: var(--ink); color: var(--card); }
+            :host-context(.compact) { padding: 0 8px; font-size: 11px; }
+          </style>
+        <slot></slot>
+      </template>
+      Tags
+    </x-chip>
+  </section>
+  <p class="cap">The chips have <code>:host-context(.night)</code> and <code>:host-context(.compact)</code> rules in their templates: they react to any ancestor with that class. The choices restyle those ancestors. Chrome only; Firefox and Safari do not support <code>:host-context()</code>, so the chips stay plain there.</p>
+</div>

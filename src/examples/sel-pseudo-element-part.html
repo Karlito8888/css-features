@@ -1,0 +1,39 @@
+<div id="example-element" class="card">
+  <user-card>
+    <template shadowrootmode="open">
+      <style>
+        :host { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 16px; }
+        .text { display: grid; flex: 1; min-width: 0; }
+        .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--grad); }
+        .name { font-weight: 700; }
+        .role { color: var(--muted); font-size: 13px; }
+        .badge { padding: 1px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 700; }
+      </style>
+      <div class="avatar" part="avatar"></div>
+      <div class="text">
+        <span class="name" part="label name">Ada Lovelace</span>
+        <span class="role" part="label role">Analyst</span>
+      </div>
+      <span class="badge" part="badge">Free</span>
+    </template>
+  </user-card>
+  <user-card class="pro">
+    <template shadowrootmode="open">
+      <style>
+        :host { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 16px; }
+        .text { display: grid; flex: 1; min-width: 0; }
+        .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--grad); }
+        .name { font-weight: 700; }
+        .role { color: var(--muted); font-size: 13px; }
+        .badge { padding: 1px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 12px; font-weight: 700; }
+      </style>
+      <div class="avatar" part="avatar"></div>
+      <div class="text">
+        <span class="name" part="label name">Grace Hopper</span>
+        <span class="role" part="label role">Engineer</span>
+      </div>
+      <span class="badge" part="badge">Pro</span>
+    </template>
+  </user-card>
+  <p class="cap">Styled from outside: </p>
+</div>

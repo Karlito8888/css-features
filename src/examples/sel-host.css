@@ -1,0 +1,21 @@
+#example-element {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: min(100%, 340px);
+  padding: 16px;
+  font-size: 14px;
+}
+
+.cap {
+  flex-basis: 100%;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}

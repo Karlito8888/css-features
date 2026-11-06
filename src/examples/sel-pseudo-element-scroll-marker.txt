@@ -1,0 +1,15 @@
+#example-element { scroll-marker-group: after; border-color: var(--a1); }
+.tile::scroll-marker { content: ""; width: 10px; height: 10px; border-radius: 50%; background: color-mix(in oklab, var(--muted) 45%, transparent); }
+.tile::scroll-marker:target-current { background: var(--a1); }
+
+#example-element { scroll-marker-group: after; border-color: var(--a2); }
+.tile::scroll-marker { content: counter(slide); display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 50%; color: var(--ink); font-size: 13px; font-weight: 700; text-decoration: none; background: var(--card); }
+.tile::scroll-marker:target-current { color: #fff; border-color: transparent; background: var(--grad); }
+
+#example-element { scroll-marker-group: after; border-color: var(--a3); }
+.tile::scroll-marker { content: attr(data-label); padding: 4px 10px; border-radius: 8px; color: var(--muted); font-size: 12px; font-weight: 600; text-decoration: none; }
+.tile::scroll-marker:target-current { color: var(--ink); background: var(--card); box-shadow: 0 0 0 1px var(--line); }
+
+#example-element { scroll-marker-group: after; border-color: var(--a4); }
+.tile::scroll-marker { content: ""; width: 34px; height: 22px; border-radius: 6px; background: var(--grad); opacity: .55; }
+.tile::scroll-marker:target-current { opacity: 1; outline: 2px solid var(--ink); outline-offset: 2px; }

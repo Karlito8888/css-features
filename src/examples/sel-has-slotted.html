@@ -1,0 +1,28 @@
+<div id="example-element" class="card">
+  <x-note>
+    <template shadowrootmode="open">
+      <style>
+        :host { display: block; padding: 10px 14px; border: 1px solid var(--line); border-radius: 14px; }
+        slot { display: block; color: var(--empty-color, var(--muted)); font-style: italic; }
+        slot:has-slotted { color: var(--filled-color, var(--ink)); font-style: normal; font-weight: 700; }
+      </style>
+      <slot name="title">Untitled</slot>
+      <slot name="body">Nothing written yet</slot>
+    </template>
+    <span slot="title">Release notes</span>
+  </x-note>
+  <x-note>
+    <template shadowrootmode="open">
+      <style>
+        :host { display: block; padding: 10px 14px; border: 1px solid var(--line); border-radius: 14px; }
+        slot { display: block; color: var(--empty-color, var(--muted)); font-style: italic; }
+        slot:has-slotted { color: var(--filled-color, var(--ink)); font-style: normal; font-weight: 700; }
+      </style>
+      <slot name="title">Untitled</slot>
+      <slot name="body">Nothing written yet</slot>
+    </template>
+    <span slot="title">Release notes</span>
+    <span slot="body">Fixes the tide table.</span>
+  </x-note>
+  <p class="cap">Both <code>&lt;slot&gt;</code> elements are styled in the template: <code>:has-slotted</code> picks the ones that received content. The choices set the colours they read. Only Firefox 136 and later draws it; Chrome and Safari drop the rule.</p>
+</div>

@@ -1,0 +1,26 @@
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 340px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+.cap {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}
+
+@supports not selector(:has-slotted) {
+  .cap::after {
+    content: " This browser lacks :has-slotted, so filled and empty slots look the same.";
+    color: var(--a2);
+    font-weight: 700;
+  }
+}

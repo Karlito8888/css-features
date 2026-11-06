@@ -1,0 +1,18 @@
+<div id="example-element" class="card">
+  <x-callout>
+    <template shadowrootmode="open">
+      <style>
+        :host { display: block; padding: 14px 16px; border: 1px solid var(--line); border-radius: 16px; }
+        ::slotted(*) { margin: 0 0 8px; }
+        ::slotted(h3) { font-size: 17px; color: var(--a1); }
+        ::slotted(p) { color: var(--muted); font-style: italic !important; }
+        ::slotted(.tag) { display: inline-block; padding: 1px 10px; border-radius: 999px; background: var(--grad); color: #fff; font-size: 12px; font-weight: 700; }
+      </style>
+      <slot></slot>
+    </template>
+    <h3>Heads up</h3>
+    <p>The harbour road is closed until noon.</p>
+    <span class="tag">Beta</span>
+  </x-callout>
+  <p class="cap">The <code>::slotted()</code> rules live in the template. The choices are page rules on the slotted nodes: they win, except over the <code>!important</code> italic.</p>
+</div>

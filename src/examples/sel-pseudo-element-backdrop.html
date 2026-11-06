@@ -1,0 +1,11 @@
+<div id="example-element" class="card">
+  <p class="line">Delete 3 files?</p>
+  <p class="sub">They stay in the bin for 30 days.</p>
+  <button type="button" commandfor="confirm" command="show-modal">Open dialog</button>
+  <dialog id="confirm" closedby="any">
+    <b>Confirm</b>
+    <span>Delete the files for good.</span>
+    <button type="button" commandfor="confirm" command="close">Close</button>
+  </dialog>
+</div>
+<p class="cap">Click Open dialog: the layer behind it is its <code>::backdrop</code>. Press Esc, Close or click the backdrop to leave. The button opens the dialog without script through <code>command</code>, supported in Chrome 135, Firefox 144 and Safari 26.2.</p>

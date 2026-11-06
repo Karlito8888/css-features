@@ -1,0 +1,19 @@
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 340px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+.cap {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cap::after {
+  content: var(--note);
+  color: var(--ink);
+  font-family: ui-monospace, monospace;
+}

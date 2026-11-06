@@ -1,0 +1,36 @@
+<div id="example-element" class="card">
+  <x-badge>
+    <template shadowrootmode="open">
+      <style>
+        :host { --tone: var(--a1); display: inline-block; padding: 3px 12px; border: 2px solid var(--tone); border-radius: 999px; background: color-mix(in oklab, var(--tone) 16%, var(--card)); font-size: 13px; font-weight: 700; }
+        :host(.hot) { --tone: var(--a2); }
+        :host([disabled]) { --tone: var(--muted); text-decoration: line-through; }
+      </style>
+      <slot></slot>
+    </template>
+    New
+  </x-badge>
+  <x-badge class="hot">
+    <template shadowrootmode="open">
+      <style>
+        :host { --tone: var(--a1); display: inline-block; padding: 3px 12px; border: 2px solid var(--tone); border-radius: 999px; background: color-mix(in oklab, var(--tone) 16%, var(--card)); font-size: 13px; font-weight: 700; }
+        :host(.hot) { --tone: var(--a2); }
+        :host([disabled]) { --tone: var(--muted); text-decoration: line-through; }
+      </style>
+      <slot></slot>
+    </template>
+    Hot
+  </x-badge>
+  <x-badge disabled>
+    <template shadowrootmode="open">
+      <style>
+        :host { --tone: var(--a1); display: inline-block; padding: 3px 12px; border: 2px solid var(--tone); border-radius: 999px; background: color-mix(in oklab, var(--tone) 16%, var(--card)); font-size: 13px; font-weight: 700; }
+        :host(.hot) { --tone: var(--a2); }
+        :host([disabled]) { --tone: var(--muted); text-decoration: line-through; }
+      </style>
+      <slot></slot>
+    </template>
+    Sold out
+  </x-badge>
+  <p class="cap">The <code>:host</code> rules live in each badge's template: <code>:host</code>, <code>:host(.hot)</code>, <code>:host([disabled])</code>. The choices are page rules on the badges, and they beat <code>:host</code> rules.</p>
+</div>

@@ -1,0 +1,7 @@
+x-callout > h3 { color: var(--a2); text-transform: uppercase; letter-spacing: 0.05em; }
+
+x-callout > p { color: var(--ink); font-style: normal; font-size: 15px; }
+
+x-callout > .tag { border-radius: 4px; background: var(--a5); }
+
+x-callout > :is(h3, p) { padding-left: 10px; border-left: 3px solid var(--a3); }

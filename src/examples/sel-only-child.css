@@ -1,0 +1,53 @@
+:root {
+  --hit: color-mix(in oklab, var(--a1) 30%, transparent);
+}
+
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 440px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+#example-element section {
+  display: grid;
+  gap: 6px;
+  padding: 8px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+#example-element section > * {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+#example-element section > [data-el]::before {
+  content: attr(data-el);
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: var(--muted);
+  background: var(--line);
+  font: 700 11px/1.3 ui-monospace, monospace;
+}
+
+#example-element h4 {
+  font-size: 14px;
+}
+
+#example-element ul {
+  list-style: none;
+}
+
+#example-element li {
+  padding: 2px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 13px;
+}

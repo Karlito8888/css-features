@@ -1,0 +1,19 @@
+.current ~ li {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+.done ~ li {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li ~ .done {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+.done ~ .current {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

@@ -1,0 +1,19 @@
+h3 + p {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+p + p {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+p + ul {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li + li {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

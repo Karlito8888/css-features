@@ -1,0 +1,19 @@
+:is(h1, h2, h3) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+:is(header, footer) p {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+main :is(ul, ol) li {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+:is(h2, h3) + :is(p, ul) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

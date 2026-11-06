@@ -1,0 +1,7 @@
+input:user-valid { outline: 3px solid var(--a5); outline-offset: 2px; background-color: color-mix(in oklab, var(--a5) 22%, var(--card)); }
+
+input:required:user-valid { outline: 3px solid var(--a5); outline-offset: 2px; background-color: color-mix(in oklab, var(--a5) 22%, var(--card)); }
+
+input:user-valid + small { display: block; color: var(--ink); font-weight: 700; }
+
+.row:has(:user-valid) { background-color: color-mix(in oklab, var(--a5) 22%, var(--card)); }

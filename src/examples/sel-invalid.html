@@ -1,0 +1,14 @@
+<form id="example-element" class="card">
+  <fieldset>
+    <legend>Account</legend>
+    <label class="row">Name <input type="text" value="Ana Reyes" required><small>Required</small></label>
+    <label class="row">Email <input type="email" value="ana.mail.com" required><small>Not an email address</small></label>
+    <label class="row">Website <input type="text" inputmode="url" pattern="https?://.+" value="example.com"><small>Start with https://</small></label>
+  </fieldset>
+  <fieldset>
+    <legend>Extras</legend>
+    <label class="row">Company <input type="text"><small>Required</small></label>
+    <label class="row">Nickname <input type="text" value="ana" pattern="[a-z]+"><small>Lowercase letters only</small></label>
+  </fieldset>
+  <button type="submit">Create account</button>
+</form>

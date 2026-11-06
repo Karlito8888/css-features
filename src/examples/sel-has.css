@@ -1,0 +1,36 @@
+:root {
+  --hit: color-mix(in oklab, var(--a1) 30%, transparent);
+}
+
+#example-element {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 380px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+#example-element fieldset {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  margin: 0;
+  padding: 6px 10px 10px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+#example-element legend {
+  padding: 0 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#example-element label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 8px;
+}

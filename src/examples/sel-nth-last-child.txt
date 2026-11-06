@@ -1,0 +1,19 @@
+li:nth-last-child(2) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:nth-last-child(-n + 3) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:nth-last-child(even) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:nth-last-child(2 of .unread) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

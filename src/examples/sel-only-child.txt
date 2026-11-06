@@ -1,0 +1,19 @@
+p:only-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+ul:only-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:only-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+section > :only-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

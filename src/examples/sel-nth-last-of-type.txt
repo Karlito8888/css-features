@@ -1,0 +1,19 @@
+dd:nth-last-of-type(2) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+dd:nth-last-of-type(odd) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+dt:nth-last-of-type(2) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+dl > :nth-last-of-type(2) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

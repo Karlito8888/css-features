@@ -1,0 +1,14 @@
+li:last-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+p:last-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+.card > :last-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

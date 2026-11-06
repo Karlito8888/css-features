@@ -1,0 +1,19 @@
+h4:only-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+p:only-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+ul:only-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+article > :only-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

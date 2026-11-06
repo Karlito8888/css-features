@@ -1,0 +1,7 @@
+input:read-only { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+textarea:read-only { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+select:read-only { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+form p:read-only { outline: 2px solid var(--a2); background-color: var(--on); }

@@ -1,0 +1,7 @@
+.row:focus-within { outline: 2px solid var(--a2); background-color: var(--on); }
+
+fieldset:focus-within { border-color: var(--a2); box-shadow: 0 0 0 3px var(--on); }
+
+form:focus-within { outline: 3px solid var(--a2); outline-offset: 4px; }
+
+fieldset:not(:focus-within) { opacity: 0.45; }

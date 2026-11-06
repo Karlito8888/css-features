@@ -1,0 +1,22 @@
+:root {
+  --hit: color-mix(in oklab, var(--a1) 30%, transparent);
+}
+
+#example-element {
+  display: grid;
+  gap: 4px;
+  width: min(100%, 380px);
+  margin: 0;
+  padding: 12px;
+  list-style: decimal inside;
+}
+
+#example-element li {
+  padding: 6px 12px;
+  border-radius: 10px;
+}
+
+#example-element .off::after {
+  content: " · day off";
+  color: var(--muted);
+}

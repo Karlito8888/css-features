@@ -1,0 +1,19 @@
+nav > a {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+nav > div {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+nav > div > a {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+.sub > a {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

@@ -1,0 +1,52 @@
+#example-element {
+  --on: color-mix(in oklab, var(--a2) 22%, var(--card));
+  width: 100%;
+  max-width: 340px;
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+:where(input, select, textarea, button) {
+  font: inherit;
+  color: var(--ink);
+}
+
+#example-element {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+button {
+  padding: 3px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--stage);
+  font-weight: 600;
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

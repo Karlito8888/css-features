@@ -1,0 +1,9 @@
+:matches(h2, h3) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+:matches(h2, h3) + :matches(p, ul) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

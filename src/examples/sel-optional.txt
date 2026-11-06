@@ -1,0 +1,7 @@
+input:optional { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+textarea:optional { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+label:has(+ :optional)::after { content: " (optional)"; color: var(--muted); font-weight: 500; }
+
+input:optional:not([type="checkbox"]) { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }

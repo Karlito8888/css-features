@@ -1,0 +1,29 @@
+:root {
+  --hit: color-mix(in oklab, var(--a1) 30%, transparent);
+}
+
+#example-element {
+  display: grid;
+  gap: 4px;
+  width: min(100%, 380px);
+  margin: 0;
+  padding: 12px;
+  list-style: none;
+}
+
+#example-element li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  border-radius: 10px;
+}
+
+#example-element li[data-tag]::after {
+  content: attr(data-tag);
+  padding: 1px 8px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: var(--line);
+  font-size: 12px;
+}

@@ -1,0 +1,7 @@
+input:default { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+button:default { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+option:default { background-color: var(--on); font-weight: 800; }
+
+label:has(:default)::after { content: "default"; margin-left: auto; padding: 0 8px; border-radius: 999px; background-color: var(--on); font-size: 11px; }

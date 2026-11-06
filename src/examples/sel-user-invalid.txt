@@ -1,0 +1,7 @@
+input:user-invalid { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input:required:user-invalid { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input:user-invalid + small { display: block; color: var(--a2); font-weight: 700; }
+
+.row:has(:user-invalid) { background-color: var(--on); }

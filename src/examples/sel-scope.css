@@ -1,0 +1,32 @@
+:root {
+  --hit: color-mix(in oklab, var(--a1) 30%, transparent);
+}
+
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 420px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+#example-element .comment {
+  display: grid;
+  gap: 6px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--bar, var(--line));
+  border-radius: 8px;
+}
+
+#example-element .comment p {
+  margin: 0;
+}
+
+.hint {
+  max-width: 420px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  text-wrap: balance;
+}

@@ -1,0 +1,7 @@
+input:focus { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+textarea:focus { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+select:focus, button:focus { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+:focus { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }

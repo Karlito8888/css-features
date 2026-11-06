@@ -1,0 +1,14 @@
+li:first-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+p:first-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+.card > :first-child {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

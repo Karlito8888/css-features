@@ -1,0 +1,19 @@
+li:nth-child(odd) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:nth-child(3n + 1) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:nth-child(-n + 3) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:nth-child(2 of .off) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

@@ -1,0 +1,7 @@
+input:read-write { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+textarea:read-write { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+div:read-write { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+label:has(:read-write) { background-color: var(--on); }

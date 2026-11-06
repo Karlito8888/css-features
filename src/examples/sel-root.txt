@@ -1,0 +1,12 @@
+:root {
+  --brand: var(--a2);
+}
+
+:root {
+  --brand: var(--a5);
+  --radius: 999px;
+}
+
+:root {
+  font-size: 20px;
+}

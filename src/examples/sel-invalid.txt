@@ -1,0 +1,9 @@
+input:invalid { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input:required:invalid { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+fieldset:invalid { border-color: var(--a2); background-color: var(--on); }
+
+input:invalid + small { display: block; color: var(--a2); font-weight: 700; }
+
+form:invalid button { opacity: 0.45; }

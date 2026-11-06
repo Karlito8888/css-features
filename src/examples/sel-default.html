@@ -1,0 +1,22 @@
+<form id="example-element" class="card">
+  <fieldset>
+    <legend>Plan</legend>
+    <label class="opt"><input type="radio" name="plan" checked><span>Free</span></label>
+    <label class="opt"><input type="radio" name="plan"><span>Pro</span></label>
+  </fieldset>
+  <fieldset>
+    <legend>Extras</legend>
+    <label class="opt"><input type="checkbox" checked><span>Offers</span></label>
+    <label class="opt"><input type="checkbox"><span>Beta</span></label>
+  </fieldset>
+  <label class="row wide">Digest <select size="3">
+    <option>Daily</option>
+    <option selected>Weekly</option>
+    <option>Monthly</option>
+  </select></label>
+  <div class="bar wide">
+    <button type="submit">Subscribe</button>
+    <button type="submit">Save draft</button>
+  </div>
+</form>
+<p class="cap">Pick another plan: <code>:checked</code> follows you, <code>:default</code> stays on what the markup set.</p>

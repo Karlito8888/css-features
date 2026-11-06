@@ -1,0 +1,7 @@
+input:autofill { box-shadow: inset 0 0 0 100px var(--on); outline: 3px solid var(--a2); outline-offset: 2px; }
+
+input[type="email"]:autofill { box-shadow: inset 0 0 0 100px var(--on); outline: 3px solid var(--a2); outline-offset: 2px; }
+
+label:has(:autofill) { background-color: var(--on); }
+
+label:has(:autofill)::after { content: "Filled by your browser"; grid-column: 2; color: var(--muted); font-size: 12px; }

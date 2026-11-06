@@ -1,0 +1,7 @@
+input:placeholder-shown { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+textarea:placeholder-shown { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input:not(:placeholder-shown) { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input:placeholder-shown:required { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }

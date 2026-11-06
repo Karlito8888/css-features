@@ -1,0 +1,19 @@
+p:last-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+ul:last-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+.card > :last-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:last-of-type {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

@@ -1,0 +1,14 @@
+:is(.menu) a {
+  color: var(--brand);
+  background: var(--hit);
+}
+
+:where(.menu) a {
+  color: var(--brand);
+  background: var(--hit);
+}
+
+:where(.menu) a.link {
+  color: var(--brand);
+  background: var(--hit);
+}

@@ -1,0 +1,35 @@
+:root {
+  --hit: color-mix(in oklab, var(--a1) 30%, transparent);
+}
+
+#example-element {
+  --brand: color-mix(in oklab, var(--a1), var(--ink) 25%);
+  display: grid;
+  gap: 4px;
+  width: min(100%, 320px);
+  padding: 12px;
+}
+
+#example-element a {
+  padding: 7px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a {
+  color: var(--ink);
+}
+
+.link {
+  color: color-mix(in oklab, var(--a2), var(--ink) 30%);
+}
+
+.hint {
+  max-width: 420px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  text-wrap: balance;
+}

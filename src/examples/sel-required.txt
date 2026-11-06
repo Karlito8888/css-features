@@ -1,0 +1,7 @@
+input:required { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+select:required { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+label:has(+ :required)::after { content: " *"; color: var(--a2); font-weight: 800; }
+
+input:required:not([type="checkbox"]) { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }

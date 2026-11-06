@@ -1,0 +1,7 @@
+input:valid { outline: 3px solid var(--a5); outline-offset: 2px; background-color: color-mix(in oklab, var(--a5) 22%, var(--card)); }
+
+input:required:valid { outline: 3px solid var(--a5); outline-offset: 2px; background-color: color-mix(in oklab, var(--a5) 22%, var(--card)); }
+
+fieldset:valid { border-color: var(--a5); background-color: color-mix(in oklab, var(--a5) 14%, var(--card)); }
+
+input:valid + small { display: block; color: var(--ink); font-weight: 700; }

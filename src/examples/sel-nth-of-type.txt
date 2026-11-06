@@ -1,0 +1,19 @@
+p:nth-of-type(2) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+p:nth-of-type(odd) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+ul:nth-of-type(2) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+.card > :nth-of-type(2) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

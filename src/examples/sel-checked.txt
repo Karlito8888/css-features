@@ -1,0 +1,7 @@
+input:checked { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+[type="checkbox"]:checked + span { background-color: var(--on); font-weight: 800; }
+
+label:has(:checked) { background-color: var(--on); }
+
+option:checked { background-color: var(--on); font-weight: 800; }

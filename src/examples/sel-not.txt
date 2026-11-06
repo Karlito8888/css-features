@@ -1,0 +1,14 @@
+li:not(.sold-out) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:not(.new, .sale) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+li:not(:first-child, :last-child) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

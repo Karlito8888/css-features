@@ -1,0 +1,28 @@
+:root {
+  --hit: color-mix(in oklab, var(--a1) 30%, transparent);
+}
+
+#example-element {
+  display: grid;
+  gap: 4px;
+  width: min(100%, 340px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+#example-element a {
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#example-element div {
+  display: grid;
+  gap: 4px;
+  margin-left: 12px;
+  padding: 6px 6px 6px 10px;
+  border-left: 2px solid var(--line);
+  border-radius: 8px;
+}

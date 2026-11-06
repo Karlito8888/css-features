@@ -1,0 +1,59 @@
+#example-element {
+  --on: color-mix(in oklab, var(--a2) 22%, var(--card));
+  width: 100%;
+  max-width: 340px;
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 10px;
+}
+
+fieldset {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+  margin: 0;
+  padding: 4px 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+legend {
+  padding: 0 6px;
+  font-weight: 700;
+}
+
+.bar {
+  display: flex;
+  gap: 8px;
+}
+
+progress {
+  width: 100%;
+  accent-color: var(--a1);
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

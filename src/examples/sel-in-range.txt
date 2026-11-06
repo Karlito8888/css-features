@@ -1,0 +1,7 @@
+input:in-range { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input[type="number"]:in-range { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input[type="date"]:in-range { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+input:in-range + small { background-color: color-mix(in oklab, var(--a5) 28%, var(--card)); color: var(--ink); padding: 1px 8px; border-radius: 999px; font-weight: 700; }

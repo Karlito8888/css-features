@@ -1,0 +1,7 @@
+input:enabled { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+button:enabled { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+select:enabled { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+label:has(:enabled) { background-color: var(--on); }

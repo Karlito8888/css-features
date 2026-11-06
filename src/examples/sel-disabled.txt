@@ -1,0 +1,7 @@
+input:disabled { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+button:disabled { outline: 3px solid var(--a2); outline-offset: 2px; background-color: var(--on); }
+
+fieldset:disabled { border-color: var(--a2); box-shadow: 0 0 0 3px var(--on); }
+
+label:has(:disabled) { background-color: var(--on); }

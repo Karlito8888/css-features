@@ -1,0 +1,20 @@
+dd:empty {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+dd:empty::before {
+  content: "not provided";
+  color: var(--muted);
+  font-style: italic;
+}
+
+dd:not(:empty) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}
+
+dt:has(+ dd:empty) {
+  background: var(--hit);
+  outline: 2px solid var(--a1);
+}

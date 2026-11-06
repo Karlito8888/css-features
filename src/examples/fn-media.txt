@@ -1,0 +1,8 @@
+width: if(media(width >= 500px): 100%; else: 50%);
+--note: "100% wide from 500px, else 50%";
+
+gap: if(media(400px <= width <= 800px): 28px; else: 4px);
+--note: "a wide gap between 400px and 800px, a tight one outside";
+
+flex-direction: if(media(orientation: landscape): row; else: column);
+--note: "a row when landscape, a column when portrait";

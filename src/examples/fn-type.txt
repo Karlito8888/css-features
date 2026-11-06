@@ -1,0 +1,10 @@
+width: calc(attr(data-n type(<number>), 1) * 5rem);
+
+width: attr(data-w type(<length> | <percentage>), 7rem);
+
+background: attr(data-color type(<color>), var(--a5));
+
+rotate: attr(data-angle type(<angle>), 0deg);
+
+@function --twice(--n type(<number>)) returns type(<number>) { result: calc(var(--n) * 2); }
+#example-element { width: calc(--twice(2) * 1rem); }

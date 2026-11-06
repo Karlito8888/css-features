@@ -1,0 +1,33 @@
+/* A tall line height leaves half-leading above and below the letters. With trim-both, the <text-edge> pair decides which font metrics the box is cut to. */
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+
+.wrap {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+#example-element {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 14px;
+  outline: 2px solid var(--a1);
+  background: color-mix(in oklab, var(--a1) 22%, var(--card));
+  color: var(--ink);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 2.4;
+  text-box-trim: trim-both;
+}

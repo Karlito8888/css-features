@@ -1,0 +1,11 @@
+@function --scale(--n type(<number>)) returns type(<length>) { result: calc(var(--n) * 2rem); }
+#example-element { width: --scale(3); }
+
+@function --half(--v type(<length-percentage>)) returns type(<length-percentage>) { result: calc(var(--v) / 2); }
+#example-element { width: --half(100%); }
+
+@function --soft(--c type(<color>)) returns type(<color>) { result: color-mix(in oklab, var(--c) 35%, var(--card)); }
+#example-element { background: --soft(var(--a2)); }
+
+@function --turn(--n type(<number>)) returns type(<angle>) { result: calc(var(--n) * 1deg); }
+#example-element { rotate: --turn(8); }

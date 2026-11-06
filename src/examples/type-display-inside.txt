@@ -1,0 +1,12 @@
+display: flow;
+
+display: flow-root;
+
+display: flex;
+gap: 6px;
+
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 6px;
+
+display: table;

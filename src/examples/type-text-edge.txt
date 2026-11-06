@@ -1,0 +1,9 @@
+text-box-edge: text;
+
+text-box-edge: cap alphabetic;
+
+text-box-edge: ex alphabetic;
+
+text-box-edge: cap text;
+
+text-box-edge: text alphabetic;

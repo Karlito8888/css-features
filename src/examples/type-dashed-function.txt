@@ -1,0 +1,11 @@
+@function --half(--w) { result: calc(var(--w) / 2); }
+#example-element { width: --half(10rem); }
+
+@function --space(--n, --unit: 1rem) { result: calc(var(--n) * var(--unit)); }
+#example-element { padding: --space(2) --space(4, 0.5rem); }
+
+@function --pill(--r: 999px) { result: var(--r); }
+#example-element { width: 12rem; border-radius: --pill(); }
+
+@function --tone(--c, --amount: 40%) { result: color-mix(in oklab, var(--c), var(--a1) var(--amount)); }
+#example-element { background: --tone(var(--a5), 60%); }

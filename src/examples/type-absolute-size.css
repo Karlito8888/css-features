@@ -1,0 +1,16 @@
+/* <absolute-size>: a font-size keyword, from xx-small to xxx-large. Each is a fixed step of the browser's
+   default size (medium, 16px), whatever the size around it. */
+.demo {
+  width: min(100%, 360px);
+}
+
+#example-element {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+#example-element::after {
+  content: " (" var(--note) ")";
+  color: var(--muted);
+  font-size: 12px;
+}

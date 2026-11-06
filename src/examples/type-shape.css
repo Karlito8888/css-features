@@ -1,0 +1,36 @@
+/* <shape>: rect(top, right, bottom, left), the four edges of the visible rectangle measured from the
+   top left corner of the box. Used by the legacy clip property, which is deprecated in favor of
+   clip-path. The dashed outline is the whole box. */
+.stage {
+  position: relative;
+  width: 200px;
+  height: 120px;
+}
+
+.ghost,
+#example-element {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+}
+
+.ghost {
+  border: 2px dashed var(--muted);
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  background: var(--grad);
+}
+
+.cap {
+  max-width: 240px;
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

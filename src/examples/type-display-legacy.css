@@ -1,0 +1,27 @@
+/* <display-legacy>: the one-keyword spellings of an inline box with its own inside layout: inline-block,
+   inline-flex, inline-grid, inline-table. The box sits in the line of text and aligns on its baseline. */
+.line {
+  width: min(100%, 300px);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.box {
+  padding: 4px;
+  border: 2px solid var(--a1);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--a1) 10%, var(--card));
+}
+
+.box .tile {
+  min-width: 36px;
+  min-height: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.box .big {
+  min-height: 52px;
+  font-size: 18px;
+}

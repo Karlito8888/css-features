@@ -1,0 +1,19 @@
+/* <flex>: the fr unit. Three tiles in one row; the choice sets how the free space is shared. */
+.demo {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 560px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+#example-element {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}

@@ -1,0 +1,29 @@
+/* <self-position>: where a grid item sits in its area. start and end follow the container's writing
+   direction; self-start and self-end follow the item's own. */
+.stage {
+  display: grid;
+  width: min(100%, 300px);
+  height: 190px;
+  padding: 8px;
+  border: 2px dashed var(--muted);
+  border-radius: 14px;
+  direction: rtl;
+}
+
+#example-element {
+  width: 130px;
+  min-height: 52px;
+  direction: ltr;
+  font-size: 14px;
+}
+
+#example-element::before {
+  content: var(--note);
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

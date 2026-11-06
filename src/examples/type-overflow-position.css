@@ -1,0 +1,26 @@
+/* <overflow-position>: unsafe or safe. The tile is larger than the dashed box. Centered the unsafe
+   way it spills out on both sides, so its start can no longer be reached; safe falls back to the start
+   edge when the tile would overflow. */
+#example-element {
+  position: relative;
+  display: flex;
+  width: min(100%, 200px);
+  height: 80px;
+}
+
+#example-element::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px dashed var(--ink);
+  border-radius: 14px;
+}
+
+.tile {
+  flex: none;
+  width: 250px;
+  height: 150px;
+  padding: 0 14px;
+  opacity: 0.8;
+  text-align: center;
+}

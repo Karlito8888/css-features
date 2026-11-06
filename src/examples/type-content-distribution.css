@@ -1,0 +1,15 @@
+/* <content-distribution>: how justify-content spreads the leftover space of a grid whose columns are
+   sized by their content: in the gaps (space-between, space-around, space-evenly) or into the
+   columns themselves (stretch). */
+#example-element {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  width: min(100%, 380px);
+  padding: 14px;
+}
+
+.tile {
+  min-height: 72px;
+  padding: 0 8px;
+}

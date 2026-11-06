@@ -1,0 +1,22 @@
+top: calc(anchor(bottom) + 8px);
+left: anchor(left);
+--note: "below, left edges aligned";
+
+bottom: calc(anchor(top) + 8px);
+left: anchor(center);
+translate: -50% 0;
+--note: "above, centered";
+
+top: anchor(top);
+left: calc(anchor(right) + 8px);
+--note: "right";
+
+inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+outline: 3px dashed var(--a2);
+outline-offset: 4px;
+background: transparent;
+--note: "";
+
+top: anchor(--nothing bottom, 16px);
+left: anchor(--nothing left, 16px);
+--note: "unknown anchor: the fallbacks";

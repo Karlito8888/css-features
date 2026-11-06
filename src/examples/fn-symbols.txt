@@ -1,0 +1,9 @@
+list-style-type: symbols(cyclic "◆" "◇");
+
+list-style-type: symbols(alphabetic "A" "B" "C");
+
+list-style-type: symbols(numeric "0" "1");
+
+list-style-type: symbols(symbolic "*" "†");
+
+list-style-type: symbols(fixed "①" "②" "③");

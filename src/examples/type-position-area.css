@@ -1,0 +1,35 @@
+/* <position-area>: the tip sits in one cell, or a span of cells, of the 3 by 3 grid drawn around the
+   anchor (the button) and bounded by the stage. */
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  height: 230px;
+  padding: 14px;
+}
+
+.btn {
+  anchor-name: --btn;
+  padding: 10px 22px;
+  border: 2px solid var(--a1);
+  border-radius: 14px;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--a1) 12%, var(--card));
+}
+
+#example-element {
+  position: absolute;
+  position-anchor: --btn;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--grad);
+}
+
+#example-element::before {
+  content: var(--note);
+}

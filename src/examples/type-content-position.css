@@ -1,0 +1,18 @@
+/* <content-position>: where justify-content packs the items. start and end follow the writing mode
+   of the container; flex-start and flex-end follow the flex direction. */
+#example-element {
+  display: flex;
+  gap: 4px;
+  width: min(100%, 380px);
+  padding: 14px;
+}
+
+.tile {
+  flex: none;
+  width: 52px;
+  min-height: 72px;
+}
+
+.tile:nth-child(2) {
+  width: 64px;
+}

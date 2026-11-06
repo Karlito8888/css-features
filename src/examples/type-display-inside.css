@@ -1,0 +1,26 @@
+/* <display-inside>: the layout a box gives its children: flow (normal block layout), flow-root (a new
+   block formatting context that contains its floats), flex, grid, table. The orange tile is a float. */
+.stage {
+  width: min(100%, 300px);
+  padding: 8px 0 24px;
+}
+
+#example-element {
+  padding: 8px;
+  border: 2px solid var(--a1);
+  border-radius: 16px;
+  background: var(--card);
+}
+
+#example-element .tile {
+  min-height: 36px;
+  margin: 3px;
+  padding: 0 14px;
+}
+
+.fl {
+  float: right;
+  width: 90px;
+  min-height: 76px !important;
+  font-size: 13px;
+}

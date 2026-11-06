@@ -1,0 +1,41 @@
+/* <display-internal>: the parts of a table box. A header group is always drawn above the other row
+   groups and a footer group below them, wherever they sit in the source; a caption is drawn above the
+   table. The three groups are in the source order Top, Middle, Bottom. */
+.table {
+  display: table;
+  width: min(100%, 280px);
+  border-spacing: 6px;
+}
+
+.group {
+  display: table-row-group;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  text-align: center;
+}
+
+#example-element {
+  outline: 3px solid var(--a2);
+  outline-offset: 1px;
+}
+
+#example-element .cell {
+  background: color-mix(in oklab, var(--a2) 14%, var(--card));
+}
+
+.cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

@@ -1,0 +1,12 @@
+background: if(supports(color: oklch(70% 0.2 30)): oklch(85% 0.12 30); else: var(--a1));
+--note: "oklch() is understood here: the first branch";
+
+background: if(supports(color: not-a-color): var(--a2); else: color-mix(in oklab, var(--a5) 30%, var(--card)));
+--note: "not a color: the else branch";
+
+border-radius: 28px;
+corner-shape: if(supports(corner-shape: bevel): bevel; else: round);
+--note: "bevel corners if corner-shape is understood, round ones if not";
+
+gap: if(supports(display: masonry): 2px; else: 28px);
+--note: "a 28px gap unless display: masonry is understood, then 2px";

@@ -1,0 +1,11 @@
+/* A track is never smaller than the first argument of minmax() and never larger than the second. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 560px);
+  padding: 14px;
+}
+
+.tile {
+  min-height: 56px;
+}

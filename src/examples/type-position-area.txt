@@ -1,0 +1,17 @@
+position-area: top left;
+--note: "top left";
+
+position-area: top;
+--note: "top";
+
+position-area: right;
+--note: "right";
+
+position-area: bottom span-all;
+--note: "bottom span-all";
+
+position-area: span-left bottom;
+--note: "span-left bottom";
+
+position-area: center;
+--note: "center";

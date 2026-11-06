@@ -1,0 +1,9 @@
+li::before { content: counters(item, "."); }
+
+li::before { content: counters(item, " › "); }
+
+li::before { content: counters(item, "-", upper-roman); }
+
+li::before { content: counters(item, ".", lower-alpha); }
+
+li::before { content: counters(item, "/", decimal-leading-zero); }

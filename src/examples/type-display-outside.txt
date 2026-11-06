@@ -1,0 +1,9 @@
+display: inline;
+
+display: block;
+
+display: inline flex;
+justify-content: space-between;
+
+display: block flex;
+justify-content: space-between;

@@ -1,0 +1,7 @@
+li::before { content: counter(item); }
+
+li::before { content: counter(item, lower-alpha); }
+
+li::before { content: counters(item, "."); }
+
+li::before { content: counters(item, ".", upper-roman); }

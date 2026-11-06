@@ -1,0 +1,8 @@
+display: list-item;
+
+display: flow-root list-item;
+
+display: inline list-item;
+
+display: list-item;
+list-style: decimal inside;

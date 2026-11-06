@@ -1,0 +1,11 @@
+justify-content: start;
+
+justify-content: center;
+
+justify-content: end;
+
+flex-direction: row-reverse;
+justify-content: flex-start;
+
+flex-direction: row-reverse;
+justify-content: start;

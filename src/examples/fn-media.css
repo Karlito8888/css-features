@@ -1,0 +1,30 @@
+/* media() is a condition of if(): true when the media query matches. The query is evaluated against this
+   preview, not a window you resize. */
+.demo {
+  width: min(100%, 520px);
+  padding-bottom: 40px;
+}
+
+#example-element {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+}
+
+.tile {
+  flex: 1;
+  min-width: 0;
+  min-height: 52px;
+}
+
+#example-element::after {
+  content: var(--note);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

@@ -1,0 +1,26 @@
+top: calc(anchor(bottom) + 8px);
+left: anchor(left);
+width: anchor-size(width);
+--note: "same width";
+
+top: calc(anchor(bottom) + 8px);
+left: anchor(left);
+width: calc(anchor-size(width) * 1.5);
+--note: "1.5 times the width";
+
+top: anchor(top);
+left: calc(anchor(right) + 8px);
+width: 56px;
+height: anchor-size(height);
+--note: "same height";
+
+top: calc(anchor(bottom) + 8px);
+left: anchor(left);
+width: anchor-size(height);
+height: anchor-size(height);
+--note: "square";
+
+top: calc(anchor(bottom) + 8px);
+left: anchor(left);
+width: anchor-size(--nothing width, 64px);
+--note: "unknown anchor: 64px";

@@ -1,0 +1,9 @@
+h3::before { content: counter(step); }
+
+h3::before { content: counter(step, upper-roman); }
+
+h3::before { content: counter(step, lower-alpha); }
+
+h3::before { content: counter(step, decimal-leading-zero); }
+
+h3::before { content: "Step " counter(step); }

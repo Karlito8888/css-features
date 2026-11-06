@@ -1,0 +1,8 @@
+display: inline-block;
+
+display: inline-flex;
+gap: 4px;
+
+display: inline-grid;
+grid-template-columns: auto auto;
+gap: 4px;

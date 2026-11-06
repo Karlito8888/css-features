@@ -1,0 +1,11 @@
+/* Six tiles. repeat() writes the track list once: a count repeats the pattern, auto-fill and auto-fit add as many tracks as fit. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 560px);
+  padding: 14px;
+}
+
+.tile {
+  min-height: 56px;
+}

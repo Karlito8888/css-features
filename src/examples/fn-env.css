@@ -1,0 +1,29 @@
+/* env() reads a value the browser or the device defines: the safe-area insets (a notch, rounded
+   corners, the home indicator), the titlebar of an installed app, the keyboard. The padding is the
+   amber band around the content. */
+.demo {
+  width: min(100%, 300px);
+}
+
+#example-element {
+  background:
+    linear-gradient(var(--card), var(--card)) content-box,
+    color-mix(in oklab, var(--a4) 55%, var(--card)) padding-box;
+  border: 2px solid var(--line);
+  border-radius: 18px;
+}
+
+.inner {
+  display: grid;
+  place-items: center;
+  min-height: 80px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

@@ -1,0 +1,19 @@
+justify-self: center;
+align-self: center;
+--note: "center";
+
+justify-self: start;
+align-self: start;
+--note: "start";
+
+justify-self: self-start;
+align-self: start;
+--note: "self-start";
+
+justify-self: end;
+align-self: end;
+--note: "end";
+
+justify-self: self-end;
+align-self: end;
+--note: "self-end";

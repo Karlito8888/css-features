@@ -1,0 +1,14 @@
+font-size: xx-small;
+--note: "xx-small";
+
+font-size: small;
+--note: "small";
+
+font-size: medium;
+--note: "medium";
+
+font-size: x-large;
+--note: "x-large";
+
+font-size: xxx-large;
+--note: "xxx-large";

@@ -1,0 +1,16 @@
+width: anchor-size(width);
+height: 34px;
+--note: "width";
+
+width: anchor-size(height);
+height: 34px;
+--note: "height";
+
+width: anchor-size(inline);
+height: anchor-size(block);
+--note: "inline, block";
+
+writing-mode: vertical-rl;
+width: anchor-size(self-inline);
+height: anchor-size(self-block);
+--note: "self-inline, self-block";

@@ -1,0 +1,29 @@
+/* <generic-family>: a family name that is not a font but a category (serif, sans-serif, monospace,
+   cursive, fantasy, system-ui...). The browser picks a font from those installed, so the result differs
+   between machines. */
+#example-element {
+  width: min(100%, 520px);
+  overflow-wrap: anywhere;
+}
+
+#example-element h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+#example-element p {
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+
+#example-element .note {
+  margin: 0;
+  color: var(--muted);
+  font: 500 13px/1.4 system-ui, sans-serif;
+}
+
+#example-element .note::before {
+  content: var(--note);
+}

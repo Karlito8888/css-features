@@ -1,0 +1,25 @@
+/* <display-listitem>: the list-item keyword, alone or with an outside type (block, inline) and an inside
+   type (flow, flow-root). The box gets a marker, the bullet. */
+.stage {
+  width: min(100%, 300px);
+  padding: 6px 0 6px 28px;
+}
+
+#example-element {
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--a1) 26%, var(--card));
+  font-size: 14px;
+  list-style: disc;
+}
+
+.fl {
+  float: right;
+  margin: 0 0 6px 10px;
+  padding: 54px 12px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--grad);
+}

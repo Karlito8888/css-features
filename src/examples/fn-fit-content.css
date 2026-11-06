@@ -1,0 +1,13 @@
+/* The first column holds a long label. fit-content(limit) sizes it to that label, but never past the limit: the label wraps instead. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 560px);
+  padding: 14px;
+}
+
+.tile {
+  min-height: 64px;
+  padding: 0 10px;
+  text-align: center;
+}

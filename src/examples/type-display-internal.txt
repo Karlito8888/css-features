@@ -1,0 +1,7 @@
+display: table-row-group;
+
+display: table-header-group;
+
+display: table-footer-group;
+
+display: table-caption;

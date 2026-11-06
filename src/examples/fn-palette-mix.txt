@@ -1,0 +1,7 @@
+font-palette: palette-mix(in srgb, --warm 80%, --cool 20%);
+
+font-palette: palette-mix(in lch, --warm, --cool);
+
+font-palette: palette-mix(in srgb, --warm 20%, --cool 80%);
+
+font-palette: palette-mix(in lch longer hue, --warm, --cool);

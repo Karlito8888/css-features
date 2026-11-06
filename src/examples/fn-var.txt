@@ -1,0 +1,11 @@
+gap: var(--gap, 28px);
+
+--gap: 4px;
+gap: var(--gap, 28px);
+
+background: var(--surface, var(--tint, color-mix(in oklab, var(--a4) 35%, var(--card))));
+
+--tint: color-mix(in oklab, var(--a3) 35%, var(--card));
+background: var(--surface, var(--tint, color-mix(in oklab, var(--a4) 35%, var(--card))));
+
+border-radius: var(--radius, 40px);

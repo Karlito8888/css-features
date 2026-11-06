@@ -1,0 +1,35 @@
+/* anchor() turns a side of the anchor (the button) into an inset of the absolutely positioned tip.
+   Each choice sets the insets of the tip from the sides of the button. */
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  height: 210px;
+  padding: 14px;
+}
+
+.btn {
+  anchor-name: --btn;
+  padding: 10px 26px;
+  border: 2px solid var(--a1);
+  border-radius: 14px;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--a1) 12%, var(--card));
+}
+
+#example-element {
+  position: absolute;
+  position-anchor: --btn;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--grad);
+}
+
+#example-element::before {
+  content: var(--note);
+}

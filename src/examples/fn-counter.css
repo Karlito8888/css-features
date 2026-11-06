@@ -1,0 +1,26 @@
+/* Every heading adds 1 to the step counter; counter() prints it. The choice sets what ::before shows. */
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 300px);
+  counter-reset: step;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 16px;
+  counter-increment: step;
+}
+
+h3::before {
+  min-width: 2.4em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  background: var(--grad);
+}

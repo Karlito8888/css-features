@@ -1,0 +1,22 @@
+/* symbols() builds a counter style inline: a type (cyclic, numeric, alphabetic, symbolic, fixed) and
+   the symbols it counts with. */
+.demo {
+  width: min(100%, 300px);
+}
+
+#example-element {
+  margin: 0;
+  padding: 18px 20px 18px 56px;
+}
+
+#example-element li::marker {
+  color: var(--a1);
+  font-weight: 700;
+}
+
+.cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

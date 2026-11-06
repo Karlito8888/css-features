@@ -1,0 +1,18 @@
+/* <relative-size>: larger or smaller, one step from the size of the parent. */
+.demo {
+  width: min(100%, 360px);
+}
+
+.base {
+  margin: 0;
+  padding: 22px 26px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  font-size: 20px;
+}
+
+#example-element {
+  color: var(--a2);
+  font-weight: 700;
+}

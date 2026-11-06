@@ -1,0 +1,25 @@
+/* type(<syntax>) gives a @function parameter and its result a CSS type: the call is rejected when the argument does not match. */
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  width: min(100%, 420px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  width: 7rem;
+  min-height: 72px;
+  border: 3px solid var(--a1);
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--ink);
+  font-weight: 700;
+}

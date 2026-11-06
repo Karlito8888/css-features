@@ -1,0 +1,27 @@
+/* Each nested list restarts the item counter, so every level keeps its own count. counters() joins all of them; the choice sets the separator and the style. */
+#example-element,
+#example-element ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+#example-element {
+  width: min(100%, 300px);
+  padding: 16px 20px;
+}
+
+#example-element ol {
+  margin-left: 1.4em;
+}
+
+#example-element li {
+  counter-increment: item;
+}
+
+#example-element li::before {
+  margin-right: 0.5em;
+  color: var(--a1);
+  font-weight: 800;
+}

@@ -1,0 +1,14 @@
+font-family: serif;
+--note: "serif";
+
+font-family: sans-serif;
+--note: "sans-serif";
+
+font-family: monospace;
+--note: "monospace";
+
+font-family: system-ui;
+--note: "system-ui";
+
+font-family: cursive;
+--note: "cursive (the default font when no cursive font is installed)";

@@ -1,0 +1,23 @@
+/* <baseline-position>: [ first | last ]? baseline. The items line up on the baseline of their first
+   line of text (first baseline) or of their last line (last baseline). */
+#example-element {
+  display: flex;
+  gap: 10px;
+  width: min(100%, 380px);
+  padding: 18px 14px;
+}
+
+.tile {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  padding: 10px 6px;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.big {
+  font-size: 34px;
+  line-height: 1.1;
+}

@@ -1,0 +1,56 @@
+.pad {
+  width: min(100%, 320px);
+  padding: 18px;
+  border: 2px dashed var(--a1);
+  border-radius: 22px;
+  background: color-mix(in oklab, var(--a1) 10%, var(--card));
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--a5);
+}
+
+.x {
+  opacity: var(--x, 1);
+}
+
+.y {
+  opacity: var(--y, 1);
+}
+
+.pz {
+  opacity: var(--pz, 1);
+}
+
+.dt {
+  opacity: var(--dt, 1);
+}
+
+.legend {
+  color: var(--muted);
+  font-size: 13px;
+}

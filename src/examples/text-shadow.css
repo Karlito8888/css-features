@@ -1,0 +1,17 @@
+#example-element {
+  align-content: center;
+  justify-items: center;
+  gap: 2px;
+  width: min(100%, 440px);
+  min-height: 160px;
+  background: var(--grad);
+}
+
+strong {
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+small {
+  font-size: 16px;
+}

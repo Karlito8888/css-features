@@ -1,0 +1,17 @@
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 240px);
+}
+
+#example-element p {
+  margin: 0;
+  padding: 8px 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  font-size: 15px;
+  white-space: nowrap;
+  text-overflow: inherit;
+}

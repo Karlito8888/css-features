@@ -1,0 +1,20 @@
+#example-element {
+  width: min(100%, 420px);
+  overflow-wrap: anywhere;
+}
+
+#example-element h2 {
+  margin: 0 0 0.4em;
+  font-size: 1.5em;
+  font-weight: inherit;
+}
+
+#example-element p {
+  margin: 0 0 0.5em;
+}
+
+#example-element .glyphs {
+  margin: 0;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}

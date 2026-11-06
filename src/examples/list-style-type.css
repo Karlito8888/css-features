@@ -1,0 +1,12 @@
+#example-element {
+  width: min(100%, 320px);
+  margin: 0;
+  padding: 18px 22px 18px 3em;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+#example-element li::marker {
+  color: var(--a1);
+  font-weight: 700;
+}

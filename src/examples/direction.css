@@ -1,0 +1,59 @@
+#example-element {
+  width: min(100%, 360px);
+  line-height: 1.5;
+}
+
+#example-element p,
+#example-element li {
+  unicode-bidi: inherit;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 700;
+  background: var(--grad);
+}
+
+.who {
+  display: grid;
+  line-height: 1.25;
+}
+
+.who small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+ul {
+  margin: 0 0 12px;
+  padding-inline-start: 1.4em;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions span {
+  padding: 4px 14px;
+  border: 1px solid var(--a1);
+  border-radius: 999px;
+  color: var(--a1);
+  font-size: 14px;
+}

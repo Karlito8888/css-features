@@ -1,0 +1,11 @@
+border-left: 4px solid var(--a1);
+
+border-left: 12px solid var(--a3);
+
+border-left: 3px dashed var(--a2);
+
+border-left: 8px double var(--a4);
+
+border-left: 6px dotted var(--a5);
+
+border-left: 0;

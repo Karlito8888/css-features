@@ -1,0 +1,5 @@
+overflow-wrap: normal;
+
+overflow-wrap: break-word;
+
+overflow-wrap: anywhere;

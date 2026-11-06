@@ -1,0 +1,9 @@
+border-top-left-radius: 0;
+
+border-top-left-radius: 40px;
+
+border-top-left-radius: 50%;
+
+border-top-left-radius: 120px 30px;
+
+border-top-left-radius: 30px 100px;

@@ -1,0 +1,11 @@
+align-content: flex-start;
+
+align-content: center;
+
+align-content: flex-end;
+
+align-content: space-between;
+
+align-content: space-around;
+
+align-content: stretch;

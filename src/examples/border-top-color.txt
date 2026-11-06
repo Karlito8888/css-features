@@ -1,0 +1,11 @@
+border-top-color: var(--a1);
+
+border-top-color: var(--a2);
+
+border-top-color: var(--a5);
+
+border-top-color: color-mix(in oklab, var(--a3) 45%, transparent);
+
+border-top-color: currentcolor;
+
+border-top-color: transparent;

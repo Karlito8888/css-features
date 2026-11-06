@@ -1,0 +1,44 @@
+/* The hint changes the page even before anything animates. A property that makes a stacking context
+   (transform, opacity) lifts the green layer above the card background. A property that makes a
+   containing block for fixed boxes (transform) pins the badge to the card instead of the window. */
+#example-element {
+  position: relative;
+  width: min(100%, 300px);
+  height: 200px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+  background: var(--card);
+}
+
+#example-element::before {
+  content: var(--note, "");
+}
+
+.under {
+  position: absolute;
+  inset: 80px 22px 22px;
+  z-index: -1;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--a5), var(--a3));
+}
+
+.badge {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--grad);
+}

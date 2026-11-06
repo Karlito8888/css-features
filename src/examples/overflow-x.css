@@ -1,0 +1,33 @@
+#example-element {
+  width: 180px;
+  padding: 12px 14px;
+  border: 2px dashed var(--a1);
+  border-radius: 16px;
+  background: var(--card);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+}
+
+.tile {
+  flex: none;
+  width: 70px;
+  min-height: 64px;
+  font-size: 18px;
+}
+
+p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}

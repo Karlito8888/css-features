@@ -1,0 +1,9 @@
+border-collapse: separate;
+
+border-collapse: collapse;
+
+border-collapse: separate;
+border-spacing: 0;
+
+border-collapse: separate;
+border-spacing: 16px 4px;

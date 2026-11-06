@@ -1,0 +1,9 @@
+fill: currentColor;
+
+fill: var(--a2);
+
+fill: none;
+
+fill: url(#g);
+
+fill: url(#dots);

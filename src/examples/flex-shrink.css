@@ -1,0 +1,13 @@
+/* Each tile asks for 180px, more than the row holds: A and C shrink at 1, B shrinks at the chosen rate. */
+.row {
+  display: flex;
+  gap: 10px;
+  width: min(100%, 380px);
+  padding: 14px;
+}
+
+.tile {
+  flex: 0 1 180px;
+  min-width: 0;
+  min-height: 96px;
+}

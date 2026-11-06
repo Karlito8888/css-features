@@ -1,0 +1,36 @@
+#example-element {
+  width: min(100%, 280px);
+  height: 190px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+  scrollbar-color: var(--a1) var(--line);
+}
+
+.note {
+  position: sticky;
+  top: 0;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--a1);
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--card);
+}
+
+.note::before {
+  content: var(--note);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}

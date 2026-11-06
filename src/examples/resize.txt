@@ -1,0 +1,14 @@
+resize: none;
+--note: "none: no handle";
+
+resize: both;
+--note: "both: width and height";
+
+resize: horizontal;
+--note: "horizontal: width only";
+
+resize: vertical;
+--note: "vertical: height only";
+
+resize: block;
+--note: "block: the block axis (height here)";

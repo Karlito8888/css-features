@@ -1,0 +1,22 @@
+#example-element {
+  width: min(100%, 380px);
+  margin: 0;
+  padding: 16px 18px 16px 2.6em;
+}
+
+#example-element li {
+  margin: 0 0 6px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--a1) 12%, transparent);
+  font-size: 15px;
+}
+
+#example-element li:last-child {
+  margin: 0;
+}
+
+#example-element li::marker {
+  color: var(--a1);
+  font-weight: 700;
+}

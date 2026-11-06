@@ -1,0 +1,20 @@
+#example-element {
+  width: min(100%, 520px);
+  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+}
+
+#example-element p {
+  margin: 0;
+}
+
+.big {
+  margin-bottom: 10px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.small {
+  color: var(--muted);
+  font-size: 14px;
+}

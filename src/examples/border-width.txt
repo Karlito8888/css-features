@@ -1,0 +1,11 @@
+border-width: thick;
+
+border-width: thin;
+
+border-width: 12px;
+
+border-width: 2px 16px;
+
+border-width: 0 0 6px;
+
+border-width: 1px 4px 8px 16px;

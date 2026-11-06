@@ -1,0 +1,35 @@
+.card {
+  display: flow-root;
+  width: min(100%, 420px);
+  font-size: 15px;
+}
+
+.tile {
+  width: 56px;
+  min-height: 0;
+}
+
+.left {
+  float: left;
+  height: 48px;
+  margin: 0 12px 6px 0;
+}
+
+.right {
+  float: right;
+  height: 84px;
+  margin: 0 0 6px 12px;
+}
+
+#example-element {
+  margin: 0;
+  padding: 8px 12px;
+  border: 2px dashed var(--a2);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--a2) 14%, transparent);
+  font-weight: 700;
+}
+
+.after {
+  margin: 8px 0 0;
+}

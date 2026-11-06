@@ -1,0 +1,40 @@
+/* The vertical lines mark every 10% of the track the box travels along. The negative delays start
+   some of the animations part way, so a still frame already shows them. */
+.track {
+  container-type: inline-size;
+  display: grid;
+  align-content: end;
+  width: min(100%, 520px);
+  height: 150px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card) repeating-linear-gradient(to right, transparent 0 calc(10% - 1px), color-mix(in oklab, var(--ink) 14%, transparent) calc(10% - 1px) 10%) no-repeat;
+  background-origin: content-box;
+  background-clip: padding-box;
+}
+
+#example-element {
+  width: 56px;
+  min-height: 56px;
+  font-size: 14px;
+}
+
+@keyframes slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(70cqw); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-60px); }
+}
+
+@keyframes pop {
+  from { opacity: 0.25; transform: translateX(0) scale(0.2); }
+  to { opacity: 1; transform: translateX(34cqw) scale(1.15); }
+}

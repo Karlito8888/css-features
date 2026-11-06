@@ -1,0 +1,11 @@
+will-change: auto;
+--note: "auto: no hint. The layer hides behind the card, the badge sticks to the window";
+
+will-change: transform;
+--note: "transform: a stacking context and a containing block for the badge";
+
+will-change: opacity;
+--note: "opacity: a stacking context only. The layer shows, the badge stays on the window";
+
+will-change: scroll-position;
+--note: "scroll-position: a hint for scrolling, nothing changes on screen";

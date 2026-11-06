@@ -1,0 +1,11 @@
+user-select: auto;
+--note: "auto: the default, text selects as usual";
+
+user-select: text;
+--note: "text: always selectable, even under a none parent";
+
+user-select: none;
+--note: "none: nothing here can be selected";
+
+user-select: all;
+--note: "all: a click selects the whole block";

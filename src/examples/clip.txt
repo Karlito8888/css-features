@@ -1,0 +1,9 @@
+clip: rect(20px, 220px, 120px, 40px);
+
+clip: rect(0, 120px, 150px, 0);
+
+clip: rect(auto, auto, 56px, auto);
+
+clip: rect(50px, 258px, 100px, 0);
+
+clip: auto;

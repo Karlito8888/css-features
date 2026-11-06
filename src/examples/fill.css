@@ -1,0 +1,26 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+#example-element {
+  display: block;
+  width: 100%;
+  color: var(--a1);
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+stop:first-child {
+  stop-color: var(--a1);
+}
+
+stop:last-child {
+  stop-color: var(--a2);
+}
+
+pattern circle {
+  fill: var(--a3);
+  stroke: none;
+}

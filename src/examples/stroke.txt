@@ -1,0 +1,10 @@
+stroke: none;
+
+stroke: currentColor;
+
+stroke: var(--a2);
+
+stroke: url(#g);
+
+stroke: var(--a5);
+stroke-dasharray: 6 5;

@@ -1,0 +1,15 @@
+#example-element {
+  width: min(100%, 240px);
+  padding: 14px 16px;
+  border: 2px dashed var(--a1);
+  line-height: 1.45;
+}
+
+#example-element p {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+#example-element p:last-child {
+  margin: 0;
+}

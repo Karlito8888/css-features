@@ -1,0 +1,14 @@
+text-shadow: none;
+
+text-shadow: 0 2px 6px rgb(15 23 42 / 0.55);
+
+text-shadow: 4px 4px 0 var(--a4);
+
+text-shadow: 0 0 10px #fff, 0 0 28px var(--a3);
+
+text-shadow:
+  1px 1px 0 var(--a5),
+  2px 2px 0 var(--a5),
+  3px 3px 0 var(--a5),
+  4px 4px 0 var(--a5),
+  5px 5px 0 var(--a5);

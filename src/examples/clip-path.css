@@ -1,0 +1,5 @@
+#example-element {
+  width: min(100%, 220px);
+  aspect-ratio: 1;
+  font-size: 18px;
+}

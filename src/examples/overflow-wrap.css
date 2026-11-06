@@ -1,0 +1,33 @@
+#example-element {
+  display: grid;
+  justify-items: start;
+  gap: 6px;
+  width: min(100%, 300px);
+  font-size: 15px;
+}
+
+.label {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.label:first-child {
+  margin: 0;
+}
+
+.box {
+  width: 190px;
+  padding: 10px 12px;
+  border: 2px dashed var(--a1);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--a1) 12%, var(--card));
+  line-height: 1.4;
+}
+
+.shrink {
+  width: min-content;
+  min-width: 6em;
+  border-color: var(--a2);
+  background: color-mix(in oklab, var(--a2) 12%, var(--card));
+}

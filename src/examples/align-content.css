@@ -1,0 +1,14 @@
+/* The container is taller than its two lines of tiles; align-content spreads them over the free height. */
+#example-element {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: min(100%, 420px);
+  height: 250px;
+  padding: 14px;
+}
+
+.tile {
+  flex: 0 0 72px;
+  min-height: 40px;
+}

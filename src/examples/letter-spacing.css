@@ -1,0 +1,25 @@
+#example-element {
+  width: min(100%, 440px);
+  overflow-wrap: anywhere;
+}
+
+#example-element p,
+#example-element h2 {
+  margin: 0 0 10px;
+}
+
+#example-element :last-child {
+  margin: 0;
+}
+
+.eyebrow {
+  color: var(--a1);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 1.15;
+}

@@ -1,0 +1,41 @@
+#example-element {
+  width: min(100%, 360px);
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--a2);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#example-element ::selection {
+  color: #fff;
+  background: var(--a2);
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+.try {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+code {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--a1) 14%, transparent);
+  font: 700 15px ui-monospace, Menlo, Consolas, monospace;
+}

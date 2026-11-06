@@ -1,0 +1,7 @@
+stroke-width: 1px;
+
+stroke-width: 3px;
+
+stroke-width: 6px;
+
+stroke-width: 12px;

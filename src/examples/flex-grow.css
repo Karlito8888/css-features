@@ -1,0 +1,13 @@
+/* Each tile starts at 50px and the row has room to spare: A and C grow at 1, B grows at the chosen rate. */
+.row {
+  display: flex;
+  gap: 10px;
+  width: min(100%, 420px);
+  padding: 14px;
+}
+
+.tile {
+  flex: 1 1 50px;
+  min-width: 0;
+  min-height: 96px;
+}

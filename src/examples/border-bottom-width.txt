@@ -1,0 +1,9 @@
+border-bottom-width: thin;
+
+border-bottom-width: thick;
+
+border-bottom-width: 10px;
+
+border-bottom-width: 1.5em;
+
+border-bottom-width: 0;

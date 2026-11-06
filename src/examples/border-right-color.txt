@@ -1,0 +1,11 @@
+border-right-color: var(--a1);
+
+border-right-color: var(--a2);
+
+border-right-color: var(--a5);
+
+border-right-color: color-mix(in oklab, var(--a3) 45%, transparent);
+
+border-right-color: currentcolor;
+
+border-right-color: transparent;

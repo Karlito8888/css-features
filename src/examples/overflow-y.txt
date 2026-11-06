@@ -1,0 +1,11 @@
+overflow-y: visible;
+
+overflow-y: hidden;
+
+overflow-y: clip;
+overflow-x: clip;
+overflow-clip-margin: 20px;
+
+overflow-y: scroll;
+
+overflow-y: auto;

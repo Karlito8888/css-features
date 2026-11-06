@@ -1,0 +1,9 @@
+animation-name: slide;
+
+animation-name: spin;
+
+animation-name: bounce;
+
+animation-name: slide, fade;
+
+animation-name: none;

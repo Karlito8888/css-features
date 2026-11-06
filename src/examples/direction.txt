@@ -1,0 +1,9 @@
+direction: ltr;
+
+direction: rtl;
+
+direction: rtl;
+unicode-bidi: bidi-override;
+
+direction: ltr;
+unicode-bidi: plaintext;

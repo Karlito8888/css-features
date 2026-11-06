@@ -1,0 +1,24 @@
+transform-origin: top left;
+transform: rotate(30deg);
+--ox: 0%;
+--oy: 0%;
+
+transform-origin: bottom right;
+transform: rotate(-35deg);
+--ox: 100%;
+--oy: 100%;
+
+transform-origin: center;
+transform: rotate(45deg);
+--ox: 50%;
+--oy: 50%;
+
+transform-origin: 100% 0;
+transform: scale(0.55);
+--ox: 100%;
+--oy: 0%;
+
+transform-origin: -40px 50%;
+transform: rotate(40deg);
+--ox: -40px;
+--oy: 50%;

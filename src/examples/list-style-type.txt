@@ -1,0 +1,11 @@
+list-style-type: decimal-leading-zero;
+
+list-style-type: lower-roman;
+
+list-style-type: upper-alpha;
+
+list-style-type: lower-greek;
+
+list-style-type: "→ ";
+
+list-style-type: disclosure-closed;

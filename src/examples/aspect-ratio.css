@@ -1,0 +1,5 @@
+/* The box has a width and no height: the ratio gives it one. */
+#example-element {
+  width: 160px;
+  min-height: 0;
+}

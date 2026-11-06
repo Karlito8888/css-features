@@ -1,0 +1,9 @@
+animation-duration: 0.5s;
+
+animation-duration: 2s;
+
+animation-duration: 6s;
+
+animation-duration: 6s, 1s;
+
+animation-duration: 0s;

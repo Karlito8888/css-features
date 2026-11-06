@@ -1,0 +1,10 @@
+aspect-ratio: auto;
+
+aspect-ratio: 1 / 1;
+border-radius: 50%;
+
+aspect-ratio: 16 / 9;
+
+aspect-ratio: 3 / 4;
+
+aspect-ratio: 3 / 1;

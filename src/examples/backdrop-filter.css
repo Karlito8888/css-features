@@ -1,0 +1,22 @@
+.scene {
+  position: relative;
+  width: min(100%, 320px);
+  height: 190px;
+  overflow: hidden;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 18% 28%, var(--a2) 0 26px, transparent 27px),
+    radial-gradient(circle at 80% 72%, var(--a4) 0 34px, transparent 35px),
+    radial-gradient(circle at 70% 20%, var(--a5) 0 20px, transparent 21px),
+    repeating-linear-gradient(90deg, var(--a1) 0 14px, var(--a3) 14px 28px);
+}
+#example-element {
+  position: absolute;
+  inset: 44px 22px 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
+  border-radius: 16px;
+  background: color-mix(in oklab, var(--card) 35%, transparent);
+  font-weight: 700;
+}

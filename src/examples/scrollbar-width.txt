@@ -1,0 +1,8 @@
+scrollbar-width: auto;
+--note: "auto: the platform scrollbar";
+
+scrollbar-width: thin;
+--note: "thin: a slimmer scrollbar";
+
+scrollbar-width: none;
+--note: "none: hidden, still scrollable";

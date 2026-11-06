@@ -1,0 +1,16 @@
+#example-element {
+  width: min(100%, 300px);
+  border-spacing: 8px;
+  background: var(--card);
+  font-size: 14px;
+  text-align: center;
+}
+th,
+td {
+  padding: 8px 6px;
+  border: 2px solid var(--a1);
+}
+th {
+  border-bottom: 6px solid var(--a2);
+  color: var(--a2);
+}

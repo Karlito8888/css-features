@@ -1,0 +1,9 @@
+gap: 0;
+
+gap: 10px;
+
+gap: 32px 6px;
+
+gap: 6px 32px;
+
+gap: 2.5rem;

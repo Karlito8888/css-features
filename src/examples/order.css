@@ -1,0 +1,33 @@
+/* The tiles are numbered in source order. Tile 4 carries order: 2, the others the default 0. */
+.row {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  width: min(100%, 420px);
+  padding: 14px 14px 36px;
+}
+
+.row::after {
+  content: "tile 4 has order: 2";
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tile {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 80px;
+  font-size: 22px;
+}
+
+.tile:nth-child(4) {
+  order: 2;
+}
+
+#example-element {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+}

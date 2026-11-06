@@ -1,0 +1,18 @@
+.frame {
+  position: relative;
+  width: min(100%, 258px);
+  height: 150px;
+  border: 1.5px dashed var(--muted);
+  border-radius: 14px;
+}
+#example-element {
+  position: absolute;
+  inset: 0;
+  font-size: 22px;
+}
+.legend {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}

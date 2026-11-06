@@ -11,8 +11,9 @@ of `~/Bureau/html` (`Karlito8888/html-elements`), same mechanics. Remote
 
 ```bash
 bun run sync             # download the sources, rewrite data/features.json and data/sources.json
-bun run validate [id...] # send every showcase (or the named ones) to the W3C Nu HTML Checker (network; run by hand, not in CI; CHECKER=http://localhost:8888/?out=json targets a local vnu.jar)
-bun scripts/preview-showcase.ts <id>   # one showcase as a standalone document in /tmp, to open in a browser
+bun run validate [id...] # send every showcase and reference example (or the named ones) to the W3C Nu HTML Checker (network; run by hand, not in CI; CHECKER=http://localhost:8888/?out=json targets a local vnu.jar)
+bun run check-examples [id...] # headless Chrome check of the reference examples, screenshots in /tmp/css-examples-check/
+bun scripts/preview.ts <id>   # a showcase or reference example as a standalone document in /tmp, to open in a browser
 bun run dev              # http://localhost:4341
 bun run check            # the gate: astro check && astro build
 bun run preview          # serve dist/ on 4341 (daemonized: `bunx astro preview stop`)
@@ -62,15 +63,18 @@ Rules the sync applies:
   (`/all-properties/` ...), `404.astro`, `search.json.ts` the search index (modern features,
   features, modules).
 - `src/components/FeatureBlock.astro` one feature; `Example.astro` preview plus Shiki code tabs
-  (CSS first) and, for MDN examples with value choices, a row of radio buttons; `Search.astro`
+  (CSS first) and, for examples with value choices, a row of radio buttons; `Search.astro`
   combobox over `/search.json` (names compared without `:`, `@`, `<>` and `()`);
   `ThemeToggle.astro`; `ModuleNav.astro` sidebar.
 - `src/scripts/examples.ts` previews: sandboxed `srcdoc` iframes (no `allow-same-origin`)
   mounted when near the viewport, sized by a `postMessage` tagged with the example id. MDN
   examples get the base styles of MDN's own play runner (`mdn/dex`,
   `cloud-function/src/internal/play`): a 300 px centered stage for choice examples, a plain
-  document otherwise; a choice is applied to `#example-element` as inline style through a
-  `MessagePort`, and choices this browser cannot parse (`CSS.supports`) are marked.
+  document otherwise. A choice is applied through a `MessagePort`: declarations as inline style
+  on `#example-element`, a choice holding `{` as the content of a style element; choices this
+  browser cannot parse (`CSS.supports`, or a rule the parser drops) are marked.
+  `src/standalone-document.ts` holds the showcase and written-example skins and builds the
+  standalone documents the scripts use (`scripts/example-files.ts` reads both folders).
   `src/scripts/editor.ts` CodeMirror, imported only on "Edit" (about 190 KB gzipped).
 
 ## Modern showcases
@@ -82,7 +86,20 @@ text, `name(` for a function); the keys it uses are solid chips under the demo, 
 Every showcase says inside the frame, through `@supports not (...)`, when the browser lacks the
 feature. `bun run validate` checks their HTML with the Nu checker; its CSS messages are printed
 and tolerated, since the checker's CSS parser lags behind modern CSS. Features without a showcase
-show the MDN example of their first documented key.
+show the reference example of their first key that has a written one, else the MDN example of
+their first documented key.
+
+## Reference examples
+
+Examples written for this site replace the MDN example of a feature: `src/examples/<feature id>.html`
+(the demonstrated element is `#example-element`), optional `.css`, optional `.txt` with the value
+choices (one per blank-line separated paragraph), loaded by `src/examples.ts`. They render on a
+shared skin (`src/standalone-document.ts`) that follows the site theme through `light-dark()`,
+and their bar says "Written for this site". The build fails when an example never writes its
+feature (`keyPattern`). A feature without one keeps its MDN example. The contract they obey is
+in `.omp/RULES.md`; `bun run check-examples` proves it in headless Chrome at 330 and 900 px,
+light and dark: no page error, no horizontal overflow, every supported choice changes the
+computed style (declared properties, or for rule blocks every element against no choice).
 
 ## Deployment
 

@@ -2,9 +2,10 @@
 import Search from "../components/Search.astro";
 import Base from "../layouts/Base.astro";
 import { KINDS, allFeatures, data, featureById, featureCount, featureUrl, moduleUrl, sources, type Kind } from "../data";
+import { writtenExample } from "../examples";
 import { showcaseIds } from "../showcases";
 
-const examples = allFeatures.filter((f) => f.example).length;
+const examples = allFeatures.filter((f) => f.example || writtenExample(f.id)).length;
 const kinds = Object.keys(KINDS) as Kind[];
 const count = (k: Kind) => allFeatures.filter((f) => f.kind === k).length;
 const kindPath = (k: Kind) => `/all-${k === "at-rule" ? "at-rules" : k === "property" ? "properties" : `${k}s`}/`;
@@ -49,7 +50,7 @@ const modernLabel = (status: "high" | "low" | false) => (status === "high" ? "Wi
               <span class:list={["number", m.status === false ? "edge" : ""]}>{modernLabel(m.status)} · {month(m.since)}</span>
               <span class="title">{m.name}</span>
               <span class="guide" set:html={m.description} />
-              <span class="count">{showcaseIds.has(m.id) ? "Demo written for this site" : "MDN example"}{m.group && ` · ${m.group}`}</span>
+              <span class="count">{showcaseIds.has(m.id) ? "Demo written for this site" : m.keys.some((id) => writtenExample(id)) ? "Example written for this site" : "MDN example"}{m.group && ` · ${m.group}`}</span>
             </a>
             <ul class="tags">
               {m.keys.slice(0, 5).map((id) => <li><a href={featureUrl(featureById.get(id)!)}><code>{featureById.get(id)!.name}</code></a></li>)}

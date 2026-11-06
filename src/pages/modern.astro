@@ -3,6 +3,7 @@ import Example from "../components/Example.astro";
 import ModuleNav from "../components/ModuleNav.astro";
 import Base from "../layouts/Base.astro";
 import { BROWSERS, data, featureById, featureUrl, type Modern } from "../data";
+import { writtenExample } from "../examples";
 import { showcaseFor } from "../showcases";
 
 const month = (date: string) => new Date(date.replace("≤", "")).toLocaleDateString("en", { month: "long", year: "numeric", timeZone: "UTC" });
@@ -41,12 +42,12 @@ const description = `${data.modern.length} modern CSS features with live demos: 
 <Base title="Modern CSS" description={description}>
   <section class="hero">
     <div class="container">
-      <p class="eyebrow">{data.modern.length} features · {written} demos written for this site · the rest illustrated by MDN</p>
+      <p class="eyebrow">{data.modern.length} features · {written} demos written for this site · the rest illustrated by a reference example</p>
       <h1>Modern CSS,<br /><span class="gradient">live.</span></h1>
       <p class="tagline">
         Every CSS feature that reached Baseline, or shipped in a browser engine, in {since} or later, as
         <a href="https://github.com/web-platform-dx/web-features">web-features</a> names and describes it. Each one renders below, in your browser,
-        with the code to edit and copy. Demos written for this site say so in their window bar; the others are MDN's own examples.
+        with the code to edit and copy. Each preview says in its bar whether it was written for this site or comes from MDN.
       </p>
       <nav class="jump" aria-label="Groups">
         {groups.map((g) => <a href={`#${String(g.key)}`}>{g.title} <span>{g.items.length}</span></a>)}
@@ -64,7 +65,10 @@ const description = `${data.modern.length} modern CSS features with live demos: 
             <p class="intro">{g.intro}</p>
             {g.items.map((m) => {
               const showcase = showcases[m.id];
-              const example = showcase?.example ?? (m.exampleOf ? featureById.get(m.exampleOf)!.example : null);
+              // No showcase: the first key with an example written for this site, else MDN's.
+              const writtenOf = showcase ? undefined : m.keys.find((id) => writtenExample(id));
+              const exampleOf = writtenOf ?? m.exampleOf;
+              const example = showcase?.example ?? (writtenOf ? writtenExample(writtenOf) : exampleOf ? featureById.get(exampleOf)!.example : null);
               const b = badge(m);
               return (
                 <article class="modern" id={m.id} aria-labelledby={`${m.id}-title`}>
@@ -82,6 +86,7 @@ const description = `${data.modern.length} modern CSS features with live demos: 
                       id={`modern-${m.id}`}
                       label={m.name}
                       showcase={showcase ? { title: m.name, keys: m.keys.map((id) => ({ id, name: featureById.get(id)!.name, url: featureUrl(featureById.get(id)!), used: showcase.used.has(id) })) } : undefined}
+                      written={!!writtenOf}
                     />
                   )}
                   {!example && <p class="no-example">No demo written yet and no MDN example for this feature: read its definition through the links below.</p>}
@@ -92,7 +97,7 @@ const description = `${data.modern.length} modern CSS features with live demos: 
                         <ul class="keys">
                           {m.keys.map((id) => <li><a href={featureUrl(featureById.get(id)!)}><code>{featureById.get(id)!.name}</code></a></li>)}
                         </ul>
-                        {m.exampleOf && <p class="note">The example above is MDN's example for <code>{featureById.get(m.exampleOf)!.name}</code>.</p>}
+                        {exampleOf && <p class="note">The example above is {writtenOf ? "this site's" : "MDN's"} example for <code>{featureById.get(exampleOf)!.name}</code>.</p>}
                       </section>
                     )}
                     <section class="card">

@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "sync": "bun scripts/sync.ts",
-    "validate": "bun scripts/validate-showcases.ts",
+    "validate": "bun scripts/validate.ts",
+    "check-examples": "bun scripts/check-examples.ts",
     "dev": "astro dev --port 4341",
     "build": "astro build",
     "preview": "astro preview --port 4341",

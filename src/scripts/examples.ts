@@ -1,10 +1,11 @@
+import { SHOWCASE_CSS, writtenCss } from "../standalone-document";
 import type { Editor } from "./editor";
 import { isDark, onThemeChange } from "./theme";
 
 // Live examples: each preview is a sandboxed iframe (opaque origin, no access to this page),
 // rendered when it scrolls near the viewport. "Edit" swaps the highlighted code for CodeMirror.
-// MDN examples with value choices get a row of buttons that apply a declaration block to the
-// example element, as MDN's own interactive examples do.
+// Examples with value choices get a row of buttons that apply a declaration block to the
+// example element, as MDN's own interactive examples do, or a whole rule block (selectors, at-rules).
 
 type Lang = "html" | "css" | "js";
 type Source = Record<Lang, string | null> & { choices: string[] | null };
@@ -12,7 +13,7 @@ type Source = Record<Lang, string | null> & { choices: string[] | null };
 const SANDBOX = "allow-scripts allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox";
 // The base styles of MDN's interactive examples (mdn/dex, cloud-function/src/internal/play), so
 // the examples render as on MDN. "choice" examples center one element in a 300 px stage;
-// "tabbed" examples are plain documents. Showcases written for this site get a neutral page.
+// "tabbed" examples are plain documents. Showcases and written examples use src/standalone-document.ts.
 const CHOICE_CSS = `body{font:400 1rem/1.1876 Inter,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;color:#15141a;background:#fff;height:300px;overflow:hidden;position:relative;padding:1rem;margin:0;box-sizing:border-box}
 section{height:100%;text-align:center;display:flex;align-items:center;justify-content:center}
 section.flex-column{flex-direction:column;align-items:initial}
@@ -22,35 +23,36 @@ section.hidden{display:none}
 .transition-all{transition:all 0.3s ease-in}
 *{box-sizing:border-box}`;
 const TABBED_CSS = `body{background:#fff;font:400 1rem/1.1876 Inter,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif;color:#15141a;font-size:0.9rem;line-height:1.5;padding:2rem 1rem 1rem;margin:0;min-width:min-content}`;
-const SHOWCASE_CSS = "body{margin:16px;font-family:system-ui,sans-serif;color:#1b1b1b;background:#fff}";
-// Reference examples written for this site: a stage that follows the site theme, a palette and
-// a few shared classes (.tile, .card) so each example only writes what its feature needs.
-const WRITTEN_CSS = `:root{--ink:light-dark(#0f172a,#e6e8ee);--muted:light-dark(#596275,#98a1b3);--stage:light-dark(#f4f6fb,#0d1017);--card:light-dark(#fff,#161b26);--line:light-dark(#dde2ec,#2a3242);--a1:#6366f1;--a2:#ec4899;--a3:#06b6d4;--a4:#f59e0b;--a5:#10b981;--grad:linear-gradient(135deg,var(--a1),var(--a2))}
-*{box-sizing:border-box}
-body{margin:0;min-height:320px;display:grid;place-items:center;padding:28px;font:500 16px/1.5 Inter,system-ui,sans-serif;color:var(--ink);background:radial-gradient(60% 80% at 15% 0%,color-mix(in oklab,var(--a1) 16%,transparent),transparent),radial-gradient(50% 70% at 100% 100%,color-mix(in oklab,var(--a2) 14%,transparent),transparent),var(--stage)}
-#example-element{transition:all .4s cubic-bezier(.2,.8,.2,1)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 26px;box-shadow:0 18px 40px -24px rgb(15 23 42/.45)}
-.tile{display:grid;place-items:center;min-height:72px;border-radius:14px;color:#fff;font-weight:700;background:var(--grad);box-shadow:0 8px 22px -10px color-mix(in oklab,var(--a1) 70%,transparent)}
-.tile:nth-child(4n+2){--grad:linear-gradient(135deg,var(--a3),var(--a1))}
-.tile:nth-child(4n+3){--grad:linear-gradient(135deg,var(--a4),var(--a2))}
-.tile:nth-child(4n+4){--grad:linear-gradient(135deg,var(--a5),var(--a3))}`;
 
 /**
  * Runs inside a preview with value choices. Serialized with toString(), so it must not use
- * anything from this module. Applies a choice to #example-element (MDN's convention) when the
- * page asks through a MessagePort, and reports which choices this browser does not support.
+ * anything from this module. Applies a choice when the page asks through a MessagePort: inline
+ * style on #example-element (MDN's convention), or, when the choice holds "{", the content of a
+ * style element. Reports which choices this browser does not support.
  */
 function choiceAgent(id: string, choices: string[]) {
-  const supported = (code: string) =>
-    code
+  const isBlock = (code: string) => code.includes("{");
+  const supported = (code: string) => {
+    if (isBlock(code)) {
+      // The parser drops a rule it does not understand.
+      const sheet = new CSSStyleSheet();
+      sheet.replaceSync(code);
+      return sheet.cssRules.length > 0;
+    }
+    return code
       .replace(/\/\*[\s\S]*?\*\//g, "")
       .split(";")
       .map((d) => d.trim())
       .filter(Boolean)
       .every((d) => CSS.supports(d));
+  };
+  const style = document.body.appendChild(document.createElement("style"));
   const apply = (code: string) => {
-    const el = document.getElementById("example-element");
-    if (el) el.style.cssText = code;
+    if (isBlock(code)) style.textContent = code;
+    else {
+      const el = document.getElementById("example-element");
+      if (el) el.style.cssText = code;
+    }
   };
   const channel = new MessageChannel();
   channel.port1.onmessage = (e) => {
@@ -79,7 +81,7 @@ function srcdoc(source: Source, id: string, base: string): string {
 
 function combined(source: Source, choice: number): string {
   const chosen = source.choices?.[choice];
-  const css = [source.css, chosen && `#example-element {\n  ${chosen.replace(/\n/g, "\n  ")}\n}`].filter(Boolean).join("\n\n");
+  const css = [source.css, chosen && (chosen.includes("{") ? chosen : `#example-element {\n  ${chosen.replace(/\n/g, "\n  ")}\n}`)].filter(Boolean).join("\n\n");
   return [source.html, css && `<style>\n${css}\n</style>`, source.js && `<script>\n${source.js}\n<\/script>`].filter(Boolean).join("\n\n");
 }
 
@@ -111,7 +113,7 @@ function setup(root: HTMLElement) {
     const base = showcase
       ? SHOWCASE_CSS
       : written
-        ? `:root{color-scheme:${isDark() ? "dark" : "light"}}${WRITTEN_CSS}`
+        ? writtenCss(isDark())
         : current.choices
           ? CHOICE_CSS
           : TABBED_CSS;

@@ -2,15 +2,15 @@
 
 Every CSS feature, alive: <https://css.charmaweb.com>
 
-Each property, selector, at-rule, function and type has a live preview you can edit, its
-definition table and syntax from the specification, browser support and Baseline status. The
-Modern CSS gallery (<https://css.charmaweb.com/modern/>) shows every feature that reached
-Baseline, or shipped in a browser engine, in 2023 or later, each one running live, many with a
-demo written for the site. Every description is quoted from the official sources, nothing is
-paraphrased:
+Each property, selector, at-rule, function and type has a live preview you can edit (an example
+written for the site, or MDN's where none is written yet), its definition table and syntax from
+the specification, browser support and Baseline status. The Modern CSS gallery
+(<https://css.charmaweb.com/modern/>) shows every feature that reached Baseline, or shipped in a
+browser engine, in 2023 or later, each one running live, many with a demo written for the site.
+Every description is quoted from the official sources, nothing is paraphrased:
 
 - [W3C CSS specifications](https://www.w3.org/Style/CSS/) through [webref](https://github.com/w3c/webref) and [browser-specs](https://github.com/w3c/browser-specs)
-- [MDN](https://github.com/mdn/content) (summaries and examples)
+- [MDN](https://github.com/mdn/content) (summaries, and the examples not yet written for the site)
 - [MDN browser-compat-data](https://github.com/mdn/browser-compat-data) (status and support)
 - [web-features](https://github.com/web-platform-dx/web-features) (Baseline and the named modern features)
 

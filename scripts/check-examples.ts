@@ -30,8 +30,8 @@ const BATCH = 20;
 /** Frame height of the measuring harness, and of each row of the contact sheet. */
 const MEASURE_HEIGHT = 640;
 const SHEET_HEIGHT = 480;
-/** Pseudo-classes that never match in a still frame without the reader acting on the page. */
-const INTERACTIVE = /:(hover|active|focus|focus-visible|focus-within|visited|target|target-current|user-invalid|user-valid|autofill|fullscreen|picture-in-picture|playing|paused|seeking|buffering|stalled|muted|volume-locked|popover-open|modal|interest-source|interest-target|snapped(-[a-z]+)?|active-view-transition(-type)?)(?![\w-])/;
+/** Selectors that never match in a still frame: they need the reader to act on the page (hover, select text, find in page...) or a printer (@page). */
+const INTERACTIVE = /:(hover|active|focus|focus-visible|focus-within|visited|target|target-current|user-invalid|user-valid|autofill|fullscreen|picture-in-picture|playing|paused|seeking|buffering|stalled|muted|volume-locked|popover-open|modal|interest-source|interest-target|snapped(-[a-z]+)?|active-view-transition(-type)?|selection|target-text|search-text|spelling-error|grammar-error)(?![\w-])|@page\b/;
 
 type Row = { choice: number; supported: boolean; value: string; overflow: number };
 type Result = { key: string; errors: string[]; rows: Row[] };
@@ -167,7 +167,7 @@ for (let start = 0; start < ids.length; start += BATCH) {
     failures += problems.size ? 1 : 0;
     const notes = [
       unsupported.size && `not supported by this Chrome: choice ${[...unsupported].join(", ")}`,
-      interactive.size && `matches only on interaction: choice ${[...interactive].join(", ")}`,
+      interactive.size && `needs a reader action or print: choice ${[...interactive].join(", ")}`,
     ].filter(Boolean);
     const note = notes.length ? ` (${notes.join("; ")})` : "";
     console.log(`${problems.size ? "✗" : "✓"} ${id}${note}`);

@@ -100,8 +100,8 @@ feature (`keyPattern`). A feature without one keeps its MDN example. The contrac
 in `.omp/RULES.md`; `bun run check-examples` proves it in headless Chrome at 330 and 900 px,
 light and dark: no page error, no horizontal overflow, every supported choice changes the
 computed style (declared properties, or for rule blocks every element against no choice). Rule
-blocks whose selector only matches on interaction (`:hover`, `:focus`, media states...) are
-listed rather than failed, and their example says in the frame what to do.
+blocks whose selector cannot match a still frame (`:hover`, `:focus`, `::selection`, media
+states, `@page`...) are listed rather than failed, and their example says in the frame what to do.
 
 ## Deployment
 

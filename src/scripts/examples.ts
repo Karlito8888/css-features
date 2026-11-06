@@ -66,7 +66,9 @@ function srcdoc(source: Source, id: string, base: string): string {
   const resize = `<script>new ResizeObserver(() => parent.postMessage({ previewHeight: Math.ceil(document.documentElement.getBoundingClientRect().height), example: ${JSON.stringify(id)} }, "*")).observe(document.documentElement);<\/script>`;
   const agent = source.choices ? `<script>(${choiceAgent.toString()})(${JSON.stringify(id)}, ${JSON.stringify(source.choices)}, ${declarations.toString()});<\/script>` : "";
   return (
-    (fullDocument ? "" : `<!doctype html><meta charset="utf-8"><style>${base}</style>`) +
+    // about:srcdoc as base keeps "#id" links inside the preview: a srcdoc frame otherwise resolves
+    // them against this page, and a click loads the whole site into the frame.
+    (fullDocument ? "" : `<!doctype html><meta charset="utf-8"><base href="about:srcdoc"><style>${base}</style>`) +
     (source.css ? `<style>${source.css}</style>` : "") +
     html +
     (source.js ? `<script>${source.js}<\/script>` : "") +

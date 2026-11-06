@@ -1,0 +1,37 @@
+#example-element {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 8px 24px;
+  width: min(100%, 420px);
+  text-emphasis-style: filled circle;
+  text-emphasis-color: var(--a2);
+}
+
+#example-element p {
+  margin: 0;
+}
+
+#example-element .latin {
+  padding: 0.5em 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+#example-element .v {
+  grid-row: 1 / 3;
+  grid-column: 2;
+  padding: 0 0.6em;
+  font-size: 26px;
+  line-height: 1.8;
+  writing-mode: vertical-rl;
+}
+
+#example-element .cap {
+  grid-column: 1;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-emphasis: none;
+}

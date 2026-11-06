@@ -1,0 +1,45 @@
+/* Only the float's shape-outside moves the text: the clip-path or background just makes the shape visible. */
+:root {
+  --star: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23ec4899' d='M50 4l13 30 33 3-25 22 8 32-29-17-29 17 8-32L4 37l33-3z'/%3E%3C/svg%3E");
+}
+
+.box {
+  position: relative;
+  display: flow-root;
+  width: min(100%, 320px);
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.box p {
+  margin: 0;
+}
+
+.ghost {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 120px;
+  height: 120px;
+  border: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+}
+
+#example-element {
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin: 0 12px 4px 0;
+  shape-margin: 6px;
+  background: var(--grad);
+}
+
+.cap {
+  margin: 8px 0 0;
+  max-width: 320px;
+  color: var(--muted);
+  font-size: 12px;
+}

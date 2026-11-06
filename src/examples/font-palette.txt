@@ -1,0 +1,9 @@
+font-palette: normal;
+
+font-palette: light;
+
+font-palette: dark;
+
+font-palette: --custom;
+
+font-palette: palette-mix(in lch, light, dark);

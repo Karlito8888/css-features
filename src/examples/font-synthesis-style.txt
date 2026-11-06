@@ -1,0 +1,5 @@
+font-synthesis-style: auto;
+
+font-synthesis-style: none;
+
+font-synthesis-style: oblique-only;

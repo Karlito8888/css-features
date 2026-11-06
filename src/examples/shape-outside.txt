@@ -1,0 +1,14 @@
+clip-path: circle(50%);
+shape-outside: circle(50%) border-box;
+
+clip-path: polygon(0 0, 100% 50%, 0 100%);
+shape-outside: polygon(0 0, 100% 50%, 0 100%) border-box;
+
+border-radius: 0 60px 0 60px;
+shape-outside: border-box;
+
+background: linear-gradient(45deg, var(--a2) 50%, transparent 50%);
+shape-outside: linear-gradient(45deg, var(--a2) 50%, transparent 50%);
+
+background: var(--star) center / 100% 100% no-repeat;
+shape-outside: var(--star);

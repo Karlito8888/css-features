@@ -1,0 +1,36 @@
+#example-element {
+  width: min(100%, 330px);
+  overflow-wrap: anywhere;
+  font-family: "Noto Sans CJK JP", "Hiragino Sans", "Yu Gothic", "Noto Sans", sans-serif;
+}
+
+#example-element p {
+  margin: 0;
+}
+
+#example-element .label {
+  margin-top: 10px;
+  color: var(--muted);
+  font: 600 12px/1.4 system-ui, sans-serif;
+}
+
+#example-element .label:first-child {
+  margin-top: 0;
+}
+
+#example-element .sample {
+  font-size: 40px;
+  line-height: 1.3;
+}
+
+#example-element .ref {
+  font-variant-east-asian: normal;
+}
+
+#example-element .note {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font: 400 12px/1.4 system-ui, sans-serif;
+}

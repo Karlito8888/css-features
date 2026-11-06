@@ -1,0 +1,22 @@
+#example-element {
+  width: min(100%, 420px);
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.8;
+}
+
+#example-element rt {
+  outline: 1px dashed var(--a2);
+  background: color-mix(in oklab, var(--a2) 12%, transparent);
+  font-size: 18px;
+}
+
+#example-element .cap {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

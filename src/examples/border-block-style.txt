@@ -1,0 +1,13 @@
+border-block-style: dashed;
+
+border-block-style: dotted double;
+
+border-block-style: groove ridge;
+
+border-block-style: none solid;
+
+border-block-style: dashed dotted;
+writing-mode: vertical-lr;
+
+border-block-style: dashed dotted;
+writing-mode: vertical-rl;

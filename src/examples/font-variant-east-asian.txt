@@ -1,0 +1,7 @@
+font-variant-east-asian: jis78;
+
+font-variant-east-asian: jis83;
+
+font-variant-east-asian: full-width;
+
+font-variant-east-asian: jis78 full-width;

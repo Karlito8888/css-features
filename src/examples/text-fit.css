@@ -1,0 +1,25 @@
+.wrap {
+  width: min(300px, 100vw - 56px);
+}
+
+.box {
+  padding: 14px;
+  border: 2px dashed var(--a1);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--a1) 8%, var(--card));
+}
+
+#example-element {
+  margin: 0;
+  font-size: 15px;
+  text-wrap: balance;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

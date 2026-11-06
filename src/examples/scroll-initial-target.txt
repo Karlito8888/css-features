@@ -1,0 +1,5 @@
+scroll-initial-target: none;
+--note: "none: a plain card";
+
+scroll-initial-target: nearest;
+--note: "nearest: the strip opens here";

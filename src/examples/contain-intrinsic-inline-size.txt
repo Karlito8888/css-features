@@ -1,0 +1,15 @@
+contain-intrinsic-inline-size: none;
+--note: "none: no intrinsic inline size, only the border is left";
+
+contain-intrinsic-inline-size: 80px;
+--note: "80px: content 80 along the text";
+
+contain-intrinsic-inline-size: 160px;
+--note: "160px: content 160 along the text";
+
+contain-intrinsic-inline-size: 250px;
+--note: "250px: content 250 along the text";
+
+contain-intrinsic-inline-size: 180px;
+writing-mode: vertical-rl;
+--note: "180px in a vertical writing mode: the inline size is the height";

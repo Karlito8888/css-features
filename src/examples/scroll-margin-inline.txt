@@ -1,0 +1,16 @@
+scroll-margin-inline: 0;
+--out: 0px;
+--note: "0: flush";
+
+scroll-margin-inline: 40px;
+--out: 0 -40px;
+--note: "40px both ends";
+
+scroll-margin-inline: 72px 0;
+--out: 0 0 0 -72px;
+--note: "72px at the start";
+
+scroll-margin-inline: 0 48px;
+scroll-snap-align: center end;
+--out: 0 -48px 0 0;
+--note: "end: 48px";

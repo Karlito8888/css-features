@@ -1,0 +1,11 @@
+mask-border-repeat: stretch;
+
+mask-border-repeat: repeat;
+
+mask-border-repeat: round;
+
+mask-border-repeat: space;
+
+mask-border-repeat: repeat stretch;
+
+mask-border-repeat: space round;

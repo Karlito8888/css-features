@@ -1,0 +1,9 @@
+text-emphasis-color: currentcolor;
+
+text-emphasis-color: var(--a1);
+
+text-emphasis-color: var(--a2);
+
+text-emphasis-color: var(--a4);
+
+text-emphasis-color: transparent;

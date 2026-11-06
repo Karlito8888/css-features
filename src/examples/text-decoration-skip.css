@@ -1,0 +1,20 @@
+#example-element {
+  width: min(100%, 420px);
+}
+
+#example-element h2 {
+  margin: 0 0 12px;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-decoration: underline 2px var(--a1);
+  text-underline-offset: 2px;
+}
+
+#example-element p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}

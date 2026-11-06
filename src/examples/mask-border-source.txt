@@ -1,0 +1,7 @@
+mask-border-source: var(--mask);
+
+mask-border-source: var(--diamonds);
+
+mask-border-source: var(--stripes);
+
+mask-border-source: none;

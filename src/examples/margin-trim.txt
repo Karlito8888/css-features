@@ -1,0 +1,9 @@
+margin-trim: none;
+
+margin-trim: block;
+
+margin-trim: block-start;
+
+margin-trim: block-end;
+
+margin-trim: inline;

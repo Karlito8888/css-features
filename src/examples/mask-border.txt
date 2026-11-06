@@ -1,0 +1,9 @@
+mask-border: var(--mask) 30 fill / 30px;
+
+mask-border: var(--mask) 30 / 30px;
+
+mask-border: var(--mask) 30 fill / 30px repeat;
+
+mask-border: var(--mask) 30 fill / 30px round;
+
+mask-border: var(--mask) 30 fill / 15px / 10px space;

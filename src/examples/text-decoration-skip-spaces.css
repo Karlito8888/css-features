@@ -1,0 +1,24 @@
+article {
+  width: min(100%, 420px);
+}
+
+.big {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+#example-element {
+  background: color-mix(in oklab, var(--a1) 14%, transparent);
+  text-decoration: underline 4px var(--a2);
+  text-underline-offset: 6px;
+}
+
+.cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

@@ -1,0 +1,7 @@
+scroll-axis-lock: auto;
+--tone: var(--a3);
+--note: "auto: a slightly slanted drag may lock to one axis";
+
+scroll-axis-lock: none;
+--tone: var(--a2);
+--note: "none: the map follows the drag in both axes";

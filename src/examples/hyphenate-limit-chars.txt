@@ -1,0 +1,5 @@
+hyphenate-limit-chars: auto;
+
+hyphenate-limit-chars: auto 5 5;
+
+hyphenate-limit-chars: auto 7 7;

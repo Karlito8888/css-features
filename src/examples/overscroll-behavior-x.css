@@ -37,6 +37,7 @@ p {
   left: 0;
   display: block;
   width: 100%;
+  box-sizing: border-box;
   padding: 6px 10px;
   border-left: 4px solid var(--tone, var(--a1));
   color: var(--ink);

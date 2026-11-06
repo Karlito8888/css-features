@@ -1,0 +1,21 @@
+/* The marks are drawn by text-emphasis-style; text-emphasis-color only paints them, apart from the text. */
+#example-element {
+  width: min(100%, 420px);
+  text-emphasis-style: filled circle;
+}
+
+#example-element p {
+  margin: 0;
+  padding-top: 0.5em;
+}
+
+#example-element .latin {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+#example-element .cjk {
+  font-size: 26px;
+  line-height: 1.8;
+}

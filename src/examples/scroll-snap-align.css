@@ -21,6 +21,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
   height: 38px;
   margin-bottom: -38px;
   padding: 0 12px;

@@ -1,0 +1,7 @@
+text-decoration-skip-spaces: none;
+
+text-decoration-skip-spaces: start;
+
+text-decoration-skip-spaces: end;
+
+text-decoration-skip-spaces: start end;

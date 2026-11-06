@@ -1,0 +1,7 @@
+mask-clip: border-box;
+
+mask-clip: padding-box;
+
+mask-clip: content-box;
+
+mask-clip: no-clip;

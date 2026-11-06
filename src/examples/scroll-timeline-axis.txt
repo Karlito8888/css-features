@@ -1,0 +1,11 @@
+scroll-timeline-axis: y, x;
+--note: "--down is y, --across is x";
+
+scroll-timeline-axis: x, y;
+--note: "axes swapped: down follows x";
+
+scroll-timeline-axis: x;
+--note: "x for both: both bars follow across";
+
+scroll-timeline-axis: y;
+--note: "y for both: both bars follow down";

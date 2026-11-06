@@ -1,0 +1,11 @@
+contain-intrinsic-width: none;
+--note: "none: no intrinsic width, only the border is left";
+
+contain-intrinsic-width: 80px;
+--note: "80px: content 80 wide, the text is cut";
+
+contain-intrinsic-width: 160px;
+--note: "160px: content 160 wide";
+
+contain-intrinsic-width: 250px;
+--note: "250px: content 250 wide";

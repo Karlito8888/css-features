@@ -1,0 +1,7 @@
+text-autospace: no-autospace;
+
+text-autospace: normal;
+
+text-autospace: ideograph-alpha;
+
+text-autospace: ideograph-numeric;

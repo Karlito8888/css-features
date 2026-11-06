@@ -1,0 +1,35 @@
+/* A colour font made for this page: a, b and c are shapes of three layers, with three palettes: 0 by default, 1 for
+   light backgrounds, 2 for dark ones. */
+@font-face {
+  font-family: "Shape Palette";
+  src: url("data:font/woff;base64,d09GRgABAAAAAAPoAAwAAAAABJQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDT0xSAAADbAAAADQAAABEAGAAT0NQQUwAAAOgAAAASAAAAE6ASZIST1MvMgAAAYwAAAAuAAAAYEUARO1jbWFwAAAB1AAAADkAAABCAMUAp2dseWYAAAIwAAAAlwAAAPCJFmJyaGVhZAAAARwAAAA2AAAANjBbjhhoaGVhAAABVAAAAB0AAAAkBXoDJGhtdHgAAAG8AAAAFQAAACIGpAAAbG9jYQAAAhAAAAAdAAAAHgGGATZtYXhwAAABdAAAABgAAAAgABAABm5hbWUAAALIAAAAXQAAAHLxdgvucG9zdAAAAygAAABEAAAAa5gGnqYAAQAAAAEAAPDUEeBfDzz1AAED6AAAAADnE6VwAAAAAOcTpXAAZAAAArwCWAAAAAMAAgAAAAAAAHicY2BkYGBW+G8BIhkYGE4wRTAARVAAMwBDWwKlAAAAeJxjYGRgYOBjYGEA0QwMTAxoAAACVgAXeJxjYGZ6xziBgZWBhYEwYETm2AMBkFJgSGZW+G/BwMCswHACTb0CAwMA97gFcwAAeJxj/MLAwDiBgYFZgQEHAAAzlAGqAAAAeJwdi8ERABAQA/cwHt4KUIGejMpVEuGRbDJ3ARKQrW6Pz8I0qxm+DrbkPliSjtP7KrxlpV2tUAdoAAAAeJxjYIACXgYpBjUgNGZwYPABwhiGLIYKABV2Ar0AAAB4nFXOsQ3CMBCF4feOAlFGFkpNkc6uIuRNUPpEmYAxIrEGQ1BbiutMAjUW56QIbl7zS98diAGQl3Q4AG11qQbppPs+ASJilBvfuXgtkdPIKd1BOsz88JFLc23PdGEOAbslapEDLe2K7ZYWb0wMYaP+LC2Nr+n6vrT0hjnJaqVl27SU3xlfH5UMtDoo/6O2jPa0Oj/fETpEAHicLYgxCoAwFENftSAOOjk59QSOnkP0BH/4tEOHUur9/YoJCS8BPDuOV47p61cdg60e50d7VpafO2a2K0nRcEjW1vTUeGepXCSEghI4jLJRMyunJXLbI9QHY3wQVAAAAHicY2BiwA/4gJiZwYWRiZGZkYXBlZGVkY2RncGNkYORk5GLJVEvxwBEGIIII5YkEDcJxE0CcZNB3GQQF0gYAQA2eAvbeJwtiskNACAMwwzlvmZg/ylJJR5WHCWAAUdcOhHvRRjjJyQCWVuVN7n/pnzJN/EBGB8AsHicY2BkYAZCTgYGBjkgZmZgA5JODFDwMS35/0yPN/+55339P6GE73/jToH/ps8W/xfSrfkvVvzzf9ezv/+hShmBmAkAy7YXXQ==") format("woff");
+}
+
+@font-palette-values --custom {
+  font-family: "Shape Palette";
+  override-colors: 0 #e11d48, 2 #22d3ee;
+}
+
+.demo {
+  width: min(100%, 330px);
+}
+
+#example-element {
+  margin: 0;
+  padding: 14px 20px;
+  font: 400 56px/1.3 "Shape Palette", sans-serif;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

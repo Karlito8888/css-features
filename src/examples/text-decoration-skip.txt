@@ -1,0 +1,3 @@
+text-decoration-skip: auto;
+
+text-decoration-skip: none;

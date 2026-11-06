@@ -1,0 +1,9 @@
+mask-border-width: 1;
+
+mask-border-width: 0.5;
+
+mask-border-width: 2;
+
+mask-border-width: 10%;
+
+mask-border-width: 6px 30px;

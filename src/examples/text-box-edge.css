@@ -1,0 +1,28 @@
+/* trim-both turns the trimming on; text-box-edge decides where the cut lands. */
+.wrap {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+
+#example-element {
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 14px;
+  outline: 2px solid var(--a1);
+  background: color-mix(in oklab, var(--a1) 18%, var(--card));
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 2.2;
+  text-box-trim: trim-both;
+  overflow-wrap: anywhere;
+}
+
+.cap {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}

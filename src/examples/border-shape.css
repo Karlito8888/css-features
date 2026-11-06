@@ -1,0 +1,23 @@
+.demo {
+  width: min(100%, 300px);
+}
+
+#example-element {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border: 14px solid var(--a1);
+  background: linear-gradient(135deg, var(--a4), var(--a2));
+}
+
+.cap {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

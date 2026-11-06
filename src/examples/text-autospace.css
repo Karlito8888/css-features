@@ -1,0 +1,19 @@
+/* The gap is an eighth of an em, drawn between an ideograph and a Latin letter or a digit. It is easier to see in large type, with the guide lines. */
+#example-element {
+  width: min(100%, 420px);
+}
+
+#example-element .line {
+  margin: 0 0 8px;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+#example-element .cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

@@ -1,0 +1,7 @@
+hyphenate-character: auto;
+
+hyphenate-character: "~";
+
+hyphenate-character: "=";
+
+hyphenate-character: "";

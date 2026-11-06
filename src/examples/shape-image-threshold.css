@@ -1,0 +1,45 @@
+/* A radial gradient fading from opaque to transparent is both the picture and the shape. */
+:root {
+  --fade: radial-gradient(closest-side, var(--a1), transparent);
+}
+
+.box {
+  position: relative;
+  display: flow-root;
+  width: min(100%, 320px);
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.box p {
+  margin: 0;
+}
+
+.ghost {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 120px;
+  height: 120px;
+  border: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+}
+
+#example-element {
+  float: left;
+  width: 120px;
+  height: 120px;
+  margin: 0 12px 4px 0;
+  background: var(--fade);
+  shape-outside: var(--fade);
+}
+
+.cap {
+  margin: 8px 0 0;
+  max-width: 320px;
+  color: var(--muted);
+  font-size: 12px;
+}

@@ -1,0 +1,7 @@
+font-width: normal;
+
+font-width: condensed;
+
+font-width: expanded;
+
+font-width: 75%;

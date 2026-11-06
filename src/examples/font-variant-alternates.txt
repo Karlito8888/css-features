@@ -1,0 +1,11 @@
+font-variant-alternates: styleset(hollow);
+
+font-variant-alternates: styleset(dotted);
+
+font-variant-alternates: swash(tail);
+
+font-variant-alternates: ornaments(stack);
+
+font-variant-alternates: annotation(boxed);
+
+font-variant-alternates: character-variant(hollow-a, small-c);

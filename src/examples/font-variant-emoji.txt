@@ -1,0 +1,5 @@
+font-variant-emoji: normal;
+
+font-variant-emoji: text;
+
+font-variant-emoji: emoji;

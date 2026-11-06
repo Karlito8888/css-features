@@ -1,0 +1,13 @@
+border-inline-color: var(--a1);
+
+border-inline-color: var(--a1) var(--a2);
+
+border-inline-color: var(--a3) transparent;
+
+border-inline-color: var(--a4) var(--a5);
+direction: rtl;
+
+border-inline-color: var(--a4) var(--a5);
+writing-mode: vertical-rl;
+
+border-inline-color: currentcolor var(--a2);

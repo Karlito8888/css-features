@@ -1,0 +1,23 @@
+article {
+  width: min(100%, 420px);
+}
+
+.big {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+#example-element {
+  text-decoration: underline 5px var(--a2);
+  text-underline-offset: 6px;
+}
+
+.cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

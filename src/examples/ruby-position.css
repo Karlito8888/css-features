@@ -1,0 +1,22 @@
+#example-element {
+  width: min(100%, 420px);
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 28px;
+  line-height: 2.2;
+}
+
+#example-element rt {
+  color: var(--a1);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#example-element .cap {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

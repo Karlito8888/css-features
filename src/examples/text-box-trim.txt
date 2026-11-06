@@ -1,0 +1,7 @@
+text-box-trim: none;
+
+text-box-trim: trim-start;
+
+text-box-trim: trim-end;
+
+text-box-trim: trim-both;

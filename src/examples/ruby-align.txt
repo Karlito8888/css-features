@@ -1,0 +1,7 @@
+ruby-align: space-around;
+
+ruby-align: space-between;
+
+ruby-align: center;
+
+ruby-align: start;

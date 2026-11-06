@@ -1,0 +1,13 @@
+border-block-color: var(--a1);
+
+border-block-color: var(--a1) var(--a2);
+
+border-block-color: var(--a3) transparent;
+
+border-block-color: var(--a4) var(--a5);
+writing-mode: vertical-lr;
+
+border-block-color: var(--a4) var(--a5);
+writing-mode: vertical-rl;
+
+border-block-color: currentcolor var(--a2);

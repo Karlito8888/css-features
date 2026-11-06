@@ -1,0 +1,15 @@
+scroll-margin-inline-start: 0;
+--out: 0px;
+--note: "0: flush";
+
+scroll-margin-inline-start: 24px;
+--out: 0 0 0 -24px;
+--note: "24px";
+
+scroll-margin-inline-start: 48px;
+--out: 0 0 0 -48px;
+--note: "48px";
+
+scroll-margin-inline-start: 72px;
+--out: 0 0 0 -72px;
+--note: "72px";

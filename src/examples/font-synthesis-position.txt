@@ -1,0 +1,3 @@
+font-synthesis-position: auto;
+
+font-synthesis-position: none;

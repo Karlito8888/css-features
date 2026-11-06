@@ -1,0 +1,7 @@
+shape-margin: 0;
+
+shape-margin: 12px;
+
+shape-margin: 24px;
+
+shape-margin: 40px;

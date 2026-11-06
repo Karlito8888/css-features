@@ -1,0 +1,3 @@
+scroll-target-group: none;
+
+scroll-target-group: auto;

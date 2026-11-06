@@ -1,0 +1,7 @@
+text-emphasis-position: over right;
+
+text-emphasis-position: under right;
+
+text-emphasis-position: over left;
+
+text-emphasis-position: under left;

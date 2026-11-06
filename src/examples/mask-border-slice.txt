@@ -1,0 +1,9 @@
+mask-border-slice: 30;
+
+mask-border-slice: 30 fill;
+
+mask-border-slice: 15 fill;
+
+mask-border-slice: 40 fill;
+
+mask-border-slice: 10 30 fill;

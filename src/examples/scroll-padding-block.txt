@@ -1,0 +1,16 @@
+scroll-padding-block: 0;
+--pad: 0px;
+--note: "0: flush";
+
+scroll-padding-block: 40px;
+--pad: 40px;
+--note: "40px both ends";
+
+scroll-padding-block: 90px 0;
+--pad: 90px 0;
+--note: "start: 90px";
+
+scroll-padding-block: 0 90px;
+--align: end center;
+--pad: 0 90px;
+--note: "end: 90px";

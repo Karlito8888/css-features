@@ -1,0 +1,7 @@
+shape-image-threshold: 0;
+
+shape-image-threshold: 0.3;
+
+shape-image-threshold: 0.6;
+
+shape-image-threshold: 0.9;

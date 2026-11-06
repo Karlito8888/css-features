@@ -1,0 +1,11 @@
+scroll-timeline-name: --down, --across;
+--note: "--down is y, --across is x";
+
+scroll-timeline-name: --across, --down;
+--note: "names swapped: down follows x";
+
+scroll-timeline-name: --down;
+--note: "no --across: that bar is not scroll-driven";
+
+scroll-timeline-name: none;
+--note: "none: no timeline, bars not scroll-driven";

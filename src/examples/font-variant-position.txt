@@ -1,0 +1,3 @@
+font-variant-position: sub;
+
+font-variant-position: super;

@@ -1,0 +1,51 @@
+/* A font made for this page: a, b and c are plain shapes, each with numbered alternates. @font-feature-values gives
+   the numbers names, and font-variant-alternates picks a kind by name. */
+@font-face {
+  font-family: "Shape Alternates";
+  src: url("data:font/woff;base64,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") format("woff");
+}
+
+@font-feature-values "Shape Alternates" {
+  @styleset {
+    hollow: 1;
+    dotted: 2;
+  }
+  @swash {
+    tail: 1;
+  }
+  @ornaments {
+    stack: 1;
+  }
+  @annotation {
+    boxed: 1;
+  }
+  @character-variant {
+    hollow-a: 1 1;
+    small-c: 3 3;
+  }
+}
+
+.demo {
+  width: min(100%, 330px);
+}
+
+#example-element {
+  margin: 0;
+  padding: 14px 20px;
+  color: var(--a1);
+  font: 400 48px/1.3 "Shape Alternates", sans-serif;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

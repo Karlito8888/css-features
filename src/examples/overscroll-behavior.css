@@ -40,6 +40,7 @@ p {
   display: flex;
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
   height: 38px;
   margin-bottom: -38px;
   z-index: 1;

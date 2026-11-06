@@ -1,0 +1,11 @@
+text-fit: none;
+
+text-fit: grow consistent;
+
+text-fit: grow per-line;
+
+text-fit: grow per-line-all;
+
+font-size: 24px;
+white-space: nowrap;
+text-fit: shrink;

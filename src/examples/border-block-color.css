@@ -1,0 +1,16 @@
+/* Indigo marks the block-start side, pink the block-end side (their labels sit inside the box): the first value goes to the start. */
+#example-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: min(100%, 300px);
+  height: 150px;
+  padding: 20px;
+  border: 12px solid var(--line);
+  border-radius: 0;
+  background: var(--card);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

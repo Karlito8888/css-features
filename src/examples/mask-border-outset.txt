@@ -1,0 +1,9 @@
+mask-border-outset: 0;
+
+mask-border-outset: 10px;
+
+mask-border-outset: 20px;
+
+mask-border-outset: 1;
+
+mask-border-outset: 0 40px;

@@ -1,0 +1,15 @@
+contain-intrinsic-block-size: none;
+--note: "none: no intrinsic block size, only the border is left";
+
+contain-intrinsic-block-size: 60px;
+--note: "60px: content 60 tall, the text is cut";
+
+contain-intrinsic-block-size: 120px;
+--note: "120px: content 120 tall";
+
+contain-intrinsic-block-size: 200px;
+--note: "200px: content 200 tall";
+
+contain-intrinsic-block-size: 120px;
+writing-mode: vertical-rl;
+--note: "120px in a vertical writing mode: the block size is the width";

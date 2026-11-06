@@ -1,0 +1,28 @@
+.demo {
+  width: min(100%, 300px);
+}
+
+#example-element {
+  padding: 6px;
+  border: 2px dashed var(--a1);
+  border-radius: 12px;
+  background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--a1) 22%, transparent) 0 3px, transparent 3px 9px), var(--card);
+}
+
+#example-element .tile {
+  min-height: 40px;
+  margin: 22px;
+  border-radius: 8px;
+}
+
+.cap {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

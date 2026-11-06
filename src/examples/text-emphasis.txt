@@ -1,0 +1,9 @@
+text-emphasis: filled circle var(--a1);
+
+text-emphasis: open sesame var(--a2);
+
+text-emphasis: triangle var(--a4);
+
+text-emphasis: "★" var(--a5);
+
+text-emphasis: none;

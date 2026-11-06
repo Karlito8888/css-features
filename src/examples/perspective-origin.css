@@ -1,0 +1,54 @@
+/* Four frames of the same size, pushed back along z by 0, 120, 260 and 440px, seen with a 300px perspective.
+   The amber dot is the perspective origin (--at repeats the choice to place it): the deeper frames drift toward it. */
+#example-element {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+  height: 200px;
+  overflow: hidden;
+  perspective: 300px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: radial-gradient(circle at var(--at, center), var(--a4) 0 5px, transparent 6px), var(--card);
+}
+
+.frame {
+  position: absolute;
+  inset: 14px 30px;
+  border: 3px solid var(--c);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--c) 14%, transparent);
+}
+
+.f1 {
+  --c: var(--a1);
+}
+
+.f2 {
+  --c: var(--a2);
+  transform: translateZ(-120px);
+}
+
+.f3 {
+  --c: var(--a3);
+  transform: translateZ(-260px);
+}
+
+.f4 {
+  --c: var(--a5);
+  transform: translateZ(-440px);
+}
+
+#example-element::after {
+  content: var(--note);
+  position: absolute;
+  bottom: 6px;
+  left: 10px;
+  z-index: 5;
+  padding: 1px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.5;
+  background: var(--card);
+}

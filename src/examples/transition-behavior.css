@@ -1,0 +1,46 @@
+/* Hovering or focusing the stage sets the box to opacity 0 and display none, and it transitions both. Opacity
+   always fades; display is a discrete property, so it only takes part in the transition with allow-discrete
+   (it then flips when the duration ends). A still frame cannot show it: each choice says in the box what happens. */
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 280px;
+  max-width: 100%;
+  height: 170px;
+  border: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+  border-radius: 18px;
+  cursor: default;
+}
+
+.hint {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  font-size: 11px;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--muted);
+}
+
+#example-element {
+  width: 220px;
+  padding: 0 14px;
+  font-size: 13px;
+  line-height: 1.35;
+  text-align: center;
+  transition-property: opacity, display;
+  transition-duration: 1.4s;
+  transition-timing-function: linear;
+}
+
+#example-element::after {
+  content: var(--note);
+}
+
+.stage:hover #example-element,
+.stage:focus #example-element {
+  display: none;
+  opacity: 0;
+}

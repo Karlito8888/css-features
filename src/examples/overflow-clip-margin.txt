@@ -1,0 +1,14 @@
+overflow-clip-margin: 0px;
+--note: "padding-box (default)";
+
+overflow-clip-margin: content-box;
+--note: "content-box";
+
+overflow-clip-margin: border-box;
+--note: "border-box";
+
+overflow-clip-margin: padding-box 24px;
+--note: "padding-box + 24px";
+
+overflow-clip-margin: border-box 40px;
+--note: "border-box + 40px";

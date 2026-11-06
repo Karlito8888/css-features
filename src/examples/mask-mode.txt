@@ -1,0 +1,7 @@
+mask-mode: alpha;
+
+mask-mode: luminance;
+
+mask-mode: alpha, luminance;
+
+mask-mode: luminance, alpha;

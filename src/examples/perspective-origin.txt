@@ -1,0 +1,19 @@
+perspective-origin: center;
+--at: center;
+--note: "center (default)";
+
+perspective-origin: left;
+--at: left;
+--note: "left";
+
+perspective-origin: top right;
+--at: top right;
+--note: "top right";
+
+perspective-origin: bottom;
+--at: bottom;
+--note: "bottom";
+
+perspective-origin: 20% 80%;
+--at: 20% 80%;
+--note: "20% 80%";

@@ -1,0 +1,17 @@
+corner-shape: round;
+--note: "round: the default";
+
+corner-shape: bevel;
+--note: "bevel: a straight cut";
+
+corner-shape: scoop;
+--note: "scoop: a concave curve";
+
+corner-shape: notch;
+--note: "notch: a square cut-out";
+
+corner-shape: superellipse(4);
+--note: "superellipse(4): squarer than round";
+
+corner-shape: round bevel scoop notch;
+--note: "TL round, TR bevel, BR scoop, BL notch";

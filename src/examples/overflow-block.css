@@ -1,0 +1,26 @@
+/* The block axis is the direction lines stack: down in horizontal text, across in vertical text. */
+#example-element {
+  width: 220px;
+  height: 120px;
+  padding: 12px 14px;
+  border: 2px dashed var(--a1);
+  border-radius: 16px;
+  background: var(--card);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0 0 6px;
+}
+
+.tile {
+  min-height: 40px;
+  font-size: 13px;
+}

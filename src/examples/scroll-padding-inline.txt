@@ -1,0 +1,21 @@
+scroll-padding-inline: 0;
+--pad: 0px;
+--note: "0: flush";
+
+scroll-padding-inline: 40px;
+--pad: 40px;
+--note: "40px both ends";
+
+scroll-padding-inline: 90px 0;
+--pad: 90px 0;
+--note: "start: 90px";
+
+scroll-padding-inline: 0 90px;
+--align: center end;
+--pad: 0 90px;
+--note: "end: 90px";
+
+scroll-padding-inline: 60px 0;
+direction: rtl;
+--pad: 60px 0;
+--note: "rtl: start is the right";

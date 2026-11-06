@@ -1,0 +1,51 @@
+/* Every row is a snap area and the list snaps on the block axis. scroll-snap-stop only matters when a scroll
+   would carry the list past a snap position (a flick, a long wheel spin), which a still frame cannot show:
+   each choice says in the row what the specification allows. */
+.wrap {
+  width: 280px;
+  max-width: 100%;
+}
+
+.hint {
+  margin: 0 0 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 232px;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+.list .tile {
+  flex: none;
+  min-height: 0;
+  height: 56px;
+  font-size: 18px;
+  scroll-snap-align: start;
+}
+
+#example-element {
+  grid-auto-flow: column;
+  gap: 12px;
+  padding: 0 12px;
+  outline: 3px solid var(--a4);
+  outline-offset: 3px;
+}
+
+#example-element::after {
+  content: var(--note);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+}

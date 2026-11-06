@@ -1,0 +1,14 @@
+perspective: none;
+--note: "none: no depth, the frames stack up";
+
+perspective: 1000px;
+--note: "1000px: gentle";
+
+perspective: 500px;
+--note: "500px";
+
+perspective: 250px;
+--note: "250px: strong";
+
+perspective: 120px;
+--note: "120px: extreme";

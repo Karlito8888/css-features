@@ -1,0 +1,8 @@
+mask-origin: border-box;
+
+mask-origin: padding-box;
+
+mask-origin: content-box;
+
+mask-origin: padding-box;
+mask-position: bottom right;

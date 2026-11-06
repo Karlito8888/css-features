@@ -1,0 +1,15 @@
+scroll-margin-bottom: 0;
+--out: 0px;
+--note: "0: flush";
+
+scroll-margin-bottom: 16px;
+--out: 0 0 -16px;
+--note: "16px";
+
+scroll-margin-bottom: 32px;
+--out: 0 0 -32px;
+--note: "32px";
+
+scroll-margin-bottom: 48px;
+--out: 0 0 -48px;
+--note: "48px";

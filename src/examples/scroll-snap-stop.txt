@@ -1,0 +1,9 @@
+scroll-snap-stop: normal;
+--note: "normal: a hard flick may pass over this row";
+
+scroll-snap-stop: always;
+--note: "always: a flick cannot pass this row";
+
+scroll-snap-stop: always;
+scroll-snap-align: none;
+--note: "align none: not a snap area, stop ignored";

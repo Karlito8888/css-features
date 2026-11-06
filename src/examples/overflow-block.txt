@@ -1,0 +1,12 @@
+overflow-block: visible;
+
+overflow-block: hidden;
+
+overflow-block: clip;
+overflow-inline: clip;
+overflow-clip-margin: 20px;
+
+overflow-block: scroll;
+
+overflow-block: auto;
+writing-mode: vertical-rl;

@@ -1,0 +1,9 @@
+transition-behavior: normal;
+--note: "normal: display flips at once, the fade is never seen";
+
+transition-behavior: allow-discrete;
+--note: "allow-discrete: fades for 1.4s, then display flips";
+
+transition-behavior: allow-discrete;
+transition-duration: 3s;
+--note: "allow-discrete, 3s: fades for 3s, then display flips";

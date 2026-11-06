@@ -1,0 +1,20 @@
+scroll-margin: 0;
+--out: 0px;
+--note: "0: flush";
+
+scroll-margin: 40px;
+--out: -40px;
+--note: "40px all round";
+
+scroll-margin: 50px 0 0;
+--out: -50px 0 0;
+--note: "50px on top";
+
+scroll-margin: 0 0 0 80px;
+--out: 0 0 0 -80px;
+--note: "80px on the left";
+
+scroll-margin: 0 40px 48px 0;
+scroll-snap-align: end;
+--out: 0 -40px -48px 0;
+--note: "end: bottom, right";

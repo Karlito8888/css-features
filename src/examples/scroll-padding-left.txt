@@ -1,0 +1,15 @@
+scroll-padding-left: 0;
+--pad: 0px;
+--note: "0: flush";
+
+scroll-padding-left: 24px;
+--pad: 24px;
+--note: "24px";
+
+scroll-padding-left: 48px;
+--pad: 48px;
+--note: "48px";
+
+scroll-padding-left: 72px;
+--pad: 72px;
+--note: "72px";

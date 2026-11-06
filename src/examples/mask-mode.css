@@ -1,0 +1,48 @@
+/* The dashed outline is the box. Two mask layers, listed top first: the top half is four vertical bands (white,
+   grey, black, nothing), the bottom half a ramp from black to white, all of them opaque. The choice says how each
+   layer is read: alpha sees the bands in full, luminance reads their brightness. */
+.stage {
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  padding: 24px 24px 44px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card) repeating-conic-gradient(color-mix(in oklab, var(--ink) 7%, transparent) 0 25%, transparent 0 50%) 0 0 / 20px 20px;
+}
+
+/* the box before it is masked, for reference */
+.frame {
+  position: relative;
+  width: min(100%, 240px);
+  outline: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+  outline-offset: 0;
+  border-radius: 4px;
+}
+
+.frame::after {
+  content: "top layer: bands, bottom layer: ramp";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.paint {
+  width: 100%;
+  aspect-ratio: 1;
+  mask-image:
+    linear-gradient(90deg, #fff 0 25%, #808080 0 50%, #000 0 75%, transparent 0),
+    linear-gradient(90deg, #000, #fff);
+  mask-size: 100% 50%;
+  mask-position: top, bottom;
+  mask-repeat: no-repeat;
+  background:
+    radial-gradient(circle at 20% 15%, var(--a4), transparent 45%),
+    radial-gradient(circle at 85% 85%, var(--a3), transparent 50%),
+    linear-gradient(135deg, var(--a1), var(--a2));
+}

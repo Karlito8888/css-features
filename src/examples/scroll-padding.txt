@@ -1,0 +1,20 @@
+scroll-padding: 0;
+--pad: 0px;
+--note: "0: flush";
+
+scroll-padding: 40px;
+--pad: 40px;
+--note: "40px all round";
+
+scroll-padding: 64px 0 0;
+--pad: 64px 0 0;
+--note: "64px on top";
+
+scroll-padding: 0 0 0 90px;
+--pad: 0 0 0 90px;
+--note: "90px on the left";
+
+scroll-padding: 0 40px 56px 0;
+--align: end;
+--pad: 0 40px 56px 0;
+--note: "end: bottom, right";

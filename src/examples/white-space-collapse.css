@@ -1,0 +1,6 @@
+/* white-space-collapse alone: only what happens to spaces and line breaks changes, wrapping stays on. */
+#example-element {
+  width: min(100%, 330px);
+  font: 500 13px/1.6 ui-monospace, Menlo, Consolas, monospace;
+  padding: 18px 20px;
+}

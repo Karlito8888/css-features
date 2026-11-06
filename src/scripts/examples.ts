@@ -1,4 +1,4 @@
-import { SHOWCASE_CSS, writtenCss } from "../standalone-document";
+import { SHOWCASE_CSS, declarations, writtenCss } from "../standalone-document";
 import type { Editor } from "./editor";
 import { isDark, onThemeChange } from "./theme";
 
@@ -26,11 +26,12 @@ const TABBED_CSS = `body{background:#fff;font:400 1rem/1.1876 Inter,BlinkMacSyst
 
 /**
  * Runs inside a preview with value choices. Serialized with toString(), so it must not use
- * anything from this module. Applies a choice when the page asks through a MessagePort: inline
- * style on #example-element (MDN's convention), or, when the choice holds "{", the content of a
- * style element. Reports which choices this browser does not support.
+ * anything from this module (the declaration splitter is passed in). Applies a choice when the
+ * page asks through a MessagePort: inline style on #example-element (MDN's convention), or, when
+ * the choice holds "{", the content of a style element. Reports which choices this browser does
+ * not support.
  */
-function choiceAgent(id: string, choices: string[]) {
+function choiceAgent(id: string, choices: string[], split: typeof declarations) {
   const isBlock = (code: string) => code.includes("{");
   const supported = (code: string) => {
     if (isBlock(code)) {
@@ -39,12 +40,7 @@ function choiceAgent(id: string, choices: string[]) {
       sheet.replaceSync(code);
       return sheet.cssRules.length > 0;
     }
-    return code
-      .replace(/\/\*[\s\S]*?\*\//g, "")
-      .split(";")
-      .map((d) => d.trim())
-      .filter(Boolean)
-      .every((d) => CSS.supports(d));
+    return split(code).every((d) => CSS.supports(d));
   };
   const style = document.body.appendChild(document.createElement("style"));
   const apply = (code: string) => {
@@ -68,7 +64,7 @@ function srcdoc(source: Source, id: string, base: string): string {
   const fullDocument = /<html[\s>]|<!doctype/i.test(html);
   // The preview reports its height tagged with its example id so the page can size the frame.
   const resize = `<script>new ResizeObserver(() => parent.postMessage({ previewHeight: Math.ceil(document.documentElement.getBoundingClientRect().height), example: ${JSON.stringify(id)} }, "*")).observe(document.documentElement);<\/script>`;
-  const agent = source.choices ? `<script>(${choiceAgent.toString()})(${JSON.stringify(id)}, ${JSON.stringify(source.choices)});<\/script>` : "";
+  const agent = source.choices ? `<script>(${choiceAgent.toString()})(${JSON.stringify(id)}, ${JSON.stringify(source.choices)}, ${declarations.toString()});<\/script>` : "";
   return (
     (fullDocument ? "" : `<!doctype html><meta charset="utf-8"><style>${base}</style>`) +
     (source.css ? `<style>${source.css}</style>` : "") +

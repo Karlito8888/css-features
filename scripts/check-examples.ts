@@ -12,7 +12,7 @@
  */
 
 import { mkdir, rm } from "node:fs/promises";
-import { standaloneDocument, writtenCss } from "../src/standalone-document";
+import { declarations, standaloneDocument, writtenCss } from "../src/standalone-document";
 import { exampleIds, readExample } from "./example-files";
 
 // EXAMPLES_DIR checks drafts kept outside the repo (same file layout as src/examples).
@@ -34,22 +34,16 @@ type Row = { choice: number; supported: boolean; value: string; overflow: number
 type Result = { key: string; errors: string[]; rows: Row[] };
 
 /**
- * Runs inside each frame, serialized with toString(). Applies each choice as the page does, lets
- * transitions finish, and reports what it measured to the harness.
+ * Runs inside each frame, serialized with toString() (the declaration splitter is passed in).
+ * Applies each choice as the page does, lets transitions finish, and reports what it measured.
  */
-function probe(key: string, choices: string[]) {
+function probe(key: string, choices: string[], declared: typeof declarations) {
   const errors: string[] = [];
   addEventListener("error", (e) => errors.push(e instanceof ErrorEvent ? e.message : e.type));
   const el = document.getElementById("example-element");
   if (!el) errors.push("no #example-element");
   const style = document.body.appendChild(document.createElement("style"));
   const isBlock = (c: string) => c.includes("{");
-  const declared = (c: string) =>
-    c
-      .replace(/\/\*[\s\S]*?\*\//g, "")
-      .split(";")
-      .map((d) => d.trim())
-      .filter(Boolean);
   const supported = (c: string) => {
     if (!isBlock(c)) return declared(c).every((d) => CSS.supports(d));
     const sheet = new CSSStyleSheet();
@@ -131,7 +125,7 @@ for (let start = 0; start < ids.length; start += BATCH) {
     const example = examples.get(id)!;
     const key = `${id} ${width}px ${dark ? "dark" : "light"}`;
     if (choice !== null) return { key, width, doc: standaloneDocument({ ...example, choices: example.choices && [example.choices[choice]] }, id, writtenCss(dark)) };
-    const script = `<script>(${probe.toString()})(${JSON.stringify(key)}, ${JSON.stringify(example.choices ?? [])});</script>`;
+    const script = `<script>(${probe.toString()})(${JSON.stringify(key)}, ${JSON.stringify(example.choices ?? [])}, ${declarations.toString()});</script>`;
     return { key, width, doc: standaloneDocument(example, id, writtenCss(dark)).replace(/<\/body>/, `${script}</body>`) };
   };
 

@@ -25,6 +25,34 @@ export const writtenCss = (dark: boolean) => `:root{color-scheme:${dark ? "dark"
 export const splitChoices = (text: string) => text.split(/\n\s*\n/);
 
 /**
+ * The declarations of a value choice: split on the ";" that end them, not on those inside
+ * parentheses or strings (`if(style(--x: 1): a; else: b)`, `content: ";"`). Serialized with
+ * toString() into the preview frames, so it must stay self-contained.
+ */
+export function declarations(code: string): string[] {
+  const out: string[] = [];
+  let depth = 0;
+  let quote = "";
+  let start = 0;
+  code = code.replace(/\/\*[\s\S]*?\*\//g, "");
+  for (let i = 0; i < code.length; i++) {
+    const c = code[i];
+    if (quote) {
+      if (c === "\\") i++;
+      else if (c === quote) quote = "";
+    } else if (c === '"' || c === "'") quote = c;
+    else if (c === "(") depth++;
+    else if (c === ")") depth--;
+    else if (c === ";" && depth === 0) {
+      out.push(code.slice(start, i));
+      start = i + 1;
+    }
+  }
+  out.push(code.slice(start));
+  return out.map((d) => d.trim()).filter(Boolean);
+}
+
+/**
  * The complete document an example becomes, with its first value choice applied as the page does
  * (declarations inline on #example-element, a choice holding "{" as a style element).
  */

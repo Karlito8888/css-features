@@ -1,0 +1,27 @@
+.wrap {
+  display: grid;
+  gap: 14px;
+  width: min(100%, 300px);
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+code {
+  font-size: 12px;
+}
+
+/* Three layers, top to bottom: a sun, a sky gradient, a row of coloured stripes. The blend modes
+   mix each layer with the ones under it. */
+#example-element {
+  height: 170px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 70% 34%, var(--a4) 0 26%, transparent 27%),
+    linear-gradient(180deg, var(--a2), var(--a1)),
+    repeating-linear-gradient(90deg, var(--a3) 0 24px, var(--a5) 24px 48px, var(--a4) 48px 72px);
+}

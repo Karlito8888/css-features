@@ -1,0 +1,9 @@
+background-image: -webkit-cross-fade(var(--sun), var(--night), 0%);
+
+background-image: -webkit-cross-fade(var(--sun), var(--night), 30%);
+
+background-image: -webkit-cross-fade(var(--sun), var(--night), 60%);
+
+background-image: -webkit-cross-fade(var(--sun), var(--night), 100%);
+
+background-image: cross-fade(linear-gradient(cyan, indigo) 40%, linear-gradient(gold, deeppink) 60%);

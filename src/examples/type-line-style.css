@@ -1,0 +1,15 @@
+/* <line-style>: the keywords of border-style and outline-style (none and hidden draw no line, so they are not shown). Wide borders make groove, ridge, inset and outset visible. */
+#example-element {
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  padding: 28px 20px;
+  border: 12px solid var(--a1);
+  border-radius: 10px;
+  background: var(--card);
+  font-weight: 700;
+}
+
+#example-element::after {
+  content: var(--note);
+}

@@ -1,0 +1,9 @@
+background-image: linear-gradient(135deg, var(--a1), var(--a2));
+
+background-image: linear-gradient(90deg, var(--a1) 0 33.33%, var(--a4) 0 66.66%, var(--a5) 0);
+
+background-image: linear-gradient(in oklch 90deg, var(--a1), var(--a4));
+
+background-image: linear-gradient(to bottom, var(--a3), transparent);
+
+background-image: linear-gradient(to top right, var(--a5), var(--a3) 45%, var(--a1));

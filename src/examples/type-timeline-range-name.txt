@@ -1,0 +1,11 @@
+animation-range: entry;
+--note: "entry: while the panel slides into the box";
+
+animation-range: contain;
+--note: "contain: while the panel is fully inside the box";
+
+animation-range: cover;
+--note: "cover: from the panel's first pixel entering to its last pixel leaving";
+
+animation-range: exit;
+--note: "exit: while the panel slides out of the box";

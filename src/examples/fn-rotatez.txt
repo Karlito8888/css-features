@@ -1,0 +1,9 @@
+transform: rotateZ(20deg);
+
+transform: rotateZ(-45deg);
+
+transform: rotateZ(0.25turn);
+
+transform: rotateZ(180deg);
+
+transform: rotateX(55deg) rotateZ(30deg);

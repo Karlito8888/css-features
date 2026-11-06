@@ -1,0 +1,9 @@
+filter: blur(3px) brightness(1.2);
+
+filter: sepia(1) hue-rotate(160deg);
+
+filter: grayscale(1) contrast(1.8);
+
+filter: saturate(3) drop-shadow(8px 10px 0 var(--a2));
+
+filter: invert(1) opacity(60%);

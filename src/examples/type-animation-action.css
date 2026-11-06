@@ -1,0 +1,75 @@
+/* The panel is its own trigger: timeline-trigger --seen view() fires when it enters the box and when it
+   leaves it, and animation-trigger (the choice) says which <animation-action> each of those runs on its
+   reveal animation. Until a trigger plays it, the animation waits at its first keyframe. Where
+   scroll-initial-target is supported the box starts with the panel already in view. */
+.wrap {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 300px);
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.scroll {
+  position: relative;
+  height: 230px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: 0 18px 40px -24px rgb(15 23 42 / 0.45);
+}
+
+.lines {
+  height: 220px;
+  background: repeating-linear-gradient(to bottom, var(--line) 0 8px, transparent 8px 22px);
+}
+
+.tail {
+  height: 400px;
+}
+
+.start {
+  position: absolute;
+  top: 142px;
+  height: 1px;
+  scroll-initial-target: nearest;
+}
+
+#example-element {
+  height: 124px;
+  margin: 0 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--a1) 14%, var(--card));
+  transition: none;
+  timeline-trigger: --seen view();
+  animation: reveal 0.6s ease both;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+@keyframes reveal {
+  from {
+    scale: 0.88;
+    border-color: var(--a2);
+    background: var(--line);
+  }
+}

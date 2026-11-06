@@ -1,0 +1,8 @@
+animation-timeline: scroll();
+--note: "scroll(): the nearest scroller on its block axis: how far the box is scrolled down";
+
+animation-timeline: scroll(inline);
+--note: "scroll(inline): the same scroller on its inline axis: how far the box is scrolled across";
+
+animation-timeline: scroll(root);
+--note: "scroll(root): the page, not this box, so scrolling the box leaves the runner where it is";

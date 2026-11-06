@@ -1,0 +1,17 @@
+corner-shape: round;
+--note: "round";
+
+corner-shape: scoop;
+--note: "scoop";
+
+corner-shape: bevel;
+--note: "bevel";
+
+corner-shape: notch;
+--note: "notch";
+
+corner-shape: square;
+--note: "square";
+
+corner-shape: squircle;
+--note: "squircle";

@@ -1,0 +1,7 @@
+background-image: filter(url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%202'%3E%3Cpath%20fill='orange'%20d='M0%200h2v2H0z'/%3E%3Cpath%20fill='teal'%20d='M2%200h2v2H2z'/%3E%3Ccircle%20cx='2'%20cy='1'%20r='.8'%20fill='hotpink'/%3E%3C/svg%3E"), grayscale(1));
+
+background-image: filter(url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%202'%3E%3Cpath%20fill='orange'%20d='M0%200h2v2H0z'/%3E%3Cpath%20fill='teal'%20d='M2%200h2v2H2z'/%3E%3Ccircle%20cx='2'%20cy='1'%20r='.8'%20fill='hotpink'/%3E%3C/svg%3E"), sepia(1));
+
+background-image: filter(url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%202'%3E%3Cpath%20fill='orange'%20d='M0%200h2v2H0z'/%3E%3Cpath%20fill='teal'%20d='M2%200h2v2H2z'/%3E%3Ccircle%20cx='2'%20cy='1'%20r='.8'%20fill='hotpink'/%3E%3C/svg%3E"), blur(3px));
+
+background-image: filter(url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%202'%3E%3Cpath%20fill='orange'%20d='M0%200h2v2H0z'/%3E%3Cpath%20fill='teal'%20d='M2%200h2v2H2z'/%3E%3Ccircle%20cx='2'%20cy='1'%20r='.8'%20fill='hotpink'/%3E%3C/svg%3E"), hue-rotate(160deg) saturate(2));

@@ -1,0 +1,7 @@
+transform: perspective(100px) rotateY(55deg);
+
+transform: perspective(220px) rotateY(55deg);
+
+transform: perspective(600px) rotateY(55deg);
+
+transform: perspective(none) rotateY(55deg);

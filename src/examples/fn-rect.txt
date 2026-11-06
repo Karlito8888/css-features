@@ -1,0 +1,9 @@
+clip-path: rect(10% 90% 90% 10%);
+
+clip-path: rect(0 100% 50% 0);
+
+clip-path: rect(auto 70% auto 30%);
+
+clip-path: rect(20% 80% 80% 20% round 24px);
+
+clip-path: rect(0 60% 100% 20% round 50%);

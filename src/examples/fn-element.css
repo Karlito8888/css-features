@@ -1,0 +1,42 @@
+/* element() paints a live copy of the element with that id as an image; the standard name is element(), Firefox ships -moz-element(). */
+.demo {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 300px);
+}
+
+#source {
+  display: grid;
+  place-items: center;
+  height: 64px;
+  border-radius: 14px;
+  background: var(--grad);
+  color: #fff;
+  font-weight: 700;
+  background-size: 200% 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #source {
+    animation: drift 3s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes drift {
+  to {
+    background-position: 100% 0;
+  }
+}
+
+#example-element {
+  height: 140px;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  background-color: var(--card);
+}
+
+.cap {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}

@@ -1,0 +1,40 @@
+/* The dashed ring is 70px from the centre of the track, where the tile stops (offset-distance). The angle is
+   measured clockwise from the top, so 0deg points up and 90deg points right. The tile turns to follow its ray;
+   "at" moves the start of the ray away from the centre. */
+.track {
+  position: relative;
+  width: 274px;
+  max-width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at center, var(--muted) 0 3px, transparent 4px),
+    radial-gradient(circle at center, transparent 69px, color-mix(in oklab, var(--ink) 35%, transparent) 69px 70.5px, transparent 71px),
+    var(--card);
+}
+
+.deg {
+  position: absolute;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.n { top: 8px; left: calc(50% - 14px); }
+.s { bottom: 8px; left: calc(50% - 18px); }
+.e { top: calc(50% - 6px); right: 8px; }
+.w { top: calc(50% - 6px); left: 8px; }
+
+#example-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  min-height: 26px;
+  font-size: 12px;
+  border-radius: 8px;
+  offset-distance: 70px;
+  offset-rotate: auto;
+}

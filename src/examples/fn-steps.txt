@@ -1,0 +1,7 @@
+animation-timing-function: steps(3, jump-end);
+
+animation-timing-function: steps(3, jump-none);
+
+animation-timing-function: steps(3, jump-start);
+
+animation-timing-function: steps(1, jump-start);

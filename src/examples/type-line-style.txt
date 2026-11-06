@@ -1,0 +1,17 @@
+border-style: dotted;
+--note: "dotted";
+
+border-style: dashed;
+--note: "dashed";
+
+border-style: double;
+--note: "double";
+
+border-style: groove;
+--note: "groove";
+
+border-style: ridge;
+--note: "ridge";
+
+border-style: inset outset;
+--note: "inset outset";

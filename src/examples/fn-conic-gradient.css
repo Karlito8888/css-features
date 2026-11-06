@@ -1,0 +1,8 @@
+/* the colour stops turn around a centre, with angles or percentages of a full turn */
+#example-element {
+  width: min(100%, 190px);
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background-color: var(--card);
+}

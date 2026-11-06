@@ -1,0 +1,72 @@
+/* The dashed outline is where the box sits untransformed. Thin lines are the axes through its centre;
+   the stage has a perspective, so anything that moves along z or turns in depth grows, shrinks or tilts. */
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  height: 250px;
+  overflow: hidden;
+  perspective: 350px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    linear-gradient(var(--line), var(--line)) center / 100% 1px no-repeat,
+    linear-gradient(var(--line), var(--line)) center / 1px 100% no-repeat,
+    var(--card);
+}
+
+.stage > * {
+  grid-area: 1 / 1;
+  width: 96px;
+  height: 96px;
+}
+
+.stage > .ax {
+  position: absolute;
+  grid-area: auto;
+  width: auto;
+  height: auto;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1;
+}
+
+.ax.x {
+  top: calc(50% + 6px);
+  right: 10px;
+}
+
+.ax.y {
+  bottom: 26px;
+  left: calc(50% + 7px);
+}
+
+.ax.z {
+  top: 10px;
+  left: 12px;
+}
+
+/* the untransformed position, for reference */
+.stage > .cap {
+  position: absolute;
+  grid-area: auto;
+  width: auto;
+  height: auto;
+  right: 12px;
+  bottom: 8px;
+  left: 12px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1;
+  text-align: center;
+}
+
+.ghost {
+  border: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+  border-radius: 14px;
+}
+
+#example-element {
+  font-size: 22px;
+}

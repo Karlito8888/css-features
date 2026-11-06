@@ -1,0 +1,7 @@
+offset-path: ray(0deg);
+
+offset-path: ray(90deg);
+
+offset-path: ray(215deg);
+
+offset-path: ray(90deg at 15% 20%);

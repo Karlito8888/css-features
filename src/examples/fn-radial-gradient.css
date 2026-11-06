@@ -1,0 +1,8 @@
+/* the colour stops run from the centre outwards; a stop with two positions (0 60%) makes a hard edge */
+#example-element {
+  width: min(100%, 300px);
+  height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background-color: var(--card);
+}

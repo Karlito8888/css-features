@@ -1,0 +1,5 @@
+transform: scaleZ(1) rotateX(60deg);
+
+transform: scaleZ(3) rotateX(60deg);
+
+transform: scaleZ(-1) rotateX(60deg);

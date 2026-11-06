@@ -1,0 +1,9 @@
+background-image: linear-gradient(135deg, var(--a1), var(--a2)); --note: "a gradient";
+
+background-image: var(--scene); --note: "url()";
+
+background-image: image-set(var(--dusk) 1x, var(--scene) 2x); --note: "image-set()";
+
+background-image: -webkit-cross-fade(var(--scene), var(--dusk), 50%); --note: "cross-fade()";
+
+background-image: image(var(--a4)); --note: "image()";

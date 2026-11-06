@@ -1,0 +1,80 @@
+/* The runner crosses its rail with a keyframe animation, and its timeline is the choice, inherited down
+   from the card, so scroll() resolves against the runner: its nearest scroller is the box. The box
+   scrolls in both directions and the rail sticks to its corner. Where scroll-initial-target is supported
+   the box starts scrolled part way down and across, so the progress is already visible; elsewhere it
+   starts at the top left and you scroll it. */
+#example-element {
+  width: min(100%, 300px);
+  padding: 14px;
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.scroll {
+  contain: inline-size;
+  height: 190px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  animation-timeline: inherit;
+}
+
+.canvas {
+  position: relative;
+  width: 620px;
+  height: 420px;
+  background:
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(135deg, transparent 30%, color-mix(in oklab, var(--a3) 22%, transparent));
+}
+
+.start {
+  position: absolute;
+  top: 80px;
+  left: 40%;
+  width: 1px;
+  height: 1px;
+  scroll-initial-target: nearest;
+}
+
+.hud {
+  position: sticky;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  width: calc(100% - 20px);
+  height: 0;
+  animation-timeline: inherit;
+}
+
+.rail {
+  container-type: inline-size;
+  height: 52px;
+  padding: 3px;
+  border: 1px dashed var(--muted);
+  border-radius: 14px;
+  background: var(--card);
+  animation-timeline: inherit;
+}
+
+.runner {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--line);
+  animation: run linear both;
+  animation-timeline: inherit;
+}
+
+@keyframes run {
+  from { translate: 0 0; background: var(--a3); }
+  to { translate: calc(100cqw - 44px) 0; background: var(--a2); }
+}

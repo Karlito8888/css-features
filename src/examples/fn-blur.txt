@@ -1,0 +1,7 @@
+filter: blur(2px);
+
+filter: blur(6px);
+
+filter: blur(14px);
+
+filter: blur(30px);

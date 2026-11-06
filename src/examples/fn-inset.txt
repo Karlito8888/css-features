@@ -1,0 +1,9 @@
+clip-path: inset(15%);
+
+clip-path: inset(0 40% 0 0);
+
+clip-path: inset(10% 5% round 28px);
+
+clip-path: inset(10% round 50%);
+
+clip-path: inset(25% 10% round 16px 48px);

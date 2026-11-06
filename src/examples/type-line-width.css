@@ -1,0 +1,15 @@
+/* <line-width>: a length or one of the keywords thin, medium and thick, as in border-width and outline-width. */
+#example-element {
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  padding: 28px 20px;
+  border: 3px solid var(--a1);
+  border-radius: 10px;
+  background: var(--card);
+  font-weight: 700;
+}
+
+#example-element::after {
+  content: var(--note);
+}

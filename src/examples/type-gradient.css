@@ -1,0 +1,21 @@
+/* <gradient>: every function that draws a gradient, each one also in a repeating form */
+#example-element {
+  width: min(100%, 300px);
+  height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background-color: var(--card);
+  display: grid;
+  place-items: center;
+}
+
+#example-element::after {
+  content: var(--note);
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px -8px color-mix(in oklab, var(--ink) 45%, transparent);
+}

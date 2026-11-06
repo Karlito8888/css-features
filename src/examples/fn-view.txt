@@ -1,0 +1,8 @@
+animation-timeline: view();
+--note: "view(): the runner crossing the box from bottom to top";
+
+animation-timeline: view(block 80px 0px);
+--note: "view(block 80px 0px): same, with the top edge of the box inset by 80px";
+
+animation-timeline: view(block 0px 80px);
+--note: "view(block 0px 80px): same, with the bottom edge of the box inset by 80px";

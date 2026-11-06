@@ -1,0 +1,9 @@
+background-image: radial-gradient(circle at 30% 30%, var(--a4), var(--a2) 55%, var(--a1));
+
+background-image: radial-gradient(circle closest-side, var(--a3) 0 60%, transparent 60%);
+
+background-image: radial-gradient(ellipse farthest-corner at 50% 100%, var(--a5), transparent 70%);
+
+background-image: radial-gradient(circle closest-side, var(--a1) 0 20%, var(--a3) 20% 40%, var(--a5) 40% 60%, var(--a4) 60% 80%, var(--a2) 80%);
+
+background-image: radial-gradient(in oklch, var(--a4), var(--a1));

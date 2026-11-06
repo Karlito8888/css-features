@@ -1,0 +1,8 @@
+/* the colour stops run along a line; the third choice mixes the same two colours in oklch instead of sRGB */
+#example-element {
+  width: min(100%, 300px);
+  height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background-color: var(--card);
+}

@@ -1,0 +1,7 @@
+background-image: image(var(--a1)); background-size: 100% 100%;
+
+background-image: image(var(--a1)), image(var(--a2)); background-size: 50% 100%, 100% 100%;
+
+background-image: image(var(--a4)), image(var(--a3)), image(var(--a5)); background-size: 100% 34%, 100% 34%, 100% 34%; background-position: 0 0, 0 50%, 0 100%;
+
+background-image: image(color-mix(in oklab, var(--a2) 55%, transparent)); background-size: 70% 70%; background-position: center;

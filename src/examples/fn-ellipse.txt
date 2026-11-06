@@ -1,0 +1,7 @@
+clip-path: ellipse(50% 30%);
+
+clip-path: ellipse(30% 50%);
+
+clip-path: ellipse(closest-side farthest-side at 25% 50%);
+
+clip-path: ellipse(60% 25% at 50% 100%);

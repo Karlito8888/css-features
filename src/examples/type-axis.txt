@@ -1,0 +1,11 @@
+scroll-timeline-axis: y;
+--note: "y: the vertical axis: how far the box is scrolled down";
+
+scroll-timeline-axis: x;
+--note: "x: the horizontal axis: how far the box is scrolled across";
+
+scroll-timeline-axis: block;
+--note: "block: the direction blocks stack, which is down for horizontal text: the same as y here";
+
+scroll-timeline-axis: inline;
+--note: "inline: the direction text runs, which is across for horizontal text: the same as x here";

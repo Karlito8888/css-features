@@ -1,0 +1,7 @@
+filter: contrast(25%);
+
+filter: contrast(60%);
+
+filter: contrast(1.6);
+
+filter: contrast(3);

@@ -1,0 +1,14 @@
+border-width: thin;
+--note: "thin";
+
+border-width: medium;
+--note: "medium";
+
+border-width: thick;
+--note: "thick";
+
+border-width: 14px;
+--note: "14px";
+
+border-width: 2px 18px;
+--note: "2px 18px";

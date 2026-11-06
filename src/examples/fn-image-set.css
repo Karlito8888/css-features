@@ -1,0 +1,20 @@
+/* image-set() lists the same picture at several densities (x, dppx, dpi, dpcm) and lets the browser choose. The images are data: URIs. */
+:root {
+  --lo: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='88'%3E%3Crect width='220' height='88' rx='14' fill='%236366f1'/%3E%3Ctext x='110' y='51' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='700' fill='white'%3E1x image%3C/text%3E%3C/svg%3E");
+  --mid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='88'%3E%3Crect width='220' height='88' rx='14' fill='%230891b2'/%3E%3Ctext x='110' y='51' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='700' fill='white'%3E1.5x image%3C/text%3E%3C/svg%3E");
+  --hi: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='88'%3E%3Crect width='220' height='88' rx='14' fill='%23ec4899'/%3E%3Ctext x='110' y='51' text-anchor='middle' font-family='sans-serif' font-size='18' font-weight='700' fill='white'%3E2x image%3C/text%3E%3C/svg%3E");
+}
+
+#example-element {
+  width: 220px;
+  max-width: 100%;
+  min-height: 88px;
+  background-size: 100% 100%;
+}
+
+.cap {
+  margin: 8px 0 0;
+  max-width: 260px;
+  color: var(--muted);
+  font-size: 12px;
+}

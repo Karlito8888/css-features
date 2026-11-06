@@ -1,0 +1,9 @@
+transform: rotate(20deg);
+
+transform: scale(1.5, 0.7);
+
+transform: translate(50px, -40px) skewX(-20deg);
+
+transform: perspective(250px) rotateY(55deg);
+
+transform: matrix(1, 0.3, -0.3, 1, 30, 0);

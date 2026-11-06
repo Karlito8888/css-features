@@ -1,0 +1,14 @@
+animation-trigger: --seen play;
+--note: "play: runs the animation when the panel first comes into view, and it stays played";
+
+animation-trigger: --seen replay;
+--note: "replay: runs the animation again from its start every time the panel comes back into view";
+
+animation-trigger: --seen play-forwards play-backwards;
+--note: "play-forwards play-backwards: runs forward on entering and backward on leaving";
+
+animation-trigger: --seen play-forwards reset;
+--note: "play-forwards reset: runs forward on entering and snaps back to its start on leaving";
+
+animation-trigger: --seen pause;
+--note: "pause: only pauses a running animation, so this one never starts and the panel keeps its first keyframe";

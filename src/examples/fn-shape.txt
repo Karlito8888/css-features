@@ -1,0 +1,9 @@
+clip-path: shape(from 50% 0, line to 100% 100%, line to 0 100%, close);
+
+clip-path: shape(from 0 0, hline to 100%, vline to 70%, curve to 50% 70% with 75% 100%, smooth to 0 70%, close);
+
+clip-path: shape(from 50% 100%, curve to 0% 35% with 20% 85% / 0% 60%, curve to 25% 5% with 0% 15% / 12% 5%, curve to 50% 25% with 38% 5% / 50% 15%, curve to 75% 5% with 50% 15% / 62% 5%, curve to 100% 35% with 88% 5% / 100% 15%, curve to 50% 100% with 100% 60% / 80% 85%, close);
+
+clip-path: shape(from 0 0, hline to 100%, vline to 40%, arc to 100% 60% of 20px ccw, vline to 100%, hline to 0, vline to 60%, arc to 0 40% of 20px ccw, close);
+
+clip-path: shape(from 0 50%, arc to 100% 50% of 50% cw, line to 100% 100%, line to 0 100%, close);

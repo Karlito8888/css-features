@@ -1,0 +1,9 @@
+clip-path: circle(50%);
+
+clip-path: circle(30% at 50% 50%);
+
+clip-path: circle(closest-side at 30% 40%);
+
+clip-path: circle(60px at 75% 30%);
+
+clip-path: circle(farthest-side at 0 0);

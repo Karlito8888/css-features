@@ -1,0 +1,7 @@
+background-image: image-set(var(--lo) 1x, var(--hi) 2x);
+
+background-image: image-set(var(--lo) 2x, var(--hi) 1x);
+
+background-image: image-set(var(--mid) 96dpi, var(--hi) 192dpi);
+
+background-image: image-set(linear-gradient(135deg, var(--a4), var(--a2)) 1x, var(--hi) 2x);

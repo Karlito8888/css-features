@@ -1,0 +1,7 @@
+background-image: repeating-conic-gradient(var(--a1) 0 25%, var(--a3) 0 50%); background-size: 40px 40px;
+
+background-image: repeating-conic-gradient(var(--a4) 0 10deg, var(--a2) 10deg 20deg);
+
+background-image: repeating-conic-gradient(from 20deg at 20% 50%, var(--a1) 0 15deg, transparent 15deg 30deg);
+
+background-image: repeating-conic-gradient(var(--a1), var(--a3), var(--a5), var(--a1) 90deg);

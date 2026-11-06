@@ -1,0 +1,7 @@
+filter: brightness(30%);
+
+filter: brightness(65%);
+
+filter: brightness(1.5);
+
+filter: brightness(2.5);

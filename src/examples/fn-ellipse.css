@@ -1,0 +1,23 @@
+/* ellipse() takes two radii (horizontal, then vertical) and a centre after at. */
+.stage {
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+/* the reference box, before the shape is applied */
+.frame {
+  width: min(100%, 220px);
+  aspect-ratio: 1;
+  outline: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+}
+
+#example-element {
+  width: 100%;
+  height: 100%;
+  background: var(--grad);
+}

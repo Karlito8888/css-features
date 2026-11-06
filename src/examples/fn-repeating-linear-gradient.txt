@@ -1,0 +1,9 @@
+background-image: repeating-linear-gradient(45deg, var(--a1) 0 12px, var(--a3) 12px 24px);
+
+background-image: repeating-linear-gradient(-45deg, var(--a4) 0 14px, var(--ink) 14px 28px);
+
+background-image: repeating-linear-gradient(90deg, var(--a5) 0 18px, transparent 18px 22px);
+
+background-image: repeating-linear-gradient(0deg, var(--a1), var(--a2) 24px);
+
+background-image: repeating-linear-gradient(0deg, color-mix(in oklab, var(--a1) 45%, transparent) 0 1px, transparent 1px 20px), repeating-linear-gradient(90deg, color-mix(in oklab, var(--a1) 45%, transparent) 0 1px, transparent 1px 20px);

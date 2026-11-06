@@ -1,0 +1,22 @@
+/* cross-fade() mixes images: the standard form takes a percentage after each image, the older prefixed one takes the percentage last. */
+:root {
+  --sun: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='170' viewBox='0 0 300 170'%3E%3Crect width='300' height='170' fill='%2306b6d4'/%3E%3Ccircle cx='210' cy='60' r='34' fill='%23f59e0b'/%3E%3Cpath d='M0 170V120Q80 80 150 120T300 110V170Z' fill='%2310b981'/%3E%3C/svg%3E");
+  --night: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='170' viewBox='0 0 300 170'%3E%3Crect width='300' height='170' fill='%236366f1'/%3E%3Ccircle cx='90' cy='60' r='30' fill='%23fde68a'/%3E%3Ccircle cx='114' cy='52' r='26' fill='%236366f1'/%3E%3Cpath d='M0 170V130Q80 100 150 130T300 120V170Z' fill='%23312e81'/%3E%3C/svg%3E");
+}
+
+#example-element {
+  width: min(100%, 300px);
+  height: 170px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  background-origin: border-box;
+}
+
+.cap {
+  margin: 8px 0 0;
+  max-width: 300px;
+  color: var(--muted);
+  font-size: 12px;
+}

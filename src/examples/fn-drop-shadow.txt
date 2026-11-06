@@ -1,0 +1,7 @@
+filter: drop-shadow(9px 11px 0 var(--a2));
+
+filter: drop-shadow(0 12px 8px var(--a5));
+
+filter: drop-shadow(0 0 10px var(--a4));
+
+filter: drop-shadow(5px 5px 0 var(--a3)) drop-shadow(10px 10px 0 var(--a2));

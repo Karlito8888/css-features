@@ -1,0 +1,5 @@
+filter: sepia(30%);
+
+filter: sepia(60%);
+
+filter: sepia(100%);

@@ -1,0 +1,17 @@
+corner-shape: superellipse(-1);
+--note: "superellipse(-1): scoop";
+
+corner-shape: superellipse(0.5);
+--note: "superellipse(0.5)";
+
+corner-shape: superellipse(1);
+--note: "superellipse(1): round";
+
+corner-shape: superellipse(2);
+--note: "superellipse(2): squircle";
+
+corner-shape: superellipse(4);
+--note: "superellipse(4)";
+
+corner-shape: superellipse(infinity);
+--note: "superellipse(infinity): square";

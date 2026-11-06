@@ -1,0 +1,27 @@
+/* The same transparent star with a hole, twice. box-shadow shadows the rectangle of the box, drop-shadow()
+   shadows the shape that is actually painted, hole included. */
+.pair {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+}
+
+figure {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  justify-items: center;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.shape path {
+  fill: var(--a1);
+}
+
+.ref {
+  box-shadow: 9px 11px 0 var(--a2);
+}

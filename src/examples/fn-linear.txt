@@ -1,0 +1,9 @@
+animation-timing-function: linear(0, 0.6 15%, 1 30%, 0.75 42%, 1 55%, 0.92 66%, 1 75%, 0.98 85%, 1);
+
+animation-timing-function: linear(0, 0.25, 1);
+
+animation-timing-function: linear(0, 0, 0.5 20%, 0.5 50%, 1 70%);
+
+animation-timing-function: linear(0, 0.9 12%, 1.12 24%, 0.97 38%, 1.02 52%, 1);
+
+animation-timing-function: linear(0, -0.25 20%, 0.5 55%, 1);

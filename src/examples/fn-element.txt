@@ -1,0 +1,7 @@
+background-image: -moz-element(#source); background-size: 100% 100%;
+
+background-image: -moz-element(#source); background-size: 50% 50%;
+
+background: -moz-element(#source) no-repeat center / 40%;
+
+background-image: element(#source); background-size: 100% 100%;

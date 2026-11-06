@@ -1,0 +1,7 @@
+filter: hue-rotate(45deg);
+
+filter: hue-rotate(120deg);
+
+filter: hue-rotate(0.5turn);
+
+filter: hue-rotate(-90deg);

@@ -1,0 +1,5 @@
+transform: translateX(75px);
+
+transform: translateX(-75px);
+
+transform: translateX(40%);

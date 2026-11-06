@@ -1,0 +1,10 @@
+#example-element {
+  width: min(100%, 260px);
+  height: 160px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 74% 30%, var(--a4) 0 16%, transparent 17%),
+    radial-gradient(ellipse 70% 40% at 20% 105%, var(--a5) 0 98%, transparent 100%),
+    radial-gradient(ellipse 80% 38% at 85% 110%, color-mix(in oklab, var(--a5) 60%, var(--ink)) 0 98%, transparent 100%),
+    linear-gradient(var(--a3), var(--a1) 60%, var(--a2));
+}

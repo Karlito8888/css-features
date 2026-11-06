@@ -1,0 +1,5 @@
+background-image: -webkit-image-set(var(--lo) 1x, var(--hi) 2x);
+
+background-image: -webkit-image-set(var(--lo) 2x, var(--hi) 1x);
+
+background-image: -webkit-image-set(var(--hi) 3x, var(--mid) 1.5x);

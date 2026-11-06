@@ -1,0 +1,7 @@
+background-image: repeating-radial-gradient(circle at 50% 50%, var(--a1) 0 8px, var(--a3) 8px 16px);
+
+background-image: repeating-radial-gradient(circle at 20% 50%, var(--a2), var(--a1) 24px);
+
+background-image: repeating-radial-gradient(circle at 100% 0, var(--a4) 0 10px, var(--a2) 10px 20px);
+
+background-image: repeating-radial-gradient(circle, transparent 0 9px, color-mix(in oklab, var(--a5) 70%, transparent) 9px 11px);

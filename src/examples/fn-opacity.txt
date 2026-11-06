@@ -1,0 +1,7 @@
+filter: opacity(15%);
+
+filter: opacity(40%);
+
+filter: opacity(0.7);
+
+filter: opacity(90%);

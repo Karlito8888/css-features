@@ -1,0 +1,9 @@
+<div id="example-element" class="card">
+  <button type="button">button</button>
+  <time datetime="2026-11-06">time</time>
+  <user-avatar>user-avatar</user-avatar>
+  <price-tag>price-tag</price-tag>
+  <star-rating>star-rating</star-rating>
+  <kbd>kbd</kbd>
+</div>
+<p class="cap">Each chip is named after its tag. <code>user-avatar</code>, <code>price-tag</code> and <code>star-rating</code> are custom elements that nothing registers here (no <code>customElements.define()</code>), so they stay <code>:not(:defined)</code>. Built-in elements are always defined.</p>

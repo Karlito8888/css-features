@@ -1,0 +1,7 @@
+a:visited { color: var(--a2); text-decoration-color: var(--a2); }
+
+a:visited { background-color: color-mix(in oklab, var(--a5) 30%, var(--card)); }
+
+a:visited { border-color: var(--a5); }
+
+a:visited { color: var(--muted); text-decoration-color: var(--muted); border-color: var(--muted); }

@@ -1,0 +1,15 @@
+::target-text {
+  color: #fff;
+  background: var(--a1);
+}
+
+::target-text {
+  background: color-mix(in oklab, var(--a5) 45%, transparent);
+  text-decoration: underline;
+}
+
+::target-text {
+  color: var(--a2);
+  background: transparent;
+  text-shadow: 0 0 8px color-mix(in oklab, var(--a2) 60%, transparent);
+}

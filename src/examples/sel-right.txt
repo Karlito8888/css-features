@@ -1,0 +1,11 @@
+@page :right {
+  margin-left: 3cm;
+}
+
+@page :right {
+  @bottom-right { content: counter(page); }
+}
+
+@page :right {
+  @top-right { content: "Cascade layers"; }
+}

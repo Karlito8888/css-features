@@ -1,0 +1,48 @@
+#example-element {
+  width: min(100%, 340px);
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+}
+
+nav a {
+  padding: 3px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--a1);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+section {
+  padding: 10px 16px;
+  border-radius: 14px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 15px;
+}
+
+p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}

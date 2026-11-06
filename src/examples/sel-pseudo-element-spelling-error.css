@@ -1,0 +1,30 @@
+body {
+  align-content: center;
+}
+
+#example-element {
+  width: min(100%, 320px);
+  margin: 0;
+  padding: 18px 22px;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.field {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.cap {
+  width: min(100%, 320px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

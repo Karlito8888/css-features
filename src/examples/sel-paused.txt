@@ -1,0 +1,7 @@
+video:paused { border-style: dashed; border-color: var(--a4); filter: saturate(0.25); }
+
+li:has(video:paused) { opacity: 0.55; }
+
+li:has(video:paused) b::after { content: " ⏸"; color: var(--a4); }
+
+video:not(:paused) { border-color: var(--a2); box-shadow: 0 0 0 4px color-mix(in oklab, var(--a2) 30%, transparent); }

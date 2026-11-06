@@ -1,0 +1,5 @@
+a:link { color: var(--a1); text-decoration: underline; text-underline-offset: 5px; }
+
+a:not(:link) { padding: 2px 12px; border-radius: 999px; color: #fff; background: var(--grad); }
+
+a:link::after { content: "/"; margin-left: 6px; color: var(--muted); font-weight: 400; }

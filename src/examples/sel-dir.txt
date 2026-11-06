@@ -1,0 +1,7 @@
+#example-element p:dir(rtl) { color: #fff; background: linear-gradient(135deg, var(--a2), var(--a4)); }
+
+#example-element p:dir(ltr) { outline: 3px solid var(--a3); background: color-mix(in oklab, var(--a3) 18%, var(--card)); }
+
+#example-element p[dir="auto"]:dir(rtl) { outline: 3px solid var(--a5); background: color-mix(in oklab, var(--a5) 22%, var(--card)); }
+
+#example-element p:dir(rtl)::before { content: "◀"; margin-inline-end: 8px; color: var(--a2); }

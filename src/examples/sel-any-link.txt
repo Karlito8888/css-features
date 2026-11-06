@@ -1,0 +1,7 @@
+a:any-link { padding: 2px 12px; border-radius: 999px; color: #fff; background: var(--grad); }
+
+a:not(:any-link) { color: var(--muted); font-style: italic; text-decoration: line-through; }
+
+a:any-link::after { content: " ↗"; color: var(--a3); }
+
+li:has(:any-link) { border-left-color: var(--a5); background: color-mix(in oklab, var(--a5) 16%, var(--card)); }

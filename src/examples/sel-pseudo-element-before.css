@@ -1,0 +1,21 @@
+#example-element {
+  width: min(100%, 340px);
+  margin: 0;
+  padding: 18px 22px;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+p {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+a {
+  color: var(--a1);
+  font-size: 14px;
+  font-weight: 700;
+}

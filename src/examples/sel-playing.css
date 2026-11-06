@@ -1,0 +1,43 @@
+#example-element {
+  width: min(100%, 340px);
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 14px 16px;
+  list-style: none;
+  font-size: 14px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px;
+  border-radius: 14px;
+}
+
+video {
+  flex: none;
+  width: 84px;
+  height: 48px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: var(--grad);
+}
+
+li div {
+  display: grid;
+}
+
+small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

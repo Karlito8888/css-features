@@ -1,0 +1,28 @@
+#example-element {
+  width: min(100%, 320px);
+  margin: 0;
+  padding: 18px 22px;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.cap {
+  width: min(100%, 320px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}

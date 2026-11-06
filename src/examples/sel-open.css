@@ -1,0 +1,66 @@
+#example-element {
+  width: min(100%, 340px);
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+details,
+dialog {
+  position: static;
+  width: auto;
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+details p,
+dialog p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+dialog {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+dialog p {
+  margin: 0;
+}
+
+dialog form {
+  margin: 0;
+}
+
+button {
+  padding: 3px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--stage);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}

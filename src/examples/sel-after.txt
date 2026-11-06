@@ -1,0 +1,45 @@
+a:after {
+  content: "↗";
+  margin-left: 4px;
+}
+
+h3:after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 6px;
+  border-radius: 2px;
+  background: var(--grad);
+}
+
+p {
+  position: relative;
+  max-height: 3em;
+  overflow: hidden;
+}
+p:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1.6em;
+  background: linear-gradient(transparent, var(--card));
+}
+
+a:after {
+  content: " (" attr(href) ")";
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+h3:after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: var(--a2);
+  vertical-align: super;
+}

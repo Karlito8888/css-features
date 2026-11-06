@@ -1,0 +1,14 @@
+<div id="example-element" class="card">
+  <p class="line">Delete 3 files?</p>
+  <dialog id="note" open>
+    <b>Heads up</b>
+    <span>Open with the attribute: not modal.</span>
+  </dialog>
+  <button type="button" commandfor="confirm" command="show-modal">Show modal</button>
+  <dialog id="confirm">
+    <b>Confirm</b>
+    <span>Delete the files for good.</span>
+    <button type="button" commandfor="confirm" command="close">Close</button>
+  </dialog>
+</div>
+<p class="cap">The first dialog is open from the start, so it is not modal. Click Show modal: the second one opens with <code>showModal()</code> (here <code>command="show-modal"</code>) and matches <code>:modal</code> until you close it.</p>

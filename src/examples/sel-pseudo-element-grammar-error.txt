@@ -1,0 +1,13 @@
+::grammar-error {
+  text-decoration: underline wavy var(--a1);
+}
+
+::grammar-error {
+  background: color-mix(in oklab, var(--a3) 30%, transparent);
+  text-decoration: none;
+}
+
+::grammar-error {
+  color: var(--a2);
+  text-decoration: underline dotted 2px;
+}

@@ -1,0 +1,52 @@
+h3:before {
+  content: "#";
+  margin-right: 6px;
+  color: var(--a1);
+}
+
+h3:before {
+  content: "New";
+  margin-right: 8px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--grad);
+  font-size: 11px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+p:before {
+  content: "“";
+  display: block;
+  height: 26px;
+  color: var(--a2);
+  font: 800 52px/1 Georgia, serif;
+}
+
+#example-element { position: relative; overflow: hidden; }
+#example-element:before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  background: var(--grad);
+}
+
+p {
+  --bubble: color-mix(in oklab, var(--a1) 14%, var(--card));
+  position: relative;
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--bubble);
+}
+p:before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 18px;
+  border: 8px solid transparent;
+  border-top: 0;
+  border-bottom-color: var(--bubble);
+}

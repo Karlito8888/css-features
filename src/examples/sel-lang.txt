@@ -1,0 +1,9 @@
+#example-element p:lang(en) { color: #fff; background: var(--grad); }
+
+#example-element p:lang(en-GB) { outline: 3px solid var(--a4); background: color-mix(in oklab, var(--a4) 22%, var(--card)); }
+
+#example-element p:lang(fr) { color: #fff; background: linear-gradient(135deg, var(--a3), var(--a1)); }
+
+#example-element p:lang(ja) { outline: 3px solid var(--a2); background: color-mix(in oklab, var(--a2) 18%, var(--card)); }
+
+#example-element p:not(:lang(en)) { opacity: 0.35; }

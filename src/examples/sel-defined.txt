@@ -1,0 +1,7 @@
+#example-element > :defined { border-color: transparent; color: #fff; background: var(--grad); }
+
+#example-element > :not(:defined) { border-style: dashed; border-color: var(--a2); }
+
+#example-element > :defined::before { content: "✓ "; color: var(--a5); }
+
+#example-element > :not(:defined) { visibility: hidden; }

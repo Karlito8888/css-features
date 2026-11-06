@@ -1,0 +1,7 @@
+[popover]:popover-open { border-color: var(--a2); background: color-mix(in oklab, var(--a2) 14%, var(--card)); }
+
+button:has(+ :popover-open) { border-color: transparent; color: #fff; background: var(--grad); }
+
+#example-element:has(:popover-open) :is(.line, .sub) { opacity: 0.3; filter: blur(2px); }
+
+:popover-open::backdrop { background: color-mix(in oklab, var(--a1) 35%, transparent); }

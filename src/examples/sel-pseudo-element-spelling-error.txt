@@ -1,0 +1,13 @@
+::spelling-error {
+  text-decoration: underline wavy var(--a2);
+}
+
+::spelling-error {
+  background: color-mix(in oklab, var(--a4) 45%, transparent);
+  text-decoration: none;
+}
+
+::spelling-error {
+  color: var(--a1);
+  text-decoration: underline dotted 2px;
+}

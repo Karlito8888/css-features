@@ -1,0 +1,27 @@
+body {
+  align-content: center;
+}
+
+#example-element {
+  width: min(100%, 320px);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 15px;
+}
+
+summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+p {
+  margin: 8px 0 0;
+}
+
+.cap {
+  width: min(100%, 320px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

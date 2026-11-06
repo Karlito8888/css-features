@@ -1,0 +1,57 @@
+#example-element {
+  display: flex;
+  gap: 8px;
+  width: min(100%, 330px);
+  margin: 0;
+  padding: 16px 12px 12px;
+}
+
+.pg {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sheet {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background:
+    repeating-linear-gradient(var(--line) 0 2px, transparent 2px 7px) 50% 70% / 64% 40% no-repeat,
+    var(--stage);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.hit {
+  border: 2px solid var(--a1);
+  background:
+    repeating-linear-gradient(var(--line) 0 2px, transparent 2px 7px) 50% 70% / 64% 40% no-repeat,
+    color-mix(in oklab, var(--a1) 14%, var(--stage));
+  color: var(--ink);
+}
+
+code {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.cap {
+  width: min(100%, 330px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 12px;
+  white-space: nowrap;
+}

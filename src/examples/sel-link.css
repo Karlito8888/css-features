@@ -1,0 +1,36 @@
+body {
+  align-content: center;
+}
+
+#example-element {
+  width: min(100%, 340px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}

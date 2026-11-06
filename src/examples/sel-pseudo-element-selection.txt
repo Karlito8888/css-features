@@ -1,0 +1,19 @@
+::selection {
+  color: #fff;
+  background: var(--a1);
+}
+
+::selection {
+  background: color-mix(in oklab, var(--a4) 60%, transparent);
+}
+
+::selection {
+  color: var(--a2);
+  background: transparent;
+  text-decoration: underline wavy;
+}
+
+::selection {
+  color: var(--card);
+  background: var(--ink);
+}

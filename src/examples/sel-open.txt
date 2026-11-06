@@ -1,0 +1,7 @@
+:open { outline: 3px solid var(--a2); outline-offset: 2px; }
+
+details:open > summary { padding: 2px 10px; border-radius: 8px; color: #fff; background: var(--grad); }
+
+details:not(:open) { opacity: 0.5; }
+
+dialog:open { border-color: var(--a5); background: color-mix(in oklab, var(--a5) 18%, var(--card)); }

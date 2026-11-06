@@ -1,0 +1,25 @@
+::search-text {
+  color: #fff;
+  background: var(--a3);
+}
+::search-text:current {
+  background: var(--a2);
+}
+
+::search-text {
+  background: transparent;
+  text-decoration: underline wavy var(--a1);
+}
+::search-text:current {
+  background: color-mix(in oklab, var(--a4) 55%, transparent);
+  font-weight: 800;
+}
+
+::search-text {
+  color: var(--card);
+  background: var(--ink);
+}
+::search-text:current {
+  color: #fff;
+  background: var(--a1);
+}

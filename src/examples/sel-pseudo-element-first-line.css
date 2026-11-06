@@ -1,0 +1,11 @@
+#example-element {
+  width: min(100%, 270px);
+  margin: 0;
+  padding: 20px 24px;
+}
+
+p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+}

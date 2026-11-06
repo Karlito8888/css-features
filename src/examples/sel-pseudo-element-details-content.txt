@@ -1,0 +1,27 @@
+details::details-content {
+  margin-top: 10px;
+  padding: 4px 14px 12px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--a1) 12%, var(--card));
+}
+
+details::details-content {
+  margin: 10px 0 0 4px;
+  padding-left: 14px;
+  border-left: 3px solid var(--a2);
+}
+
+details::details-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+
+:root { interpolate-size: allow-keywords; }
+details::details-content {
+  block-size: 0;
+  overflow: clip;
+  color: var(--muted);
+  transition: block-size 0.35s, content-visibility 0.35s allow-discrete;
+}
+details[open]::details-content { block-size: auto; }

@@ -1,0 +1,7 @@
+video:playing { border-color: var(--a5); box-shadow: 0 0 0 4px color-mix(in oklab, var(--a5) 35%, transparent); }
+
+li:has(video:playing) { background: color-mix(in oklab, var(--a5) 16%, var(--card)); }
+
+video:not(:playing) { opacity: 0.35; filter: grayscale(1); }
+
+video:playing + div b::before { content: "▶ "; color: var(--a5); }

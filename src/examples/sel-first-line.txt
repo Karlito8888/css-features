@@ -1,0 +1,23 @@
+p:first-line {
+  color: var(--a1);
+  font-size: 1.15em;
+  font-weight: 800;
+}
+
+p:first-line {
+  color: var(--a2);
+  font: italic 1.3em/1.3 Georgia, serif;
+}
+
+p:first-line {
+  background: color-mix(in oklab, var(--a4) 40%, transparent);
+  font-size: 1.1em;
+  font-weight: 700;
+}
+
+p:first-line {
+  color: var(--muted);
+  font-size: 0.8em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}

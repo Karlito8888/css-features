@@ -1,0 +1,9 @@
+all: initial;
+
+all: inherit;
+
+all: unset;
+
+all: revert;
+
+all: revert-layer;

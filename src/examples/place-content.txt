@@ -1,0 +1,11 @@
+place-content: start;
+
+place-content: center;
+
+place-content: end;
+
+place-content: space-between;
+
+place-content: space-evenly start;
+
+place-content: end center;

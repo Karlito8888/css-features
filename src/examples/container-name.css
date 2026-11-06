@@ -1,0 +1,62 @@
+/* The card is a 300px wide container. Each row lights up when its own query matches: a named query only
+   looks at containers carrying that name, an unnamed one takes the nearest container whatever its name. */
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 300px);
+  padding: 16px;
+  container-type: inline-size;
+}
+
+.q {
+  margin: 0;
+  padding: 9px 12px;
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.q::after {
+  content: " : no match";
+}
+
+code {
+  font-weight: 700;
+}
+
+@container panel (min-width: 200px) {
+  .panel {
+    border: 2px solid var(--a5);
+    color: var(--ink);
+    background: color-mix(in oklab, var(--a5) 18%, transparent);
+  }
+
+  .panel::after {
+    content: " : matched";
+  }
+}
+
+@container sidebar (min-width: 200px) {
+  .sidebar {
+    border: 2px solid var(--a1);
+    color: var(--ink);
+    background: color-mix(in oklab, var(--a1) 18%, transparent);
+  }
+
+  .sidebar::after {
+    content: " : matched";
+  }
+}
+
+@container (min-width: 200px) {
+  .any {
+    border: 2px solid var(--a4);
+    color: var(--ink);
+    background: color-mix(in oklab, var(--a4) 20%, transparent);
+  }
+
+  .any::after {
+    content: " : matched";
+  }
+}

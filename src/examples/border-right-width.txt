@@ -1,0 +1,9 @@
+border-right-width: thin;
+
+border-right-width: thick;
+
+border-right-width: 10px;
+
+border-right-width: 1.5em;
+
+border-right-width: 0;

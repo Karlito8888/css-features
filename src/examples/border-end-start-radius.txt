@@ -1,0 +1,13 @@
+border-end-start-radius: 0;
+
+border-end-start-radius: 40px;
+
+border-end-start-radius: 72px;
+
+border-end-start-radius: 120px 30px;
+
+border-end-start-radius: 60px;
+direction: rtl;
+
+border-end-start-radius: 60px;
+writing-mode: vertical-rl;

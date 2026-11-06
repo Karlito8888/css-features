@@ -1,0 +1,16 @@
+/* The width is not a percentage: a percentage would make the stage grow to the no-wrap row. */
+#example-element {
+  display: flex;
+  align-content: flex-start;
+  gap: 10px;
+  width: min(380px, 100vw - 56px);
+  height: 220px;
+  padding: 14px;
+}
+.tile {
+  flex: 0 1 auto;
+  width: 64px;
+  height: 44px;
+  min-width: 0;
+  min-height: 0;
+}

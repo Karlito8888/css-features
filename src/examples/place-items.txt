@@ -1,0 +1,11 @@
+place-items: stretch;
+
+place-items: start;
+
+place-items: center;
+
+place-items: end;
+
+place-items: end start;
+
+place-items: center end;

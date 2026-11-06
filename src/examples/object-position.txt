@@ -1,0 +1,9 @@
+object-position: center;
+
+object-position: top left;
+
+object-position: bottom right;
+
+object-position: 25% 75%;
+
+object-position: right 20px top 20px;

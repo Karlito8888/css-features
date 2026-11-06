@@ -1,0 +1,13 @@
+container-type: normal;
+--note: "normal: not a container, no query matches";
+
+container-type: inline-size;
+--note: "inline-size: the width query matches, so the row layout";
+
+container-type: inline-size;
+width: 190px;
+--note: "inline-size, but only 162px wide: below the 220px query";
+
+container-type: size;
+height: 250px;
+--note: "size: width and height queries both match";

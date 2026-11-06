@@ -1,0 +1,14 @@
+scroll-snap-type: none;
+--note: "none: nothing snaps, stays at 0, 0";
+
+scroll-snap-type: x mandatory;
+--note: "x mandatory: snapped to tile 6 across";
+
+scroll-snap-type: y mandatory;
+--note: "y mandatory: snapped to tile 6 down";
+
+scroll-snap-type: both mandatory;
+--note: "both mandatory: snapped on both axes";
+
+scroll-snap-type: both proximity;
+--note: "proximity: tile 6 is too far to snap";

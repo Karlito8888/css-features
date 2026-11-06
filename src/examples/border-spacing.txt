@@ -1,0 +1,9 @@
+border-spacing: 0;
+
+border-spacing: 6px;
+
+border-spacing: 16px;
+
+border-spacing: 20px 4px;
+
+border-spacing: 4px 20px;

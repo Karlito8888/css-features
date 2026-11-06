@@ -1,0 +1,10 @@
+min-block-size: 0;
+
+min-block-size: 40%;
+
+min-block-size: 8rem;
+
+min-block-size: 100%;
+
+min-block-size: 70%;
+writing-mode: vertical-rl;

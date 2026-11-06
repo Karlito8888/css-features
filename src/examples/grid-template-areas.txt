@@ -1,0 +1,23 @@
+grid-template-areas:
+  "header header header"
+  "nav main main"
+  "footer footer footer";
+
+grid-template-areas:
+  "nav header header"
+  "nav main main"
+  "nav footer footer";
+
+grid-template-areas:
+  "header header header"
+  "main main nav"
+  "footer footer footer";
+
+grid-template-areas:
+  "header . ."
+  "nav main main"
+  ". . footer";
+
+grid-template-areas:
+  "main main main"
+  "nav header footer";

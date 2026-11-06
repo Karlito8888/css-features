@@ -1,0 +1,11 @@
+background-position-x: left;
+
+background-position-x: center;
+
+background-position-x: right;
+
+background-position-x: 25%;
+
+background-position-x: right 24px;
+
+background-position-x: 0, 100%;

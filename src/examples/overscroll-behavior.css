@@ -1,0 +1,65 @@
+.page {
+  width: 300px;
+  max-width: 100%;
+  height: 280px;
+  padding: 14px 16px;
+  overflow: auto;
+}
+
+h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.wide {
+  width: 460px;
+}
+
+#example-element {
+  width: 268px;
+  height: 140px;
+  margin-bottom: 10px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--stage);
+}
+
+#example-element::before {
+  content: var(--note);
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 38px;
+  margin-bottom: -38px;
+  z-index: 1;
+  padding: 6px 10px;
+  border-left: 4px solid var(--tone, var(--a1));
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  background: color-mix(in oklab, var(--tone, var(--a1)) 20%, var(--card));
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  grid-auto-rows: 64px;
+  gap: 10px;
+  padding: 48px 10px 10px;
+}
+
+.tile {
+  font-size: 18px;
+}

@@ -1,0 +1,11 @@
+border-right-style: solid;
+
+border-right-style: dashed;
+
+border-right-style: dotted;
+
+border-right-style: double;
+
+border-right-style: groove;
+
+border-right-style: none;

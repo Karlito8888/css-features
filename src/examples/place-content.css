@@ -1,0 +1,15 @@
+/* The tinted box is the content area of the grid: the tracks are smaller, place-content spreads or moves them. */
+#example-element {
+  display: grid;
+  grid-template-columns: repeat(3, 56px);
+  grid-template-rows: repeat(2, 56px);
+  gap: 6px;
+  width: min(100%, 300px);
+  height: 230px;
+  padding: 14px;
+  background: linear-gradient(color-mix(in oklab, var(--a3) 14%, transparent) 0 0) content-box, var(--card);
+}
+.tile {
+  min-width: 0;
+  min-height: 0;
+}

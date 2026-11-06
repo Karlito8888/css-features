@@ -1,0 +1,53 @@
+/* The box is the dashed frame. contain-intrinsic-size is the size it keeps while its content is skipped. */
+.panel {
+  width: min(100%, 300px);
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+small {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+#example-element {
+  padding: 4px 14px;
+  border: 2px dashed var(--a1);
+  border-radius: 16px;
+  background: var(--card);
+  contain-intrinsic-size: auto 80px;
+}
+
+#example-element p {
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+#example-element p:last-child {
+  border-bottom: 0;
+}
+
+.note {
+  margin: 8px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* The caption follows the choice written on the box. */
+.panel:has([style*="visible"]) .note::before {
+  content: "visible: rendered as usual";
+}
+
+.panel:has([style*="auto"]) .note::before {
+  content: "auto: this box is on screen, so it renders. Far off screen the browser would skip it until you scroll near.";
+}
+
+.panel:has([style*="hidden"]) .note::before {
+  content: "hidden: the content is skipped but the box stays, at its contain-intrinsic-size.";
+}

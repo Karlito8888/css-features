@@ -1,0 +1,16 @@
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 360px);
+  height: 260px;
+  padding: 14px;
+}
+.tile {
+  min-width: 0;
+  min-height: 0;
+  font-size: 13px;
+}
+.tile:nth-child(1) { grid-area: header; }
+.tile:nth-child(2) { grid-area: nav; }
+.tile:nth-child(3) { grid-area: main; }
+.tile:nth-child(4) { grid-area: footer; }

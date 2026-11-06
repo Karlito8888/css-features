@@ -1,0 +1,10 @@
+/* The picture keeps its own 200px size inside a wider, shorter box, so it can slide on both axes. */
+#example-element {
+  display: block;
+  width: min(100%, 260px);
+  height: 150px;
+  object-fit: none;
+  border: 2px dashed var(--muted);
+  border-radius: 14px;
+  background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--ink) 9%, transparent) 0 8px, transparent 8px 16px);
+}

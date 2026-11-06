@@ -1,0 +1,8 @@
+forced-color-adjust: auto;
+--note: "auto: in forced colors, the browser swaps all of these colors for the system palette";
+
+forced-color-adjust: none;
+--note: "none: in forced colors, every color here is kept as written, the indigo text too";
+
+forced-color-adjust: preserve-parent-color;
+--note: "preserve-parent-color: like none, but the inherited text color becomes the parent's, which the system has swapped";

@@ -1,0 +1,9 @@
+outline-width: thin;
+
+outline-width: medium;
+
+outline-width: thick;
+
+outline-width: 10px;
+
+outline-width: 0;

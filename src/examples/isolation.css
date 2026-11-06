@@ -1,0 +1,52 @@
+/* Both discs use mix-blend-mode: multiply. isolation decides what they blend with: the stripes behind the group
+   (auto), or only what is inside the group (isolate). */
+.stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  height: 230px;
+  padding-bottom: 36px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, var(--a4) 0 33.3%, var(--a3) 33.3% 66.6%, var(--a5) 66.6%);
+}
+
+#example-element {
+  position: relative;
+  width: 190px;
+  height: 130px;
+  border-radius: 24px;
+}
+
+#example-element::after {
+  content: var(--note);
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  translate: -50% 0;
+  padding: 3px 12px;
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 12px;
+  white-space: nowrap;
+  background: var(--card);
+}
+
+.disc {
+  position: absolute;
+  top: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+}
+
+.one {
+  left: 14px;
+  background: var(--a2);
+}
+
+.two {
+  right: 14px;
+  background: var(--a1);
+}

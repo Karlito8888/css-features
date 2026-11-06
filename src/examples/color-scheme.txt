@@ -1,0 +1,11 @@
+color-scheme: light;
+--note: "light: light controls and scrollbar, in any theme";
+
+color-scheme: dark;
+--note: "dark: dark controls and scrollbar, in any theme";
+
+color-scheme: light dark;
+--note: "light dark: follows the theme of the preview";
+
+color-scheme: normal;
+--note: "normal: nothing declared, the browser draws light controls";

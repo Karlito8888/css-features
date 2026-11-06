@@ -1,0 +1,8 @@
+scrollbar-gutter: auto;
+--note: "auto: no scrollbar, so nothing is reserved";
+
+scrollbar-gutter: stable;
+--note: "stable: a scrollbar-wide strip is kept free on one side";
+
+scrollbar-gutter: stable both-edges;
+--note: "stable both-edges: the same strip on both sides";

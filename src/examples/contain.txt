@@ -1,0 +1,11 @@
+contain: none;
+--note: "none: the ring spills out, the badge sticks to the window";
+
+contain: paint;
+--note: "paint: the ring is clipped, the badge is held inside";
+
+contain: layout;
+--note: "layout: the badge is held inside, nothing is clipped";
+
+contain: size;
+--note: "size: the box ignores its content, so its height collapses";

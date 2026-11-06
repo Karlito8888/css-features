@@ -1,0 +1,10 @@
+block-size: auto;
+
+block-size: 40%;
+
+block-size: calc(100% - 3rem);
+
+block-size: 100%;
+
+block-size: 60%;
+writing-mode: vertical-rl;

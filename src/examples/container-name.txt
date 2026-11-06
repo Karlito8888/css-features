@@ -1,0 +1,7 @@
+container-name: none;
+
+container-name: panel;
+
+container-name: sidebar;
+
+container-name: panel sidebar;

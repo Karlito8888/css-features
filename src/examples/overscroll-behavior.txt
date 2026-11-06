@@ -1,0 +1,19 @@
+overscroll-behavior: auto;
+--tone: var(--a3);
+--note: "auto: the page follows on both axes";
+
+overscroll-behavior: contain;
+--tone: var(--a5);
+--note: "contain: nothing leaves the board";
+
+overscroll-behavior: auto contain;
+--tone: var(--a1);
+--note: "auto contain: across follows, down stays";
+
+overscroll-behavior: contain auto;
+--tone: var(--a4);
+--note: "contain auto: across stays, down follows";
+
+overscroll-behavior: none;
+--tone: var(--a2);
+--note: "none: stays, with no bounce or glow";

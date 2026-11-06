@@ -1,0 +1,9 @@
+h3 { counter-increment: step; }
+
+h3 { counter-increment: step 2; }
+
+h3 { counter-increment: step 10; }
+
+h3 { counter-increment: step -1; }
+
+h3:nth-child(odd) { counter-increment: step; }

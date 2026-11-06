@@ -1,0 +1,26 @@
+/* The counter starts at 0; the headings below pick how much each one adds, and print the result. */
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 300px);
+  counter-reset: step;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 16px;
+}
+
+h3::before {
+  content: counter(step);
+  min-width: 2.4em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+  background: var(--grad);
+}

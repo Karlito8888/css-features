@@ -1,0 +1,12 @@
+#example-element {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: min(100%, 360px);
+  height: 300px;
+  padding: 14px;
+}
+.tile {
+  min-width: 0;
+  min-height: 0;
+}

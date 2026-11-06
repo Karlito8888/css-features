@@ -1,0 +1,15 @@
+overscroll-behavior-y: auto;
+--tone: var(--a3);
+--note: "auto: the page follows, with the usual bounce or glow";
+
+overscroll-behavior-y: contain;
+--tone: var(--a5);
+--note: "contain: stays in the list, the page does not move";
+
+overscroll-behavior-y: none;
+--tone: var(--a2);
+--note: "none: stays here and shows no bounce or glow";
+
+overscroll-behavior-y: chain;
+--tone: var(--a4);
+--note: "chain: the page follows, but no bounce or glow";

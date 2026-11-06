@@ -1,0 +1,37 @@
+/* The sheet stays pale in both themes: all: initial resets color-scheme, so the list text falls back to black. */
+.parent {
+  width: min(100%, 280px);
+  padding: 14px 24px;
+  border: 3px dashed var(--a2);
+  border-radius: 20px;
+  color: var(--a1);
+  font: italic 700 15px/1.5 Georgia, serif;
+  letter-spacing: 0.02em;
+  text-align: center;
+  background: color-mix(in oklab, var(--a2) 12%, #fff);
+}
+
+/* Author styles of the list, in a cascade layer: revert drops them, revert-layer drops only the unlayered ones. */
+@layer base {
+  .plan {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    padding: 12px 16px;
+    border: 2px solid var(--a5);
+    border-radius: 14px;
+    color: var(--ink);
+    font: 500 14px/1.5 system-ui, sans-serif;
+    text-align: left;
+    list-style: none;
+    background: var(--card);
+  }
+}
+
+.legend {
+  margin: 12px 0 0;
+  width: min(100%, 280px);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

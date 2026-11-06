@@ -1,0 +1,14 @@
+scrollbar-color: auto;
+--note: "auto: the browser's own scrollbar";
+
+scrollbar-color: var(--a1) color-mix(in oklab, var(--a1) 14%, transparent);
+--note: "indigo thumb on a pale track";
+
+scrollbar-color: var(--a2) var(--card);
+--note: "pink thumb on the card color";
+
+scrollbar-color: var(--ink) transparent;
+--note: "ink thumb, no track";
+
+scrollbar-color: var(--a5) var(--a1);
+--note: "green thumb on an indigo track";

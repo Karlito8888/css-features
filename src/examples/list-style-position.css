@@ -1,0 +1,20 @@
+/* Each item has a tinted box: the marker is outside it, or inside it and part of the first line. */
+#example-element {
+  width: min(100%, 320px);
+  margin: 0;
+  padding-block: 18px;
+  padding-inline: 2.4em 18px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#example-element li {
+  margin-block: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--a1) 16%, transparent);
+}
+
+#example-element li::marker {
+  color: var(--a1);
+}

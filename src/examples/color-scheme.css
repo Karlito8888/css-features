@@ -1,0 +1,42 @@
+/* Canvas and CanvasText are system colors: they follow the color scheme of the box they are used in. */
+#example-element {
+  display: grid;
+  gap: 10px;
+  width: min(100%, 260px);
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  color: CanvasText;
+  background: Canvas;
+}
+
+#example-element::after {
+  content: var(--note);
+  color: GrayText;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+input[type="text"],
+select,
+textarea,
+button {
+  font: inherit;
+  font-size: 14px;
+}
+
+textarea {
+  resize: none;
+}

@@ -1,0 +1,10 @@
+#example-element {
+  width: min(100%, 300px);
+  padding: 28px 20px;
+  border-radius: 0;
+  background: var(--card);
+  text-align: center;
+  font-weight: 700;
+  border: 12px solid var(--line);
+  border-bottom-color: var(--a2);
+}

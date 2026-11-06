@@ -1,0 +1,13 @@
+caret-color: auto;
+
+caret-color: var(--a2);
+--swatch: var(--a2);
+
+caret-color: var(--a5);
+--swatch: var(--a5);
+
+caret-color: var(--a4);
+--swatch: var(--a4);
+
+caret-color: transparent;
+--swatch: transparent;

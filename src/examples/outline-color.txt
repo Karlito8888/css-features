@@ -1,0 +1,9 @@
+outline-color: var(--a3);
+
+outline-color: var(--a2);
+
+outline-color: var(--a5);
+
+outline-color: color-mix(in oklab, var(--a1) 45%, transparent);
+
+outline-color: var(--ink);

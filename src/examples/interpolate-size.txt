@@ -1,0 +1,9 @@
+interpolate-size: numeric-only;
+--note: "numeric-only: snaps open";
+
+interpolate-size: allow-keywords;
+--note: "allow-keywords: glides open";
+
+interpolate-size: allow-keywords;
+transition-duration: 2.5s;
+--note: "allow-keywords, 2.5s";

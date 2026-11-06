@@ -1,0 +1,23 @@
+grid-template:
+  "header header" 50px
+  "nav main" 1fr
+  "footer footer" 40px
+  / 90px 1fr;
+
+grid-template:
+  "nav header" 50px
+  "nav main" 1fr
+  "nav footer" 40px
+  / 80px 1fr;
+
+grid-template:
+  "header header header" 40px
+  "main main nav" 1fr
+  "footer footer footer" 40px
+  / 1fr 1fr 70px;
+
+grid-template:
+  "header nav" 1fr
+  "main main" 2fr
+  "footer footer" auto
+  / 1fr 2fr;

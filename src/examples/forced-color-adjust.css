@@ -1,0 +1,59 @@
+/* Forced colors mode (for example Windows High Contrast) replaces authored colors with a system palette.
+   Outside it nothing changes, so the card says which mode this preview is in. The text color comes from the
+   parent (indigo): that is the case preserve-parent-color is about. */
+.parent {
+  color: var(--a1);
+}
+
+#example-element {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  width: min(100%, 280px);
+}
+
+.brand {
+  padding: 6px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  background: var(--grad);
+}
+
+button {
+  padding: 8px 18px;
+  border: 2px solid var(--a5);
+  border-radius: 12px;
+  color: var(--a5);
+  font: inherit;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--a5) 14%, transparent);
+}
+
+p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.state {
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--a1) 12%, transparent);
+}
+
+.state::before {
+  content: "Forced colors mode here: off";
+}
+
+@media (forced-colors: active) {
+  .state::before {
+    content: "Forced colors mode here: on";
+  }
+}
+
+#example-element::after {
+  content: var(--note);
+  font-size: 12px;
+  line-height: 1.4;
+}

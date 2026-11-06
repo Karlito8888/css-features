@@ -1,0 +1,9 @@
+isolation: auto;
+--note: "auto: the discs blend with the stripes";
+
+isolation: isolate;
+--note: "isolate: they blend with each other only";
+
+isolation: isolate;
+background: var(--a4);
+--note: "isolate + a background: they blend with it";

@@ -1,0 +1,10 @@
+inline-size: auto;
+
+inline-size: 30%;
+
+inline-size: 14rem;
+
+inline-size: fit-content;
+
+inline-size: 60%;
+writing-mode: vertical-rl;

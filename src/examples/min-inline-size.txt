@@ -1,0 +1,10 @@
+min-inline-size: 0;
+
+min-inline-size: 60%;
+
+min-inline-size: 12rem;
+
+min-inline-size: 100%;
+
+min-inline-size: 90%;
+writing-mode: vertical-rl;

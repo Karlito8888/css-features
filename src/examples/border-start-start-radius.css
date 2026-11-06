@@ -1,0 +1,8 @@
+/* The label sits in the corner the property rounds, wherever the writing mode puts it. */
+#example-element {
+  width: min(100%, 240px);
+  height: 150px;
+  padding: 26px;
+  place-items: start;
+  border-radius: 6px;
+}

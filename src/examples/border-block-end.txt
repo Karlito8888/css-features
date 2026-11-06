@@ -1,0 +1,13 @@
+border-block-end: 4px solid var(--a1);
+
+border-block-end: 3px dashed var(--a2);
+
+border-block-end: 8px double var(--a3);
+
+border-block-end: 6px dotted var(--a4);
+
+border-block-end: 6px solid var(--a5);
+writing-mode: vertical-rl;
+
+border-block-end: 6px solid var(--a5);
+writing-mode: vertical-lr;

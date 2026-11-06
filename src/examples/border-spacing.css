@@ -1,0 +1,17 @@
+/* The table is hatched and the cells are opaque: what shows between them is the spacing. */
+#example-element {
+  width: min(100%, 300px);
+  border-collapse: separate;
+  background: repeating-linear-gradient(45deg, color-mix(in oklab, var(--a1) 28%, transparent) 0 5px, transparent 5px 10px), var(--card);
+  font-size: 14px;
+  text-align: center;
+}
+th,
+td {
+  padding: 8px 6px;
+  border: 2px solid var(--a1);
+  background: var(--card);
+}
+th {
+  color: var(--a2);
+}

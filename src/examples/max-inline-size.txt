@@ -1,0 +1,10 @@
+max-inline-size: none;
+
+max-inline-size: 100%;
+
+max-inline-size: 65%;
+
+max-inline-size: min-content;
+
+max-inline-size: 70%;
+writing-mode: vertical-rl;

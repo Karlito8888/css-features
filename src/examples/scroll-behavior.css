@@ -1,0 +1,64 @@
+.wrap {
+  width: 260px;
+  max-width: 100%;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+a {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--a1);
+  font-weight: 700;
+  text-decoration: none;
+  background: var(--card);
+}
+
+a:hover,
+a:focus-visible {
+  border-color: var(--a1);
+}
+
+#example-element {
+  height: 130px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+section {
+  height: 130px;
+  margin: 0;
+  border-radius: 0;
+  scroll-snap-align: start;
+  font-size: 22px;
+}
+
+p {
+  margin: 10px 4px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+/* The caption follows the choice written on the box; the later rule wins for the snap choice. */
+.wrap:has([style*="auto"]) .note::before {
+  content: "auto: a click jumps straight to the section.";
+}
+
+.wrap:has([style*="smooth"]) .note::before {
+  content: "smooth: a click glides to the section.";
+}
+
+.wrap:has([style*="snap"]) .note::before {
+  content: "smooth with y mandatory snap: the glide ends exactly on the section.";
+}

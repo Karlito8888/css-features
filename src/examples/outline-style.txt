@@ -1,0 +1,11 @@
+outline-style: solid;
+
+outline-style: dashed;
+
+outline-style: dotted;
+
+outline-style: double;
+
+outline-style: groove;
+
+outline-style: auto;

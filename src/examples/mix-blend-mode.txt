@@ -1,0 +1,11 @@
+mix-blend-mode: normal;
+
+mix-blend-mode: multiply;
+
+mix-blend-mode: screen;
+
+mix-blend-mode: difference;
+
+mix-blend-mode: overlay;
+
+mix-blend-mode: luminosity;

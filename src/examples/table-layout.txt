@@ -1,0 +1,9 @@
+table-layout: auto;
+
+table-layout: fixed;
+
+table-layout: auto;
+width: 75%;
+
+table-layout: fixed;
+width: 75%;

@@ -1,0 +1,70 @@
+/* The box opens scrolled so that row 5 is in view (scroll-initial-target). The banner above keeps growing
+   and shrinking: with anchoring the row stays where it is, without it the row is pushed down. */
+#example-element {
+  width: min(100%, 270px);
+  height: 170px;
+  overflow-y: auto;
+  scroll-padding-top: 40px;
+  scrollbar-width: thin;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+}
+
+#example-element::before {
+  content: var(--note);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  background: var(--card);
+}
+
+.grow {
+  height: 0;
+  overflow: hidden;
+  color: #fff;
+  font-size: 13px;
+  line-height: 64px;
+  text-align: center;
+  background: var(--grad);
+  animation: grow 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes grow {
+  to {
+    height: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grow {
+    height: 64px;
+    animation: none;
+  }
+}
+
+.rows {
+  overflow-anchor: var(--rows-anchor, auto);
+}
+
+.row {
+  margin: 0;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.target {
+  scroll-initial-target: nearest;
+  color: var(--ink);
+  font-weight: 700;
+  background: color-mix(in oklab, var(--a4) 28%, transparent);
+}

@@ -1,0 +1,7 @@
+justify-items: stretch;
+
+justify-items: start;
+
+justify-items: center;
+
+justify-items: end;

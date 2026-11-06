@@ -1,0 +1,75 @@
+/* The layout wrapper answers @container queries about the card. Without a container, the card is
+   never matched and the compact stacked layout stays. */
+#example-element {
+  width: min(100%, 300px);
+  padding: 14px;
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.layout {
+  display: grid;
+  gap: 12px;
+}
+
+.media {
+  height: 64px;
+  border-radius: 12px;
+  background: var(--grad);
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+p {
+  margin: 2px 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+button {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--a1);
+}
+
+.tall {
+  display: none;
+}
+
+@container (min-width: 220px) {
+  .layout {
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+  }
+
+  .media {
+    height: 90px;
+  }
+}
+
+@container (min-height: 190px) {
+  .tall {
+    display: block;
+    margin: 12px 0 0;
+    color: var(--a5);
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,9 @@
+overflow-anchor: auto;
+--note: "auto: row 5 stays put while the banner grows";
+
+overflow-anchor: none;
+--note: "none: row 5 is pushed down as the banner grows";
+
+overflow-anchor: auto;
+--rows-anchor: none;
+--note: "auto, but the rows opted out: pushed down too";

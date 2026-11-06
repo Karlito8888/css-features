@@ -1,0 +1,32 @@
+/* The content is short, so overflow: auto shows no scrollbar. stable still reserves the strip a scrollbar
+   would take (the tinted edge), so the content does not shift when a scrollbar appears. */
+#example-element {
+  width: min(100%, 260px);
+  height: 150px;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in oklab, var(--a1) 28%, var(--card));
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  padding: 10px 14px;
+  color: var(--ink);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.content {
+  display: grid;
+  gap: 2px;
+  padding: 14px;
+  background: var(--card);
+}
+
+span {
+  color: var(--muted);
+  font-size: 13px;
+}

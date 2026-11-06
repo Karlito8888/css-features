@@ -1,0 +1,27 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  width: min(100%, 420px);
+}
+.n {
+  display: grid;
+  place-items: center;
+  min-height: 88px;
+  border: 1.5px dashed var(--muted);
+  border-radius: 14px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.legend {
+  margin: 20px 0 0;
+  max-width: 280px;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+#example-element {
+  min-height: 88px;
+  outline: 5px solid;
+  outline-offset: 3px;
+}

@@ -1,0 +1,8 @@
+view-transition-name: none;
+--note: "none: no stacking context, so the green layer hides behind the card";
+
+view-transition-name: hero;
+--note: "hero: named, so a stacking context and its own layer to capture";
+
+view-transition-name: match-element;
+--note: "match-element: named from the element itself, same stacking context";

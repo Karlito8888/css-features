@@ -1,0 +1,8 @@
+content-visibility: visible;
+
+content-visibility: auto;
+
+content-visibility: hidden;
+
+content-visibility: hidden;
+contain-intrinsic-size: 150px;

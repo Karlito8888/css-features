@@ -1,0 +1,19 @@
+/* The stage isolates the blend: the disc only mixes with the stripes and the band behind it. */
+.stage {
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  height: 220px;
+  border-radius: 22px;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, var(--ink), var(--card)) bottom / 100% 36% no-repeat,
+    linear-gradient(90deg, var(--a3) 0 25%, var(--a4) 25% 50%, var(--a5) 50% 75%, var(--a1) 75%);
+}
+
+#example-element {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--a4), var(--a2) 55%, var(--a1));
+}

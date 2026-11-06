@@ -1,0 +1,20 @@
+/* auto sizes each column to its content; fixed splits the width evenly from the first row, whatever the cells hold. */
+#example-element {
+  width: min(100%, 420px);
+  border-collapse: collapse;
+  background: var(--card);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1.5px solid var(--a1);
+  text-align: start;
+}
+
+th {
+  color: var(--a2);
+  background: color-mix(in oklab, var(--a1) 14%, transparent);
+}

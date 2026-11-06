@@ -1,0 +1,13 @@
+border-block-start-color: var(--a1);
+
+border-block-start-color: var(--a2);
+
+border-block-start-color: color-mix(in oklab, var(--a3) 45%, transparent);
+
+border-block-start-color: currentcolor;
+
+border-block-start-color: var(--a5);
+writing-mode: vertical-rl;
+
+border-block-start-color: var(--a5);
+writing-mode: vertical-lr;

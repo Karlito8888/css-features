@@ -1,0 +1,34 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The grid is 20 units a square. The rectangle is 50 wide and its x is the position of its left edge;
+   left unset, x is 0. A percentage counts against the width of the viewBox (240). */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.grid {
+  fill: url(#grid);
+  stroke: color-mix(in oklab, var(--ink) 35%, transparent);
+}
+
+pattern path {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 14%, transparent);
+}
+
+#example-element {
+  fill: color-mix(in oklab, var(--a4) 35%, transparent);
+  stroke: var(--a4);
+  stroke-width: 2;
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+  text-anchor: middle;
+}

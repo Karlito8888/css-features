@@ -1,0 +1,32 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* Each chevron is one path with a mitered corner, drawn 14 wide with the true path as a hairline on top.
+   A miter is cut back to a bevel as soon as its length divided by the stroke width, 1 / sin(tip / 2),
+   goes over the limit: the sharper the tip, the higher the ratio printed under it. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: none;
+  stroke-linejoin: miter;
+}
+
+.join {
+  stroke: var(--a1);
+  stroke-width: 14;
+}
+
+.skeleton {
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+text {
+  fill: var(--muted);
+  stroke: none;
+  font-size: 9px;
+  text-anchor: middle;
+}

@@ -1,0 +1,5 @@
+stroke-linejoin: miter;
+
+stroke-linejoin: round;
+
+stroke-linejoin: bevel;

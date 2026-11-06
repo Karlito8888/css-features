@@ -1,0 +1,34 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The grid is 20 units a square. The rectangle is 36 tall and its y is the position of its top edge;
+   left unset, y is 0. A percentage counts against the height of the viewBox (120). */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.grid {
+  fill: url(#grid);
+  stroke: color-mix(in oklab, var(--ink) 35%, transparent);
+}
+
+pattern path {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 14%, transparent);
+}
+
+#example-element {
+  fill: color-mix(in oklab, var(--a5) 35%, transparent);
+  stroke: var(--a5);
+  stroke-width: 2;
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+  text-anchor: end;
+}

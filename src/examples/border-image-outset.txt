@@ -1,0 +1,11 @@
+border-image-outset: 0;
+
+border-image-outset: 10px;
+
+border-image-outset: 1;
+
+border-image-outset: 2;
+
+border-image-outset: 0 40px;
+
+border-image-outset: 20px 0;

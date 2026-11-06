@@ -1,0 +1,31 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The filter floods its whole region with the colour of the feFlood, then draws the word on top: the
+   flooded rectangle is the highlight behind it. flood-opacity says how much of the stripes shows through. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.stripes {
+  fill: url(#stripes);
+}
+
+pattern rect {
+  fill: color-mix(in oklab, var(--ink) 28%, transparent);
+}
+
+#example-element {
+  flood-color: var(--a4);
+}
+
+text {
+  fill: var(--ink);
+  font-size: 38px;
+  font-weight: 800;
+  text-anchor: middle;
+}

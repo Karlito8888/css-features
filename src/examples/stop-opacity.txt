@@ -1,0 +1,7 @@
+stop-opacity: 1;
+
+stop-opacity: 0.6;
+
+stop-opacity: 0.3;
+
+stop-opacity: 0;

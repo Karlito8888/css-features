@@ -1,0 +1,11 @@
+vector-effect: none;
+transform: scale(3, 1);
+
+vector-effect: non-scaling-stroke;
+transform: scale(3, 1);
+
+vector-effect: none;
+transform: scale(0.5);
+
+vector-effect: non-scaling-stroke;
+transform: scale(0.5);

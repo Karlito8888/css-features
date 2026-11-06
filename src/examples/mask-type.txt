@@ -1,0 +1,3 @@
+mask-type: luminance;
+
+mask-type: alpha;

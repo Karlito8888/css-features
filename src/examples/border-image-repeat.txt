@@ -1,0 +1,11 @@
+border-image-repeat: stretch;
+
+border-image-repeat: repeat;
+
+border-image-repeat: round;
+
+border-image-repeat: space;
+
+border-image-repeat: repeat stretch;
+
+border-image-repeat: space round;

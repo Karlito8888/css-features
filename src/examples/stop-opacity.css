@@ -1,0 +1,41 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The bar is a gradient from its first stop to this one, over a checkerboard so that transparency shows.
+   The first stop is opaque; stop-opacity says how opaque the gradient is where it ends. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.check {
+  fill: url(#check);
+}
+
+pattern rect {
+  fill: color-mix(in oklab, var(--ink) 16%, transparent);
+}
+
+.bar {
+  fill: url(#g);
+}
+
+.first {
+  stop-color: var(--a1);
+}
+
+#example-element {
+  stop-color: var(--a2);
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+}
+
+.end {
+  text-anchor: end;
+}

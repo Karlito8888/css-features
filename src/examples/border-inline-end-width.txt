@@ -1,0 +1,13 @@
+border-inline-end-width: thin;
+
+border-inline-end-width: thick;
+
+border-inline-end-width: 12px;
+
+border-inline-end-width: 0;
+
+border-inline-end-width: 12px;
+direction: rtl;
+
+border-inline-end-width: 12px;
+writing-mode: vertical-rl;

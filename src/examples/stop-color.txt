@@ -1,0 +1,9 @@
+stop-color: var(--a2);
+
+stop-color: var(--a4);
+
+stop-color: var(--a5);
+
+stop-color: color-mix(in oklab, var(--a1) 40%, var(--a3));
+
+stop-color: currentcolor;

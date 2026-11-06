@@ -1,0 +1,11 @@
+border-image-width: 1;
+
+border-image-width: 0.5;
+
+border-image-width: 2;
+
+border-image-width: 10%;
+
+border-image-width: auto;
+
+border-image-width: 6px 30px;

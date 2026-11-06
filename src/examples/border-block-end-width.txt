@@ -1,0 +1,13 @@
+border-block-end-width: thin;
+
+border-block-end-width: thick;
+
+border-block-end-width: 12px;
+
+border-block-end-width: 0;
+
+border-block-end-width: 12px;
+writing-mode: vertical-rl;
+
+border-block-end-width: 12px;
+writing-mode: vertical-lr;

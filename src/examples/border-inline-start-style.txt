@@ -1,0 +1,13 @@
+border-inline-start-style: solid;
+
+border-inline-start-style: dashed;
+
+border-inline-start-style: dotted;
+
+border-inline-start-style: double;
+
+border-inline-start-style: dashed;
+direction: rtl;
+
+border-inline-start-style: dashed;
+writing-mode: vertical-rl;

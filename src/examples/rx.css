@@ -1,0 +1,25 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The dashed outline is the rectangle with square corners (180 by 90). rx sets the horizontal radius of
+   the corners, and ry, left to auto, copies it. A percentage counts against the width. Radii are capped
+   at half the width and half the height. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.sharp {
+  fill: none;
+  stroke: var(--muted);
+  stroke-dasharray: 4 4;
+}
+
+#example-element {
+  fill: color-mix(in oklab, var(--a2) 28%, transparent);
+  stroke: var(--a2);
+  stroke-width: 2;
+}

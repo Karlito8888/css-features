@@ -1,0 +1,15 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* Everything is drawn with 1 unit lines, the kind of line where smoothing is most visible. Zoom in on the
+   diagonals and the circles to compare the edges of each choice. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1;
+}

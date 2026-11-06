@@ -1,0 +1,9 @@
+border-image-slice: 30;
+
+border-image-slice: 15;
+
+border-image-slice: 40;
+
+border-image-slice: 10 30;
+
+border-image-slice: 30 fill;

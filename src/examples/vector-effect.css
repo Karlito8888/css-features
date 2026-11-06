@@ -1,0 +1,32 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The circle has a 6 unit outline and is scaled around its own centre by the transform of each choice.
+   By default the outline is scaled with the shape: stretched when the scale differs by axis, thinner when
+   it shrinks. non-scaling-stroke keeps it 6 wide, measured on screen, whatever the transform. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.guide {
+  stroke: color-mix(in oklab, var(--ink) 25%, transparent);
+  stroke-dasharray: 3 3;
+}
+
+#example-element {
+  fill: color-mix(in oklab, var(--a1) 25%, transparent);
+  stroke: var(--a1);
+  stroke-width: 6;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+  text-anchor: middle;
+}

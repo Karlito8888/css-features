@@ -1,0 +1,30 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The text is anchored at y = 60, the dashed line. dominant-baseline picks which baseline of the text is
+   put on that y: the line the glyphs sit on, the bottom of the descenders, the middle of the lower case letters, the
+   middle of the em box, the line the capitals hang from. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.baseline {
+  stroke: var(--a2);
+  stroke-dasharray: 4 4;
+}
+
+#example-element {
+  fill: var(--ink);
+  font-size: 56px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.label {
+  fill: var(--muted);
+  font-size: 9px;
+}

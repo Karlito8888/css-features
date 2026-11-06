@@ -1,0 +1,12 @@
+border-inline: 4px solid var(--a1);
+
+border-inline: 3px dashed var(--a2);
+
+border-inline: 8px double var(--a3);
+
+border-inline: 6px dotted var(--a4);
+
+border-inline: 3px solid;
+
+border-inline: 6px solid var(--a5);
+writing-mode: vertical-rl;

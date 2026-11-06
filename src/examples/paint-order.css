@@ -1,0 +1,33 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The word and the triangle have a fill (amber, cyan) and a thick outline in the text colour; the triangle
+   also has a dot on each corner (a marker, drawn 2 outline widths wide). paint-order lists the layers from
+   the first painted to the last: by default fill, then stroke, then markers. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  stroke: var(--ink);
+  stroke-width: 9;
+  stroke-linejoin: round;
+}
+
+text {
+  fill: var(--a4);
+  font-size: 54px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+polygon {
+  fill: var(--a3);
+  marker: url(#dot);
+}
+
+marker circle {
+  fill: var(--a2);
+  stroke: none;
+}

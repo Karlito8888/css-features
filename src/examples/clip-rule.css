@@ -1,0 +1,37 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* A gradient clipped by three shapes, each one path; the dashed outlines show where the paths are. The star
+   crosses itself; the rings draw the inner circle in the same direction as the outer one (first ring) or the
+   other way round (second ring). clip-rule decides which parts of each path are inside the clip. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.outline {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 40%, transparent);
+  stroke-dasharray: 3 3;
+}
+
+.art {
+  fill: url(#art);
+}
+
+#art stop:first-child {
+  stop-color: var(--a1);
+}
+
+#art stop:last-child {
+  stop-color: var(--a2);
+}
+
+text {
+  fill: var(--muted);
+  font-size: 11px;
+  text-anchor: middle;
+}

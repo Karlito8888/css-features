@@ -1,0 +1,9 @@
+dominant-baseline: alphabetic;
+
+dominant-baseline: ideographic;
+
+dominant-baseline: middle;
+
+dominant-baseline: central;
+
+dominant-baseline: hanging;

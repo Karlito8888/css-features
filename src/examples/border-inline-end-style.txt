@@ -1,0 +1,13 @@
+border-inline-end-style: solid;
+
+border-inline-end-style: dashed;
+
+border-inline-end-style: dotted;
+
+border-inline-end-style: double;
+
+border-inline-end-style: dashed;
+direction: rtl;
+
+border-inline-end-style: dashed;
+writing-mode: vertical-rl;

@@ -1,0 +1,31 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The thin line over each shape is its true path: the join is what the thick stroke adds at every corner
+   of it. The corners are all wide enough to keep a miter under the default miter limit of 4. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: none;
+}
+
+.join {
+  stroke: var(--a1);
+  stroke-width: 14;
+}
+
+.skeleton {
+  stroke: var(--ink);
+  stroke-width: 1;
+  stroke-linejoin: miter;
+}
+
+text {
+  fill: var(--muted);
+  stroke: none;
+  font-size: 9px;
+  text-anchor: middle;
+}

@@ -1,0 +1,29 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The bar is a gradient from its first stop, indigo, to this one: stop-color is the colour the gradient
+   reaches where this stop sits (offset 1, the right end). */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.bar {
+  fill: url(#g);
+}
+
+.first {
+  stop-color: var(--a1);
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+}
+
+.end {
+  text-anchor: end;
+}

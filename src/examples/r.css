@@ -1,0 +1,40 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The grid is 20 units a square. The circle is always centred on the dot (cx 120, cy 60), so only r moves.
+   A percentage radius counts against the normalised diagonal of the viewBox: sqrt((240² + 120²) / 2) = 189.7 units here. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  stroke-width: 2;
+}
+
+.grid {
+  fill: url(#grid);
+  stroke: color-mix(in oklab, var(--ink) 35%, transparent);
+  stroke-width: 1;
+}
+
+pattern path {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 14%, transparent);
+  stroke-width: 1;
+}
+
+#example-element {
+  fill: color-mix(in oklab, var(--a1) 28%, transparent);
+  stroke: var(--a1);
+}
+
+.centre {
+  fill: var(--ink);
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+  text-anchor: middle;
+}

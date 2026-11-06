@@ -1,0 +1,11 @@
+border-image: var(--frame) 30 round;
+
+border-image: var(--frame) 30 fill;
+
+border-image: var(--frame) 30 / 12px / 12px space;
+
+border-image: linear-gradient(135deg, var(--a1), var(--a2)) 1;
+
+border-image: conic-gradient(var(--a1), var(--a2), var(--a3), var(--a4), var(--a1)) 1;
+
+border-image: repeating-linear-gradient(45deg, var(--a4) 0 8px, transparent 8px 16px) 24;

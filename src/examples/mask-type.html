@@ -1,0 +1,28 @@
+<div class="card">
+  <svg viewBox="0 0 240 114" role="img" aria-label="A gradient bar seen through a mask made of a light disc, a dark disc and a dark to light ramp">
+    <defs>
+      <linearGradient id="art">
+        <stop offset="0" />
+        <stop offset="1" />
+      </linearGradient>
+      <linearGradient id="ramp">
+        <stop offset="0" />
+        <stop offset="1" />
+      </linearGradient>
+      <pattern id="check" width="16" height="16" patternUnits="userSpaceOnUse">
+        <rect width="8" height="8" />
+        <rect x="8" y="8" width="8" height="8" />
+      </pattern>
+      <mask id="example-element">
+        <circle class="light" cx="40" cy="42" r="30" />
+        <circle class="dark" cx="120" cy="42" r="30" />
+        <rect class="ramp" x="170" y="12" width="60" height="60" />
+      </mask>
+    </defs>
+    <rect class="check" width="240" height="84" />
+    <rect class="art" width="240" height="84" mask="url(#example-element)" />
+    <text x="40" y="104">light disc</text>
+    <text x="120" y="104">dark disc</text>
+    <text x="200" y="104">dark to light</text>
+  </svg>
+</div>

@@ -1,0 +1,27 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* Both lines start from x = 120, the dashed line. text-anchor says which part of each line sits on that
+   x: its start, its middle or its end. The dots mark the two text positions. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.anchor {
+  stroke: var(--a2);
+  stroke-dasharray: 4 4;
+}
+
+.point {
+  fill: var(--a2);
+}
+
+#example-element {
+  fill: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+}

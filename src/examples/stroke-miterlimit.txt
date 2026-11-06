@@ -1,0 +1,7 @@
+stroke-miterlimit: 1;
+
+stroke-miterlimit: 2;
+
+stroke-miterlimit: 4;
+
+stroke-miterlimit: 6;

@@ -1,0 +1,13 @@
+border-block-start-style: solid;
+
+border-block-start-style: dashed;
+
+border-block-start-style: dotted;
+
+border-block-start-style: double;
+
+border-block-start-style: dashed;
+writing-mode: vertical-rl;
+
+border-block-start-style: dashed;
+writing-mode: vertical-lr;

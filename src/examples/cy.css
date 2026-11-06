@@ -1,0 +1,39 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The grid is 20 units a square and the dashed line is cx: only cy moves the circle. Left unset, cy is 0:
+   the circle is centred on the top edge of the viewBox. A percentage counts against its height (120). */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.grid {
+  fill: url(#grid);
+  stroke: color-mix(in oklab, var(--ink) 35%, transparent);
+}
+
+pattern path {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 14%, transparent);
+}
+
+.guide {
+  stroke: var(--muted);
+  stroke-dasharray: 4 4;
+}
+
+#example-element {
+  fill: color-mix(in oklab, var(--a3) 28%, transparent);
+  stroke: var(--a3);
+  stroke-width: 2;
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+  text-anchor: end;
+}

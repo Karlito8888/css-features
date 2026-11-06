@@ -15,7 +15,7 @@ read it by path.
     feature (`@supports not`);
   - the reference examples in `src/examples/<feature id>.{html,css,txt}`, which replace the MDN
     example of a feature. The demonstrated element is `#example-element`; `.txt` holds 3 to 6
-    value choices, one per blank-line separated paragraph: declarations applied inline to
+    value choices (2 when only two values look different), one per blank-line separated paragraph: declarations applied inline to
     `#example-element` (extra declarations allowed when the value needs them to show), or, for
     selectors and at-rules, a whole rule block (contains `{`). Choices show real, current usage
     and stay even when Chromium lacks them (the page marks them). Use the skin of

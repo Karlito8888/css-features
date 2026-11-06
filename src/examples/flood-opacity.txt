@@ -1,0 +1,7 @@
+flood-opacity: 1;
+
+flood-opacity: 0.6;
+
+flood-opacity: 0.3;
+
+flood-opacity: 0;

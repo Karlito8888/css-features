@@ -1,0 +1,59 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The mask is fully opaque everywhere it is drawn: a light disc, a dark disc and a ramp from dark to
+   light. A luminance mask keeps the picture where the mask is light, so the dark parts disappear;
+   an alpha mask only looks at opacity and keeps all three shapes. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.check {
+  fill: url(#check);
+}
+
+pattern rect {
+  fill: color-mix(in oklab, var(--ink) 16%, transparent);
+}
+
+.art {
+  fill: url(#art);
+}
+
+#art stop:first-child {
+  stop-color: var(--a1);
+}
+
+#art stop:last-child {
+  stop-color: var(--a2);
+}
+
+.light {
+  fill: oklch(0.97 0.01 270);
+}
+
+.dark {
+  fill: oklch(0.12 0.02 270);
+}
+
+.ramp {
+  fill: url(#ramp);
+}
+
+#ramp stop:first-child {
+  stop-color: oklch(0.12 0.02 270);
+}
+
+#ramp stop:last-child {
+  stop-color: oklch(0.97 0.01 270);
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+  text-anchor: middle;
+}

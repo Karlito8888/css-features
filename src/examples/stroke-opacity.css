@@ -1,0 +1,26 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The bars and the fills are not affected: stroke-opacity only makes the thick outlines see-through. Each
+   outline is centred on the edge of its circle, so half of it lies over the fill and half over the bars. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  stroke-width: 14;
+}
+
+.bar {
+  fill: color-mix(in oklab, var(--ink) 45%, transparent);
+  stroke: none;
+}
+
+circle {
+  fill: var(--card);
+}
+
+.c1 { stroke: var(--a1); }
+.c2 { stroke: var(--a2); }
+.c3 { stroke: var(--a4); }

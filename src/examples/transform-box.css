@@ -1,0 +1,36 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The rectangle is rotated 35 degrees around the bottom right corner of the box chosen by transform-box
+   (transform-origin: 100% 100%). The dashed outlines show the unrotated boxes: the frame is the view-box,
+   the inner outline is the fill-box (the geometry), the outer one is the stroke-box (geometry plus the
+   thick outline, painted under the fill). content-box and border-box give the same result as these two
+   on an SVG shape, which has no CSS layout box, so they are not listed. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.frame,
+.ghost {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 40%, transparent);
+  stroke-dasharray: 3 3;
+}
+
+#example-element {
+  fill: var(--a2);
+  stroke: color-mix(in oklab, var(--a1) 55%, transparent);
+  stroke-width: 36;
+  paint-order: stroke;
+  transform: rotate(35deg);
+  transform-origin: 100% 100%;
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+}

@@ -1,0 +1,49 @@
+/* The tile fills the content box: the hatched band is the padding, on whichever side the writing mode maps it to. */
+#example-element {
+  display: flex;
+  width: min(100%, 300px);
+  height: 200px;
+  border: 1.5px dashed var(--muted);
+  border-radius: 16px;
+  background: repeating-linear-gradient(135deg, color-mix(in oklab, var(--a4) 50%, transparent) 0 5px, transparent 5px 10px), var(--card);
+  background-clip: padding-box;
+}
+#example-element .tile {
+  flex: 1;
+}
+#example-element .tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 0;
+  padding-block: 10px;
+  border-block-start: 6px solid var(--a4);
+  border-block-end: 6px solid var(--a2);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.legend i {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-inline-end: 6px;
+  border-radius: 4px;
+  vertical-align: -2px;
+}
+.legend .s { background: var(--a4); }
+.legend .e { background: var(--a2); }
+.legend .h {
+  background: repeating-linear-gradient(135deg, color-mix(in oklab, var(--a4) 50%, transparent) 0 5px, transparent 5px 10px);
+  outline: 1.5px dashed var(--a4);
+}

@@ -1,0 +1,9 @@
+mask-position: center;
+
+mask-position: top left;
+
+mask-position: bottom right;
+
+mask-position: 25% 70%;
+
+mask-position: right -30px top 40px;

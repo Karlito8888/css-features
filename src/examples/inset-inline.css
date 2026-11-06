@@ -1,0 +1,56 @@
+/* The box is positioned inside the dashed frame; it has no size on the stretched axis, so the offsets alone place it. */
+.frame {
+  position: relative;
+  display: grid;
+  place-items: start;
+  width: min(100%, 300px);
+  height: 204px;
+  padding: 4px 10px;
+  border: 2px dashed color-mix(in oklab, var(--a1) 55%, transparent);
+  border-radius: 18px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 19px, var(--line) 19px 20px),
+    repeating-linear-gradient(180deg, transparent 0 19px, var(--line) 19px 20px);
+}
+#example-element {
+  position: absolute;
+  inset-block: 36px;
+  opacity: 0.85;
+}
+#example-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 0;
+  padding-inline: 10px;
+  border-inline-start: 6px solid var(--a4);
+  border-inline-end: 6px solid var(--a2);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+.legend i {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-inline-end: 6px;
+  border-radius: 4px;
+  vertical-align: -2px;
+}
+.legend .s { background: var(--a4); }
+.legend .e { background: var(--a2); }

@@ -1,0 +1,43 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The ring is 176 units long (2π × 28) and dashed 176 on, 176 off: its offset is how much of it is
+   hidden, as in a progress ring. The two lines are dashed 30 on, 20 off: the grey one keeps offset 0,
+   the other takes the offset of the choice and slides its dashes along the line. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: none;
+  stroke-width: 6;
+}
+
+.base {
+  stroke: color-mix(in oklab, var(--ink) 12%, transparent);
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+}
+
+.ring {
+  stroke: var(--a2);
+  stroke-dasharray: 176 176;
+}
+
+.ref {
+  stroke: var(--muted);
+  stroke-dasharray: 30 20;
+  stroke-dashoffset: 0;
+}
+
+.dash {
+  stroke: var(--a1);
+  stroke-dasharray: 30 20;
+}
+
+text {
+  fill: var(--muted);
+  stroke: none;
+  font-size: 9px;
+}

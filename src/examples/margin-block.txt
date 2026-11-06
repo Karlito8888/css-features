@@ -1,0 +1,14 @@
+margin-block: 0;
+
+margin-block: 40px;
+
+margin-block: 12px 64px;
+
+margin-block: auto;
+block-size: 72px;
+
+margin-block: 12px 64px;
+writing-mode: vertical-rl;
+
+margin-block: 12px 64px;
+writing-mode: vertical-lr;

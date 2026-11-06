@@ -1,0 +1,11 @@
+inset-block-start: 0;
+
+inset-block-start: 24px;
+
+inset-block-start: 50%;
+
+inset-block-start: 24px;
+writing-mode: vertical-rl;
+
+inset-block-start: 24px;
+writing-mode: vertical-lr;

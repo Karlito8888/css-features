@@ -1,0 +1,11 @@
+text-decoration-line: underline;
+
+text-decoration-line: overline;
+
+text-decoration-line: line-through;
+
+text-decoration-line: underline overline;
+
+text-decoration-line: spelling-error;
+
+text-decoration-line: grammar-error;

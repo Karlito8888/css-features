@@ -1,0 +1,35 @@
+/* The scene is the perspective parent. The box is a stack of three layers, each pushed along z
+   (translateZ 0, 45px, 90px). flat flattens the layers into the plane of the box: the stack
+   collapses into one square. preserve-3d keeps them in space, so they fan out. */
+.scene {
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  height: 280px;
+  overflow: hidden;
+  perspective: 700px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.stack {
+  display: grid;
+  width: 104px;
+  height: 104px;
+  transform: rotateX(60deg) rotateZ(-35deg);
+}
+
+.layer {
+  grid-area: 1 / 1;
+  min-height: 0;
+  opacity: 0.85;
+}
+
+.layer:nth-child(2) {
+  transform: translateZ(45px);
+}
+
+.layer:nth-child(3) {
+  transform: translateZ(90px);
+}

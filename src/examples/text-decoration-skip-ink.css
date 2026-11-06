@@ -1,0 +1,31 @@
+#example-element {
+  width: min(100%, 520px);
+  overflow-wrap: anywhere;
+}
+
+#example-element h2,
+#example-element p {
+  text-decoration-line: underline;
+  text-decoration-color: var(--a1);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+#example-element h2 {
+  margin: 0 0 10px;
+  font-size: 38px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+#example-element .cjk {
+  margin-top: 8px;
+  text-underline-offset: -0.2em;
+}

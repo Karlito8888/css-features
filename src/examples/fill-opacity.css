@@ -1,0 +1,26 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The bars and the outlines are not affected: fill-opacity only makes the fills of the circles see-through. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  stroke-width: 2;
+}
+
+.bar {
+  fill: color-mix(in oklab, var(--ink) 45%, transparent);
+  fill-opacity: 1;
+  stroke: none;
+}
+
+circle {
+  stroke: var(--ink);
+}
+
+.c1 { fill: var(--a1); }
+.c2 { fill: var(--a2); }
+.c3 { fill: var(--a4); }

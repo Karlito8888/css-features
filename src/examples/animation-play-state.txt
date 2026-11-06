@@ -1,0 +1,11 @@
+animation-play-state: paused;
+--note: "paused";
+
+animation-play-state: running;
+--note: "running";
+
+animation-play-state: running, paused;
+--note: "hue paused";
+
+animation-play-state: paused, running;
+--note: "slide paused";

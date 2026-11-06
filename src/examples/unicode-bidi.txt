@@ -1,0 +1,8 @@
+direction: rtl;
+unicode-bidi: normal;
+
+direction: rtl;
+unicode-bidi: isolate;
+
+direction: rtl;
+unicode-bidi: bidi-override;

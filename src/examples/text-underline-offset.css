@@ -1,0 +1,21 @@
+#example-element {
+  width: min(100%, 520px);
+  overflow-wrap: anywhere;
+  text-decoration-line: underline;
+  text-decoration-color: var(--a1);
+  text-decoration-thickness: 2px;
+}
+
+#example-element h2 {
+  margin: 0 0 10px;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 2;
+}

@@ -1,0 +1,8 @@
+fill-rule: nonzero;
+
+fill-rule: evenodd;
+
+fill-rule: evenodd;
+stroke: var(--ink);
+stroke-width: 1.5;
+stroke-linejoin: round;

@@ -1,0 +1,29 @@
+/* The dashed outline is where the box sits untransformed. The stage has a perspective, so a third value
+   (z) moves the box toward the viewer and makes it larger, or away and makes it smaller. */
+.stage {
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  height: 250px;
+  overflow: hidden;
+  perspective: 500px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.stage > * {
+  grid-area: 1 / 1;
+  width: 96px;
+  height: 96px;
+}
+
+/* the untransformed position, for reference */
+.ghost {
+  border: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+  border-radius: 14px;
+}
+
+#example-element {
+  font-size: 22px;
+}

@@ -1,0 +1,5 @@
+hyphens: none;
+
+hyphens: manual;
+
+hyphens: auto;

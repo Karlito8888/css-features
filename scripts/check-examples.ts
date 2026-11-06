@@ -15,7 +15,8 @@ import { mkdir, rm } from "node:fs/promises";
 import { standaloneDocument, writtenCss } from "../src/standalone-document";
 import { exampleIds, readExample } from "./example-files";
 
-const DIR = "src/examples";
+// EXAMPLES_DIR checks drafts kept outside the repo (same file layout as src/examples).
+const DIR = process.env.EXAMPLES_DIR ?? "src/examples";
 const OUT = "/tmp/css-examples-check";
 const CHROME = process.env.CHROME ?? "google-chrome";
 const FRAMES = [

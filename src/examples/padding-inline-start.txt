@@ -1,0 +1,11 @@
+padding-inline-start: 0;
+
+padding-inline-start: 24px;
+
+padding-inline-start: 72px;
+
+padding-inline-start: 44px;
+direction: rtl;
+
+padding-inline-start: 44px;
+writing-mode: vertical-rl;

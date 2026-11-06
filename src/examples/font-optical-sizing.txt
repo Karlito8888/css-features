@@ -1,0 +1,6 @@
+font-optical-sizing: auto;
+
+font-optical-sizing: none;
+
+font-optical-sizing: none;
+font-variation-settings: "opsz" 144;

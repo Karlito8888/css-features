@@ -1,0 +1,11 @@
+padding-block-end: 0;
+
+padding-block-end: 24px;
+
+padding-block-end: 72px;
+
+padding-block-end: 44px;
+writing-mode: vertical-rl;
+
+padding-block-end: 44px;
+writing-mode: vertical-lr;

@@ -1,0 +1,11 @@
+padding-block: 0;
+
+padding-block: 28px;
+
+padding-block: 12px 64px;
+
+padding-block: 12px 64px;
+writing-mode: vertical-rl;
+
+padding-block: 12px 64px;
+writing-mode: vertical-lr;

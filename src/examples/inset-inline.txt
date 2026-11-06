@@ -1,0 +1,11 @@
+inset-inline: 0;
+
+inset-inline: 24px;
+
+inset-inline: 20px 60px;
+
+inset-inline: 20px 60px;
+direction: rtl;
+
+inset-inline: 20px 60px;
+writing-mode: vertical-rl;

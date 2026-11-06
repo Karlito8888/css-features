@@ -1,0 +1,11 @@
+stroke-dasharray: none;
+
+stroke-dasharray: 10;
+
+stroke-dasharray: 16 5 2 5;
+
+stroke-dasharray: 0 9;
+stroke-linecap: round;
+stroke-width: 5;
+
+stroke-dasharray: 25% 8%;

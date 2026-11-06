@@ -1,0 +1,10 @@
+text-wrap: wrap;
+
+text-wrap: balance;
+
+text-wrap: pretty;
+
+text-wrap: nowrap;
+
+text-wrap: stable;
+--note: "Edit the paragraph: with stable, the lines above the one you type in keep their breaks.";

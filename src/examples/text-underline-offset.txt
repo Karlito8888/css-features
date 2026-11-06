@@ -1,0 +1,7 @@
+text-underline-offset: auto;
+
+text-underline-offset: 0.35em;
+
+text-underline-offset: 0.7em;
+
+text-underline-offset: -0.25em;

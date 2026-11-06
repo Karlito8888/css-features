@@ -1,0 +1,12 @@
+#example-element {
+  width: min(100%, 520px);
+  padding: 18px 20px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#example-element p {
+  margin: 0;
+  padding-left: 28px;
+  border-left: 2px dashed var(--a1);
+}

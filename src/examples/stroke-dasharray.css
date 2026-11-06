@@ -1,0 +1,14 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: color-mix(in oklab, var(--a1) 16%, transparent);
+  stroke: var(--a1);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}

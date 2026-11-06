@@ -1,0 +1,11 @@
+padding-inline-end: 0;
+
+padding-inline-end: 24px;
+
+padding-inline-end: 72px;
+
+padding-inline-end: 44px;
+direction: rtl;
+
+padding-inline-end: 44px;
+writing-mode: vertical-rl;

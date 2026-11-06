@@ -1,0 +1,31 @@
+#example-element {
+  width: min(100%, 520px);
+}
+
+#example-element p {
+  margin: 0;
+}
+
+#example-element .label {
+  margin-bottom: 8px;
+  color: var(--a1);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#example-element .body {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+#example-element::after {
+  content: var(--note, "");
+  display: block;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

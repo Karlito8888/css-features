@@ -1,0 +1,11 @@
+font-feature-settings: normal;
+
+font-feature-settings: "smcp";
+
+font-feature-settings: "onum";
+
+font-feature-settings: "zero";
+
+font-feature-settings: "frac";
+
+font-feature-settings: "smcp", "onum", "zero";

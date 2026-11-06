@@ -1,0 +1,9 @@
+mask-size: auto;
+
+mask-size: 24px;
+
+mask-size: 120px 40px;
+
+mask-size: contain;
+
+mask-size: cover;

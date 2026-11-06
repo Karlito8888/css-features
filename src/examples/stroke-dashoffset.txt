@@ -1,0 +1,9 @@
+stroke-dashoffset: 0;
+
+stroke-dashoffset: 20;
+
+stroke-dashoffset: 60;
+
+stroke-dashoffset: 88;
+
+stroke-dashoffset: -35;

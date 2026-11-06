@@ -1,0 +1,10 @@
+mask: radial-gradient(circle, #000 40%, transparent 72%);
+
+mask: linear-gradient(to bottom, #000 35%, transparent);
+
+mask: var(--star) center / contain no-repeat;
+
+mask: radial-gradient(circle, #000 7px, transparent 8px) 0 0 / 24px 24px;
+
+mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+padding: 28px;

@@ -1,0 +1,25 @@
+#example-element {
+  width: min(100%, 274px);
+  overflow-x: auto;
+}
+
+#example-element h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#example-element::after {
+  content: var(--note, "");
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}

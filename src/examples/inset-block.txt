@@ -1,0 +1,11 @@
+inset-block: 0;
+
+inset-block: 24px;
+
+inset-block: 20px 60px;
+
+inset-block: 20px 60px;
+writing-mode: vertical-rl;
+
+inset-block: 20px 60px;
+writing-mode: vertical-lr;

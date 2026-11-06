@@ -1,0 +1,5 @@
+text-decoration-thickness: auto;
+
+text-decoration-thickness: 4px;
+
+text-decoration-thickness: 40%;

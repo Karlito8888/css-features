@@ -1,0 +1,9 @@
+text-decoration-style: solid;
+
+text-decoration-style: double;
+
+text-decoration-style: dotted;
+
+text-decoration-style: dashed;
+
+text-decoration-style: wavy;

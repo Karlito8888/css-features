@@ -1,0 +1,7 @@
+animation-fill-mode: none;
+
+animation-fill-mode: backwards;
+
+animation-fill-mode: forwards;
+
+animation-fill-mode: both;

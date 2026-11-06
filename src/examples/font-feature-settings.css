@@ -1,0 +1,25 @@
+#example-element {
+  width: min(100%, 520px);
+  font-family: "Noto Sans", Calibri, "Segoe UI", system-ui, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+#example-element h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#example-element .note {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}

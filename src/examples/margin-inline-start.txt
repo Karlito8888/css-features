@@ -1,0 +1,15 @@
+margin-inline-start: 0;
+
+margin-inline-start: 32px;
+
+margin-inline-start: 80px;
+
+margin-inline-start: auto;
+flex: none;
+inline-size: 40%;
+
+margin-inline-start: 48px;
+direction: rtl;
+
+margin-inline-start: 48px;
+writing-mode: vertical-rl;

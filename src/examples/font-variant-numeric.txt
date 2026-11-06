@@ -1,0 +1,7 @@
+font-variant-numeric: proportional-nums;
+
+font-variant-numeric: tabular-nums;
+
+font-variant-numeric: oldstyle-nums;
+
+font-variant-numeric: slashed-zero;

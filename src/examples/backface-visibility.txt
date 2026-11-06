@@ -1,0 +1,11 @@
+backface-visibility: visible;
+transform: rotateY(150deg);
+
+backface-visibility: hidden;
+transform: rotateY(150deg);
+
+backface-visibility: hidden;
+transform: rotateY(35deg);
+
+backface-visibility: visible;
+transform: rotateX(160deg);

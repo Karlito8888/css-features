@@ -1,0 +1,24 @@
+.wrap {
+  width: min(100%, 260px);
+}
+
+#example-element {
+  width: 160px;
+  padding: 12px 14px;
+  border: 2px dashed var(--a1);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--a1) 10%, var(--card));
+  line-height: 1.45;
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.hint {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

@@ -1,0 +1,30 @@
+#example-element {
+  width: min(100%, 520px);
+  overflow-wrap: anywhere;
+  font-family: system-ui, sans-serif;
+}
+
+#example-element p {
+  margin: 0;
+}
+
+#example-element .display {
+  margin-bottom: 8px;
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+#example-element .text {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+#example-element .note {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}

@@ -1,0 +1,43 @@
+#example-element {
+  width: min(100%, 520px);
+  overflow-wrap: anywhere;
+}
+
+#example-element p {
+  margin: 0;
+}
+
+#example-element .label {
+  margin-top: 8px;
+  color: var(--muted);
+  font: 600 12px/1.4 system-ui, sans-serif;
+}
+
+#example-element .label:first-child {
+  margin-top: 0;
+}
+
+#example-element .sample {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+#example-element .note {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font: 400 12px/1.4 system-ui, sans-serif;
+}
+
+.dv {
+  font-family: "DejaVu Sans", sans-serif;
+}
+
+.bs {
+  font-family: Bahnschrift, sans-serif;
+}
+
+.sk {
+  font-family: Skia, sans-serif;
+}

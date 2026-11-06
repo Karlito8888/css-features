@@ -1,0 +1,11 @@
+mask-image: radial-gradient(circle, #000 35%, transparent 70%);
+
+mask-image: linear-gradient(to right, #000 30%, transparent);
+
+mask-image: var(--star);
+
+mask-image: var(--bubbles);
+
+mask-image: radial-gradient(circle at 30% 30%, #000 22%, transparent 23%), radial-gradient(circle at 68% 66%, #000 32%, transparent 33%);
+
+mask-image: none;

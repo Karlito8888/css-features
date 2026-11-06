@@ -1,0 +1,38 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The thin line over each thick line is the path itself, and the dashed vertical lines mark where the
+   first path ends: the cap is what the thick line adds beyond them. The lower line is dashed, so every
+   dash gets two caps. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--a1);
+  stroke-width: 22;
+}
+
+.fat.dashed {
+  stroke: var(--a2);
+  stroke-dasharray: 36 36;
+}
+
+.hair {
+  stroke: var(--ink);
+  stroke-width: 1;
+  stroke-linecap: butt;
+}
+
+.hair.dashed {
+  stroke-dasharray: 36 36;
+}
+
+.end {
+  stroke: var(--muted);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+  stroke-linecap: butt;
+}

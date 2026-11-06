@@ -1,0 +1,7 @@
+mask-composite: add;
+
+mask-composite: subtract;
+
+mask-composite: intersect;
+
+mask-composite: exclude;

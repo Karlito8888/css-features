@@ -1,0 +1,9 @@
+text-decoration-color: var(--a1);
+
+text-decoration-color: var(--a2);
+
+text-decoration-color: var(--a4);
+
+text-decoration-color: var(--a5);
+
+text-decoration-color: currentcolor;

@@ -1,0 +1,33 @@
+/* The dashed outline is the box before the mask; the checkerboard shows through where the mask hides it.
+   Only the alpha of a mask image counts: opaque keeps the box, transparent hides it. */
+.stage {
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card) repeating-conic-gradient(color-mix(in oklab, var(--ink) 7%, transparent) 0 25%, transparent 0 50%) 0 0 / 20px 20px;
+}
+
+/* the box before it is masked, for reference */
+.frame {
+  width: min(100%, 240px);
+  outline: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+  outline-offset: 0;
+  border-radius: 4px;
+}
+
+.paint {
+  --star: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Cpolygon%20points='50,0%2061,35%2098,35%2068,57%2079,91%2050,70%2021,91%2032,57%202,35%2039,35'/%3E%3C/svg%3E");
+  --bubbles: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ccircle%20cx='30'%20cy='66'%20r='26'/%3E%3Ccircle%20cx='68'%20cy='34'%20r='19'/%3E%3Ccircle%20cx='74'%20cy='80'%20r='12'/%3E%3C/svg%3E");
+  width: 100%;
+  aspect-ratio: 1;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background:
+    radial-gradient(circle at 20% 15%, var(--a4), transparent 45%),
+    radial-gradient(circle at 85% 85%, var(--a3), transparent 50%),
+    linear-gradient(135deg, var(--a1), var(--a2));
+}

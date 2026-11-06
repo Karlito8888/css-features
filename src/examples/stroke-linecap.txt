@@ -1,0 +1,5 @@
+stroke-linecap: butt;
+
+stroke-linecap: round;
+
+stroke-linecap: square;

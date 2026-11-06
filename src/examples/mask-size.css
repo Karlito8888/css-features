@@ -1,0 +1,33 @@
+/* The dashed outline is the box (3:2). The mask is a star tile that repeats, 60px by its own size;
+   mask-size scales the tile: a length, a stretched pair, or contain and cover (the box is not square,
+   so they differ). The tile does not keep its proportions (preserveAspectRatio none), so a pair of lengths
+   stretches the star. */
+.stage {
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card) repeating-conic-gradient(color-mix(in oklab, var(--ink) 7%, transparent) 0 25%, transparent 0 50%) 0 0 / 20px 20px;
+}
+
+/* the box before it is masked, for reference */
+.frame {
+  width: min(100%, 240px);
+  outline: 2px dashed color-mix(in oklab, var(--ink) 35%, transparent);
+  outline-offset: 0;
+  border-radius: 4px;
+}
+
+.paint {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  --star: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='60'%20height='60'%20preserveAspectRatio='none'%20viewBox='0%200%20100%20100'%3E%3Cpolygon%20points='50,10%2058.8,38%2088.4,38%2064.4,55.6%2073.2,82.8%2050,66%2026.8,82.8%2035.6,55.6%2011.6,38%2041.2,38'/%3E%3C/svg%3E");
+  mask-image: var(--star);
+  mask-position: center;
+  background:
+    radial-gradient(circle at 20% 15%, var(--a4), transparent 45%),
+    radial-gradient(circle at 85% 85%, var(--a3), transparent 50%),
+    linear-gradient(135deg, var(--a1), var(--a2));
+}

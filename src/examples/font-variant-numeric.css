@@ -1,0 +1,43 @@
+#example-element {
+  width: min(100%, 520px);
+  font-family: "Noto Sans", Calibri, "Segoe UI", system-ui, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 20px;
+}
+
+caption {
+  margin-bottom: 6px;
+  color: var(--a1);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+th,
+td {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--line);
+  font-weight: 400;
+  text-align: left;
+}
+
+td {
+  text-align: right;
+}
+
+.total th,
+.total td {
+  border-bottom: 0;
+  font-weight: 700;
+}
+
+.foot {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}

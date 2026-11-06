@@ -1,0 +1,23 @@
+transition-delay: 0s;
+transform: translateX(70cqw);
+--note: "delay 0s";
+
+transition-delay: 0.8s;
+transform: translateX(10cqw);
+opacity: 0.45;
+--note: "delay 0.8s";
+
+transition-delay: 2.5s;
+transform: translateX(52cqw);
+filter: grayscale(1);
+--note: "delay 2.5s";
+
+transition-delay: -0.6s;
+transform: translateX(30cqw);
+--note: "delay -0.6s: starts half way";
+
+transition-property: transform, border-radius;
+transition-delay: 0s, 1.5s;
+transform: translateX(64cqw);
+border-radius: 50%;
+--note: "delay 0s, then 1.5s";

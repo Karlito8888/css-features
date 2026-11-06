@@ -1,0 +1,11 @@
+text-size-adjust: auto;
+--note: "auto: a phone may inflate small text. Only a browser that does so shows a change; this frame may not.";
+
+text-size-adjust: none;
+--note: "none: no inflation, the text keeps the size written in the CSS even after rotating a phone.";
+
+text-size-adjust: 100%;
+--note: "100%: the classic reset, no inflation either.";
+
+text-size-adjust: 150%;
+--note: "150%: a browser that supports it scales the text by half again.";

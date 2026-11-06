@@ -1,0 +1,5 @@
+font-stretch: normal;
+
+font-stretch: condensed;
+
+font-stretch: expanded;

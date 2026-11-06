@@ -12,7 +12,7 @@ of `~/Bureau/html` (`Karlito8888/html-elements`), same mechanics. Remote
 ```bash
 bun run sync             # download the sources, rewrite data/features.json and data/sources.json
 bun run validate [id...] # send every showcase and reference example (or the named ones) to the W3C Nu HTML Checker (network; run by hand, not in CI; CHECKER=http://localhost:8888/?out=json targets a local vnu.jar)
-bun run check-examples [id...] # headless Chrome check of the reference examples, screenshots in /tmp/css-examples-check/
+bun run check-examples [id...] # headless Chrome check of the reference examples, contact sheets in /tmp/css-examples-check/ (EXAMPLES_DIR=<folder> checks drafts outside the repo)
 bun scripts/preview.ts <id>   # a showcase or reference example as a standalone document in /tmp, to open in a browser
 bun run dev              # http://localhost:4341
 bun run check            # the gate: astro check && astro build

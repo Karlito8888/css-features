@@ -1,0 +1,9 @@
+transform-style: flat;
+
+transform-style: preserve-3d;
+
+transform-style: preserve-3d;
+transform: rotateY(50deg);
+
+transform-style: preserve-3d;
+transform: rotateX(-25deg) rotateY(40deg);

@@ -1,0 +1,9 @@
+font-variant: normal;
+
+font-variant: small-caps;
+
+font-variant: all-small-caps;
+
+font-variant: oldstyle-nums slashed-zero;
+
+font-variant: diagonal-fractions ordinal;

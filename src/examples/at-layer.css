@@ -1,0 +1,36 @@
+/* Every rule below targets .btn with the same specificity. The button prints which layer set its
+   colour (--who) and the layers it was declared in. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  width: min(100%, 360px);
+  padding: 18px;
+}
+
+/* Declared first, so this layer ranks below every layer a choice adds. An unlayered background here
+   would beat all of them. */
+@layer defaults {
+  .btn { background: var(--muted); }
+}
+
+.btn {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 12px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.btn::after {
+  content: " : " var(--who, "no layer yet");
+  font-weight: 500;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}

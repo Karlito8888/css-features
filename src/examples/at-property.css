@@ -1,0 +1,35 @@
+/* .parent holds the custom property, .child reads it. Each choice registers one property and the
+   note under the box says what its registration changes. */
+#example-element {
+  width: min(100%, 360px);
+  padding: 16px;
+}
+
+.parent {
+  padding: 10px;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+}
+
+.child {
+  display: grid;
+  place-items: center;
+  justify-self: start;
+  width: 100%;
+  min-height: 72px;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  background: #475569;
+}
+
+.note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.note::before {
+  content: var(--note, "No registered property yet");
+}

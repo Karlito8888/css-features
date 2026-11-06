@@ -1,0 +1,11 @@
+@import url("data:text/css,.badge%7Bbackground:%23ec4899%7D");
+.note { --note: "Plain import: its rule comes after the page's own .badge rule and wins"; }
+
+@import url("data:text/css,.badge%7Bbackground:%23ec4899%7D") layer(vendor);
+.note { --note: "layer(vendor): imported into a layer, so the page's unlayered grey wins"; }
+
+@import url("data:text/css,.badge%7Bbackground:%2306b6d4%7D") supports(display: grid);
+.note { --note: "supports(display: grid): the sheet loads only because the test passes"; }
+
+@import url("data:text/css,.badge%7Bbackground:%23f59e0b%7D") (width >= 500px);
+.note { --note: "Media condition: loaded only from a 500px wide viewport (grey below)"; }

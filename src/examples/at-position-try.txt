@@ -1,0 +1,24 @@
+@position-try --above {
+  position-area: top;
+}
+.tip { position-try-fallbacks: --above; }
+.note { --note: "--above: the tooltip flips above the anchor"; }
+
+@position-try --beside {
+  position-area: left;
+  margin-inline-end: 8px;
+}
+.tip { position-try-fallbacks: --beside; }
+.note { --note: "--beside: it moves to the left of the anchor, with a margin"; }
+
+@position-try --above-right-edge {
+  position-area: top span-left;
+}
+.tip { position-try-fallbacks: --above-right-edge; }
+.note { --note: "--above-right-edge: above, ending at the anchor's right edge"; }
+
+@position-try --above-left-edge {
+  position-area: top span-right;
+}
+.tip { position-try-fallbacks: --above-left-edge; }
+.note { --note: "--above-left-edge: above, starting at the anchor's left edge"; }

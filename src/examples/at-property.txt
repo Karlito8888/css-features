@@ -1,0 +1,48 @@
+@property --tone {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #475569;
+}
+.parent { --tone: var(--a1); }
+.child { background: var(--tone); }
+.note { --note: "inherits: true, so the child gets the colour set on its parent"; }
+
+@property --tone {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #475569;
+}
+.parent { --tone: var(--a1); }
+.child { background: var(--tone); }
+.note { --note: "inherits: false, so the child falls back to initial-value"; }
+
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes turn { to { --angle: 360deg; } }
+.child {
+  background: conic-gradient(from var(--angle), var(--a1), var(--a2), var(--a4), var(--a3), var(--a1));
+  animation: turn 3s linear infinite;
+}
+.note { --note: "<angle> makes --angle animatable: the gradient turns smoothly"; }
+
+@property --gap {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+.parent { font-size: 40px; --gap: 1em; }
+.child { width: calc(var(--gap) * 5); font-size: 12px; }
+.note { --note: "<length> resolves 1em on the parent (40px), so the child is 200px wide"; }
+
+@property --n {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes count { to { --n: 100; } }
+.child { counter-reset: n var(--n); animation: count 4s linear infinite; }
+.out::before { content: counter(n) "%"; }
+.note { --note: "<integer> makes --n animatable: it feeds a counter"; }

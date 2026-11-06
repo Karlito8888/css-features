@@ -1,0 +1,27 @@
+@custom-media --narrow (width < 500px);
+@media (--narrow) {
+  .grid { grid-template-columns: 1fr; }
+  .which { --which: "(--narrow) matched: one column"; }
+}
+.def { --def: "@custom-media --narrow (width < 500px);"; }
+
+@custom-media --dark (prefers-color-scheme: dark);
+@media (--dark) {
+  .tile { --grad: linear-gradient(135deg, var(--a3), var(--a5)); border-radius: 999px; }
+  .which { --which: "(--dark) matched: cyan round tiles"; }
+}
+.def { --def: "@custom-media --dark (prefers-color-scheme: dark);"; }
+
+@custom-media --touch (hover: none) and (pointer: coarse);
+@media (--touch) {
+  .tile { min-height: 96px; font-size: 28px; }
+  .which { --which: "(--touch) matched: big tiles"; }
+}
+.def { --def: "@custom-media --touch (hover: none) and (pointer: coarse);"; }
+
+@custom-media --fancy true;
+@media (--fancy) {
+  .tile { transform: rotate(-4deg); outline: 2px dashed var(--a4); outline-offset: 3px; }
+  .which { --which: "(--fancy) matched: it is always true, a switch kept in one place"; }
+}
+.def { --def: "@custom-media --fancy true;"; }

@@ -1,0 +1,26 @@
+/* Each choice tests one feature and has a branch for both answers, so the label always says what
+   this browser answered. */
+#example-element {
+  width: min(100%, 360px);
+  padding: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.tile {
+  width: 72px;
+  min-height: 56px;
+}
+
+.which {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.which::before {
+  content: var(--which, "No @supports rule applied");
+}

@@ -1,0 +1,54 @@
+/* The tooltip starts below the anchor, where it does not fit in the box, so the browser tries the
+   fallbacks a choice lists. The anchor sits near the bottom edge of the dashed box. */
+#example-element {
+  width: min(100%, 320px);
+  padding: 16px;
+}
+
+.stage {
+  position: relative;
+  height: 150px;
+  margin-bottom: 40px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+.anchor {
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  anchor-name: --anchor;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--a1);
+}
+
+.tip {
+  position: absolute;
+  position-anchor: --anchor;
+  position-area: bottom;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--a2);
+}
+
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.note::before {
+  content: var(--note, "No @position-try rule yet: the tooltip overflows the box");
+}

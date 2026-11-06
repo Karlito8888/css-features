@@ -1,0 +1,33 @@
+/* @charset only works as the very first bytes of a style sheet file: inside a style element, or
+   in the page's own CSS, it is ignored. That is why the two sheets above are linked files. */
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 360px);
+  padding: 18px 22px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0;
+}
+
+.row span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+code {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}

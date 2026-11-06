@@ -1,0 +1,35 @@
+@media (width < 520px) {
+  .grid { grid-template-columns: 1fr; }
+  .which { --which: "Viewport under 520px: one column"; }
+}
+@media (width >= 520px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+  .which { --which: "Viewport 520px or more: three columns"; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .tile { --grad: linear-gradient(135deg, var(--a3), var(--a5)); border-radius: 999px; }
+  .which { --which: "System set to dark: cyan round tiles"; }
+}
+@media (prefers-color-scheme: light) {
+  .tile { --grad: linear-gradient(135deg, var(--a4), var(--a2)); border-radius: 4px; }
+  .which { --which: "System set to light: warm square tiles"; }
+}
+
+@media (orientation: portrait) {
+  .tile { min-height: 110px; }
+  .which { --which: "Taller than wide: tall tiles"; }
+}
+@media (orientation: landscape) {
+  .tile { min-height: 32px; }
+  .which { --which: "Wider than tall: flat tiles"; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tile { transform: scale(0.8); }
+  .which { --which: "Mouse or trackpad: small targets"; }
+}
+@media not ((hover: hover) and (pointer: fine)) {
+  .tile { min-height: 96px; font-size: 28px; }
+  .which { --which: "Touch first: big targets"; }
+}

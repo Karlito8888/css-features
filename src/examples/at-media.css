@@ -1,0 +1,25 @@
+/* Every choice has two branches, so one of them always applies, and the label prints which. */
+#example-element {
+  width: min(100%, 440px);
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tile {
+  min-height: 56px;
+}
+
+.which {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.which::before {
+  content: var(--which, "No media rule applied");
+}

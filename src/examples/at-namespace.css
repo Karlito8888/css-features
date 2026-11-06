@@ -1,0 +1,33 @@
+/* Two elements are named a: the HTML link and the SVG link. A plain type selector matches both,
+   a namespace prefix picks one. */
+#example-element {
+  display: grid;
+  gap: 6px;
+  width: min(100%, 360px);
+  padding: 18px 22px;
+}
+
+.row {
+  margin: 0;
+}
+
+svg {
+  display: block;
+  overflow: visible;
+}
+
+svg text {
+  font-size: 16px;
+  font-weight: 500;
+  fill: currentColor;
+}
+
+.note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.note::before {
+  content: var(--note, "No @namespace rule yet: nothing is styled");
+}

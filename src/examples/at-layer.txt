@@ -1,0 +1,21 @@
+@layer reset, theme;
+@layer reset { .btn { --who: "reset"; background: var(--a2); } }
+@layer theme { .btn { --who: "theme"; background: var(--a3); } }
+
+@layer theme, reset;
+@layer reset { .btn { --who: "reset"; background: var(--a2); } }
+@layer theme { .btn { --who: "theme"; background: var(--a3); } }
+
+.btn { --who: "unlayered"; background: var(--a4); }
+@layer reset, theme;
+@layer reset { .btn { --who: "reset"; background: var(--a2); } }
+@layer theme { .btn { --who: "theme"; background: var(--a3); } }
+
+@layer base, brand, theme;
+@layer base { .btn { --who: "base" !important; background: var(--a5) !important; } }
+@layer brand { .btn { --who: "brand" !important; background: var(--a1) !important; } }
+@layer theme { .btn { --who: "theme" !important; background: var(--a3) !important; } }
+
+@layer ui.reset, ui.theme;
+@layer ui.theme { .btn { --who: "ui.theme"; background: var(--a1); } }
+@layer ui.reset { .btn { --who: "ui.reset"; background: var(--a2); } }

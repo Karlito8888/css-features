@@ -1,0 +1,15 @@
+@namespace svg url("http://www.w3.org/2000/svg");
+svg|a { color: var(--a2); text-decoration: underline; }
+.note { --note: "svg|a: only the SVG link is styled"; }
+
+@namespace html url("http://www.w3.org/1999/xhtml");
+html|a { color: var(--a3); font-weight: 800; text-decoration: wavy underline; }
+.note { --note: "html|a: only the HTML link is styled"; }
+
+@namespace url("http://www.w3.org/1999/xhtml");
+a { color: var(--a4); font-weight: 800; }
+.note { --note: "A default namespace: a alone now means the HTML a, never the SVG one"; }
+
+@namespace svg url("http://www.w3.org/2000/svg");
+*|a { color: var(--a5); text-decoration: underline; }
+.note { --note: "*|a: an a in any namespace, so both links"; }

@@ -1,0 +1,27 @@
+/* The badge is grey until an imported style sheet recolours it. The sheets are tiny data: URLs
+   holding one rule, so no file is downloaded; a real @import names a file. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  width: min(100%, 360px);
+  padding: 18px 22px;
+}
+
+.badge {
+  padding: 8px 16px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  background: #475569;
+}
+
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.note::before {
+  content: var(--note, "No @import yet: the page's own grey");
+}

@@ -1,0 +1,27 @@
+@keyframes bounce {
+  0%, 100% { translate: 0 0; animation-timing-function: ease-out; }
+  50% { translate: 0 -48px; animation-timing-function: ease-in; }
+}
+.dot { animation: bounce 1s infinite; }
+.note { --note: "0%, 50% and 100%: up and down, with an easing set per keyframe"; }
+
+@keyframes traffic {
+  0%, 100% { background: var(--a5); }
+  35% { background: var(--a4); }
+  70% { background: var(--a2); }
+}
+.dot { animation: traffic 3s infinite; }
+.note { --note: "Four stops on three colours: the animation loops back to the first"; }
+
+@keyframes grow {
+  to { width: 100%; }
+}
+.dot { animation: grow 2s ease-in-out infinite alternate; }
+.note { --note: "Only a to keyframe: the from keyframe is the element's own 48px width"; }
+
+@keyframes wobble {
+  from { rotate: -14deg; }
+  to { rotate: 14deg; scale: 1.25; }
+}
+.dot { animation: wobble 0.8s ease-in-out infinite alternate; }
+.note { --note: "from and to: rotate and scale together, back and forth"; }

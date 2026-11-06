@@ -1,0 +1,25 @@
+@-webkit-keyframes pulse {
+  from { scale: 1; opacity: 1; }
+  to { scale: 1.5; opacity: 0.4; }
+}
+.dot { -webkit-animation: pulse 1s ease-in-out infinite alternate; }
+.note { --note: "Everything prefixed: the 2012 way, still understood here"; }
+
+@-webkit-keyframes slide {
+  from { translate: 0 0; }
+  to { translate: min(240px, 60cqw) 0; }
+}
+.stage { container-type: inline-size; }
+.dot { animation: slide 1.5s ease-in-out infinite alternate; }
+.note { --note: "Prefixed rule, standard animation property: the rule is found by name"; }
+
+@-webkit-keyframes jump {
+  from { translate: 0 -20px; }
+  to { translate: 0 20px; }
+}
+@keyframes jump {
+  from { rotate: 0deg; }
+  to { rotate: 180deg; }
+}
+.dot { animation: jump 1.2s linear infinite alternate; }
+.note { --note: "Both rules share the name jump: the later standard one wins, it rotates"; }

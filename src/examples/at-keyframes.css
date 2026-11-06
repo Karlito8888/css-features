@@ -1,0 +1,31 @@
+/* The dot has no animation of its own: each choice defines one @keyframes rule and starts it. */
+#example-element {
+  width: min(100%, 360px);
+  padding: 16px;
+}
+
+.stage {
+  display: grid;
+  align-items: end;
+  height: 110px;
+  padding: 10px;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+}
+
+.dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--grad);
+}
+
+.note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.note::before {
+  content: var(--note, "No @keyframes rule yet");
+}

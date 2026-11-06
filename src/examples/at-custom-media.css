@@ -1,0 +1,42 @@
+/* Each choice names a query once with @custom-media, then uses the name in @media. Where the rule
+   is unknown, the named query matches nothing: the last line says so plainly. */
+#example-element {
+  width: min(100%, 440px);
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.tile {
+  min-height: 52px;
+}
+
+.line {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.def {
+  margin-top: 12px;
+}
+
+.def::before {
+  content: var(--def, "No @custom-media rule yet");
+}
+
+.which::before {
+  content: var(--which, "No named query matched");
+}
+
+.state {
+  color: var(--ink);
+}
+
+.state code {
+  font-size: 11px;
+}

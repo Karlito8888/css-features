@@ -1,0 +1,7 @@
+<article id="example-element" class="card">
+  <link rel="stylesheet" href="data:text/css,@charset%20%22windows-1252%22%3B%0A.with::after%7Bcontent:%22caf%E9%22%7D">
+  <link rel="stylesheet" href="data:text/css,.without::after%7Bcontent:%22caf%E9%22%7D">
+  <p class="row"><code>@charset "windows-1252"</code><span class="with"></span></p>
+  <p class="row"><code>no @charset</code><span class="without"></span></p>
+  <p class="note">Two linked style sheets hold the same bytes, <code>caf</code> then <code>0xE9</code>. The page is UTF-8, so without the rule the browser reads 0xE9 as UTF-8, where it is not valid. The rule says the file is windows-1252, where 0xE9 is the letter é.</p>
+</article>

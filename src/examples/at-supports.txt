@@ -1,0 +1,33 @@
+@supports (display: grid) {
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .tile { width: auto; }
+  .which { --which: "display: grid is supported: three equal columns"; }
+}
+@supports not (display: grid) {
+  .which { --which: "No grid: the fixed-width flex row stays"; }
+}
+
+@supports (color: oklch(0.7 0.2 30)) {
+  .tile { --grad: linear-gradient(in oklch 135deg, oklch(0.75 0.2 150), oklch(0.65 0.25 300)); }
+  .which { --which: "oklch() is supported: a gradient interpolated in oklch"; }
+}
+@supports not (color: oklch(0.7 0.2 30)) {
+  .tile { --grad: var(--a4); }
+  .which { --which: "No oklch(): a flat fallback colour"; }
+}
+
+@supports selector(:has(b)) {
+  .row:has(b) .tile { outline: 3px solid var(--a4); outline-offset: 3px; }
+  .which { --which: "selector(:has(b)) is supported: the row is styled from its child"; }
+}
+@supports not selector(:has(b)) {
+  .which { --which: "No :has(): the row cannot be styled from its child"; }
+}
+
+@supports (container-type: inline-size) {
+  .tile { border-radius: 50%; width: 56px; }
+  .which { --which: "container-type is supported: container queries are available, round tiles"; }
+}
+@supports not (container-type: inline-size) {
+  .which { --which: "No container-type: no container queries here"; }
+}

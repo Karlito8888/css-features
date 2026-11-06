@@ -1,0 +1,19 @@
+@scope (.light) {
+  p { background: var(--a1); color: #fff; }
+}
+@scope (.dark) {
+  p { background: var(--a2); color: #fff; }
+}
+
+@scope (.light) to (.dark) {
+  p { background: var(--a3); color: #fff; }
+}
+
+@scope (.dark) {
+  p { background: var(--a4); color: #0f172a; font-weight: 700; }
+}
+
+@scope (.light) {
+  :scope { border: 2px solid var(--a5); }
+  :scope > p { background: var(--a5); color: #0f172a; }
+}

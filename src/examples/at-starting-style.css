@@ -1,0 +1,43 @@
+/* The popover is closed until the button opens it, so the entry transition only runs on that click. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  width: min(100%, 320px);
+  padding: 18px;
+}
+
+.open {
+  padding: 8px 16px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--a1);
+}
+
+[popover] {
+  padding: 22px 30px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  background: var(--card);
+  box-shadow: 0 18px 40px -20px rgb(15 23 42 / 0.5);
+}
+
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+code {
+  color: var(--ink);
+  font-size: 12px;
+  white-space: nowrap;
+}

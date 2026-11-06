@@ -1,0 +1,61 @@
+/* .wrap is the container named "outer" and .pane the one named "pane". An unnamed query reads the
+   nearest container, a named one the nearest container of that name. The label prints the branch. */
+#example-element {
+  container: outer / inline-size;
+  width: min(100%, 440px);
+  --accent: teal;
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+}
+
+.media {
+  height: 70px;
+  border-radius: 12px;
+  background: var(--grad);
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.pane {
+  container: pane / inline-size;
+  width: 50%;
+  margin-top: 8px;
+}
+
+.badge {
+  display: block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--muted);
+}
+
+.badge::after {
+  content: var(--tag, "no rule yet");
+}
+
+.which {
+  margin: 10px 4px 0;
+  font-size: 12px;
+}
+
+.which::before {
+  content: var(--which, "No container rule applied");
+}

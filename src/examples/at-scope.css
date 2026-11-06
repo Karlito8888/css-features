@@ -1,0 +1,20 @@
+/* The boxes nest: light, dark, light. The choices style their paragraphs from different scope roots. */
+#example-element {
+  width: min(100%, 360px);
+  padding: 14px;
+  font-size: 14px;
+}
+
+.box {
+  display: grid;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+}
+
+.box p {
+  margin: 0;
+  padding: 3px 6px;
+  border-radius: 6px;
+}

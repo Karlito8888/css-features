@@ -1,0 +1,38 @@
+@container (width < 400px) {
+  .card { grid-template-columns: 1fr; }
+  .which { --which: "Wrap under 400px wide: stacked"; }
+}
+@container (width >= 400px) {
+  .card { grid-template-columns: 110px 1fr; align-items: center; }
+  .media { height: 90px; }
+  .which { --which: "Wrap 400px or wider: image beside the text"; }
+}
+
+@container (250px <= width <= 420px) {
+  h3 { color: var(--a2); font-size: 22px; }
+  .which { --which: "Wrap between 250px and 420px: pink title"; }
+}
+@container not (250px <= width <= 420px) {
+  h3 { color: var(--a5); font-size: 15px; }
+  .which { --which: "Wrap outside that range: green small title"; }
+}
+
+@container outer (width >= 300px) {
+  .badge { --tag: "outer ≥ 300px"; background: var(--a1); }
+}
+@container outer not (width >= 300px) {
+  .badge { --tag: "outer < 300px"; background: var(--a4); }
+}
+
+@container pane (width >= 130px) {
+  .badge { --tag: "pane ≥ 130px"; background: var(--a3); }
+}
+@container pane not (width >= 130px) {
+  .badge { --tag: "pane < 130px"; background: var(--a2); }
+}
+
+@container style(--accent: teal) {
+  h3 { color: var(--a3); text-decoration: underline wavy; }
+  .media { background: var(--a3); height: 30px; }
+  .which { --which: "style(--accent: teal): the container's custom property matched"; }
+}

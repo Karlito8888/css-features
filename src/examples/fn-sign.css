@@ -1,0 +1,35 @@
+/* Three inputs, one rule. sign() turns each into -1, 0 or 1, and a counter prints the result under the box. */
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+figure {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  width: 80px;
+  margin: 0;
+  counter-set: s sign(var(--d));
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: var(--grad);
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+figcaption::after {
+  content: " → " counter(s);
+  display: block;
+  color: var(--ink);
+  font-weight: 700;
+}

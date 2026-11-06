@@ -1,0 +1,7 @@
+/* number values: no unit. 3e-1 is the number 0.3 in scientific notation. */
+#example-element {
+  width: 250px;
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 14px;
+}

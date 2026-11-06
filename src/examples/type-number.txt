@@ -1,0 +1,9 @@
+line-height: 1;
+
+line-height: 2.2;
+
+font-weight: 900;
+
+scale: 0.75;
+
+opacity: 3e-1;

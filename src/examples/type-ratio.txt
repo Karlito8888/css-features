@@ -1,0 +1,9 @@
+aspect-ratio: 16 / 9;
+
+aspect-ratio: 4 / 3;
+
+aspect-ratio: 1;
+
+aspect-ratio: 0.5;
+
+aspect-ratio: 21 / 9;

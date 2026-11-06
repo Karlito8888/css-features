@@ -1,0 +1,9 @@
+grid-template-areas: "head head" "side main";
+
+grid-template-areas: "head head" "main side";
+
+grid-template-areas: "side head" "side main";
+
+grid-template-areas: "head" "main" "side";
+
+grid-template-areas: "side main" "side main" "head head";

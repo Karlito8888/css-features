@@ -1,0 +1,9 @@
+background-image: conic-gradient(var(--a1) 0 90deg, var(--a2) 0 180deg, var(--a3) 0 270deg, var(--a4) 0);
+
+background-image: conic-gradient(var(--a1) 0 40%, var(--a2) 0 65%, var(--a3) 0 85%, var(--a5) 0);
+
+background-image: conic-gradient(var(--a1) 0 0.125turn, var(--a2) 0 0.5turn, var(--a3) 0);
+
+background-image: conic-gradient(var(--a1) 0 calc(25% + 45deg), var(--a2) 0 calc(50% + 0.1turn), var(--a4) 0);
+
+background-image: conic-gradient(var(--a1) 0 1rad, var(--a2) 0 3rad, var(--a5) 0);

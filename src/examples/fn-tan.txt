@@ -1,0 +1,7 @@
+clip-path: polygon(0 100%, 100% 100%, 100% calc(100% - 160px * tan(15deg)));
+
+clip-path: polygon(0 100%, 100% 100%, 100% calc(100% - 160px * tan(30deg)));
+
+clip-path: polygon(0 100%, 100% 100%, 100% calc(100% - 160px * tan(45deg)));
+
+clip-path: polygon(0 100%, 100% 100%, 100% calc(100% - 160px * tan(1rad)));

@@ -1,0 +1,9 @@
+color: oklch(62% 0.21 275);
+
+color: oklch(70% 0.19 150);
+
+color: oklch(0.75 0.15 60);
+
+color: oklch(65% 0.25 350);
+
+color: oklch(55% 0.13 220deg);

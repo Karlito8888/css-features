@@ -1,0 +1,47 @@
+/* A dashed-ident starts with two hyphens, so it can never clash with a keyword. Here it names custom properties
+   (--sun, --sea, --moss) and, in the last choice, an anchor (--target) that the label below is tied to. */
+:root {
+  --sun: var(--a4);
+  --sea: var(--a3);
+  --moss: var(--a5);
+}
+
+.stage {
+  position: relative;
+  min-height: 120px;
+  width: 240px;
+}
+
+#example-element {
+  width: 160px;
+  min-height: 72px;
+  padding: 0 8px;
+  font-size: 13px;
+  text-align: center;
+  background-image: none;
+  background-color: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+
+/* The fills are fixed accents in both themes: the label sits on a card chip so it reads on any of them. */
+.name {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+.tip {
+  position: absolute;
+  position-anchor: --target;
+  position-area: bottom;
+  margin: 8px 0 0;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--a2);
+  color: #fff;
+  font-size: 12px;
+  white-space: nowrap;
+}

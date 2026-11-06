@@ -1,0 +1,7 @@
+.dot { translate: calc(cos(var(--a)) * 90px) calc(sin(var(--a)) * 90px); }
+
+.dot { translate: calc(cos(var(--a)) * 120px) calc(sin(var(--a)) * 60px); }
+
+.dot { --r: calc(24px + var(--i) * 8px); translate: calc(cos(var(--a)) * var(--r)) calc(sin(var(--a)) * var(--r)); }
+
+.dot { translate: calc(var(--i) * 28px - 126px) calc(cos(var(--i) * 45deg) * -50px); }

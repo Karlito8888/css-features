@@ -1,0 +1,7 @@
+.row i { height: calc(sibling-index() * 14px); }
+
+.row i { background: hsl(calc(sibling-index() * 45) 80% 55%); }
+
+.row i { rotate: calc(sibling-index() * 12deg); }
+
+.row i { opacity: calc(sibling-index() * 0.12); }

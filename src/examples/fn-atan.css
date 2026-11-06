@@ -1,0 +1,54 @@
+@property --a {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* The dashed ground line runs through the middle of the box; the plank pivots on its left end. */
+#example-element {
+  position: relative;
+  width: min(100%, 300px);
+  height: 230px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat, var(--card);
+  counter-reset: d round(var(--a) / 1deg);
+}
+
+.ramp {
+  position: absolute;
+  top: calc(50% - 5px);
+  left: 36px;
+  width: 120px;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--a4), var(--a2));
+  transform-origin: 5px 50%;
+  rotate: calc(-1 * var(--a));
+}
+
+.out {
+  position: absolute;
+  top: calc(50% - 14px);
+  right: 16px;
+  font: 700 22px/1 system-ui, sans-serif;
+}
+
+.out::after {
+  content: counter(d) "°";
+}

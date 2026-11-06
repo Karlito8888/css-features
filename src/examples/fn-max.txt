@@ -1,0 +1,9 @@
+width: max(25%, 12rem);
+
+width: max(60%, 6rem);
+
+font-size: max(5vw, 1.25rem);
+
+padding: max(1rem, 6vw);
+
+margin-inline: max(1rem, 12%);

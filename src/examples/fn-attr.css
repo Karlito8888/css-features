@@ -1,0 +1,30 @@
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.hint code {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  width: 9rem;
+  min-height: 84px;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+  background: var(--grad);
+  box-shadow: 0 8px 22px -10px color-mix(in oklab, var(--a1) 70%, transparent);
+}

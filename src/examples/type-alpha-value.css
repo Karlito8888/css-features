@@ -1,0 +1,48 @@
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 520px);
+  height: 150px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+.disc {
+  width: 110px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.mine {
+  margin-inline-end: -36px;
+  background: currentColor;
+  z-index: 1;
+}
+
+.other {
+  background: var(--a4);
+}
+
+/* A checkerboard makes transparency visible. */
+.checker {
+  background: conic-gradient(var(--line) 25%, transparent 0 50%, var(--line) 0 75%, transparent 0) 0 0 / 16px 16px, var(--card);
+}
+
+.cap {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.cap {
+  width: min(100%, 520px);
+  margin-top: 12px;
+}

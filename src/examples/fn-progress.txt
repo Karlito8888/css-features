@@ -1,0 +1,9 @@
+width: calc(progress(100vw, 300px, 1200px) * 100%);
+
+width: calc(progress(100vw, 300px, 450px) * 100%);
+
+background: color-mix(in oklab, var(--a3), var(--a2) calc(progress(100vw, 300px, 1200px) * 100%));
+
+width: calc(30% + progress(100vw, 300px, 1200px) * 70%);
+
+height: calc(10px + progress(100vw, 300px, 1200px) * 60px);

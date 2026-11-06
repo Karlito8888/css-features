@@ -1,0 +1,7 @@
+.dot { translate: 0 calc(rem(var(--i), 3) * -20px); }
+
+.dot { translate: 0 calc(rem(var(--i), 4) * -20px); }
+
+.dot { translate: 0 calc(rem(var(--i), 2.5) * -20px); }
+
+.dot { translate: 0 calc(rem(var(--i) * 1.5, 4) * -20px); }

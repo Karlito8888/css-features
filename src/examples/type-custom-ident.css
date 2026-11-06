@@ -1,0 +1,17 @@
+/* A custom-ident is a name the author invents: head, side and main below are grid-area names, not keywords.
+   Each choice lays the same three named areas out differently. */
+.grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 52px;
+  gap: 8px;
+  width: 260px;
+}
+
+.head { grid-area: head; }
+.side { grid-area: side; }
+.main { grid-area: main; }
+
+.tile {
+  min-height: 0;
+}

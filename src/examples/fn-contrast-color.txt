@@ -1,0 +1,9 @@
+background: #fde68a; color: contrast-color(#fde68a);
+
+background: #1e1b4b; color: contrast-color(#1e1b4b);
+
+background: var(--a3); color: contrast-color(var(--a3));
+
+background: oklch(55% 0.2 340); color: contrast-color(oklch(55% 0.2 340));
+
+background: #64748b; color: contrast-color(#64748b);

@@ -1,0 +1,15 @@
+background-image: var(--dots);
+background-size: 24px;
+background-color: var(--card);
+color: var(--ink);
+border: 1px solid var(--line);
+
+background-image: var(--dots), var(--grad);
+background-size: 24px, auto;
+
+mask: var(--star) center / contain no-repeat;
+
+border: 12px solid transparent;
+border-image: var(--frame) 10 / 12px round;
+background: var(--card);
+color: var(--ink);

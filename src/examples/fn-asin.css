@@ -1,0 +1,61 @@
+@property --a {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* The dial: ticks every 15deg around a card-coloured disc. */
+#example-element {
+  position: relative;
+  width: 210px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(closest-side, var(--card) 84%, transparent 84.5%),
+    repeating-conic-gradient(from -1deg, var(--muted) 0 2deg, transparent 2deg 15deg);
+  counter-reset: d round(var(--a) / 1deg);
+}
+
+.needle {
+  position: absolute;
+  bottom: 50%;
+  left: calc(50% - 3px);
+  width: 6px;
+  height: 40%;
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--a3), var(--a1));
+  transform-origin: 50% 100%;
+  rotate: var(--a);
+}
+
+.hub {
+  position: absolute;
+  inset: calc(50% - 7px);
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.out {
+  position: absolute;
+  inset: 64% 0 auto;
+  text-align: center;
+  font: 700 22px/1 system-ui, sans-serif;
+}
+
+.out::after {
+  content: counter(d) "°";
+}

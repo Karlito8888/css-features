@@ -1,0 +1,53 @@
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* x runs from -5 to 5 (--i). A dot sits as high as the result for its x: one grid line is one unit, the strong line is 0. */
+i {
+  font-style: normal;
+}
+
+#example-element {
+  display: flex;
+  width: 100%;
+  height: 202px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    linear-gradient(var(--muted), var(--muted)) 0 50% / 100% 2px no-repeat,
+    repeating-linear-gradient(180deg, var(--line) 0 1px, transparent 1px 20px),
+    var(--card);
+}
+
+.col {
+  position: relative;
+  display: grid;
+  flex: 1;
+  place-items: center;
+  counter-reset: n var(--i);
+}
+
+.col::after {
+  content: counter(n);
+  position: absolute;
+  bottom: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--a4), var(--a2));
+  transition: translate 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}

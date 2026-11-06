@@ -1,0 +1,7 @@
+/* An angle-percentage stop position on a conic gradient: a percentage is a share of the full 360deg turn. */
+#example-element {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px var(--card), 0 0 0 7px var(--line);
+}

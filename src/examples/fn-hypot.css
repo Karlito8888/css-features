@@ -1,0 +1,75 @@
+@property --x {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --y {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --h {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.stage {
+  width: 100%;
+  height: 215px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+#example-element {
+  position: relative;
+  box-sizing: content-box;
+  width: var(--x);
+  height: var(--y);
+  border: 2px solid color-mix(in oklab, var(--a1) 55%, transparent);
+  border-radius: 4px;
+  counter-reset: d round(var(--h) / 1px);
+}
+
+/* Inside the border, so the corner (0, 0) is the box's top-left and (x, y) its bottom-right. */
+.diag {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: var(--h);
+  height: 4px;
+  border-radius: 2px;
+  background: var(--grad);
+  transform-origin: 0 50%;
+  rotate: atan2(var(--y), var(--x));
+}
+
+.out {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  white-space: nowrap;
+  font: 700 16px/1 system-ui, sans-serif;
+}
+
+.out::after {
+  content: "bar length " counter(d) "px";
+}

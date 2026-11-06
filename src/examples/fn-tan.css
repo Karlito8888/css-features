@@ -1,0 +1,18 @@
+/* tan() gives the slope of an angle: rise = base * tan(angle). The dashed square is the 160px box. */
+.frame {
+  width: 162px;
+  height: 162px;
+  border: 1px dashed var(--muted);
+}
+
+#example-element {
+  width: 160px;
+  height: 160px;
+  background: var(--grad);
+}
+
+.cap {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}

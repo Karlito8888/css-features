@@ -1,0 +1,11 @@
+color: rebeccapurple;
+
+color: tomato;
+
+color: mediumseagreen;
+
+color: gold;
+
+color: cornflowerblue;
+
+color: deeppink;

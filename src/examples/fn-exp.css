@@ -1,0 +1,52 @@
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* Eight bars, numbered 1 to 8 by --i; each choice sets how tall bar i is. */
+i {
+  font-style: normal;
+}
+
+#example-element {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 100%;
+  height: 180px;
+  padding: 10px 12px 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.bar {
+  position: relative;
+  width: min(10%, 28px);
+  min-height: 3px;
+  height: 3px;
+  border-radius: 8px 8px 3px 3px;
+  background: linear-gradient(180deg, var(--a4), var(--a2));
+  counter-reset: n var(--i);
+  transition: height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.bar::after {
+  content: counter(n);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+background-color: #6366f1;
+
+background-color: rebeccapurple;
+
+background-color: hsl(170 70% 40%);
+
+background-color: oklch(75% 0.17 60);
+
+background-color: color-mix(in oklch, var(--a2), var(--a3));
+
+background-color: color(display-p3 1 0.2 0.3 / 0.6);

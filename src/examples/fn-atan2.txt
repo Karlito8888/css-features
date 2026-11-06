@@ -1,0 +1,9 @@
+--x: 80px; --y: -60px; --a: atan2(var(--y), var(--x));
+
+--x: -70px; --y: 50px; --a: atan2(var(--y), var(--x));
+
+--x: 0px; --y: -85px; --a: atan2(var(--y), var(--x));
+
+--x: -90px; --y: 0px; --a: atan2(var(--y), var(--x));
+
+--x: 60px; --y: 70px; --a: atan2(var(--y), var(--x));

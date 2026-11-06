@@ -1,0 +1,8 @@
+#example-element { grid-template-columns: repeat(3, 1fr); }
+
+#example-element { grid-template-columns: repeat(6, 1fr); }
+
+#example-element { grid-auto-flow: column; grid-template-rows: repeat(2, 1fr); grid-template-columns: none; grid-auto-columns: 1fr; }
+
+#example-element > :nth-child(1) { order: 4; }
+#example-element > :nth-child(2) { order: -1; }

@@ -1,0 +1,28 @@
+/* time values in seconds (s) and milliseconds (ms): the shorter the duration, the faster the bar fills. */
+.track {
+  width: 260px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+}
+
+#example-element {
+  min-height: 44px;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: fill linear infinite;
+  animation-delay: -1s;
+}
+
+@keyframes fill {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.cap {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}

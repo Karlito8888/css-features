@@ -1,0 +1,7 @@
+--x: 120px; --y: 90px; --h: hypot(var(--x), var(--y));
+
+--x: 160px; --y: 60px; --h: hypot(var(--x), var(--y));
+
+--x: 60px; --y: 120px; --h: hypot(var(--x), var(--y));
+
+--x: 100px; --y: 100px; --h: hypot(var(--x), var(--y));

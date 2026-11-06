@@ -1,0 +1,9 @@
+color: lch(60 80 40);
+
+color: lch(80 50 150);
+
+color: lch(40 60 280);
+
+color: lch(70 100 340);
+
+color: lch(55 35 90);

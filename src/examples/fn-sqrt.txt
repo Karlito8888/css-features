@@ -1,0 +1,7 @@
+.sq { width: calc(sqrt(var(--n)) * 10px); height: calc(sqrt(var(--n)) * 10px); }
+
+.sq { width: calc(sqrt(var(--n)) * 10px); height: calc(sqrt(var(--n)) * 10px); border-radius: 50%; }
+
+.sq { height: calc(sqrt(var(--n)) * 14px); }
+
+.sq { opacity: calc(sqrt(var(--n)) / 5); }

@@ -1,0 +1,7 @@
+height: calc-size(auto, size);
+
+height: calc-size(auto, size / 2);
+
+height: calc-size(auto, size + 60px);
+
+width: calc-size(min-content, size + 8rem);

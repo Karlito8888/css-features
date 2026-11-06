@@ -1,0 +1,9 @@
+background: GrayText; color: Canvas;
+
+background: AccentColor; color: AccentColorText;
+
+background: Mark; color: MarkText;
+
+background: ButtonFace; color: ButtonText; border-color: ButtonBorder;
+
+background: Canvas; color: LinkText;

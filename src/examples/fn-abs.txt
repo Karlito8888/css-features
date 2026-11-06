@@ -1,0 +1,7 @@
+--in: -90px; --out: abs(var(--in));
+
+--in: 60px; --out: abs(var(--in));
+
+--in: -40px; --out: abs(var(--in) * 2);
+
+--in: 30px; --out: abs(var(--in) - 100px);

@@ -1,0 +1,8 @@
+list-style-image: var(--bullet);
+
+list-style-image: var(--check);
+
+background-image: var(--bullet), var(--dots);
+background-position: right 14px top 14px, left 4px top 0;
+background-size: 28px, 24px;
+background-repeat: no-repeat, repeat-y;

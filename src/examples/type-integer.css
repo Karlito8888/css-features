@@ -1,0 +1,11 @@
+/* integer values: whole numbers that count (repeat(), grid-template-rows) or rank (order, negative included). */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 260px;
+}
+
+.tile {
+  min-height: 40px;
+}

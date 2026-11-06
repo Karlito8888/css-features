@@ -1,0 +1,9 @@
+#example-element::before { content: attr(data-label); }
+
+#example-element { width: attr(data-width type(<length>), 5rem); }
+
+#example-element { background: attr(data-color type(<color>), var(--a5)); }
+
+#example-element { rotate: attr(data-angle deg, 0deg); }
+
+#example-element { width: attr(data-missing type(<length>), 5rem); }

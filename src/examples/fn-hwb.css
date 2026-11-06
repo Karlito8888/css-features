@@ -1,0 +1,44 @@
+#example-element {
+  width: min(100%, 520px);
+  display: grid;
+  gap: 10px;
+}
+
+.swatch {
+  height: 84px;
+  border-radius: 14px;
+  background: currentColor;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+}
+
+.row i {
+  height: 36px;
+  border-radius: 10px;
+}
+
+.swatch,
+.row i {
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.cap {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.row.five {
+  grid-template-columns: repeat(5, 1fr);
+}

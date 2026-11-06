@@ -1,0 +1,11 @@
+#example-element { quotes: "«\00a0" "\00a0»"; }
+
+#example-element { quotes: "\201E" "\201C"; }
+
+#example-element::before { content: "\2726 "; }
+#example-element::after { content: " \2726"; }
+
+#example-element::before { content: "say \"hi\": "; }
+#example-element::after { content: ""; }
+
+#example-element { font-family: "Courier New", monospace; }

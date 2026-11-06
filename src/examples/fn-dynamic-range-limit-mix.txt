@@ -1,0 +1,7 @@
+dynamic-range-limit: dynamic-range-limit-mix(standard 75%, no-limit 25%); --hdr: 25%;
+
+dynamic-range-limit: dynamic-range-limit-mix(standard 50%, no-limit 50%); --hdr: 50%;
+
+dynamic-range-limit: dynamic-range-limit-mix(constrained 40%, no-limit 60%); --hdr: 60%;
+
+dynamic-range-limit: dynamic-range-limit-mix(standard 10%, no-limit 90%); --hdr: 90%;

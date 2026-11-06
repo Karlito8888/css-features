@@ -1,0 +1,6 @@
+/* string values are quoted text: in quotes, in content, in a font name. \201E is a Unicode escape inside a string. */
+.card {
+  width: 250px;
+  margin: 0;
+  font-size: 16px;
+}

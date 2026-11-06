@@ -1,0 +1,45 @@
+#example-element {
+  width: min(100%, 520px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.col {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  min-height: 130px;
+  padding: 14px 16px;
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.col span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.light { color-scheme: light; }
+.dark { color-scheme: dark; }
+
+.cap {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.cap {
+  width: min(100%, 520px);
+  margin-top: 12px;
+}

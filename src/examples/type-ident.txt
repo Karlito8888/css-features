@@ -1,0 +1,7 @@
+#example-element::after { content: attr(data-label); }
+
+#example-element::after { content: attr(data-unit); }
+
+#example-element::after { content: attr(title); }
+
+#example-element::after { content: attr(data-note); }

@@ -1,0 +1,9 @@
+background-color: alpha(from var(--card) / 0.2);
+
+background-color: alpha(from var(--card) / 0.6);
+
+background-color: alpha(from var(--card) / 0.95);
+
+background-color: alpha(from var(--a1) / 0.55);
+
+background-color: alpha(from var(--a5) / 30%);

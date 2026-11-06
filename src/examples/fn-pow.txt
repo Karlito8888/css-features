@@ -1,0 +1,7 @@
+.bar { height: calc(pow(var(--i), 2) * 2px); }
+
+.bar { height: calc(pow(var(--i), 3) * 0.25px); }
+
+.bar { height: calc(pow(2, var(--i)) * 0.5px); }
+
+.bar { height: calc(pow(var(--i), 0.5) * 45px); }

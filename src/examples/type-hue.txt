@@ -1,0 +1,9 @@
+color: hsl(30 90% 55%);
+
+color: hsl(0.5turn 90% 55%);
+
+color: hsl(5rad 90% 55%);
+
+color: hsl(100grad 90% 55%);
+
+color: hsl(320deg 90% 55%);

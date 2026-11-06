@@ -1,0 +1,9 @@
+color: hsl(262 83% 58%);
+
+color: hsl(340deg 85% 55%);
+
+color: hsl(38 92% 50%);
+
+color: hsl(0.4turn 60% 45%);
+
+color: hsl(200, 100%, 40%);

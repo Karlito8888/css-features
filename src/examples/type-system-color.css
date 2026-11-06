@@ -1,0 +1,39 @@
+#example-element {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: min(100%, 520px);
+  min-height: 130px;
+  padding: 22px 26px;
+  border: 3px solid transparent;
+  border-radius: 20px;
+}
+
+.aa {
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.sample {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.cap {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.cap {
+  width: min(100%, 520px);
+  margin-top: 12px;
+}

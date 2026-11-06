@@ -1,0 +1,9 @@
+width: calc(100% - 40px);
+
+width: calc(50% + 3rem);
+
+width: calc((100% - 2 * 12px) / 3);
+
+width: calc(2 * (4rem + 10px));
+
+margin-left: calc(100% - 8rem); width: 8rem;

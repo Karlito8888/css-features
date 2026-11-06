@@ -1,0 +1,7 @@
+.bar { height: calc(log(var(--i)) * 40px); }
+
+.bar { height: calc(log(var(--i), 2) * 40px); }
+
+.bar { height: calc(log(var(--i), 10) * 40px); }
+
+.bar { height: calc(log(1000, var(--i) + 1) * 12px); }

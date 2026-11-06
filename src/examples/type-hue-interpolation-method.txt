@@ -1,0 +1,7 @@
+background: linear-gradient(in oklch shorter hue, var(--a1), var(--a2));
+
+background: linear-gradient(in oklch longer hue, var(--a1), var(--a2));
+
+background: linear-gradient(in oklch increasing hue, var(--a3), var(--a4));
+
+background: linear-gradient(in oklch decreasing hue, var(--a3), var(--a4));

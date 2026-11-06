@@ -1,0 +1,22 @@
+/* calc-keyword values (e, pi, infinity, NaN) are numbers: times a length they make a width. */
+.scale {
+  width: 260px;
+  overflow: hidden;
+  padding: 10px 0;
+  border-right: 1px solid var(--line);
+  background: repeating-linear-gradient(to right, color-mix(in oklab, var(--ink) 28%, transparent) 0 1px, transparent 1px 40px);
+}
+
+#example-element {
+  min-height: 44px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-inline: 2px solid var(--a2);
+  transition: none;
+}
+
+.cap {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}

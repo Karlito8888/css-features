@@ -1,0 +1,7 @@
+.dot { translate: 0 calc(sign(var(--d)) * -20px); }
+
+.dot { rotate: calc(sign(var(--d)) * 45deg); }
+
+.dot { background: hsl(calc(150 + sign(var(--d)) * 110) 75% 50%); }
+
+.dot { scale: calc(1 + sign(var(--d)) * 0.4); }

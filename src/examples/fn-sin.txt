@@ -1,0 +1,9 @@
+.bars i { translate: 0 calc(sin(var(--i) * 30deg) * -40px); }
+
+.bars i { translate: 0 calc(sin(var(--i) * 60deg) * -36px); }
+
+.bars i { height: calc(10px + 90px * abs(sin(var(--i) * 15deg))); }
+
+.bars i { rotate: calc(sin(var(--i) * 30deg) * 60deg); }
+
+.bars i { background: color-mix(in oklab, var(--a3) calc(50% + 50% * sin(var(--i) * 30deg)), var(--a2)); }

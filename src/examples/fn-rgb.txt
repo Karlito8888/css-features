@@ -1,0 +1,9 @@
+color: rgb(236 72 153);
+
+color: rgb(139 92 246);
+
+color: rgb(100% 65% 0%);
+
+color: rgb(from var(--a5) r g 220);
+
+color: rgb(34, 197, 94);

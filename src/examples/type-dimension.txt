@@ -1,0 +1,11 @@
+width: 14rem;
+--kind: "length: 14rem";
+
+rotate: 25deg;
+--kind: "angle: 25deg";
+
+animation-duration: 3s;
+--kind: "time: 3s";
+
+animation-duration: 700ms;
+--kind: "time: 700ms";

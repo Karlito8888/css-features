@@ -1,0 +1,9 @@
+background-position: top left;
+
+background-position: center;
+
+background-position: 25% 75%;
+
+background-position: bottom right;
+
+background-position: bottom 24px right 70px;

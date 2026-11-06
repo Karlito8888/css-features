@@ -1,0 +1,9 @@
+width: calc(e * 40px);
+
+width: calc(pi * 60px);
+
+width: calc(infinity * 1px);
+
+width: clamp(20px, calc(-infinity * 1px), 100%);
+
+width: calc(NaN * 1px);

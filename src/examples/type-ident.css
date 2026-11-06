@@ -1,0 +1,15 @@
+/* An ident is an unquoted name. In attr() it names the attribute to read: data-label, data-unit, title and data-note
+   are all idents, written without quotes. */
+#example-element {
+  width: 210px;
+  min-height: 96px;
+  align-content: center;
+  text-align: center;
+  font-size: 13px;
+}
+
+#example-element::after {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+}

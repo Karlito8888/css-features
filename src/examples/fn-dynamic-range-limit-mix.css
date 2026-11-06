@@ -1,0 +1,44 @@
+#example-element {
+  width: min(100%, 520px);
+}
+
+.head {
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.meter {
+  height: 14px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.meter::before {
+  content: "";
+  display: block;
+  width: var(--hdr, 100%);
+  height: 100%;
+  border-radius: 999px;
+  background: var(--grad);
+}
+
+.cap {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.cap code {
+  color: var(--ink);
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.warn { display: none; margin-top: 8px; }
+
+@supports not (dynamic-range-limit: standard) {
+  .warn { display: block; }
+}

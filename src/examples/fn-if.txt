@@ -1,0 +1,9 @@
+--tone: warm; background: if(style(--tone: warm): var(--a4); style(--tone: cool): var(--a3); else: var(--a5));
+
+--tone: cool; background: if(style(--tone: warm): var(--a4); style(--tone: cool): var(--a3); else: var(--a5));
+
+width: if(media(width >= 500px): 100%; else: 45%);
+
+background: if(supports(background: linear-gradient(in oklch, red, blue)): linear-gradient(in oklch 90deg, var(--a3), var(--a2)); else: var(--a1));
+
+--size: large; padding: if(style(--size: large): 2.75rem; style(--size: small): 0.5rem; else: 1rem);

@@ -1,0 +1,9 @@
+.dot { height: random(20px, 100px); }
+
+.dot { width: random(--size, 16px, 48px); height: random(--size, 16px, 48px); }
+
+.dot { height: random(20px, 100px, 20px); }
+
+.dot { rotate: random(-35deg, 35deg); }
+
+.dot { background: hsl(random(140, 340) 85% 60%); }

@@ -1,0 +1,9 @@
+color: color(display-p3 0.1 0.85 0.45);
+
+color: color(srgb 0.2 0.5 1);
+
+color: color(rec2020 0.35 0.2 0.9);
+
+color: color(xyz-d65 0.35 0.2 0.05);
+
+color: color(display-p3 1 0 0.5);

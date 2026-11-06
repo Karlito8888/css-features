@@ -1,0 +1,32 @@
+/* --raw is the input every choice rounds; the ruler ticks make the snapped width easy to read. */
+.ruler {
+  --raw: 137px;
+  display: grid;
+  gap: 10px;
+  width: 260px;
+  padding-top: 12px;
+  background: repeating-linear-gradient(to right, color-mix(in oklab, var(--ink) 28%, transparent) 0 1px, transparent 1px 20px);
+}
+
+.raw {
+  width: var(--raw);
+  height: 30px;
+  padding: 4px 10px;
+  border: 2px dashed var(--muted);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+#example-element {
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.cap {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}

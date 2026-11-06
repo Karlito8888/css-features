@@ -1,0 +1,13 @@
+#example-element::after { content: "below 1.5x"; }
+@media (min-resolution: 1.5x) { #example-element::after { content: "1.5x or more"; } }
+
+#example-element::after { content: "below 192dpi"; }
+@media (min-resolution: 192dpi) { #example-element::after { content: "192dpi or more"; } }
+
+#example-element::after { content: "below 2.5dppx"; }
+@media (min-resolution: 2.5dppx) { #example-element::after { content: "2.5dppx or more"; } }
+
+#example-element::after { content: "below 100dpcm"; }
+@media (min-resolution: 100dpcm) { #example-element::after { content: "100dpcm or more"; } }
+
+#example-element { background-image: image-set(var(--lo) 1x, var(--hi) 2x); background-size: 100% 100%; }

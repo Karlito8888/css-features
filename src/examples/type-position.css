@@ -1,0 +1,9 @@
+/* position values place the dot in the box: keywords, lengths, percentages, or four values with offsets from two edges. */
+#example-element {
+  width: 240px;
+  height: 150px;
+  padding: 0;
+  background-image: radial-gradient(circle closest-side, var(--a2) 0 70%, transparent 72%);
+  background-size: 44px 44px;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,7 @@
+.dot { translate: 0 calc(mod(var(--i), 3) * -20px); }
+
+.dot { translate: 0 calc(mod(var(--i), 4) * -20px); }
+
+.dot { translate: 0 calc(mod(var(--i), -3) * -20px); }
+
+.dot { translate: 0 calc(mod(var(--i) * 1.5, 4) * -20px); }

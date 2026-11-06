@@ -1,0 +1,79 @@
+@property --a {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@property --x {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --y {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+.demo {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  width: min(100%, 420px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+#example-element {
+  position: relative;
+  width: min(100%, 240px);
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background:
+    linear-gradient(var(--line), var(--line)) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(var(--line), var(--line)) 0 50% / 100% 1px no-repeat,
+    var(--card);
+  counter-reset: d round(var(--a) / 1deg);
+}
+
+/* From the centre to the dot: as long as the distance, turned by the angle. */
+.arrow {
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: hypot(var(--x), var(--y));
+  height: 4px;
+  border-radius: 2px;
+  background: var(--grad);
+  transform-origin: 0 50%;
+  rotate: var(--a);
+}
+
+.target {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--a2);
+  translate: var(--x) var(--y);
+}
+
+.out {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font: 700 18px/1 system-ui, sans-serif;
+}
+
+.out::after {
+  content: counter(d) "°";
+}

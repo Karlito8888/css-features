@@ -1,0 +1,9 @@
+background: color-mix(in srgb, var(--a1), var(--a4));
+
+background: color-mix(in oklch, var(--a1), var(--a4));
+
+background: color-mix(in oklch longer hue, var(--a1), var(--a4));
+
+background: color-mix(in oklab, var(--a1) 25%, var(--a4));
+
+background: color-mix(in srgb, var(--a1) 30%, transparent);

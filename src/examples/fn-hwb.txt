@@ -1,0 +1,9 @@
+color: hwb(12 0% 0%);
+
+color: hwb(200 10% 5%);
+
+color: hwb(150 20% 40%);
+
+color: hwb(290 0% 20%);
+
+color: hwb(48 30% 0%);

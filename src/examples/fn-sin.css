@@ -1,0 +1,24 @@
+/* Twelve bars numbered by --i. Each choice feeds the number to sin() as an angle. */
+.bars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 130px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(var(--line), var(--line)) center / 100% 1px no-repeat, var(--card);
+}
+
+.bars i {
+  width: 10px;
+  height: 30px;
+  border-radius: 5px;
+  background: var(--grad);
+}
+
+.cap {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}

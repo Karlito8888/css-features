@@ -1,0 +1,9 @@
+animation-duration: 8s;
+
+animation-duration: 3s;
+
+animation-duration: 2s;
+
+animation-duration: 1500ms;
+
+animation-duration: 1200ms;

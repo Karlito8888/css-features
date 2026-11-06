@@ -1,0 +1,5 @@
+/* A ratio is width / height. The box keeps its width, so the ratio decides the height. */
+#example-element {
+  width: 140px;
+  min-height: 0;
+}

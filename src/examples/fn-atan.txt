@@ -1,0 +1,9 @@
+--a: atan(1);
+
+--a: atan(60px / 120px);
+
+--a: atan(2);
+
+--a: atan(-1);
+
+--a: atan(-0.25);

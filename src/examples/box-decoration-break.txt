@@ -1,0 +1,9 @@
+box-decoration-break: slice;
+
+box-decoration-break: clone;
+
+box-decoration-break: slice;
+box-shadow: 4px 4px 0 var(--a4);
+
+box-decoration-break: clone;
+box-shadow: 4px 4px 0 var(--a4);

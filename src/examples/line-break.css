@@ -1,0 +1,32 @@
+/* Each paragraph is a fixed number of characters wide, so a line holds the same text whatever the font
+   size. The Japanese ones show where the rules for small kana, iteration marks and punctuation allow a
+   break; the address shows what anywhere does to a Latin string. */
+#example-element {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  width: min(100%, 320px);
+  font-family: "Yu Gothic", "YuGothic", "Meiryo", "Noto Sans CJK JP", "Noto Sans", sans-serif;
+}
+
+p {
+  box-sizing: content-box;
+  margin: 0;
+  padding: 4px 6px;
+  border: 1px dashed var(--muted);
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.w7 {
+  width: 7em;
+}
+
+.w8 {
+  width: 8em;
+}
+
+.w9 {
+  width: 9em;
+  font-size: 14px;
+}

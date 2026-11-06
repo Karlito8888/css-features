@@ -1,0 +1,12 @@
+/* The column rule stays on in every choice, so the edges between columns show. */
+#example-element {
+  width: min(100%, 420px);
+  padding: 14px;
+  column-gap: 14px;
+  column-rule: 1.5px solid color-mix(in oklab, var(--a1) 55%, transparent);
+  font-size: 12px;
+  line-height: 1.45;
+}
+p {
+  margin: 0 0 0.7em;
+}

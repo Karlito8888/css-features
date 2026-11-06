@@ -1,0 +1,43 @@
+#example-element {
+  width: min(100%, 330px);
+  font-family: "Noto Sans", Calibri, "Segoe UI", system-ui, sans-serif;
+}
+
+/* Inline rows, not flex: Chrome does not repaint the text of a flex item when the inherited
+   font-language-override changes. The hanging indent keeps wrapped lines clear of the label. */
+#example-element p {
+  margin: 0 0 4px;
+  padding-left: 32px;
+  text-indent: -32px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+#example-element b {
+  display: inline-block;
+  width: 20px;
+  margin-right: 12px;
+  color: var(--muted);
+  font: 600 12px/1 system-ui, sans-serif;
+  text-indent: 0;
+}
+
+#example-element .sr {
+  font-style: italic;
+}
+
+#example-element .note {
+  margin: 12px 0 0;
+  padding: 10px 0 0;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font: 400 12px/1.4 system-ui, sans-serif;
+  text-indent: 0;
+}
+
+#example-element .note::after {
+  content: var(--note, "");
+  display: block;
+  margin-top: 6px;
+}

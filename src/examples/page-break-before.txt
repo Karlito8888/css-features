@@ -1,0 +1,5 @@
+page-break-before: auto;
+--note: "starts column 2";
+
+page-break-before: avoid;
+--note: "takes one along";

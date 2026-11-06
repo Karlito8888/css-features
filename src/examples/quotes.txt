@@ -1,0 +1,9 @@
+quotes: auto;
+
+quotes: none;
+
+quotes: "“" "”" "‘" "’";
+
+quotes: "«\00a0" "\00a0»" "‹\00a0" "\00a0›";
+
+quotes: "「" "」" "『" "』";

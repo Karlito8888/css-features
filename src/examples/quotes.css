@@ -1,0 +1,20 @@
+/* Each line is a quotation with a quotation inside it, tagged with its own language: with auto,
+   every language picks its own marks; a list of strings gives all of them the same ones. */
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 320px);
+}
+
+p {
+  margin: 0;
+  font-size: 17px;
+}
+
+q {
+  font-weight: 600;
+}
+
+q q {
+  color: var(--a1);
+}

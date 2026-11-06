@@ -1,0 +1,14 @@
+animation-range: normal;
+--note: "normal: the timeline's full range";
+
+animation-range: entry;
+--note: "entry: from the runner starting to enter the box until it is fully inside";
+
+animation-range: exit;
+--note: "exit: from the runner starting to leave the box until it is gone";
+
+animation-range: cover 0% cover 70%;
+--note: "cover 0% cover 70%: the first 70% of the crossing";
+
+animation-range: cover 30% cover 100%;
+--note: "cover 30% cover 100%: from 30% of the crossing to its end";

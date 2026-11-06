@@ -1,0 +1,27 @@
+/* Two 56px motifs are pinned to the top left and the bottom right of the positioning area; the area
+   they are measured from is the choice. The border is dashed so the motifs show under it, and the
+   dotted outline marks the content box. */
+#example-element {
+  width: min(100%, 520px);
+  height: 200px;
+  padding: 24px;
+  border: 18px dashed color-mix(in oklab, var(--ink) 30%, transparent);
+  border-radius: 24px;
+  background-color: var(--card);
+  background-image:
+    radial-gradient(circle closest-side, var(--a4) 0 40%, var(--a2) 42% 96%, transparent 100%),
+    radial-gradient(circle closest-side, transparent 0 55%, var(--a1) 58% 92%, transparent 96%);
+  background-size: 56px 56px;
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+}
+
+p {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  margin: 0;
+  outline: 1px dotted var(--muted);
+  color: var(--muted);
+  font-size: 13px;
+}

@@ -1,0 +1,11 @@
+position-anchor: --edit;
+--note: "Edit tip";
+
+position-anchor: --share;
+--note: "Share tip";
+
+position-anchor: --delete;
+--note: "Delete tip";
+
+position-anchor: none;
+--note: "no anchor";

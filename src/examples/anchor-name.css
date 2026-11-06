@@ -1,0 +1,59 @@
+/* Two tooltips look for an anchor by name: the one above looks for --top, the one below for --bottom.
+   The chip carries the names the choice gives it. A tooltip that finds no anchor is not placed by it:
+   it stays at the static position of its own box, here the top left and the bottom left of the stage. */
+.stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: min(100%, 300px);
+  height: 220px;
+  padding: 14px 14px 52px;
+}
+
+.chip {
+  margin-left: 120px;
+  padding: 8px 22px;
+  border: 2px solid var(--a1);
+  border-radius: 999px;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--a1) 12%, var(--card));
+}
+
+.chip::after {
+  content: var(--note);
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.tip {
+  position: absolute;
+  padding: 4px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--grad);
+}
+
+.above {
+  align-self: flex-start;
+  justify-self: anchor-center;
+  position-anchor: --top;
+  bottom: calc(anchor(top) + 8px);
+}
+
+.below {
+  --grad: linear-gradient(135deg, var(--a4), var(--a2));
+  align-self: flex-end;
+  justify-self: anchor-center;
+  position-anchor: --bottom;
+  top: calc(anchor(bottom) + 8px);
+}

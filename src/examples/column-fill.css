@@ -1,0 +1,14 @@
+/* Three columns in a box of fixed height: auto fills them one after the other, balance evens them out. */
+#example-element {
+  width: min(100%, 420px);
+  height: 260px;
+  column-count: 3;
+  padding: 14px;
+  column-gap: 14px;
+  column-rule: 1.5px solid color-mix(in oklab, var(--a1) 55%, transparent);
+  font-size: 12px;
+  line-height: 1.45;
+}
+p {
+  margin: 0 0 0.7em;
+}

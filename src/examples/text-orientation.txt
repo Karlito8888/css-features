@@ -1,0 +1,5 @@
+text-orientation: mixed;
+
+text-orientation: upright;
+
+text-orientation: sideways;

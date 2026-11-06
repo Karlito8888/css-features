@@ -1,0 +1,10 @@
+text-wrap-mode: wrap;
+
+text-wrap-mode: nowrap;
+
+text-wrap-mode: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+
+text-wrap-mode: wrap;
+text-wrap-style: balance;

@@ -1,0 +1,11 @@
+place-self: auto;
+
+place-self: start;
+
+place-self: end;
+
+place-self: stretch;
+
+place-self: end start;
+
+place-self: start end;

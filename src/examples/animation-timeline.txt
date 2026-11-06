@@ -1,0 +1,14 @@
+animation-timeline: auto;
+--note: "auto: the page clock, and no duration: already at its end";
+
+animation-timeline: scroll(x);
+--note: "scroll(x): this box never scrolls sideways, so the timeline is inactive";
+
+animation-timeline: scroll();
+--note: "scroll(): follows how far this box is scrolled";
+
+animation-timeline: view();
+--note: "view(): follows the runner crossing the box";
+
+animation-timeline: view(block 60px 0px);
+--note: "view(block 60px 0px): same, with the top edge inset 60px";

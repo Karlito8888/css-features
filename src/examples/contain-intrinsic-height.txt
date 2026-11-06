@@ -1,0 +1,11 @@
+contain-intrinsic-height: none;
+--note: "none: no intrinsic height, only the border is left";
+
+contain-intrinsic-height: 60px;
+--note: "60px: content 60 tall, the text is cut";
+
+contain-intrinsic-height: 120px;
+--note: "120px: content 120 tall";
+
+contain-intrinsic-height: 200px;
+--note: "200px: content 200 tall";

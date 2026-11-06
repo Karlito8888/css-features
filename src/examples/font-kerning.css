@@ -1,0 +1,26 @@
+#example-element {
+  width: min(100%, 330px);
+  overflow-wrap: anywhere;
+}
+
+#example-element p {
+  margin: 0;
+  font-family: "Liberation Serif", Georgia, "Times New Roman", serif;
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+#example-element .small {
+  font-size: 34px;
+}
+
+#example-element::after {
+  content: var(--note, "");
+  display: block;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font: 400 12px/1.4 system-ui, sans-serif;
+}

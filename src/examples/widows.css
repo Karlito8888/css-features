@@ -1,0 +1,18 @@
+/* One poem of eight lines in two columns that hold seven lines each: line 8 would be alone at the top of column 2. */
+#example-element {
+  width: min(100%, 274px);
+  height: calc(7 * 18px + 30px);
+  padding: 14px;
+  column-count: 2;
+  column-gap: 20px;
+  column-fill: auto;
+  column-rule: 1.5px solid color-mix(in oklab, var(--a1) 55%, transparent);
+  font-size: 12px;
+  line-height: 18px;
+}
+p {
+  margin: 0;
+  padding-left: 8px;
+  border-left: 3px solid var(--a2);
+  white-space: nowrap;
+}

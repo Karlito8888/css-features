@@ -1,0 +1,42 @@
+/* field-sizing is not inherited: the card's value is passed down through the labels to the fields. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 320px);
+}
+
+#example-element :is(label, input, textarea, select) {
+  field-sizing: inherit;
+  min-width: inherit;
+}
+
+label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+}
+
+label span {
+  flex: none;
+  width: 38px;
+  padding-top: 7px;
+}
+
+input,
+textarea,
+select {
+  padding: 6px 10px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  color: var(--ink);
+  font: inherit;
+  background: var(--card);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

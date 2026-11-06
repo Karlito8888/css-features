@@ -1,0 +1,55 @@
+/* Three buttons each carry an anchor name. The tooltip is placed above its default anchor, the one the
+   choice names. With no default anchor, anchor() has nothing to measure from: the tooltip is not placed
+   by it and stays at the static position of its own box, here the top left of the stage. */
+.stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100%, 300px);
+  height: 200px;
+  padding: 14px 18px 14px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: 2px solid var(--a1);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--a1) 12%, var(--card));
+}
+
+.edit {
+  anchor-name: --edit;
+}
+
+.share {
+  anchor-name: --share;
+  border-color: var(--a3);
+  background: color-mix(in oklab, var(--a3) 14%, var(--card));
+}
+
+.delete {
+  anchor-name: --delete;
+  border-color: var(--a2);
+  background: color-mix(in oklab, var(--a2) 14%, var(--card));
+}
+
+#example-element {
+  position: absolute;
+  align-self: flex-start;
+  justify-self: anchor-center;
+  bottom: calc(anchor(top) + 10px);
+  padding: 5px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--grad);
+}
+
+#example-element::before {
+  content: var(--note);
+}

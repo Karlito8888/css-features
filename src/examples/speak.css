@@ -1,0 +1,51 @@
+/* speak is about speech output, which a picture cannot show. The card holds a visible line and a line set
+   to visibility: hidden inside a dashed slot, because that is where always and auto part ways. The caption
+   gives what each value says. */
+#example-element {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 300px);
+  padding: 18px 22px;
+}
+
+p {
+  margin: 0;
+}
+
+.line {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.slot {
+  min-height: 34px;
+  padding: 6px 10px;
+  border: 1px dashed var(--muted);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.slot::before {
+  content: "hidden line:";
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.slot span {
+  visibility: hidden;
+}
+
+.foot {
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.foot::after {
+  content: " " var(--note);
+  color: var(--ink);
+  font-weight: 700;
+}

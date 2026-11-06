@@ -1,0 +1,35 @@
+@page {
+  size: 210mm 297mm;
+}
+#example-element {
+  --w: 210;
+  --h: 297;
+  --note: "210 × 297 mm";
+}
+
+@page {
+  size: A4 landscape;
+}
+#example-element {
+  --w: 297;
+  --h: 210;
+  --note: "A4 landscape";
+}
+
+@page {
+  size: 120mm;
+}
+#example-element {
+  --w: 120;
+  --h: 120;
+  --note: "one length: 120 mm square";
+}
+
+@page {
+  size: 80mm 200mm;
+}
+#example-element {
+  --w: 80;
+  --h: 200;
+  --note: "80 × 200 mm";
+}

@@ -1,0 +1,42 @@
+/* Size containment makes the box ignore its content when it is sized: with no intrinsic size it collapses
+   to nothing, and contain-intrinsic-size gives it one. The content is kept inside the box (clipped) so
+   the box never takes its size from it, and the caption below says what the choice asked for. */
+#example-element {
+  position: relative;
+  contain: size;
+  border: 2px dashed var(--a1);
+  border-radius: 14px;
+  background: var(--card);
+}
+
+#example-element::after {
+  content: var(--note);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  width: 240px;
+  translate: -50% 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+h3 {
+  margin: 10px 14px 0;
+  font-size: 15px;
+}
+
+p {
+  margin: 4px 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}

@@ -1,0 +1,9 @@
+container: none;
+
+container: card / inline-size;
+
+container: sidebar / inline-size;
+
+container: card sidebar / inline-size;
+
+container: layout / inline-size;

@@ -1,0 +1,14 @@
+view-timeline: none;
+--note: "none: no timeline named --card, the bar stays empty";
+
+view-timeline: --card;
+--note: "--card: the panel crossing the box";
+
+view-timeline: --card block 30% 0px;
+--note: "--card block 30% 0px: the top edge inset by 30%";
+
+view-timeline: --card block 0px 40%;
+--note: "--card block 0px 40%: the bottom edge inset by 40%";
+
+view-timeline: --card block 0px 60%;
+--note: "--card block 0px 60%: the bottom edge inset by 60%";

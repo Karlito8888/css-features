@@ -1,0 +1,56 @@
+#example-element {
+  width: min(100%, 320px);
+}
+
+#example-element h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.bars {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.bars li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* The chart bars follow --keep when a choice sets it, otherwise the value inherited from the card. */
+.bars i {
+  width: var(--w);
+  height: 14px;
+  border-radius: 7px;
+  background: var(--grad);
+  print-color-adjust: var(--keep, inherit);
+}
+
+.badge {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--grad);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#example-element::after {
+  content: var(--note, "");
+  display: block;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}

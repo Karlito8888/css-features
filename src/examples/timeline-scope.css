@@ -1,0 +1,104 @@
+/* The two bars sit outside the box, so they cannot see the view timelines that its items define.
+   The card lifts the names it lists (timeline-scope), and only then do the matching bars follow.
+   Where scroll-initial-target is supported the box starts scrolled down a little, so the progress is
+   already visible; elsewhere it starts at the top and you scroll it. */
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 300px);
+  padding: 14px;
+}
+
+#example-element::after {
+  content: var(--note);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.bar b {
+  width: 2.4em;
+  font-weight: 700;
+}
+
+.bar span {
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  background: var(--grad);
+  transform-origin: left;
+  scale: 0 1;
+  animation: fill linear;
+}
+
+.bar.one i {
+  animation-timeline: --one;
+}
+
+.bar.two i {
+  --grad: linear-gradient(135deg, var(--a4), var(--a2));
+  animation-timeline: --two;
+}
+
+.scroll {
+  position: relative;
+  height: 150px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.lines {
+  height: 20px;
+  background: repeating-linear-gradient(to bottom, var(--line) 0 8px, transparent 8px 22px);
+}
+
+.tail {
+  height: 300px;
+}
+
+.start {
+  position: absolute;
+  top: 30px;
+  height: 1px;
+  scroll-initial-target: nearest;
+}
+
+.item {
+  display: grid;
+  place-items: center;
+  height: 44px;
+  margin: 8px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--grad);
+}
+
+.item.one {
+  view-timeline: --one;
+}
+
+.item.two {
+  --grad: linear-gradient(135deg, var(--a4), var(--a2));
+  view-timeline: --two;
+}
+
+@keyframes fill {
+  to { scale: 1 1; }
+}

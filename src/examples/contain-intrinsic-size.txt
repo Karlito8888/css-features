@@ -1,0 +1,11 @@
+contain-intrinsic-size: none;
+--note: "none: no intrinsic size, only the border is left";
+
+contain-intrinsic-size: 120px;
+--note: "120px: content 120 wide, 120 tall";
+
+contain-intrinsic-size: 240px 90px;
+--note: "240px 90px: content 240 wide, 90 tall";
+
+contain-intrinsic-size: 80px 180px;
+--note: "80px 180px: content 80 wide, 180 tall";

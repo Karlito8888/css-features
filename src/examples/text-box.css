@@ -1,0 +1,17 @@
+/* A tall line height leaves half-leading above and below the letters: text-box trims it, so the padding is the only space left. */
+.wrap {
+  display: grid;
+  place-items: center;
+  min-height: 150px;
+}
+
+#example-element {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 14px;
+  background: var(--grad);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 2.2;
+}

@@ -1,0 +1,30 @@
+/* The gradient box ends the first column, with no room left under it for the next box. */
+.cols {
+  width: min(100%, 274px);
+  height: 200px;
+  padding: 14px;
+  column-count: 2;
+  column-gap: 20px;
+  column-fill: auto;
+  column-rule: 1.5px solid color-mix(in oklab, var(--a1) 55%, transparent);
+  font-size: 12px;
+  line-height: 18px;
+}
+.cols p {
+  margin: 0 0 8px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: color-mix(in oklab, var(--ink) 9%, var(--card));
+  white-space: nowrap;
+}
+#example-element {
+  break-inside: avoid;
+  background: var(--grad);
+  color: #fff;
+}
+#example-element::after {
+  content: var(--note);
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+}

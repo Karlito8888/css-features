@@ -1,0 +1,5 @@
+text-spacing-trim: space-all;
+
+text-spacing-trim: normal;
+
+text-spacing-trim: trim-start;

@@ -1,0 +1,10 @@
+/* Three layers of one element mix with each other: a disc, a dark band and stripes. */
+#example-element {
+  width: min(100%, 300px);
+  height: 210px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 42%, var(--a4), var(--a2) 52px, var(--a1) 66px, transparent 67px),
+    linear-gradient(90deg, var(--ink), var(--card)) bottom / 100% 36% no-repeat,
+    linear-gradient(90deg, var(--a3) 0 25%, var(--a4) 25% 50%, var(--a5) 50% 75%, var(--a1) 75%);
+}

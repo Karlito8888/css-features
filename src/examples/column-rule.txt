@@ -1,0 +1,9 @@
+column-rule: 1px solid var(--muted);
+
+column-rule: 3px dashed var(--a2);
+
+column-rule: 6px double var(--a1);
+
+column-rule: 4px dotted var(--a4);
+
+column-rule: 2px solid var(--a1), 2px dashed var(--a2);

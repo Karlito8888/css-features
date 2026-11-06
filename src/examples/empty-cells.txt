@@ -1,0 +1,9 @@
+empty-cells: show;
+--note: "show: empty cells keep their border and tint";
+
+empty-cells: hide;
+--note: "hide: empty cells are not drawn";
+
+empty-cells: hide;
+border-collapse: collapse;
+--note: "hide has no effect with collapsed borders";

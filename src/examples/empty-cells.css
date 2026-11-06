@@ -1,0 +1,28 @@
+/* Separated borders: every cell has its own border and tint, the empty ones included until empty-cells hides them. */
+.card {
+  width: min(100%, 340px);
+}
+#example-element {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 6px;
+  font-size: 13px;
+}
+th,
+td {
+  padding: 8px 10px;
+  border: 2px solid var(--a1);
+  border-radius: 6px;
+  background: color-mix(in oklab, var(--a1) 14%, transparent);
+  text-align: start;
+}
+caption {
+  caption-side: bottom;
+  padding-top: 6px;
+}
+caption::before {
+  content: var(--note);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}

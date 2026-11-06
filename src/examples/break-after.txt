@@ -1,0 +1,5 @@
+break-after: auto;
+--note: "flows on";
+
+break-after: column;
+--note: "next: column 2";

@@ -1,0 +1,6 @@
+frame-sizing: auto;
+
+frame-sizing: content-height;
+
+frame-sizing: content-height;
+max-height: 200px;

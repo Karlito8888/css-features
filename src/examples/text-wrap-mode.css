@@ -1,0 +1,11 @@
+#example-element {
+  width: min(100%, 280px);
+  margin: 0;
+  padding: 14px 16px;
+  border: 1.5px dashed color-mix(in oklab, var(--a1) 55%, transparent);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--a1) 10%, var(--card));
+  font-size: 15px;
+  line-height: 1.4;
+  overflow-x: auto;
+}

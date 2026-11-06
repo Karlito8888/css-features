@@ -1,0 +1,7 @@
+line-break: auto;
+
+line-break: loose;
+
+line-break: strict;
+
+line-break: anywhere;

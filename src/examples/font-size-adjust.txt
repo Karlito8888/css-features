@@ -1,0 +1,7 @@
+font-size-adjust: none;
+
+font-size-adjust: 0.5;
+
+font-size-adjust: 0.4;
+
+font-size-adjust: cap-height 0.7;

@@ -1,0 +1,9 @@
+caption-side: top;
+
+caption-side: bottom;
+
+caption-side: top;
+width: 60%;
+
+caption-side: bottom;
+width: 60%;

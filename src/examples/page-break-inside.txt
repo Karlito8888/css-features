@@ -1,0 +1,5 @@
+page-break-inside: auto;
+--note: "may split here";
+
+page-break-inside: avoid;
+--note: "kept whole";

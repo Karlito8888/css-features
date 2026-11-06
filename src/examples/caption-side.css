@@ -1,0 +1,27 @@
+/* The caption sits outside the table's border, above or below it, and is as wide as the table. */
+.card {
+  width: min(100%, 340px);
+}
+#example-element {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+caption {
+  margin: 8px 0;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: var(--grad);
+  color: #fff;
+  font-weight: 700;
+  text-align: start;
+}
+th,
+td {
+  padding: 6px 10px;
+  border: 1.5px solid var(--a1);
+  text-align: start;
+}
+th {
+  background: color-mix(in oklab, var(--a1) 14%, transparent);
+}

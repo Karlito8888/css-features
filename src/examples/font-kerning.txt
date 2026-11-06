@@ -1,0 +1,5 @@
+font-kerning: normal;
+--note: "normal: pairs like AV, To, Wa and Yo are pulled together.";
+
+font-kerning: none;
+--note: "none: every letter keeps its default advance, so the gaps look uneven.";

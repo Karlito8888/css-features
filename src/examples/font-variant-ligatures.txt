@@ -1,0 +1,14 @@
+font-variant-ligatures: normal;
+--note: "normal: the font's default ligatures.";
+
+font-variant-ligatures: none;
+--note: "none: every ligature off.";
+
+font-variant-ligatures: discretionary-ligatures;
+--note: "discretionary-ligatures: the optional ones on.";
+
+font-variant-ligatures: historical-ligatures;
+--note: "historical-ligatures: the old-style ones on.";
+
+font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
+--note: "All three kinds on.";

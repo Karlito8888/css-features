@@ -1,0 +1,5 @@
+break-inside: auto;
+--note: "may split here";
+
+break-inside: avoid;
+--note: "kept whole";

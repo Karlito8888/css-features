@@ -1,0 +1,12 @@
+/* Three columns with a wide gap, so every rule has room. */
+#example-element {
+  width: min(100%, 420px);
+  padding: 14px;
+  column-count: 3;
+  column-gap: 24px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+p {
+  margin: 0 0 0.7em;
+}

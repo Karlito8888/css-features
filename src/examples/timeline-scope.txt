@@ -1,0 +1,11 @@
+timeline-scope: none;
+--note: "none: the names stay inside the box, both bars stay empty";
+
+timeline-scope: --one;
+--note: "--one: only the bar named one can follow its item";
+
+timeline-scope: --two;
+--note: "--two: only the bar named two can follow its item";
+
+timeline-scope: --one, --two;
+--note: "--one, --two: both bars follow their items";

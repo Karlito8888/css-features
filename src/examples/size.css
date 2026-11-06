@@ -1,0 +1,32 @@
+/* The size of the @page box only shows when printing: the sheet is redrawn here from the same numbers. */
+.card {
+  display: grid;
+  place-items: center;
+  width: min(100%, 300px);
+  padding: 22px 26px 56px;
+}
+#example-element {
+  position: relative;
+  width: calc(var(--w) * 0.5px);
+  aspect-ratio: var(--w) / var(--h);
+  border: 2px solid var(--a1);
+  border-radius: 3px;
+  background: repeating-linear-gradient(transparent 0 9px, var(--line) 9px 10px) padding-box, var(--stage);
+}
+#example-element::after {
+  content: var(--note);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  translate: -50% 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.legend {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}

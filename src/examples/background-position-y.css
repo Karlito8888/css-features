@@ -1,0 +1,14 @@
+/* Two 64px motifs, a dot and a ring, each in its own column: only their vertical position changes. */
+#example-element {
+  width: min(100%, 520px);
+  height: 200px;
+  border: 2px dashed color-mix(in oklab, var(--ink) 30%, transparent);
+  border-radius: 20px;
+  background-color: var(--card);
+  background-image:
+    radial-gradient(circle closest-side, var(--a4) 0 40%, var(--a2) 42% 96%, transparent 100%),
+    radial-gradient(circle closest-side, transparent 0 55%, var(--a1) 58% 92%, transparent 96%);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  background-position-x: 18%, 82%;
+}

@@ -1,0 +1,9 @@
+grid-column-end: auto;
+
+grid-column-end: 2;
+
+grid-column-end: 3;
+
+grid-column-end: -1;
+
+grid-column-end: span 3;

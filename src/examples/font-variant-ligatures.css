@@ -1,0 +1,33 @@
+/* The first line holds the everyday ligatures (ffi, fl, ffl), the second the rarer ones. The font decides
+   which ones exist, so the caption says what each value asks for, not what this font draws. */
+#example-element {
+  width: min(100%, 520px);
+  font-family: Palatino, "Palatino Linotype", Georgia, "DejaVu Serif", serif;
+  overflow-wrap: anywhere;
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+#example-element .rare {
+  color: var(--a1);
+}
+
+#example-element .note {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#example-element .note::before {
+  content: var(--note) " ";
+  color: var(--ink);
+  font-weight: 700;
+}

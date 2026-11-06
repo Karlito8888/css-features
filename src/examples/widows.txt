@@ -1,0 +1,7 @@
+widows: 1;
+
+widows: 2;
+
+widows: 3;
+
+widows: 4;

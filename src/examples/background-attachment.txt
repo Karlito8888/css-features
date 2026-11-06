@@ -1,0 +1,9 @@
+background-attachment: scroll;
+
+background-attachment: local;
+
+background-attachment: fixed;
+
+background-attachment: local, scroll;
+
+background-attachment: scroll, local;

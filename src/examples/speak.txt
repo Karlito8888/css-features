@@ -1,0 +1,8 @@
+speak: auto;
+--note: "auto: read aloud when visible, left out when visibility is hidden.";
+
+speak: never;
+--note: "never: left out of the speech output.";
+
+speak: always;
+--note: "always: read aloud even when it is not drawn on screen.";

@@ -1,0 +1,9 @@
+accent-color: auto;
+
+accent-color: var(--a2);
+
+accent-color: var(--a5);
+
+accent-color: var(--a4);
+
+accent-color: var(--a3);

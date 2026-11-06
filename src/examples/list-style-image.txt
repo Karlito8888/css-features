@@ -1,0 +1,9 @@
+list-style-image: none;
+
+list-style-image: var(--tick);
+
+list-style-image: var(--arrow);
+
+list-style-image: var(--star);
+
+list-style-image: linear-gradient(135deg, var(--a1), var(--a2));

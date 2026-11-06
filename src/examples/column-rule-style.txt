@@ -1,0 +1,9 @@
+column-rule-style: none;
+
+column-rule-style: solid;
+
+column-rule-style: dashed;
+
+column-rule-style: dotted;
+
+column-rule-style: double;

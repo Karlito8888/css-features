@@ -1,0 +1,10 @@
+#example-element {
+  width: min(100%, 330px);
+  text-align: justify;
+}
+
+#example-element p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+}

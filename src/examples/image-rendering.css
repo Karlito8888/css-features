@@ -1,0 +1,26 @@
+/* A tiny 11 by 10 pixel image drawn 15 times larger: how the browser fills in the pixels between the
+   source ones is the choice. The small copy beside it is the real size. */
+.stage {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: min(100%, 300px);
+  padding: 22px;
+}
+
+#example-element {
+  flex: none;
+}
+
+figure {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  justify-items: start;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.3;
+}

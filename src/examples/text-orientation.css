@@ -1,0 +1,11 @@
+/* text-orientation only acts in a vertical writing mode. */
+#example-element {
+  writing-mode: vertical-rl;
+  height: 230px;
+  font-size: 22px;
+}
+
+#example-element p {
+  margin: 0 0 0 10px;
+  font-weight: 400;
+}

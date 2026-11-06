@@ -1,0 +1,7 @@
+counter-reset: step;
+
+counter-reset: step 2;
+
+counter-reset: step 10;
+
+counter-reset: step -3;

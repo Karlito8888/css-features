@@ -1,0 +1,11 @@
+font-language-override: normal;
+--note: "normal: the lang attribute (en) decides, so no line changes.";
+
+font-language-override: "ROM";
+--note: "ROM: Romanian forms, a comma under Ţ and Ş. Only a font with language-specific glyphs (locl) changes.";
+
+font-language-override: "CAT";
+--note: "CAT: Catalan forms, a middle dot that joins the two l. Only a font with language-specific glyphs (locl) changes.";
+
+font-language-override: "SRB";
+--note: "SRB: Serbian forms of Cyrillic letters, drawn in italic here. Only a font with language-specific glyphs (locl) changes.";

@@ -1,0 +1,39 @@
+/* The card keeps the same physical size, so what changes is the way its text flows: the direction of a
+   line and the direction in which the lines stack. The caption always runs horizontally. */
+#example-element {
+  position: relative;
+  width: min(100%, 300px);
+  height: 250px;
+  padding: 18px 18px 50px;
+  font-family: "Yu Gothic", "Noto Sans CJK JP", "Noto Sans", sans-serif;
+  overflow: hidden;
+}
+
+#example-element::after {
+  content: var(--note);
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 12px;
+  writing-mode: horizontal-tb;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+h3 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--a1);
+}
+
+p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h3,
+p {
+  padding: 0 4px;
+}

@@ -1,0 +1,11 @@
+anchor-name: none;
+--note: "none: no tooltip finds an anchor, both stay at their own spot";
+
+anchor-name: --top;
+--note: "--top: the tooltip above sits on the chip";
+
+anchor-name: --bottom;
+--note: "--bottom: the tooltip below sits under the chip";
+
+anchor-name: --top, --bottom;
+--note: "--top, --bottom: one chip, two names, both tooltips";

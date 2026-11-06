@@ -1,0 +1,5 @@
+text-justify: auto;
+
+text-justify: none;
+
+text-justify: inter-character;

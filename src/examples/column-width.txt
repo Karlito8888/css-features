@@ -1,0 +1,5 @@
+column-width: 4rem;
+
+column-width: 6rem;
+
+column-width: 10rem;

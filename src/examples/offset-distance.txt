@@ -1,0 +1,9 @@
+offset-distance: 0%;
+
+offset-distance: 25%;
+
+offset-distance: 50%;
+
+offset-distance: 75%;
+
+offset-distance: 100%;

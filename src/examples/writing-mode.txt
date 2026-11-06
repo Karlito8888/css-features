@@ -1,0 +1,14 @@
+writing-mode: horizontal-tb;
+--note: "horizontal-tb: lines run left to right, and stack downward";
+
+writing-mode: vertical-rl;
+--note: "vertical-rl: lines run downward, and stack from right to left";
+
+writing-mode: vertical-lr;
+--note: "vertical-lr: lines run downward, and stack from left to right";
+
+writing-mode: sideways-rl;
+--note: "sideways-rl: like vertical-rl, with every glyph turned sideways";
+
+writing-mode: sideways-lr;
+--note: "sideways-lr: lines run upward, and stack from left to right";

@@ -1,0 +1,9 @@
+text-box: normal;
+
+text-box: trim-both text alphabetic;
+
+text-box: trim-both cap alphabetic;
+
+text-box: trim-both ex alphabetic;
+
+text-box: trim-start cap alphabetic;

@@ -1,0 +1,50 @@
+/* A nine-patch drawn as an inline SVG: only its alpha counts in a mask, opaque keeps the box, transparent hides it.
+   The thumbnail shows the first mask in the ink colour. */
+:root {
+  --mask: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='90'%20height='90'%20viewBox='0%200%2090%2090'%3E%3Ccircle%20cx='15'%20cy='15'%20r='13'/%3E%3Ccircle%20cx='15'%20cy='75'%20r='13'/%3E%3Ccircle%20cx='75'%20cy='15'%20r='13'/%3E%3Ccircle%20cx='75'%20cy='75'%20r='13'/%3E%3Crect%20x='36'%20y='6'%20width='18'%20height='18'%20rx='5'/%3E%3Crect%20x='36'%20y='66'%20width='18'%20height='18'%20rx='5'/%3E%3Crect%20x='6'%20y='36'%20width='18'%20height='18'%20rx='5'/%3E%3Crect%20x='66'%20y='36'%20width='18'%20height='18'%20rx='5'/%3E%3Crect%20x='30'%20y='30'%20width='30'%20height='30'/%3E%3C/svg%3E");
+  --diamonds: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='90'%20height='90'%20viewBox='0%200%2090%2090'%3E%3Cpolygon%20points='15,2%2028,15%2015,28%202,15'/%3E%3Cpolygon%20points='15,62%2028,75%2015,88%202,75'/%3E%3Cpolygon%20points='75,2%2088,15%2075,28%2062,15'/%3E%3Cpolygon%20points='75,62%2088,75%2075,88%2062,75'/%3E%3Cpolygon%20points='45,3%2057,15%2045,27%2033,15'/%3E%3Cpolygon%20points='45,63%2057,75%2045,87%2033,75'/%3E%3Cpolygon%20points='15,33%2027,45%2015,57%203,45'/%3E%3Cpolygon%20points='75,33%2087,45%2075,57%2063,45'/%3E%3Crect%20x='30'%20y='30'%20width='30'%20height='30'/%3E%3C/svg%3E");
+  --stripes: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='90'%20height='90'%20viewBox='0%200%2090%2090'%3E%3Crect%20x='2'%20y='2'%20width='26'%20height='26'/%3E%3Crect%20x='2'%20y='62'%20width='26'%20height='26'/%3E%3Crect%20x='62'%20y='2'%20width='26'%20height='26'/%3E%3Crect%20x='62'%20y='62'%20width='26'%20height='26'/%3E%3Crect%20x='33'%20y='3'%20width='6'%20height='24'/%3E%3Crect%20x='33'%20y='63'%20width='6'%20height='24'/%3E%3Crect%20x='3'%20y='33'%20width='24'%20height='6'/%3E%3Crect%20x='63'%20y='33'%20width='24'%20height='6'/%3E%3Crect%20x='42'%20y='3'%20width='6'%20height='24'/%3E%3Crect%20x='42'%20y='63'%20width='6'%20height='24'/%3E%3Crect%20x='3'%20y='42'%20width='24'%20height='6'/%3E%3Crect%20x='63'%20y='42'%20width='24'%20height='6'/%3E%3Crect%20x='51'%20y='3'%20width='6'%20height='24'/%3E%3Crect%20x='51'%20y='63'%20width='6'%20height='24'/%3E%3Crect%20x='3'%20y='51'%20width='24'%20height='6'/%3E%3Crect%20x='63'%20y='51'%20width='24'%20height='6'/%3E%3Crect%20x='30'%20y='30'%20width='30'%20height='30'/%3E%3C/svg%3E");
+}
+
+#example-element {
+  display: grid;
+  place-items: center;
+  width: min(100%, 240px);
+  height: 150px;
+  border: 30px solid transparent;
+  background: linear-gradient(135deg, var(--a4), var(--a2));
+  background-origin: border-box;
+}
+
+#example-element span {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(100%, 300px);
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.legend code {
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.src {
+  flex: none;
+  width: 60px;
+  height: 60px;
+  background: var(--ink);
+  mask: var(--mask) center / contain no-repeat;
+}

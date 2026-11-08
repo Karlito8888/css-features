@@ -1,0 +1,9 @@
+-webkit-mask-box-image: var(--mask) 30 fill / 30px;
+
+-webkit-mask-box-image: var(--mask) 30 fill / 30px repeat;
+
+-webkit-mask-box-image: var(--mask) 30 fill / 30px round;
+
+-webkit-mask-box-image: var(--diamonds) 30 fill / 30px;
+
+-webkit-mask-box-image: var(--stripes) 30 fill / 30px round;

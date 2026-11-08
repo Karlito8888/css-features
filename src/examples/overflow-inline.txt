@@ -1,0 +1,11 @@
+overflow-inline: visible;
+
+overflow-inline: hidden;
+
+overflow-inline: clip;
+overflow-block: clip;
+overflow-clip-margin: 20px;
+
+overflow-inline: scroll;
+
+overflow-inline: auto;

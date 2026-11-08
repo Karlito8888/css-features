@@ -1,0 +1,9 @@
+-webkit-animation: slide 2s ease-in-out -1s infinite alternate;
+
+-webkit-animation: spin 1.4s linear -0.4s infinite;
+
+-webkit-animation: bounce 0.8s ease-in-out -0.4s infinite;
+
+-webkit-animation: pop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+
+-webkit-animation: slide 3s steps(6) -1.2s infinite reverse;

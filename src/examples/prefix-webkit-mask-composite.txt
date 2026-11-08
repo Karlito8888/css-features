@@ -1,0 +1,9 @@
+-webkit-mask-composite: source-over;
+
+-webkit-mask-composite: source-out;
+
+-webkit-mask-composite: source-in;
+
+-webkit-mask-composite: xor;
+
+-webkit-mask-composite: destination-out;

@@ -1,0 +1,19 @@
+/* initial-letter sizes the first letter in text lines and sinks it into the paragraph, with no float and no hand-tuned line-height. The letter takes the colour of --letter, only to tell the choices apart. */
+#example-element {
+  width: min(100%, 320px);
+  margin: 0;
+  padding: 22px 24px;
+}
+
+p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+p::first-letter {
+  margin-right: 8px;
+  color: var(--letter, var(--ink));
+  font-family: Georgia, serif;
+  font-weight: 800;
+}

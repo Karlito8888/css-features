@@ -1,0 +1,7 @@
+-webkit-text-stroke-color: var(--a1);
+
+-webkit-text-stroke-color: var(--a2);
+
+-webkit-text-stroke-color: var(--a4);
+
+-webkit-text-stroke-color: var(--ink);

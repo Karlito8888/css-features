@@ -1,0 +1,9 @@
+object-view-box: none;
+
+object-view-box: inset(25%);
+
+object-view-box: inset(10% 15% 55% 55%);
+
+object-view-box: xywh(0 40% 100% 60%);
+
+object-view-box: inset(0 40% 0 0);

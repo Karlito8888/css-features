@@ -1,0 +1,3 @@
+image-orientation: from-image;
+
+image-orientation: none;

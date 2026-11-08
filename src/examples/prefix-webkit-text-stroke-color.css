@@ -1,0 +1,27 @@
+.stage {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  width: min(100%, 340px);
+}
+
+#example-element {
+  margin: 0;
+  font: 900 64px/1.1 system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--card);
+  -webkit-text-stroke-width: 3px;
+}
+
+.cap {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

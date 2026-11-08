@@ -1,0 +1,9 @@
+-webkit-text-stroke: 3px var(--a2);
+
+-webkit-text-stroke: 4px var(--a3);
+
+-webkit-text-stroke: 2px var(--a1);
+color: transparent;
+
+-webkit-text-stroke: 8px var(--a2);
+paint-order: stroke fill;

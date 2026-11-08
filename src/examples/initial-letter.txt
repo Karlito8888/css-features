@@ -1,0 +1,11 @@
+p { --letter: var(--a1); }
+p::first-letter { initial-letter: 3; }
+
+p { --letter: var(--a2); }
+p::first-letter { initial-letter: 2; }
+
+p { --letter: var(--a5); }
+p::first-letter { initial-letter: 3 1; }
+
+p { --letter: var(--a4); }
+p::first-letter { initial-letter: 4 2; }

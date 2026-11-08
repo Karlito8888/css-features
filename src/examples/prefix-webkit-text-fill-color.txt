@@ -1,0 +1,7 @@
+-webkit-text-fill-color: var(--a4);
+
+-webkit-text-fill-color: transparent;
+
+-webkit-text-fill-color: transparent;
+background: var(--grad);
+background-clip: text;

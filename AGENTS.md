@@ -107,6 +107,21 @@ computed style (declared properties, or for rule blocks every element against no
 blocks whose selector cannot match a still frame (`:hover`, `:focus`, `::selection`, media
 states, `@page`...) are listed rather than failed, and their example says in the frame what to do.
 
+Every feature a browser ships and a still frame can show has a written example, with these
+exceptions, which keep MDN's example if any: features that need JavaScript (`:state()`,
+`::highlight()`, `:fullscreen`, `paint()`), a real media track (`:seeking`, `:past`...), a running
+view transition or navigation (the `::view-transition*` family, `:navigation-source`), WebXR
+(`:xr-overlay`) or paged media (`string()`...); features removed from browsers
+(`background-repeat-x`) or shipped only under another name (`line-clamp`, `fit-tolerance`);
+features built on the `interestfor` attribute (`:interest-source`, `::interest-button`,
+`interest-delay`), left out because the Nu checker rejects that attribute (revisit when it
+learns it); and legacy aliases, whose banner links the standard property and its example.
+Examples are written from a facts extract of `data/features.json` plus the BCD node each
+feature's `compat` names, never from memory, and each batch is reviewed by a second agent on the
+contact sheets before it ships. Writers and reviewers validate against a local Nu checker
+(`java -cp vnu.jar nu.validator.servlet.Main 8888`, release asset of validator/validator): the
+public one rate-limits a batch into timeouts.
+
 ## Deployment
 
 Cloudflare Worker `css-features` (static assets, `wrangler.jsonc`) in the `charmaweb11@gmail.com`

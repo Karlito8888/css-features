@@ -1,0 +1,9 @@
+.t1 { reading-order: 1; }
+
+.t4 { reading-order: -1; }
+
+.t2, .t3 { reading-order: 2; }
+
+.t1 { reading-order: 3; }
+.t2 { reading-order: 2; }
+.t3 { reading-order: 1; }

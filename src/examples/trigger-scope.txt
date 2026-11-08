@@ -1,0 +1,5 @@
+#example-element { trigger-scope: all; }
+
+section { trigger-scope: all; }
+
+section:nth-child(2) { trigger-scope: all; }

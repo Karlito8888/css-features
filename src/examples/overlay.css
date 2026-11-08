@@ -1,0 +1,74 @@
+/* overlay: auto is set by the browser while the element is in the top layer; authors only transition it, which is what the choices do. The popover is centred over the hatched area of the page card (z-index 1), which stays in front of everything that left the top layer. Closing: opacity goes to 0 over the transition the choice sets. */
+.page {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 12px;
+  width: min(100%, 300px);
+  align-content: start;
+}
+
+h3 {
+  margin: 0;
+}
+
+.lines {
+  anchor-name: --area;
+  height: 110px;
+  margin: 0;
+  background: repeating-linear-gradient(to bottom, var(--line) 0 8px, transparent 8px 16px);
+}
+
+.btn {
+  justify-self: start;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  background: var(--grad);
+  cursor: pointer;
+}
+
+.cap {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap strong,
+.cap code {
+  color: var(--ink);
+}
+
+#example-element {
+  inset: auto;
+  position-anchor: --area;
+  position-area: center;
+  margin: 0;
+  width: 200px;
+  height: 100px;
+  place-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 800;
+  text-align: center;
+  background: var(--grad);
+  box-shadow: 0 24px 50px -16px color-mix(in oklab, var(--a1) 80%, transparent);
+  opacity: 0;
+}
+
+#example-element:popover-open {
+  opacity: 1;
+}
+
+@starting-style {
+  #example-element:popover-open {
+    opacity: 0;
+  }
+}

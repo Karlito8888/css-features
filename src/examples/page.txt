@@ -1,0 +1,15 @@
+page: auto;
+--label: "auto: the page the rest of the document uses";
+
+page: wide;
+--ratio: 4 / 3;
+--label: "wide: landscape page";
+
+page: cover;
+--margin: 0%;
+--label: "cover: no margins at all";
+
+page: form;
+--ratio: 148 / 210;
+--margin: 18%;
+--label: "form: A5 page";

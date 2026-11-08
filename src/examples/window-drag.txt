@@ -1,0 +1,11 @@
+window-drag: none;
+--note: "none: the title bar cannot move the window";
+
+window-drag: move;
+--note: "move: the whole bar drags the window, buttons included";
+
+#example-element {
+  window-drag: move;
+  --note: "move on the bar, none on the buttons: they stay clickable";
+}
+.chip { window-drag: none; }

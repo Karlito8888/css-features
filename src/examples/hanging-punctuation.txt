@@ -1,0 +1,7 @@
+hanging-punctuation: first;
+
+hanging-punctuation: last;
+
+hanging-punctuation: first last;
+
+hanging-punctuation: force-end;

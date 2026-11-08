@@ -1,0 +1,9 @@
+color-adjust: economy;
+--note: "Acts only when printing, this frame looks the same. economy: the browser may drop the backgrounds above to save ink.";
+
+color-adjust: exact;
+--note: "Acts only when printing, this frame looks the same. exact: the backgrounds above are printed as drawn.";
+
+color-adjust: economy;
+--keep: exact;
+--note: "Acts only when printing, this frame looks the same. economy for the page, exact kept on the chart bars only.";

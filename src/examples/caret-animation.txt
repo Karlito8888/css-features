@@ -1,0 +1,6 @@
+caret-animation: auto;
+
+caret-animation: manual;
+
+caret-animation: manual;
+animation: caret-colors 1.2s steps(1) infinite;

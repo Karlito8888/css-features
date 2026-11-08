@@ -1,0 +1,51 @@
+@counter-style bin {
+  system: numeric;
+  symbols: "0" "1";
+  suffix: " ";
+  speak-as: auto;
+}
+#example-element::after {
+  content: "auto: the reader decides how to read each marker";
+}
+
+@counter-style bin {
+  system: numeric;
+  symbols: "0" "1";
+  suffix: " ";
+  speak-as: numbers;
+}
+#example-element::after {
+  content: "numbers: the marker 101 is read as a number";
+}
+
+@counter-style bin {
+  system: numeric;
+  symbols: "0" "1";
+  suffix: " ";
+  speak-as: words;
+}
+#example-element::after {
+  content: "words: the marker 101 is read as a word";
+}
+
+@counter-style bin {
+  system: numeric;
+  symbols: "0" "1";
+  suffix: " ";
+  speak-as: spell-out;
+}
+#example-element::after {
+  content: "spell-out: the marker 101 is read digit by digit";
+}
+
+@counter-style bin {
+  system: numeric;
+  symbols: "0" "1";
+  suffix: " ";
+}
+#example-element {
+  speak-as: spell-out digits;
+}
+#example-element::after {
+  content: "speak-as on the list itself: Safari only, ignored here";
+}

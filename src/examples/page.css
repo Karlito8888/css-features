@@ -1,0 +1,53 @@
+/* The sheet mirrors the page box the named @page rule gives the element: its shape, and the area left inside the margins (dashed). */
+.demo {
+  width: min(100%, 330px);
+}
+
+#example-element {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 18px 14px 14px;
+}
+
+.sheet {
+  width: 140px;
+  aspect-ratio: var(--ratio, 3 / 4);
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--stage);
+}
+
+.area {
+  position: absolute;
+  inset: var(--margin, 12%);
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--a1);
+  background: repeating-linear-gradient(var(--line) 0 2px, transparent 2px 8px) 50% 80% / 80% 40% no-repeat;
+  font-size: 12px;
+}
+
+.label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.label::before {
+  content: var(--label, "");
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+  white-space: nowrap;
+}

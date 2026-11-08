@@ -1,0 +1,7 @@
+dynamic-range-limit: no-limit;
+
+dynamic-range-limit: standard;
+
+dynamic-range-limit: constrained;
+
+dynamic-range-limit: dynamic-range-limit-mix(standard 50%, no-limit 50%);

@@ -1,0 +1,40 @@
+.demo {
+  width: min(100%, 330px);
+}
+
+#example-element {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 16px;
+}
+
+#example-element img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.cap {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap strong,
+.cap code {
+  color: var(--ink);
+}
+
+.cap code {
+  white-space: nowrap;
+}

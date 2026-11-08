@@ -1,0 +1,5 @@
+caret-shape: bar;
+
+caret-shape: block;
+
+caret-shape: underscore;

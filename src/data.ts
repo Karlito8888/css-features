@@ -108,3 +108,6 @@ export const moduleUrl = (m: Module) => `/${m.slug}/`;
 const featureModule = new Map(data.modules.flatMap((m) => m.features.map((f) => [f.id, m] as const)));
 export const featureUrl = (f: Feature) => `${moduleUrl(featureModule.get(f.id)!)}#${f.id}`;
 export const featureById = new Map(allFeatures.map((f) => [f.id, f]));
+
+/** Known to at least one browser: a BCD entry, or a legacy alias (kept by the spec because browsers ship it, though BCD files it under the standard name). */
+export const shipped = (f: Feature) => !!f.compat || !!f.legacyAliasOf;

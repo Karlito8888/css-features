@@ -35,14 +35,18 @@ Rules the sync applies:
 
 - A module is a spec series (`css-grid`, `css-anchor-position`): 89 of them, sorted by title.
   Every feature webref lists is kept, except types without an MDN page or a BCD entry (grammar
-  productions such as `<]-token>`). Entries without a BCD key are badged "Not in any browser yet".
+  productions such as `<]-token>`). Entries without a BCD key are badged "Not in any browser yet",
+  except legacy aliases (`-webkit-align-items`...), which browsers ship but BCD files under the
+  standard name (`shipped` in `src/data.ts`).
 - Feature ids: properties keep their name (`--*` is `custom-properties`, a leading `-` becomes
   `prefix-`), the other kinds get a prefix (`at-container`, `sel-has`, `sel-pseudo-element-before`,
   `fn-calc`, `type-color`). A function defined for several scopes, or a selector with a functional
   form (`::cue` and `::cue()`), is one feature whose syntax lists each form.
 - MDN pages are matched by name (`short-title` or the first code span of the title), else by
-  the BCD key the sync guesses from the name. `cssxref` macros in summaries link to the MDN
-  page of the named feature when it exists.
+  the BCD key the sync guesses from the name. Names collide across kinds (the `width` property and
+  media feature, the `font-family` property and descriptor), so for properties, at-rules and
+  selectors a page matched by name counts only when its BCD key is of that kind. `cssxref` macros
+  in summaries link to the MDN page of the named feature when it exists.
 - **Modern CSS** (`data.modern`): a web-features feature that is filed under the CSS group tree
   or names at least one `css.*` compat key, is not discouraged, and either reached Baseline
   (`baseline_low_date`) in `MODERN_SINCE` (2023) or later, or is still limited but had an engine

@@ -12432,10 +12432,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.aspect-ratio",
+     "compat": "css.properties.aspect-ratio",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/aspect-ratio",
-      "summary": "The <strong><code>aspect-ratio</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> can be used to test the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/aspect_ratio\">aspect ratio</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/viewport\">viewport</a>."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio",
+      "summary": "The <strong><code>aspect-ratio</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property allows you to define the desired width-to-height ratio of an element's box."
      },
      "status": {
       "deprecated": false,
@@ -12443,24 +12443,29 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "3",
-      "edge": "12",
-      "firefox": "3.5",
-      "safari": "5",
-      "chrome_android": "18",
-      "safari_ios": "4.2"
+      "chrome": "88",
+      "edge": "88",
+      "firefox": "89",
+      "safari": "15",
+      "chrome_android": "88",
+      "safari_ios": "15"
      },
      "baseline": {
-      "feature": "media-queries",
+      "feature": "aspect-ratio",
       "status": "high",
-      "lowDate": "2015-07-29",
-      "highDate": "2018-01-29"
+      "lowDate": "2021-09-20",
+      "highDate": "2024-03-20"
      },
      "example": {
-      "html": "<label id=\"wf\" for=\"w\">width:165</label>\n<input id=\"w\" name=\"w\" type=\"range\" min=\"100\" max=\"250\" step=\"5\" value=\"165\" />\n<label id=\"hf\" for=\"w\">height:165</label>\n<input id=\"h\" name=\"h\" type=\"range\" min=\"100\" max=\"250\" step=\"5\" value=\"165\" />\n<label id=\"ratio\">aspect-ratio: 165/165 = 1</label>\n\n<iframe\n  id=\"outer\"\n  srcdoc=\"<style> @media (min-aspect-ratio: 8/5) { div { background: #9999ff; } } @media (max-aspect-ratio: 3/2) { div { background: #99ff99; } } @media (aspect-ratio: 1/1) { div { background: #ff9999; } }</style><div id='inner'> Watch this element as you resize iframe viewport's width and height.</div>\">\n</iframe>",
-      "css": "iframe {\n  display: block;\n  border: 1px dashed black;\n}",
-      "js": "outer.style.width = outer.style.height = \"165px\";\n\nconst updateRatio = () => {\n  ratio.textContent = `aspect-ratio: ${w.value}/${h.value} = ${(w.value / h.value).toFixed(2)}`;\n};\n\nw.onchange = w.oninput = () => {\n  outer.style.width = `${w.value}px`;\n  wf.textContent = `width: ${w.value}`;\n  updateRatio();\n};\n\nh.onchange = h.oninput = () => {\n  outer.style.height = `${h.value}px`;\n  hf.textContent = `height: ${h.value}`;\n  updateRatio();\n};",
-      "choices": null
+      "html": "<section id=\"default-example\">\n  <img\n    class=\"transition-all\"\n    height=\"640\"\n    id=\"example-element\"\n    src=\"https://developer.mozilla.org/shared-assets/images/examples/plumeria.jpg\"\n    width=\"466\" />\n</section>",
+      "css": "#example-element {\n  height: 100%;\n  width: auto;\n}",
+      "js": null,
+      "choices": [
+       "aspect-ratio: auto;",
+       "aspect-ratio: 1 / 1;",
+       "aspect-ratio: 16 / 9;",
+       "aspect-ratio: 0.5;"
+      ]
      },
      "modern": []
     },
@@ -12490,7 +12495,7 @@
      "compat": "css.properties.block-size",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size",
-      "summary": "The <strong><code>block-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">block axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size\"><code>inline-size</code></a>, which defines the other dimension of the element."
+      "summary": "The <strong><code>block-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">block axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size\"><code>inline-size</code></a>, which defines the other dimension of the element."
      },
      "status": {
       "deprecated": false,
@@ -12999,10 +13004,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.height",
+     "compat": "css.properties.height",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height",
-      "summary": "The <strong><code>height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> can be used to apply styles based on the height of the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/viewport\">viewport</a> (or the page box, for <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Paged_media\">paged media</a>)."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height",
+      "summary": "The <strong><code>height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the height of an element. By default, the property defines the height of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area\">content area</a>. If <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing\"><code>box-sizing</code></a> is set to <code>border-box</code>, however, it instead determines the height of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area\">border area</a>."
      },
      "status": {
       "deprecated": false,
@@ -13012,19 +13017,32 @@
      "support": {
       "chrome": "1",
       "edge": "12",
-      "firefox": "2",
-      "safari": "3",
+      "firefox": "1",
+      "safari": "1",
       "chrome_android": "18",
       "safari_ios": "1"
      },
      "baseline": {
-      "feature": "media-queries",
+      "feature": "width-height",
       "status": "high",
       "lowDate": "2015-07-29",
       "highDate": "2018-01-29"
      },
-     "example": null,
-     "modern": []
+     "example": {
+      "html": "<section class=\"default-example\" id=\"default-example\">\n  <div class=\"transition-all\" id=\"example-element\">\n    This is a box where you can change the height.\n  </div>\n</section>",
+      "css": "#example-element {\n  display: flex;\n  flex-direction: column;\n  background-color: #5b6dcd;\n  justify-content: center;\n  color: white;\n}",
+      "js": null,
+      "choices": [
+       "height: 150px;",
+       "height: 6em;",
+       "height: 75%;",
+       "height: auto;"
+      ]
+     },
+     "modern": [
+      "anchor-positioning",
+      "stretch"
+     ]
     },
     {
      "id": "inline-size",
@@ -13052,7 +13070,7 @@
      "compat": "css.properties.inline-size",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size",
-      "summary": "The <strong><code>inline-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">inline axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size\"><code>block-size</code></a>, which defines the other dimension of the element."
+      "summary": "The <strong><code>inline-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">inline axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size\"><code>block-size</code></a>, which defines the other dimension of the element."
      },
      "status": {
       "deprecated": false,
@@ -13176,7 +13194,7 @@
      "compat": "css.properties.max-height",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/max-height",
-      "summary": "The <strong><code>max-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a> property from becoming larger than the value specified for <code>max-height</code>."
+      "summary": "The <strong><code>max-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a> property from becoming larger than the value specified for <code>max-height</code>."
      },
      "status": {
       "deprecated": false,
@@ -13344,7 +13362,7 @@
      "compat": "css.properties.max-width",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/max-width",
-      "summary": "The <strong><code>max-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a> property from becoming larger than the value specified by <code>max-width</code>."
+      "summary": "The <strong><code>max-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a> property from becoming larger than the value specified by <code>max-width</code>."
      },
      "status": {
       "deprecated": false,
@@ -13469,7 +13487,7 @@
      "compat": "css.properties.min-height",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-height",
-      "summary": "The <strong><code>min-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a> property from becoming smaller than the value specified for <code>min-height</code>."
+      "summary": "The <strong><code>min-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a> property from becoming smaller than the value specified for <code>min-height</code>."
      },
      "status": {
       "deprecated": false,
@@ -13670,7 +13688,7 @@
      "compat": "css.properties.min-width",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-width",
-      "summary": "The <strong><code>min-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a> property from becoming smaller than the value specified for <code>min-width</code>."
+      "summary": "The <strong><code>min-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a> property from becoming smaller than the value specified for <code>min-width</code>."
      },
      "status": {
       "deprecated": false,
@@ -13731,34 +13749,24 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.page.size",
-     "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@page/size",
-      "summary": "The <strong><code>size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/At-rules\">at-rule</a> descriptor, used with the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@page\"><code>@page</code></a> at-rule, defines the size and orientation of the box which is used to represent a page. Most of the time, this size corresponds to the target size of the printed page if applicable."
-     },
+     "compat": "css.properties.size",
+     "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
      "support": {
-      "chrome": "15",
-      "edge": "79",
-      "firefox": "95",
-      "safari": "18.2",
-      "chrome_android": "18",
-      "safari_ios": "18.2"
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
      },
-     "baseline": {
-      "feature": "page-setup",
-      "status": "low",
-      "lowDate": "2024-12-11",
-      "highDate": null
-     },
+     "baseline": null,
      "example": null,
-     "modern": [
-      "page-setup"
-     ]
+     "modern": []
     },
     {
      "id": "width",
@@ -13783,10 +13791,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.width",
+     "compat": "css.properties.width",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width",
-      "summary": "The <strong><code>width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> can be used to test the width of the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/viewport\">viewport</a> (or the page box, for <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Paged_media\">paged media</a>)."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width",
+      "summary": "The <strong><code>width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets an element's width. By default, it sets the width of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#content_area\">content area</a>, but if <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/box-sizing\"><code>box-sizing</code></a> is set to <code>border-box</code>, it sets the width of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Introduction#border_area\">border area</a>."
      },
      "status": {
       "deprecated": false,
@@ -13796,19 +13804,32 @@
      "support": {
       "chrome": "1",
       "edge": "12",
-      "firefox": "2",
-      "safari": "3",
+      "firefox": "1",
+      "safari": "1",
       "chrome_android": "18",
       "safari_ios": "1"
      },
      "baseline": {
-      "feature": "media-queries",
+      "feature": "width-height",
       "status": "high",
       "lowDate": "2015-07-29",
       "highDate": "2018-01-29"
      },
-     "example": null,
-     "modern": []
+     "example": {
+      "html": "<section class=\"default-example\" id=\"default-example\">\n  <div class=\"transition-all\" id=\"example-element\">\n    This is a box where you can change the width.\n  </div>\n</section>",
+      "css": "#example-element {\n  display: flex;\n  flex-direction: column;\n  background-color: #5b6dcd;\n  height: 80%;\n  justify-content: center;\n  color: white;\n}",
+      "js": null,
+      "choices": [
+       "width: 150px;",
+       "width: 20em;",
+       "width: 75%;",
+       "width: auto;"
+      ]
+     },
+     "modern": [
+      "anchor-positioning",
+      "stretch"
+     ]
     }
    ]
   },
@@ -14644,10 +14665,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.color",
+     "compat": "css.properties.color",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/color",
-      "summary": "The <strong><code>color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> can be used to test the number of bits per color component (red, green, blue) of the output device."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color",
+      "summary": "The <strong><code>color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the foreground <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color value</a> of an element's text and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-decoration\">text decorations</a>, and sets the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value#currentcolor_keyword\"><code>currentColor</code></a> value. <code>currentColor</code> may be used as an indirect value on <em>other</em> properties and is the default for other color properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-color\"><code>border-color</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -14657,18 +14678,30 @@
      "support": {
       "chrome": "1",
       "edge": "12",
-      "firefox": "2",
-      "safari": "3",
+      "firefox": "1",
+      "safari": "1",
       "chrome_android": "18",
       "safari_ios": "1"
      },
      "baseline": {
-      "feature": "media-queries",
+      "feature": "color",
       "status": "high",
       "lowDate": "2015-07-29",
       "highDate": "2018-01-29"
      },
-     "example": null,
+     "example": {
+      "html": "<section id=\"default-example\">\n  <div class=\"example-container\">\n    <p id=\"example-element\">\n      London. Michaelmas term lately over, and the Lord Chancellor sitting in\n      Lincoln's Inn Hall. Implacable November weather.\n    </p>\n  </div>\n</section>",
+      "css": "#example-element {\n  font-size: 1.5em;\n}\n\n.example-container {\n  background-color: white;\n  padding: 10px;\n}",
+      "js": null,
+      "choices": [
+       "color: rebeccapurple;",
+       "color: #00a400;",
+       "color: rgb(214 122 127);",
+       "color: hsl(30deg 82% 43%);",
+       "color: hsl(237deg 74% 33% / 61%);",
+       "color: hwb(152deg 0% 58% / 70%);"
+      ]
+     },
      "modern": []
     },
     {
@@ -16387,24 +16420,14 @@
      "legacyAliasOf": "animation",
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.-webkit-animation",
-     "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/-webkit-animation",
-      "summary": "The <strong><code>-webkit-animation</code></strong> Boolean <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> is a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Webkit_extensions\">WebKit extension</a> whose value is <code>true</code> if vendor-prefixed CSS <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation\"><code>animation</code></a>s are supported."
-     },
+     "compat": null,
+     "mdn": null,
      "status": {
-      "deprecated": true,
+      "deprecated": false,
       "experimental": false,
-      "standardTrack": false
+      "standardTrack": true
      },
-     "support": {
-      "chrome": "2, removed in 36",
-      "edge": "No",
-      "firefox": "No",
-      "safari": "4",
-      "chrome_android": "18, removed in 36",
-      "safari_ios": "3.2"
-     },
+     "support": null,
      "baseline": null,
      "example": null,
      "modern": []
@@ -17737,7 +17760,7 @@
      "compat": "css.properties.-webkit-text-fill-color",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-fill-color",
-      "summary": "The <strong><code>-webkit-text-fill-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the fill <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color\"><code>color</code></a> property is used."
+      "summary": "The <strong><code>-webkit-text-fill-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the fill <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/color\"><code>color</code></a> property is used."
      },
      "status": {
       "deprecated": false,
@@ -17871,7 +17894,7 @@
      "compat": "css.properties.-webkit-text-stroke-color",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke-color",
-      "summary": "The <strong><code>-webkit-text-stroke-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the stroke <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color\"><code>color</code></a> property is used."
+      "summary": "The <strong><code>-webkit-text-stroke-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the stroke <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/color\"><code>color</code></a> property is used."
      },
      "status": {
       "deprecated": false,
@@ -18047,24 +18070,14 @@
      "legacyAliasOf": "transition",
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.-webkit-transition",
-     "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/-webkit-transition",
-      "summary": "The <strong><code>-webkit-transition</code></strong> Boolean non-standard <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> is a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Webkit_extensions\">WebKit extension</a> whose value is <code>true</code> if the browsing context supports <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions\">CSS transitions</a>."
-     },
+     "compat": null,
+     "mdn": null,
      "status": {
-      "deprecated": true,
+      "deprecated": false,
       "experimental": false,
-      "standardTrack": false
+      "standardTrack": true
      },
-     "support": {
-      "chrome": "2, removed in 36",
-      "edge": "No",
-      "firefox": "No",
-      "safari": "4",
-      "chrome_android": "18, removed in 36",
-      "safari_ios": "3.2"
-     },
+     "support": null,
      "baseline": null,
      "example": null,
      "modern": []
@@ -19107,6 +19120,7 @@
       "device-posture",
       "scripting",
       "prefers-reduced-transparency",
+      "overflow",
       "update",
       "media-query-range-syntax",
       "color-gamut"
@@ -23083,10 +23097,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.font-palette-values.font-family",
+     "compat": "css.properties.font-family",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family",
-      "summary": "The <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values\">@font-palette-values</a> <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/CSS_Descriptor\">descriptor</a> <strong><code>font-family</code></strong> is used to specify which font-family palette values are to be applied to. This need to match exactly the values used when setting the CSS <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\">font-family</a>."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family",
+      "summary": "The <strong><code>font-family</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies a prioritized list of one or more font family names and/or generic family names for the selected element."
      },
      "status": {
       "deprecated": false,
@@ -23094,26 +23108,35 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "101",
-      "edge": "101",
-      "firefox": "107",
-      "safari": "15.4",
-      "chrome_android": "101",
-      "safari_ios": "15.4"
+      "chrome": "1",
+      "edge": "12",
+      "firefox": "1",
+      "safari": "1",
+      "chrome_android": "18",
+      "safari_ios": "1"
      },
      "baseline": {
-      "feature": "font-palette",
+      "feature": "font-family",
       "status": "high",
-      "lowDate": "2022-11-15",
-      "highDate": "2025-05-15"
+      "lowDate": "2015-07-29",
+      "highDate": "2018-01-29"
      },
      "example": {
-      "html": "<h2>This is spicy</h2>\n<h2 class=\"extra-spicy\">This is extra hot & spicy</h2>",
-      "css": "@import \"https://fonts.googleapis.com/css2?family=Bungee+Spice\";\n@font-palette-values --bungee-extra-spicy {\n  font-family: \"Bungee Spice\";\n  override-colors:\n    0 darkred,\n    1 red;\n}\n\nh2 {\n  font-family: \"Bungee Spice\", fantasy;\n}\n\nh2.extra-spicy {\n  font-palette: --bungee-extra-spicy;\n}",
+      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    London. Michaelmas term lately over, and the Lord Chancellor sitting in\n    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets\n    as if the waters had but newly retired from the face of the earth, and it\n    would not be wonderful to meet a Megalosaurus, forty feet long or so,\n    waddling like an elephantine lizard up Holborn Hill.\n  </p>\n</section>",
+      "css": "section {\n  font-size: 1.2em;\n}",
       "js": null,
-      "choices": null
+      "choices": [
+       "font-family: \"Georgia\", serif;",
+       "font-family: \"Gill Sans\", sans-serif;",
+       "font-family: sans-serif;",
+       "font-family: serif;",
+       "font-family: cursive;",
+       "font-family: system-ui;"
+      ]
      },
-     "modern": []
+     "modern": [
+      "font-family-math"
+     ]
     },
     {
      "id": "font-feature-settings",
@@ -23136,10 +23159,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.font-face.font-feature-settings",
+     "compat": "css.properties.font-feature-settings",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-feature-settings",
-      "summary": "The <strong><code>font-feature-settings</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> descriptor allows you to define the initial settings to use for the font defined by the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face\"><code>@font-face</code></a> at-rule. You can further use this descriptor to control typographic font features such as ligatures, small caps, and swashes, for the font defined by <code>@font-face</code>. The values for this descriptor are the same as the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings\"><code>font-feature-settings</code></a> property, except for the global keyword values."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-feature-settings",
+      "summary": "The <strong><code>font-feature-settings</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property controls advanced typographic features in OpenType fonts."
      },
      "status": {
       "deprecated": false,
@@ -23147,12 +23170,12 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "140",
-      "edge": "140",
+      "chrome": "48",
+      "edge": "12",
       "firefox": "34",
-      "safari": "10",
-      "chrome_android": "140",
-      "safari_ios": "10"
+      "safari": "9.1",
+      "chrome_android": "48",
+      "safari_ios": "9.3"
      },
      "baseline": {
       "feature": "font-feature-settings",
@@ -23161,10 +23184,15 @@
       "highDate": "2018-09-21"
      },
      "example": {
-      "html": "<p class=\"swash-off\">Swash is off here</p>\n<p class=\"swash-on\">Swash is on here</p>",
-      "css": "@font-face {\n  font-family: \"MonteCarlo\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/monte-carlo/monte-carlo-regular.woff2\");\n}\n@font-face {\n  font-family: \"MonteCarlo2\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/monte-carlo/monte-carlo-regular.woff2\");\n  font-feature-settings: \"swsh\" 1;\n}\np {\n  font-size: 3rem;\n  margin: 0.7rem 3rem;\n}\n.swash-off {\n  font-family: \"MonteCarlo\", cursive;\n}\n.swash-on {\n  font-family: \"MonteCarlo2\", cursive;\n}",
+      "html": "<section id=\"default-example\">\n  <div id=\"example-element\">\n    <p>Difficult waffles</p>\n    <table>\n      <tbody>\n        <tr>\n          <td><span class=\"tabular\">0O</span></td>\n        </tr>\n        <tr>\n          <td><span class=\"tabular\">3.14</span></td>\n        </tr>\n        <tr>\n          <td><span class=\"tabular\">2.71</span></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</section>",
+      "css": "@font-face {\n  font-family: \"Fira Sans\";\n  src:\n    local(\"FiraSans-Regular\"),\n    url(\"https://developer.mozilla.org/shared-assets/fonts/FiraSans-Regular.woff2\") format(\"woff2\");\n  font-weight: normal;\n  font-style: normal;\n}\n\nsection {\n  font-family: \"Fira Sans\", sans-serif;\n  margin-top: 10px;\n  font-size: 1.5em;\n}\n\n#example-element table {\n  margin-left: auto;\n  margin-right: auto;\n}\n\n.tabular {\n  border: 1px solid;\n}",
       "js": null,
-      "choices": null
+      "choices": [
+       "font-feature-settings: normal;",
+       "font-feature-settings: \"liga\" 0;",
+       "font-feature-settings: \"tnum\";",
+       "font-feature-settings: \"smcp\", \"zero\";"
+      ]
      },
      "modern": []
     },
@@ -23520,10 +23548,10 @@
      "legacyAliasOf": "font-width",
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.font-face.font-stretch",
+     "compat": "css.properties.font-stretch",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-stretch",
-      "summary": "The <strong><code>font-stretch</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> descriptor allows authors to specify a normal, condensed, or expanded face for the fonts specified in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face\"><code>@font-face</code></a> at-rule."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-stretch",
+      "summary": "The <strong><code>font-stretch</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property selects a normal, condensed, or expanded face from a font."
      },
      "status": {
       "deprecated": false,
@@ -23531,12 +23559,12 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "62",
-      "edge": "17",
-      "firefox": "62",
-      "safari": "10.1",
-      "chrome_android": "62",
-      "safari_ios": "10.3"
+      "chrome": "60",
+      "edge": "12",
+      "firefox": "9",
+      "safari": "11",
+      "chrome_android": "60",
+      "safari_ios": "11"
      },
      "baseline": {
       "feature": "font-stretch",
@@ -23545,10 +23573,17 @@
       "highDate": "2022-07-15"
      },
      "example": {
-      "html": "<p>League Mono</p>\n<p>League Mono</p>\n<p>League Mono</p>",
-      "css": "@font-face {\n  font-family: \"League Mono Ultra Condensed\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-stretch: ultra-condensed; /* same as 50% */\n}\n\n@font-face {\n  font-family: \"League Mono Normal\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-stretch: 100%; /* same as normal */\n}\n\n@font-face {\n  font-family: \"League Mono Ultra Expanded\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-stretch: ultra-expanded; /* same as 200% */\n}\n\np:nth-child(1) {\n  font-family: \"League Mono Ultra Condensed\", sans-serif;\n}\n\np:nth-child(2) {\n  font-family: \"League Mono Normal\", sans-serif;\n}\n\np:nth-child(3) {\n  font-family: \"League Mono Ultra Expanded\", sans-serif;\n}",
+      "html": "<section class=\"default-example\" id=\"default-example\">\n  <p class=\"transition-all\" id=\"example-element\">\n    London. Michaelmas term lately over, and the Lord Chancellor sitting in\n    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets\n    as if the waters had but newly retired from the face of the earth, and it\n    would not be wonderful to meet a Megalosaurus, forty feet long or so,\n    waddling like an elephantine lizard up Holborn Hill.\n  </p>\n</section>",
+      "css": "@font-face {\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-family: \"League\";\n  font-style: normal;\n  font-weight: normal;\n}\n\nsection {\n  font-size: 1.2em;\n  font-family: \"League\", sans-serif;\n}",
       "js": null,
-      "choices": null
+      "choices": [
+       "font-stretch: condensed;",
+       "font-stretch: expanded;",
+       "font-stretch: ultra-expanded;",
+       "font-stretch: 50%;",
+       "font-stretch: 100%;",
+       "font-stretch: 150%;"
+      ]
      },
      "modern": []
     },
@@ -23573,10 +23608,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.font-face.font-style",
+     "compat": "css.properties.font-style",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-style",
-      "summary": "The <strong><code>font-style</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> descriptor allows authors to specify font styles for the fonts specified in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face\"><code>@font-face</code></a> at-rule."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-style",
+      "summary": "The <strong><code>font-style</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets whether a font should be styled with a normal, italic, or oblique face from its <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -23584,12 +23619,12 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "4",
+      "chrome": "1",
       "edge": "12",
-      "firefox": "3.5",
-      "safari": "3.1",
+      "firefox": "1",
+      "safari": "1",
       "chrome_android": "18",
-      "safari_ios": "2"
+      "safari_ios": "1"
      },
      "baseline": {
       "feature": "font-style",
@@ -23597,7 +23632,17 @@
       "lowDate": "2015-07-29",
       "highDate": "2018-01-29"
      },
-     "example": null,
+     "example": {
+      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    London. Michaelmas term lately over, and the Lord Chancellor sitting in\n    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets\n    as if the waters had but newly retired from the face of the earth, and it\n    would not be wonderful to meet a Megalosaurus, forty feet long or so,\n    waddling like an elephantine lizard up Holborn Hill.\n  </p>\n</section>",
+      "css": "@font-face {\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/variable-fonts/AmstelvarAlpha-VF.woff2\");\n  font-family: \"Amstelvar\";\n  font-style: normal;\n}\n\nsection {\n  font-size: 1.2em;\n  font-family: \"Amstelvar\", serif;\n}",
+      "js": null,
+      "choices": [
+       "font-style: normal;",
+       "font-style: italic;",
+       "font-style: oblique;",
+       "font-style: oblique 40deg;"
+      ]
+     },
      "modern": []
     },
     {
@@ -24370,10 +24415,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.font-face.font-variation-settings",
+     "compat": "css.properties.font-variation-settings",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-variation-settings",
-      "summary": "The <strong><code>font-variation-settings</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> descriptor allows authors to specify low-level OpenType or TrueType font variations in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face\"><code>@font-face</code></a> at-rule. The values for this descriptor are the same as the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variation-settings\"><code>font-variation-settings</code></a> property, except for the global keyword values."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-variation-settings",
+      "summary": "The <strong><code>font-variation-settings</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property provides low-level control over <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Fonts/Variable_fonts\">variable font</a> characteristics by letting you specify the four letter axis names of the characteristics you want to vary along with their values."
      },
      "status": {
       "deprecated": false,
@@ -24381,12 +24426,12 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "140",
-      "edge": "140",
+      "chrome": "62",
+      "edge": "17",
       "firefox": "62",
-      "safari": "No",
-      "chrome_android": "140",
-      "safari_ios": "No"
+      "safari": "11",
+      "chrome_android": "62",
+      "safari_ios": "11"
      },
      "baseline": {
       "feature": "font-variation-settings",
@@ -24394,7 +24439,17 @@
       "lowDate": "2018-09-05",
       "highDate": "2021-03-05"
      },
-     "example": null,
+     "example": {
+      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    ...it would not be wonderful to meet a Megalosaurus, forty feet long or so,\n    waddling like an elephantine lizard up Holborn Hill.\n  </p>\n</section>",
+      "css": "@font-face {\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/variable-fonts/AmstelvarAlpha-VF.woff2\");\n  font-family: \"Amstelvar\";\n  font-style: normal;\n}\n\np {\n  font-size: 1.5rem;\n  font-family: \"Amstelvar\", serif;\n}",
+      "js": null,
+      "choices": [
+       "font-variation-settings: \"wght\" 50;",
+       "font-variation-settings: \"wght\" 850;",
+       "font-variation-settings: \"wdth\" 25;",
+       "font-variation-settings: \"wdth\" 75;"
+      ]
+     },
      "modern": []
     },
     {
@@ -24418,10 +24473,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.font-face.font-weight",
+     "compat": "css.properties.font-weight",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-weight",
-      "summary": "The <strong><code>font-weight</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face\"><code>@font-face</code></a> descriptor enables authors to specify a single font weight, or a range of font weights, for the font specified in a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face\"><code>@font-face</code></a> at-rule. This is then used by the browser to select the appropriate font when a CSS rule sets a desired <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight\">font weight</a>."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight",
+      "summary": "The <strong><code>font-weight</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the weight (or boldness) of the font. The weights available depend on the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a> that is currently set."
      },
      "status": {
       "deprecated": false,
@@ -24429,12 +24484,12 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "4",
+      "chrome": "2",
       "edge": "12",
-      "firefox": "3.5",
-      "safari": "3.1",
+      "firefox": "1",
+      "safari": "1",
       "chrome_android": "18",
-      "safari_ios": "2"
+      "safari_ios": "1"
      },
      "baseline": {
       "feature": "font-weight",
@@ -24443,10 +24498,17 @@
       "highDate": "2018-01-29"
      },
      "example": {
-      "html": "<p class=\"one\">Fira Sans, `normal` weight paragraph</p>\n<p class=\"two\">Fira Sans, `bold` weight paragraph</p>\n<p><strong>Fira Sans, &lt;strong&gt; element (`bold`)</strong></p>",
-      "css": "@font-face {\n  font-family: \"Fira Sans\";\n  font-weight: normal;\n  src: url(\"https://mdn.github.io/shared-assets/fonts/FiraSans-Regular.woff2\");\n}\n\n@font-face {\n  font-family: \"Fira Sans\";\n  font-weight: bold;\n  src: url(\"https://mdn.github.io/shared-assets/fonts/FiraSans-Bold.woff2\");\n}\n\nbody {\n  font-family: \"Fira Sans\", serif;\n  font-size: 2rem;\n}\n\np.one {\n  font-weight: normal;\n}\n\np.two {\n  font-weight: bold;\n}",
+      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    London. Michaelmas term lately over, and the Lord Chancellor sitting in\n    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets\n    as if the waters had but newly retired from the face of the earth, and it\n    would not be wonderful to meet a Megalosaurus, forty feet long or so,\n    waddling like an elephantine lizard up Holborn Hill.\n  </p>\n</section>",
+      "css": "section {\n  font-size: 1.2em;\n}",
       "js": null,
-      "choices": null
+      "choices": [
+       "font-weight: normal;",
+       "font-weight: bold;",
+       "font-weight: lighter;",
+       "font-weight: bolder;",
+       "font-weight: 100;",
+       "font-weight: 900;"
+      ]
      },
      "modern": []
     },
@@ -24471,20 +24533,20 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.font-face.font-width",
+     "compat": "css.properties.font-width",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face/font-width",
-      "summary": "The <strong><code>font-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> descriptor allows authors to specify a normal, condensed, or expanded face for the fonts specified in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-face\"><code>@font-face</code></a> at-rule."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-width",
+      "summary": "The <strong><code>font-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property selects a normal, condensed, or expanded face from a font."
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "No",
       "edge": "No",
-      "firefox": "No",
+      "firefox": "155",
       "safari": "18.4",
       "chrome_android": "No",
       "safari_ios": "18.4"
@@ -24496,10 +24558,17 @@
       "highDate": null
      },
      "example": {
-      "html": "<p>League Mono</p>\n<p>League Mono</p>\n<p>League Mono</p>",
-      "css": "@font-face {\n  font-family: \"League Mono Ultra Condensed\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-width: ultra-condensed; /* same as 50% */\n}\n\n@font-face {\n  font-family: \"League Mono Normal\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-width: 100%; /* same as normal */\n}\n\n@font-face {\n  font-family: \"League Mono Ultra Expanded\";\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-width: ultra-expanded; /* same as 200% */\n}\n\np:nth-child(1) {\n  font-family: \"League Mono Ultra Condensed\", sans-serif;\n}\n\np:nth-child(2) {\n  font-family: \"League Mono Normal\", sans-serif;\n}\n\np:nth-child(3) {\n  font-family: \"League Mono Ultra Expanded\", sans-serif;\n}",
+      "html": "<section class=\"default-example\" id=\"default-example\">\n  <p class=\"transition-all\" id=\"example-element\">\n    London. Michaelmas term lately over, and the Lord Chancellor sitting in\n    Lincoln's Inn Hall. Implacable November weather. As much mud in the streets\n    as if the waters had but newly retired from the face of the earth, and it\n    would not be wonderful to meet a Megalosaurus, forty feet long or so,\n    waddling like an elephantine lizard up Holborn Hill.\n  </p>\n</section>",
+      "css": "@font-face {\n  src: url(\"https://developer.mozilla.org/shared-assets/fonts/LeagueMono-VF.ttf\") format(\"truetype\");\n  font-family: \"League\";\n  font-style: normal;\n  font-weight: normal;\n}\n\nsection {\n  font-size: 1.2em;\n  font-family: \"League\", sans-serif;\n}",
       "js": null,
-      "choices": null
+      "choices": [
+       "font-width: condensed;",
+       "font-width: expanded;",
+       "font-width: ultra-expanded;",
+       "font-width: 50%;",
+       "font-width: 100%;",
+       "font-width: 150%;"
+      ]
      },
      "modern": [
       "font-width"
@@ -24724,6 +24793,7 @@
       "choices": null
      },
      "modern": [
+      "font-width",
       "font-size-adjust"
      ]
     },
@@ -30122,10 +30192,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.grid",
+     "compat": "css.properties.grid",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/grid",
-      "summary": "The <strong><code>grid</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> can be used to test whether the output device uses a grid-based screen."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid",
+      "summary": "The <strong><code>grid</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Shorthand_properties\">shorthand</a> property sets all of the explicit and implicit grid properties in a single declaration."
      },
      "status": {
       "deprecated": false,
@@ -30133,20 +30203,29 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "1",
-      "edge": "12",
-      "firefox": "2",
-      "safari": "3",
-      "chrome_android": "18",
-      "safari_ios": "1"
+      "chrome": "57",
+      "edge": "16",
+      "firefox": "52",
+      "safari": "10.1",
+      "chrome_android": "57",
+      "safari_ios": "10.3"
      },
      "baseline": {
-      "feature": "media-queries",
+      "feature": "grid",
       "status": "high",
-      "lowDate": "2015-07-29",
-      "highDate": "2018-01-29"
+      "lowDate": "2017-10-17",
+      "highDate": "2020-04-17"
      },
-     "example": null,
+     "example": {
+      "html": "<section class=\"default-example\" id=\"default-example\">\n  <div class=\"example-container\">\n    <div class=\"transition-all\" id=\"example-element\">\n      <div>One</div>\n      <div>Two</div>\n      <div>Three</div>\n    </div>\n  </div>\n</section>",
+      "css": "#example-element {\n  border: 1px solid #c5c5c5;\n  display: grid;\n  grid-gap: 10px;\n  width: 200px;\n}\n\n#example-element :nth-child(1) {\n  background-color: rgb(0 0 255 / 0.2);\n  border: 3px solid blue;\n}\n\n#example-element :nth-child(2) {\n  background-color: rgb(255 0 200 / 0.2);\n  border: 3px solid rebeccapurple;\n  grid-column: auto / span 3;\n  grid-row: auto / span 2;\n}\n\n#example-element :nth-child(3) {\n  background-color: rgb(94 255 0 / 0.2);\n  border: 3px solid green;\n  grid-column: auto / span 2;\n}",
+      "js": null,
+      "choices": [
+       "grid: auto-flow / 1fr 1fr 1fr;",
+       "grid: auto-flow dense / 40px 40px 1fr;",
+       "grid: repeat(3, 80px) / auto-flow;"
+      ]
+     },
      "modern": []
     },
     {
@@ -37146,10 +37225,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.overflow-block",
+     "compat": "css.properties.overflow-block",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/overflow-block",
-      "summary": "The <strong><code>overflow-block</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> can be used to test how the output device handles content that overflows the initial <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Containing_block\">containing block</a> along the block axis."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-block",
+      "summary": "The <strong><code>overflow-block</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets what shows when content overflows the block start and block end edges of a box. This may be nothing, a scroll bar, or the overflow content."
      },
      "status": {
       "deprecated": false,
@@ -37157,23 +37236,21 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "113",
-      "edge": "113",
-      "firefox": "66",
-      "safari": "17",
-      "chrome_android": "113",
-      "safari_ios": "17"
+      "chrome": "135",
+      "edge": "135",
+      "firefox": "69",
+      "safari": "26",
+      "chrome_android": "135",
+      "safari_ios": "26"
      },
      "baseline": {
-      "feature": "overflow",
+      "feature": "logical-properties",
       "status": "high",
-      "lowDate": "2023-09-18",
-      "highDate": "2026-03-18"
+      "lowDate": "2021-09-20",
+      "highDate": "2024-03-20"
      },
      "example": null,
-     "modern": [
-      "overflow"
-     ]
+     "modern": []
     },
     {
      "id": "overflow-clip-margin",
@@ -37587,10 +37664,10 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.media.overflow-inline",
+     "compat": "css.properties.overflow-inline",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/overflow-inline",
-      "summary": "The <strong><code>overflow-inline</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media#media_features\">media feature</a> can be used to test how the output device handles content that overflows the initial <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Display/Containing_block\">containing block</a> along the inline axis."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-inline",
+      "summary": "The <strong><code>overflow-inline</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets what shows when content overflows the inline start and end edges of a box. This may be nothing, a scroll bar, or the overflow content."
      },
      "status": {
       "deprecated": false,
@@ -37598,23 +37675,26 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "113",
-      "edge": "113",
-      "firefox": "66",
-      "safari": "17",
-      "chrome_android": "113",
-      "safari_ios": "17"
+      "chrome": "135",
+      "edge": "135",
+      "firefox": "69",
+      "safari": "26",
+      "chrome_android": "135",
+      "safari_ios": "26"
      },
      "baseline": {
-      "feature": "overflow",
+      "feature": "logical-properties",
       "status": "high",
-      "lowDate": "2023-09-18",
-      "highDate": "2026-03-18"
+      "lowDate": "2021-09-20",
+      "highDate": "2024-03-20"
      },
-     "example": null,
-     "modern": [
-      "overflow"
-     ]
+     "example": {
+      "html": "<ul>\n  <li>\n    <code>overflow-inline: hidden</code> (hides the text outside the box)\n    <div id=\"div1\">ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ</div>\n  </li>\n\n  <li>\n    <code>overflow-inline: scroll</code> (always adds a scrollbar)\n    <div id=\"div2\">ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ</div>\n  </li>\n\n  <li>\n    <code>overflow-inline: visible</code> (displays the text outside the box if\n    needed)\n    <div id=\"div3\">ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ</div>\n  </li>\n\n  <li>\n    <code>overflow-inline: auto</code> (equivalent to <code>scroll</code>\n    in most browsers)\n    <div id=\"div4\">ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ</div>\n  </li>\n\n  <li>\n    <code>overflow-inline: clip</code> (hides the text outside the box beyond\n    the overflow clip edge)\n    <code>clip</code>\n    <div id=\"div5\">ABCDEFGHIJKLMOPQRSTUVWXYZABCDEFGHIJKLMOPQRSTUVWXYZ</div>\n  </li>\n</ul>",
+      "css": "div {\n  border: 1px solid black;\n  width: 250px;\n  margin-bottom: 12px;\n}\n\n#div1 {\n  overflow-inline: hidden;\n}\n#div2 {\n  overflow-inline: scroll;\n}\n#div3 {\n  overflow-inline: visible;\n}\n#div4 {\n  overflow-inline: auto;\n}\n#div5 {\n  overflow-inline: clip;\n  overflow-clip-margin: 2em;\n}",
+      "js": null,
+      "choices": null
+     },
+     "modern": []
     },
     {
      "id": "overflow-x",
@@ -50308,39 +50388,32 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": "css.at-rules.counter-style.speak-as",
+     "compat": "css.properties.speak-as",
      "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@counter-style/speak-as",
-      "summary": "The <strong><code>speak-as</code></strong> descriptor specifies how a counter symbol constructed with a given will be represented in the spoken form. For example, an author can specify a counter symbol to be either spoken as its numerical value or just represented with an audio cue."
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/speak-as",
+      "summary": "The <strong><code>speak-as</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property is used to define how <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTML\">HTML</a> content is spoken. The one to three enumerated key terms determine the manner by which elements and text get rendered by aural technologies, such as <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/screen_reader\">screen readers</a> and digital assistants."
      },
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
      "support": {
-      "chrome": "91",
-      "edge": "91",
-      "firefox": "33",
-      "safari": "No",
-      "chrome_android": "91",
-      "safari_ios": "No"
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "11.1",
+      "chrome_android": "No",
+      "safari_ios": "11.3"
      },
      "baseline": {
-      "feature": "counter-style",
-      "status": "high",
-      "lowDate": "2023-09-18",
-      "highDate": "2026-03-18"
+      "feature": "speak-as",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
      },
-     "example": {
-      "html": "<ul class=\"list\">\n  <li>I had one apple</li>\n  <li>I ate two bananas</li>\n  <li>I devoured three oranges</li>\n  <li>I am not hungry for dinner</li>\n  <li>But I'll have five scoops of ice cream for dessert</li>\n</ul>",
-      "css": "@counter-style speak-as-example {\n  system: fixed;\n  symbols:     ;\n  suffix: \" \";\n  speak-as: numbers;\n}\n\n.list {\n  list-style: speak-as-example;\n}",
-      "js": null,
-      "choices": null
-     },
-     "modern": [
-      "counter-style"
-     ]
+     "example": null,
+     "modern": []
     },
     {
      "id": "voice-balance",
@@ -58331,7 +58404,7 @@
      "compat": "css.types.length",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length",
-      "summary": "The <strong><code>&lt;length&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a distance value. Lengths can be used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-width\"><code>border-width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow\"><code>text-shadow</code></a>."
+      "summary": "The <strong><code>&lt;length&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a distance value. Lengths can be used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-width\"><code>border-width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow\"><code>text-shadow</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58425,7 +58498,7 @@
      "compat": "css.types.percentage",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/percentage",
-      "summary": "The <strong><code>&lt;percentage&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a percentage value. It is often used to define a size as relative to an element's parent object. Numerous properties can use percentages, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>."
+      "summary": "The <strong><code>&lt;percentage&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a percentage value. It is often used to define a size as relative to an element's parent object. Numerous properties can use percentages, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58510,7 +58583,7 @@
      "compat": "css.types.ratio",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/ratio",
-      "summary": "The <strong><code>&lt;ratio&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> describes the proportional relationship between two values. It mostly represents the aspect ratio, which relates width to height. For example, the <code>&lt;ratio&gt;</code> is used as a value for the <code>aspect-ratio</code> media feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media\"><code>@media</code></a> media queries, the <code>aspect-ratio</code> size feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@container\"><code>@container</code></a> container queries, and as a value for the CSS <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio\"><code>aspect-ratio</code></a> property."
+      "summary": "The <strong><code>&lt;ratio&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> describes the proportional relationship between two values. It mostly represents the aspect ratio, which relates width to height. For example, the <code>&lt;ratio&gt;</code> is used as a value for the <code>aspect-ratio</code> media feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media\"><code>@media</code></a> media queries, the <code>aspect-ratio</code> size feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@container\"><code>@container</code></a> container queries, and as a value for the CSS <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/aspect-ratio\"><code>aspect-ratio</code></a> property."
      },
      "status": {
       "deprecated": false,
@@ -60179,6 +60252,7 @@
     "anchor-scope",
     "block-size",
     "bottom",
+    "height",
     "inline-size",
     "inset-block-end",
     "inset-block-start",
@@ -60219,6 +60293,7 @@
     "position-visibility",
     "right",
     "top",
+    "width",
     "fn-anchor",
     "fn-anchor-size"
    ],
@@ -60467,12 +60542,14 @@
     "safari_ios": "27"
    },
    "keys": [
+    "height",
     "max-height",
     "max-width",
     "min-height",
-    "min-width"
+    "min-width",
+    "width"
    ],
-   "exampleOf": "max-height"
+   "exampleOf": "height"
   },
   {
    "id": "text-autospace",
@@ -60570,9 +60647,10 @@
     "safari_ios": "18.4"
    },
    "keys": [
+    "at-font-face",
     "font-width"
    ],
-   "exampleOf": "font-width"
+   "exampleOf": "at-font-face"
   },
   {
    "id": "progress-function",
@@ -61554,8 +61632,10 @@
     "chrome_android": "109",
     "safari_ios": "26.2"
    },
-   "keys": [],
-   "exampleOf": null
+   "keys": [
+    "font-family"
+   ],
+   "exampleOf": "font-family"
   },
   {
    "id": "text-indent-each-line",
@@ -62833,7 +62913,6 @@
    },
    "keys": [
     "at-page",
-    "size",
     "page"
    ],
    "exampleOf": "at-page"
@@ -64256,8 +64335,7 @@
     "safari_ios": "17"
    },
    "keys": [
-    "at-counter-style",
-    "speak-as"
+    "at-counter-style"
    ],
    "exampleOf": "at-counter-style"
   },
@@ -64389,10 +64467,9 @@
     "safari_ios": "17"
    },
    "keys": [
-    "overflow-block",
-    "overflow-inline"
+    "at-media"
    ],
-   "exampleOf": null
+   "exampleOf": "at-media"
   },
   {
    "id": "update",

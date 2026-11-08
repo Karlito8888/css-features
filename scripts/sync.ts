@@ -309,6 +309,13 @@ function supportLabel(statement: unknown): string {
   return label;
 }
 
+/** The BCD namespace of each kind whose keys never cross into another (functions and types do). */
+const COMPAT_NAMESPACE: Partial<Record<Kind, string>> = {
+  property: "css.properties.",
+  "at-rule": "css.at-rules.",
+  selector: "css.selectors.",
+};
+
 /** The BCD key a webref feature most likely maps to, when MDN does not name it. */
 function guessCompat(bcd: unknown, name: string, kind: Kind): string | null {
   const bare = name.replace(/^::?/, "").replace(/^@/, "").replace(/^</, "").replace(/>$/, "").replace(/\(\)$/, "");
@@ -432,7 +439,12 @@ async function main() {
     const compatToId = new Map<string, string>();
     const features: Feature[] = [];
     for (const row of readWebref(webref.json)) {
-      const page = mdn.byName.get(row.name) ?? null;
+      // MDN names collide across kinds (the width property and the width media feature, the
+      // font-family property and descriptor): a page found by name only counts when its compat key
+      // is of this kind. Functions and types are left alone, their pages point at property values.
+      const named = mdn.byName.get(row.name) ?? null;
+      const ownKind = COMPAT_NAMESPACE[row.kind];
+      const page = named && (!ownKind || !named.compat || named.compat.startsWith(ownKind)) ? named : null;
       const compat = page?.compat ?? guessCompat(bcd.json, row.name, row.kind);
       // Grammar productions nobody documents (<]-token>...) stay out: a type needs an MDN page or a BCD entry.
       if (row.kind === "type" && !page && !compat) continue;

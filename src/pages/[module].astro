@@ -2,7 +2,7 @@
 import FeatureBlock from "../components/FeatureBlock.astro";
 import ModuleNav from "../components/ModuleNav.astro";
 import Base from "../layouts/Base.astro";
-import { KINDS, data, type Kind, type Module } from "../data";
+import { KINDS, data, shipped, type Kind, type Module } from "../data";
 
 export function getStaticPaths() {
   return data.modules.map((module) => ({ params: { module: module.slug }, props: { module } }));
@@ -17,7 +17,7 @@ const names = module.features.map((f) => f.name);
 const description = `${module.title}: ${names.slice(0, 20).join(", ")}${names.length > 20 ? ` and ${names.length - 20} more` : ""}. Definitions, syntax, browser support and live examples, from the W3C specification and MDN.`;
 const counts = (Object.keys(KINDS) as Kind[]).map((k) => [k, module.features.filter((f) => f.kind === k).length] as const).filter(([, n]) => n);
 const modern = [...new Set(module.features.flatMap((f) => f.modern))].map((id) => data.modern.find((m) => m.id === id)!);
-const shipped = module.features.filter((f) => f.compat).length;
+const shippedCount = module.features.filter(shipped).length;
 ---
 
 <Base title={module.title} description={description}>
@@ -29,8 +29,8 @@ const shipped = module.features.filter((f) => f.compat).length;
         <h1>{module.title}</h1>
         <p>
           {counts.map(([k, n], i) => <>{i > 0 && ", "}{n} {n > 1 ? KINDS[k].plural.toLowerCase() : KINDS[k].title.toLowerCase()}</>)} defined by this
-          specification, {shipped === module.features.length ? "all" : `${shipped} of them`} known to at least one browser
-          {shipped < module.features.length && <> (the others are badged <em>Not in any browser yet</em>)</>}.
+          specification, {shippedCount === module.features.length ? "all" : `${shippedCount} of them`} known to at least one browser
+          {shippedCount < module.features.length && <> (the others are badged <em>Not in any browser yet</em>)</>}.
         </p>
         {
           modern.length > 0 && (

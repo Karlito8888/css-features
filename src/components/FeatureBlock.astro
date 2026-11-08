@@ -1,6 +1,6 @@
 ---
 import Example from "./Example.astro";
-import { BROWSERS, KINDS, data, type Feature } from "../data";
+import { BROWSERS, KINDS, data, shipped, type Feature } from "../data";
 import { writtenExample } from "../examples";
 
 interface Props {
@@ -46,7 +46,7 @@ const definition =
     <div class="badges">
       <span class="badge kind">{KINDS[f.kind].title}</span>
       {baseline && <span class:list={["badge", baseline.cls]}>{baseline.text}{baseline.since && <span class="since">since {month(baseline.since)}</span>}</span>}
-      {!f.compat && <span class="badge warn">Not in any browser yet</span>}
+      {!shipped(f) && <span class="badge warn">Not in any browser yet</span>}
       {f.status.deprecated && <span class="badge bad">Deprecated</span>}
       {f.status.experimental && <span class="badge warn">Experimental</span>}
       {!f.status.standardTrack && <span class="badge warn">Non-standard</span>}

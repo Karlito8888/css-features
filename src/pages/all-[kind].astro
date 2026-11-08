@@ -1,7 +1,7 @@
 ---
 import ModuleNav from "../components/ModuleNav.astro";
 import Base from "../layouts/Base.astro";
-import { KINDS, allFeatures, data, featureUrl, type Feature, type Kind } from "../data";
+import { KINDS, allFeatures, data, featureUrl, shipped, type Feature, type Kind } from "../data";
 
 export function getStaticPaths() {
   return (Object.keys(KINDS) as Kind[]).map((kind) => ({
@@ -42,7 +42,7 @@ const title = `All ${KINDS[kind].plural.toLowerCase()}`;
             <h2>{l}</h2>
             <ul>
               {features.filter((f) => letter(f) === l).map((f) => (
-                <li class:list={{ draft: !f.compat }}>
+                <li class:list={{ draft: !shipped(f) }}>
                   <a href={featureUrl(f)}><code>{f.name}</code></a>
                   <span>{moduleOf.get(f.id)}</span>
                 </li>

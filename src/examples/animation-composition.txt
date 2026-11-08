@@ -1,0 +1,5 @@
+animation-composition: replace;
+
+animation-composition: add;
+
+animation-composition: accumulate;

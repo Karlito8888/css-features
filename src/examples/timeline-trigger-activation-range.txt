@@ -1,0 +1,11 @@
+timeline-trigger-activation-range: normal;
+--note: "normal: the whole crossing, so both triggers have started";
+
+timeline-trigger-activation-range: contain, entry;
+--note: "contain, entry: --a watches the middle of the crossing and has started, --b only its first part and waits";
+
+timeline-trigger-activation-range: entry, contain;
+--note: "entry, contain: --a only watches the first part and waits, --b watches the middle and has started";
+
+timeline-trigger-activation-range: exit;
+--note: "exit: only the last part of the crossing, so both wait";

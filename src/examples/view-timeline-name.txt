@@ -1,0 +1,11 @@
+view-timeline-name: none;
+--note: "none: the panel names no timeline, both bars stay empty";
+
+view-timeline-name: --card;
+--note: "--card: the first bar follows the panel";
+
+view-timeline-name: --other;
+--note: "--other: the second bar follows the panel";
+
+view-timeline-name: --card, --other;
+--note: "--card, --other: one panel, two names, both bars follow it";

@@ -1,0 +1,42 @@
+/* The dashed line is the offset-path of the tile, and the dot is the point of the path where it stands (half way).
+   offset-anchor is the point of the tile that sits on that dot: the centre by default. */
+.track {
+  position: relative;
+  width: 270px;
+  max-width: 100%;
+  height: 170px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.line {
+  position: absolute;
+  top: 84px;
+  left: 20px;
+  width: 230px;
+  border-top: 2px dashed var(--muted);
+}
+
+.point {
+  position: absolute;
+  top: 78px;
+  left: 129px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+#example-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  min-height: 56px;
+  opacity: 0.88;
+  offset-path: path("M 20 85 H 250");
+  offset-distance: 50%;
+  offset-rotate: 0deg;
+}

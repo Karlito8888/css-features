@@ -1,0 +1,5 @@
+view-transition-scope: none;
+--note: "document transition captures:\A├─ page\A├─ panel\A└─ chip";
+
+view-transition-scope: all;
+--note: "document transition captures:\A└─ page\A\Apanel and chip wait for a transition\Astarted on the panel";

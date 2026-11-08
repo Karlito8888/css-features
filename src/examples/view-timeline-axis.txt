@@ -1,0 +1,7 @@
+view-timeline-axis: block, inline;
+
+view-timeline-axis: inline, block;
+
+view-timeline-axis: block;
+
+view-timeline-axis: inline;

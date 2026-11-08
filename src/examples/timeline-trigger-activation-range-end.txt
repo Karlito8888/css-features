@@ -1,0 +1,11 @@
+timeline-trigger-activation-range-end: normal;
+--note: "normal: to the last pixel, so both triggers are inside their range";
+
+timeline-trigger-activation-range-end: cover 30%, cover 70%;
+--note: "cover 30%, cover 70%: --a ends at 30% and waits, --b ends at 70% and has started";
+
+timeline-trigger-activation-range-end: cover 70%, cover 30%;
+--note: "cover 70%, cover 30%: --a ends at 70% and has started, --b ends at 30% and waits";
+
+timeline-trigger-activation-range-end: cover 30%;
+--note: "cover 30%: both end at 30%, so both wait";

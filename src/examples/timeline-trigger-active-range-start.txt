@@ -1,0 +1,11 @@
+timeline-trigger-active-range-start: auto;
+--note: "auto: the same start as the activation range, so both reverse as soon as the panel slips back past 40%";
+
+timeline-trigger-active-range-start: cover 0%;
+--note: "cover 0%: both stay on until the panel is back below the box";
+
+timeline-trigger-active-range-start: cover 0%, auto;
+--note: "cover 0%, auto: --a stays on while the panel is in the box, --b reverses at 40%";
+
+timeline-trigger-active-range-start: auto, cover 0%;
+--note: "auto, cover 0%: --a reverses at 40%, --b stays on while the panel is in the box";

@@ -1,0 +1,11 @@
+animation-range-end: normal;
+--note: "normal: the crossing to its very end";
+
+animation-range-end: cover 70%;
+--note: "cover 70%: until 70% of the crossing";
+
+animation-range-end: cover 55%;
+--note: "cover 55%: until 55% of the crossing";
+
+animation-range-end: entry 100%;
+--note: "entry 100%: until the runner is fully inside the box";

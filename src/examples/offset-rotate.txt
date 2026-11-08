@@ -1,0 +1,9 @@
+offset-rotate: auto;
+
+offset-rotate: reverse;
+
+offset-rotate: 0deg;
+
+offset-rotate: 90deg;
+
+offset-rotate: auto 45deg;

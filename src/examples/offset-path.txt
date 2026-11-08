@@ -1,0 +1,19 @@
+#example-element, .dot {
+  offset-path: path("M 20 130 C 60 10, 120 10, 135 85 S 210 160, 250 40");
+}
+
+#example-element, .dot {
+  offset-path: circle(70px at 50% 50%);
+}
+
+#example-element, .dot {
+  offset-path: inset(30px round 24px);
+}
+
+#example-element, .dot {
+  offset-path: polygon(50% 10%, 90% 88%, 10% 88%);
+}
+
+#example-element, .dot {
+  offset-path: ellipse(110px 55px at 50% 50%);
+}

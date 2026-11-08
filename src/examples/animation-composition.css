@@ -1,0 +1,41 @@
+/* The tile has a base transform (turned 10 degrees and scaled 1.8) and
+   an animation whose last keyframe is a turn of 20 degrees and the same scale. It ends there (fill-mode forwards):
+   replace shows the keyframe alone (scale 1.8), add puts the keyframe after the base transform (angles add, scales
+   multiply: 3.24) and accumulate adds the two values (angles add, scale amounts above 1 add: 2.6). */
+.wrap {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 270px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.stage {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 190px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+#example-element {
+  width: 34px;
+  min-height: 34px;
+  font-size: 20px;
+  transition: none;
+  transform: rotate(10deg) scale(1.8);
+  animation: grow 0.6s ease forwards;
+}
+
+@keyframes grow {
+  to {
+    transform: rotate(20deg) scale(1.8);
+  }
+}

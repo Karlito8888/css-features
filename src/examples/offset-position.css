@@ -1,0 +1,25 @@
+/* The dot grid is a ruler: one dot every 30px from the top left of the track. The tile is 60px along a ray that points
+   right, and a ray starts at the offset-position: the centre of the track while it is normal. */
+.track {
+  position: relative;
+  width: 270px;
+  max-width: 100%;
+  height: 190px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: radial-gradient(circle, var(--muted) 1.2px, transparent 1.6px) 0 0 / 30px 30px, var(--card);
+}
+
+#example-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  min-height: 26px;
+  font-size: 12px;
+  border-radius: 8px;
+  offset-path: ray(90deg);
+  offset-distance: 60px;
+  offset-rotate: auto;
+}

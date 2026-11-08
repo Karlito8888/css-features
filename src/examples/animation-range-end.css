@@ -1,0 +1,66 @@
+/* The runner crosses its rail while it crosses the box (view timeline). The end of its range is the choice, inherited
+   from the card (animation-range-end: inherit): the keyframes are finished once the crossing reaches it, and the runner
+   stays at its last keyframe after that. Where scroll-initial-target is supported the box starts scrolled down a
+   little, so the progress is already visible; elsewhere it starts at the top and you scroll it. */
+#example-element {
+  width: min(100%, 300px);
+  padding: 14px;
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.scroll {
+  position: relative;
+  height: 190px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  animation-range-end: inherit;
+}
+
+.lines {
+  height: 140px;
+  background: repeating-linear-gradient(to bottom, var(--line) 0 8px, transparent 8px 22px);
+}
+
+.tail {
+  height: 400px;
+}
+
+.start {
+  position: absolute;
+  top: 60px;
+  height: 1px;
+  scroll-initial-target: nearest;
+}
+
+.rail {
+  container-type: inline-size;
+  height: 52px;
+  padding: 3px;
+  border: 1px dashed var(--muted);
+  border-radius: 14px;
+  animation-range-end: inherit;
+}
+
+.runner {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--line);
+  animation: run linear both;
+  animation-timeline: view();
+  animation-range-end: inherit;
+}
+
+@keyframes run {
+  from { translate: 0 0; background: var(--a3); }
+  to { translate: calc(100cqw - 44px) 0; background: var(--a2); }
+}

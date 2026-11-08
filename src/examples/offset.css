@@ -1,0 +1,36 @@
+/* The dashed curve is the path written in every choice, measured from the top left of the track. The offset shorthand
+   puts the tile on it: path first, then optionally a distance and a rotation, and after a slash the anchor, the point
+   of the tile that sits on the path. The amber edge is the front of the tile, so its direction can be read. */
+.track {
+  position: relative;
+  width: 270px;
+  height: 170px;
+  max-width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--card);
+}
+
+svg {
+  position: absolute;
+  inset: 0;
+  fill: var(--muted);
+}
+
+path {
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 2;
+  stroke-dasharray: 5 6;
+}
+
+#example-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  min-height: 26px;
+  font-size: 12px;
+  border-radius: 8px;
+  border-right: 6px solid var(--a4);
+}

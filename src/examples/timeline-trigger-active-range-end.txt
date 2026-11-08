@@ -1,0 +1,11 @@
+timeline-trigger-active-range-end: auto;
+--note: "auto: the same end as the activation range, so both reverse as soon as the panel passes 56%";
+
+timeline-trigger-active-range-end: cover 100%;
+--note: "cover 100%: both stay on until the panel has left the box";
+
+timeline-trigger-active-range-end: cover 100%, auto;
+--note: "cover 100%, auto: --a stays on until the panel has left the box, --b reverses at 56%";
+
+timeline-trigger-active-range-end: auto, cover 100%;
+--note: "auto, cover 100%: --a reverses at 56%, --b stays on until the panel has left the box";

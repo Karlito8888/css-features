@@ -1,0 +1,11 @@
+timeline-trigger-source: none;
+--note: "none: no timeline to watch, so neither trigger ever fires";
+
+timeline-trigger-source: auto;
+--note: "auto: the page's own timeline, so both fire at once and never reverse";
+
+timeline-trigger-source: view();
+--note: "view(): the panel crossing the box, so both fire while it is inside";
+
+timeline-trigger-source: view(), none;
+--note: "view(), none: --a watches the panel crossing the box, --b has no timeline to watch";

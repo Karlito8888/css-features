@@ -1,0 +1,14 @@
+view-timeline-inset: auto;
+--note: "auto: the edges of the box as they are";
+
+view-timeline-inset: 30% 0px;
+--note: "30% 0px: the top edge moved in by 30%";
+
+view-timeline-inset: 50% 0px;
+--note: "50% 0px: the top edge moved in by 50%";
+
+view-timeline-inset: 0px 40%;
+--note: "0px 40%: the bottom edge moved in by 40%";
+
+view-timeline-inset: 0px 60%;
+--note: "0px 60%: the bottom edge moved in by 60%";

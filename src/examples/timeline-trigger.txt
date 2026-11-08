@@ -1,0 +1,11 @@
+timeline-trigger: none;
+--note: "none: no trigger is defined, so neither animation starts";
+
+timeline-trigger: --a view(), --b view();
+--note: "--a view(), --b view(): both triggers watch the panel crossing the box";
+
+timeline-trigger: --a view() contain, --b view() entry;
+--note: "--a view() contain, --b view() entry: --a has started, --b only watches the first part of the crossing and waits";
+
+timeline-trigger: --a view() entry, --b view() contain;
+--note: "--a view() entry, --b view() contain: --a only watches the first part and waits, --b has started";

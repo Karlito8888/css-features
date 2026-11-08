@@ -1,0 +1,11 @@
+timeline-trigger-activation-range-start: normal;
+--note: "normal: from the first pixel, so both triggers have started";
+
+timeline-trigger-activation-range-start: cover 30%, cover 70%;
+--note: "cover 30%, cover 70%: --a has started, --b waits for 70%";
+
+timeline-trigger-activation-range-start: cover 70%, cover 30%;
+--note: "cover 70%, cover 30%: --a waits for 70%, --b has started";
+
+timeline-trigger-activation-range-start: cover 70%;
+--note: "cover 70%: both wait for 70%";

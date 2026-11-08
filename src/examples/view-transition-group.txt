@@ -1,0 +1,11 @@
+view-transition-group: normal;
+--note: "::view-transition\A├─ group(outer)\A├─ group(box)\A├─ group(article)\A└─ group(chip)";
+
+view-transition-group: contain;
+--note: "::view-transition\A├─ group(outer)\A├─ group(box)\A└─ group(article)\A   └─ group(chip)";
+
+view-transition-group: nearest;
+--note: "::view-transition\A├─ group(outer)\A└─ group(box)\A   └─ group(article)\A      └─ group(chip)";
+
+view-transition-group: outer;
+--note: "::view-transition\A├─ group(outer)\A│  └─ group(article)\A│     └─ group(chip)\A└─ group(box)";

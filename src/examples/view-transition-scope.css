@@ -1,0 +1,55 @@
+.wrap {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 300px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* page > panel > chip, each with a view-transition-name. The choice sets the view-transition-scope of panel: with all,
+   the names inside it (its own included) are left to a transition started on the panel itself, and a transition on the
+   whole document does not find them. The list under the title is written by hand. */
+.page {
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--card);
+  box-shadow: 0 10px 30px -22px rgb(15 23 42 / 0.45);
+  view-transition-name: page;
+}
+
+#example-element {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--a1) 8%, var(--card));
+  view-transition-name: panel;
+}
+
+h3 {
+  margin: 0 0 6px;
+  font-size: 14px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+  view-transition-name: chip;
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  margin-top: 8px;
+  white-space: pre;
+  color: var(--ink);
+  font: 11px/1.45 ui-monospace, SFMono-Regular, Menlo, monospace;
+}

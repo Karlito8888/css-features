@@ -1,0 +1,11 @@
+timeline-trigger-name: none;
+--note: "none: no trigger is defined, so neither animation ever starts";
+
+timeline-trigger-name: --a;
+--note: "--a: only --a exists, so only the scale animation can start";
+
+timeline-trigger-name: --b;
+--note: "--b: only --b exists, so only the colour animation can start";
+
+timeline-trigger-name: --a, --b;
+--note: "--a, --b: both triggers exist, so both animations start";

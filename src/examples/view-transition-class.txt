@@ -1,0 +1,8 @@
+view-transition-class: none;
+--note: "::view-transition-group(card)";
+
+view-transition-class: hero;
+--note: "::view-transition-group(card)\A::view-transition-group(*.hero)";
+
+view-transition-class: hero wide;
+--note: "::view-transition-group(card)\A::view-transition-group(*.hero)\A::view-transition-group(*.wide)";

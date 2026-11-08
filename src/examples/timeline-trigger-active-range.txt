@@ -1,0 +1,11 @@
+timeline-trigger-active-range: auto;
+--note: "auto: the activation range itself, so both reverse as soon as the panel leaves 40% to 56%";
+
+timeline-trigger-active-range: cover;
+--note: "cover: the whole crossing, so both reverse only when the panel has left the box";
+
+timeline-trigger-active-range: contain, auto;
+--note: "contain, auto: --a reverses when the panel leaves the middle of the crossing, --b as soon as it leaves 40% to 56%";
+
+timeline-trigger-active-range: auto, cover;
+--note: "auto, cover: --a reverses as soon as the panel leaves 40% to 56%, --b only when it has left the box";

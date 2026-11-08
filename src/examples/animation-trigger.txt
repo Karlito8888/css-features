@@ -1,0 +1,11 @@
+animation-trigger: --a play-forwards play-backwards, --b play-forwards play-backwards;
+--note: "--a for the scale, --b for the colour: scale started, colour waits for the last part";
+
+animation-trigger: --b play-forwards play-backwards, --a play-forwards play-backwards;
+--note: "--b for the scale, --a for the colour: scale waits, colour started";
+
+animation-trigger: none;
+--note: "none: no trigger holds either animation back, so both play at once";
+
+animation-trigger: --b play-forwards play-backwards, --b play-forwards play-backwards;
+--note: "--b for both: both wait for the last part";

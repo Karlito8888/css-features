@@ -1,0 +1,32 @@
+.wrap {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 300px);
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* The card has a view-transition-name, and view-transition-class adds classes to it. The list under the title is written
+   by hand: the group selectors that match this card for each choice. */
+#example-element {
+  view-transition-name: card;
+  padding: 16px 18px;
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+#example-element::after {
+  content: var(--note);
+  display: block;
+  white-space: pre-wrap;
+  color: var(--ink);
+  font: 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+}

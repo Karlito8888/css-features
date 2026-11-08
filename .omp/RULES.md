@@ -9,7 +9,8 @@ read it by path.
   hand-edit `data/features.json` or `data/sources.json`, never write a description or an
   example from memory. Fix a wrong value in `scripts/sync.ts`, then re-run the sync. Two
   exceptions are hand-written, and both load no external resource and pass `bun run validate`
-  (W3C Nu HTML Checker, HTML errors only) after any change:
+  (W3C Nu HTML Checker, HTML errors only; the `interestfor` attribute, still an open HTML pull
+  request, is the one tolerated error) after any change:
   - the modern showcases in `src/showcases/`, which must use at least one reference key of their
     feature (the build fails otherwise) and say inside the frame when the browser lacks the
     feature (`@supports not`);

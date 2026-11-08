@@ -2,7 +2,9 @@
  * Send every hand-written example (modern showcases and reference examples) to the W3C Nu HTML
  * Checker and fail on any HTML error. This is what proves their markup conforms to the HTML standard.
  * The checker's CSS parser lags behind modern CSS by design here, so CSS messages are printed
- * and tolerated; they are not what this check is for.
+ * and tolerated; they are not what this check is for. One HTML error is tolerated too: the
+ * `interestfor` attribute, which Chrome ships but HTML has not merged yet
+ * (https://github.com/whatwg/html/pull/11006), so the checker rejects it on every interest source.
  * Run: bun run validate [id...]   (no id: every example of both folders)
  * The public checker rate-limits bursts. A local one works too: download vnu.jar (validator/validator
  * on GitHub), `java -cp vnu.jar nu.validator.servlet.Main 8888`, then `CHECKER=http://localhost:8888/?out=json bun run validate`.
@@ -12,6 +14,7 @@ import { standaloneDocument } from "../src/standalone-document";
 import { FOLDERS, exampleIds, readExample } from "./example-files";
 
 const CHECKER = process.env.CHECKER ?? "https://validator.w3.org/nu/?out=json";
+const INTERESTFOR = /^Attribute “interestfor” not allowed on element “[^”]+” at this point\.$/;
 
 type Message = { type: string; subType?: string; message: string; lastLine?: number; extract?: string };
 const wanted = process.argv.slice(2);
@@ -34,12 +37,12 @@ for (const { dir, base } of FOLDERS) {
     }
     if (!res.ok) throw new Error(`Checker answered HTTP ${res.status} for ${dir}/${id}`);
     const { messages } = (await res.json()) as { messages: Message[] };
-    const isCss = (m: Message) => m.message.startsWith("CSS:");
-    const failed = messages.filter((m) => (m.type === "error" || m.subType === "fatal") && !isCss(m));
+    const tolerated = (m: Message) => m.message.startsWith("CSS:") || INTERESTFOR.test(m.message);
+    const failed = messages.filter((m) => (m.type === "error" || m.subType === "fatal") && !tolerated(m));
     errors += failed.length;
     console.log(`${failed.length ? "✗" : "✓"} ${dir}/${id}: ${failed.length} HTML errors, ${messages.length - failed.length} other messages`);
     for (const m of messages) {
-      const kind = isCss(m) ? "css (tolerated)" : `${m.type}${m.subType ? `/${m.subType}` : ""}`;
+      const kind = tolerated(m) ? "tolerated" : `${m.type}${m.subType ? `/${m.subType}` : ""}`;
       console.log(`    ${kind} line ${m.lastLine ?? "?"}: ${m.message}`);
     }
   }

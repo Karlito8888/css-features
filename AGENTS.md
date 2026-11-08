@@ -89,7 +89,9 @@ none of its feature's reference keys (`keyPattern`: `name:` for a property, `@na
 text, `name(` for a function); the keys it uses are solid chips under the demo, the others dashed.
 Every showcase says inside the frame, through `@supports not (...)`, when the browser lacks the
 feature. `bun run validate` checks their HTML with the Nu checker; its CSS messages are printed
-and tolerated, since the checker's CSS parser lags behind modern CSS. Features without a showcase
+and tolerated, since the checker's CSS parser lags behind modern CSS, and so is its one rejection
+of the `interestfor` attribute, which Chrome ships while its HTML pull request
+(whatwg/html#11006) is still open. Features without a showcase
 show the reference example of their first key that has a written one, else the MDN example of
 their first documented key.
 
@@ -113,9 +115,8 @@ exceptions, which keep MDN's example if any: features that need JavaScript (`:st
 view transition or navigation (the `::view-transition*` family, `:navigation-source`), WebXR
 (`:xr-overlay`) or paged media (`string()`...); features removed from browsers
 (`background-repeat-x`) or shipped only under another name (`line-clamp`, `fit-tolerance`);
-features built on the `interestfor` attribute (`:interest-source`, `::interest-button`,
-`interest-delay`), left out because the Nu checker rejects that attribute (revisit when it
-learns it); and legacy aliases, whose banner links the standard property and its example.
+`::interest-button`, which Chrome 157 parses but draws only behind the experimental web platform
+features flag; and legacy aliases, whose banner links the standard property and its example.
 Examples are written from a facts extract of `data/features.json` plus the BCD node each
 feature's `compat` names, never from memory, and each batch is reviewed by a second agent on the
 contact sheets before it ships. Writers and reviewers validate against a local Nu checker

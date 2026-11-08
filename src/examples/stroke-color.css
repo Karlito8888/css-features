@@ -1,0 +1,27 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* stroke-color is only the colour of the outline: its width is set apart. It starts transparent, so a
+   shape has no outline until it is given one. The fill is a pale tint to make the outline stand out. */
+#example-element {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  fill: color-mix(in oklab, var(--ink) 10%, transparent);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+text {
+  font-size: 44px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+.note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

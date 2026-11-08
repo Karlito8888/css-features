@@ -1,0 +1,22 @@
+/* The seven tiles fit on one line, so a count of 1 leaves them there and a larger count spreads them over more. */
+.stage {
+  width: min(100%, 300px);
+}
+#example-element {
+  display: flex;
+  flex-wrap: wrap balance;
+  align-content: flex-start;
+  gap: 8px;
+  min-height: 220px;
+  padding: 14px;
+}
+.tile {
+  flex: 1 1 24px;
+  min-width: 0;
+  min-height: 32px;
+}
+.note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

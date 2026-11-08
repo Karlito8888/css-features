@@ -1,0 +1,18 @@
+/* Template forms use the named areas the tiles ask for through grid-area. The auto-flow forms ignore them:
+   those rules reset grid-area, so the tiles are placed one after another in the tracks. */
+#example-element {
+  display: grid;
+  gap: 8px;
+  width: min(100%, 360px);
+  height: 260px;
+  padding: 14px;
+}
+.tile {
+  min-width: 0;
+  min-height: 0;
+  font-size: 13px;
+}
+.tile:nth-child(1) { grid-area: header; }
+.tile:nth-child(2) { grid-area: nav; }
+.tile:nth-child(3) { grid-area: main; }
+.tile:nth-child(4) { grid-area: footer; }

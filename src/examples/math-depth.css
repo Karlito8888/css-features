@@ -1,0 +1,15 @@
+.card {
+  width: min(100%, 340px);
+  padding: 22px 20px;
+}
+
+/* math-depth counts how many levels of "script" (subscript, superscript, fraction part) an element is
+   nested in. Its size only follows it when font-size is math: every level shrinks the text a step more.
+   b + c is the element and takes the choice; a and d stay at depth 0. */
+math {
+  font-size: 40px;
+}
+
+#example-element {
+  font-size: math;
+}

@@ -1,0 +1,9 @@
+marker-end: none;
+
+marker-end: url(#dot);
+
+marker-end: url(#arrow);
+
+marker-end: url(#square);
+
+marker-end: url(#diamond);

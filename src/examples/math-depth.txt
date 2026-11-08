@@ -1,0 +1,7 @@
+math-depth: 0;
+
+math-depth: add(1);
+
+math-depth: add(2);
+
+math-depth: 3;

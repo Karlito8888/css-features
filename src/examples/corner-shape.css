@@ -14,3 +14,10 @@
 #example-element::after {
   content: var(--note);
 }
+
+.note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}

@@ -1,0 +1,9 @@
+baseline-shift: 0;
+
+baseline-shift: super;
+
+baseline-shift: sub;
+
+baseline-shift: 28px;
+
+baseline-shift: -24px;

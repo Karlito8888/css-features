@@ -1,0 +1,9 @@
+corner-right-shape: bevel;
+
+corner-right-shape: scoop;
+
+corner-right-shape: notch;
+
+corner-right-shape: bevel notch;
+
+corner-right-shape: square;

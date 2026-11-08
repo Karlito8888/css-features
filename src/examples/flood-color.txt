@@ -1,0 +1,9 @@
+flood-color: var(--a4);
+
+flood-color: var(--a2);
+
+flood-color: var(--a5);
+
+flood-color: color-mix(in oklab, var(--a1) 40%, var(--a3));
+
+flood-color: currentcolor;

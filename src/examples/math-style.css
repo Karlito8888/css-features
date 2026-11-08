@@ -1,0 +1,11 @@
+.card {
+  width: min(100%, 340px);
+  padding: 22px 20px;
+}
+
+/* A block of maths starts in the normal style: a big sum sign with its limits above and below, and
+   full-size fractions. compact is what inline maths uses to keep a line of text tidy: a smaller sum with
+   its limits at the side, and smaller fractions. */
+#example-element {
+  font-size: 30px;
+}

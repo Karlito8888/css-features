@@ -1,0 +1,29 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* Two lines of vertical text. The orientation property is set on the Latin word: it says how each glyph
+   of a vertical line is turned. The Japanese line beside it is the reference, with the default. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+text {
+  fill: var(--ink);
+  font-size: 26px;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+}
+
+#example-element {
+  fill: var(--a2);
+}
+
+.note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

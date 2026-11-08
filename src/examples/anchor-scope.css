@@ -1,0 +1,44 @@
+/* Both chips carry the names --pin and --tag. The two tips of item A look for an anchor by name: unscoped,
+   a name finds the last chip in the page, item B. anchor-scope on item A hides the names it lists from
+   everything outside item A, so the tips find the chip inside it. */
+.stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: min(100%, 300px);
+  height: 200px;
+  padding: 14px;
+}
+
+.chip {
+  anchor-name: --pin, --tag;
+  padding: 8px 14px;
+  border: 2px solid var(--a1);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  background: color-mix(in oklab, var(--a1) 12%, var(--card));
+}
+
+.tip {
+  position: absolute;
+  padding: 3px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--grad);
+}
+
+.pin {
+  position-anchor: --pin;
+  position-area: top;
+}
+
+.tag {
+  --grad: linear-gradient(135deg, var(--a4), var(--a2));
+  position-anchor: --tag;
+  position-area: bottom;
+}

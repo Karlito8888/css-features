@@ -1,0 +1,5 @@
+glyph-orientation-vertical: auto;
+
+glyph-orientation-vertical: 0deg;
+
+glyph-orientation-vertical: 90deg;

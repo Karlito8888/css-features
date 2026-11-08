@@ -1,0 +1,17 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* A point light hangs 45 units above the middle of a flat surface and lights it in amber: the light falls
+   off towards the edges. The shading is computed in the colour space of the filter: linearRGB (the default)
+   gives a wide bright pool, sRGB a tighter, darker one. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#example-element {
+  lighting-color: var(--a4);
+}

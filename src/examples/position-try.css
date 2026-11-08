@@ -1,0 +1,57 @@
+/* The tooltip starts below the anchor, where it does not fit in the dashed box. position-try sets the
+   fallbacks and, in front of them, how to choose among those that fit. There is more room to the right of
+   the anchor than to its left. */
+.card {
+  width: min(100%, 320px);
+  padding: 16px;
+}
+
+.stage {
+  position: relative;
+  height: 150px;
+  margin-bottom: 28px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+.anchor {
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  anchor-name: --anchor;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--a1);
+}
+
+.tip {
+  position: absolute;
+  position-anchor: --anchor;
+  position-area: bottom;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--a2);
+}
+
+.note {
+  min-height: 2.8em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.note::before {
+  content: var(--note);
+}

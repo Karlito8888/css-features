@@ -1,0 +1,3 @@
+color-interpolation-filters: linearRGB;
+
+color-interpolation-filters: sRGB;

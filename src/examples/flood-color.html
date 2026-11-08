@@ -1,0 +1,18 @@
+<div class="card">
+  <svg viewBox="0 0 240 100" role="img" aria-label="The word Highlight over diagonal stripes, with a flooded rectangle behind it">
+    <defs>
+      <pattern id="stripes" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <rect width="6" height="12" />
+      </pattern>
+      <filter id="highlight" x="-8%" y="-10%" width="116%" height="120%">
+        <feFlood id="example-element" result="flood" />
+        <feMerge>
+          <feMergeNode in="flood" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+    <rect class="stripes" width="240" height="100" rx="10" />
+    <text x="120" y="63" filter="url(#highlight)">Highlight</text>
+  </svg>
+</div>

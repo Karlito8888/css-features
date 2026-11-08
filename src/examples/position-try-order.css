@@ -1,0 +1,58 @@
+/* The tooltip starts below the anchor, where it does not fit in the dashed box, and has three fallbacks:
+   the top left corner, the left side and the whole top. Normal keeps the first that fits, the other values
+   pick the one whose area is the widest or the tallest. */
+.card {
+  width: min(100%, 320px);
+  padding: 16px;
+}
+
+.stage {
+  position: relative;
+  height: 150px;
+  margin-bottom: 28px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+.anchor {
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  anchor-name: --anchor;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  background: var(--a1);
+}
+
+.tip {
+  position: absolute;
+  position-anchor: --anchor;
+  position-area: bottom;
+  position-try-fallbacks: top left, left, top;
+  padding: 4px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--a2);
+}
+
+.note {
+  min-height: 2.8em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.note::before {
+  content: var(--note);
+}

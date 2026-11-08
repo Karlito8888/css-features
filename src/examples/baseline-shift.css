@@ -1,0 +1,36 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The dashed line marks the baseline of the text. baseline-shift moves the tspan away from it: a length
+   or a percentage raises it (negative lowers it), super and sub use the font's own offsets. The tspan is
+   smaller than the rest, as in a real exponent. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.base {
+  stroke: var(--muted);
+  stroke-dasharray: 4 4;
+}
+
+text {
+  fill: var(--ink);
+  font-size: 36px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+#example-element {
+  fill: var(--a2);
+  font-size: 22px;
+}
+
+.note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

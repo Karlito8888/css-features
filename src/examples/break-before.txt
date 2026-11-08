@@ -1,0 +1,5 @@
+break-before: auto;
+--note: "in column 1";
+
+break-before: column;
+--note: "starts column 2";

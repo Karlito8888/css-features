@@ -1,0 +1,7 @@
+anchor-scope: none;
+
+anchor-scope: --pin;
+
+anchor-scope: --tag;
+
+anchor-scope: all;

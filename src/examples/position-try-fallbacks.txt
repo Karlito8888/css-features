@@ -1,0 +1,11 @@
+#example-element { position-try-fallbacks: none; }
+.note { --note: "none: no fallback, the tooltip overflows the box"; }
+
+#example-element { position-try-fallbacks: flip-block; }
+.note { --note: "flip-block: it flips to the other side of the anchor, above"; }
+
+#example-element { position-try-fallbacks: left; }
+.note { --note: "left: it moves to the left of the anchor"; }
+
+#example-element { position-try-fallbacks: right; }
+.note { --note: "right: it moves to the right of the anchor"; }

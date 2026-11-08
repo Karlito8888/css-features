@@ -1,0 +1,8 @@
+#example-element { position-try-order: normal; }
+.note { --note: "normal: the first fallback that fits, above and to the left"; }
+
+#example-element { position-try-order: most-width; }
+.note { --note: "most-width: the widest area, above the anchor"; }
+
+#example-element { position-try-order: most-height; }
+.note { --note: "most-height: the tallest area, to the left of the anchor"; }

@@ -1,0 +1,13 @@
+corner-block-end-shape: bevel;
+
+corner-block-end-shape: scoop;
+
+corner-block-end-shape: notch;
+
+corner-block-end-shape: bevel notch;
+
+corner-block-end-shape: bevel notch;
+direction: rtl;
+
+corner-block-end-shape: bevel notch;
+writing-mode: vertical-rl;

@@ -1,0 +1,32 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The ring is dashed 60 on, 100 off. path-length tells the browser how long the circle counts as: at 100
+   the dash covers 60% of it, at 200 only 30%, at 60 all of it, whatever its real length (264 units). */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.base {
+  stroke: color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+#example-element {
+  stroke: var(--a2);
+  stroke-dasharray: 60 100;
+}
+
+.note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

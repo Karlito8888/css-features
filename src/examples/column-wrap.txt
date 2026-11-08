@@ -1,0 +1,3 @@
+column-wrap: wrap;
+
+column-wrap: nowrap;

@@ -1,0 +1,11 @@
+#example-element { position-try: none; }
+.note { --note: "none: no fallback, the tooltip overflows the box"; }
+
+#example-element { position-try: flip-block; }
+.note { --note: "flip-block: above the anchor"; }
+
+#example-element { position-try: left, right; }
+.note { --note: "left, right: the first that fits wins, the left side"; }
+
+#example-element { position-try: most-width left, right; }
+.note { --note: "most-width left, right: the roomier side wins, the right"; }

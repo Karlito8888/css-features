@@ -1,0 +1,21 @@
+/* Three columns of text. column-height sets how tall each column grows: when the text needs more, the
+   extra columns start a new row below instead of making the first ones taller. */
+.stage {
+  width: min(100%, 420px);
+}
+#example-element {
+  padding: 14px;
+  column-count: 3;
+  column-gap: 14px;
+  column-rule: 1.5px solid color-mix(in oklab, var(--a1) 55%, transparent);
+  font-size: 12px;
+  line-height: 1.45;
+}
+p {
+  margin: 0 0 0.7em;
+}
+.note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

@@ -1,0 +1,7 @@
+alignment-baseline: baseline;
+
+alignment-baseline: text-after-edge;
+
+alignment-baseline: middle;
+
+alignment-baseline: hanging;

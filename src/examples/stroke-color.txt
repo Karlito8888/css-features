@@ -1,0 +1,7 @@
+stroke-color: var(--a1);
+
+stroke-color: var(--a2);
+
+stroke-color: var(--a5);
+
+stroke-color: currentcolor;

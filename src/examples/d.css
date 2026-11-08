@@ -1,0 +1,31 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The dashed box is the area the shapes are drawn in. The path has no d attribute: the d property gives
+   it a path() string, the same syntax as the attribute, and none (the initial value) draws nothing. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.box {
+  fill: none;
+  stroke: var(--muted);
+  stroke-dasharray: 4 4;
+}
+
+#example-element {
+  fill: color-mix(in oklab, var(--a2) 28%, transparent);
+  stroke: var(--a2);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

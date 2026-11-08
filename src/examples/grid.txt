@@ -1,0 +1,24 @@
+#example-element {
+  grid:
+    "header header" 50px
+    "nav main" 1fr
+    "footer footer" 40px
+    / 90px 1fr;
+}
+
+#example-element {
+  grid:
+    "nav header" 50px
+    "nav main" 1fr
+    "nav footer" 40px
+    / 80px 1fr;
+}
+
+#example-element { grid: auto-flow 60px / 1fr 1fr; }
+#example-element > .tile { grid-area: auto; }
+
+#example-element { grid: 1fr 1fr / auto-flow 80px; }
+#example-element > .tile { grid-area: auto; }
+
+#example-element { grid: auto-flow 1fr / 60px 1fr 1fr; }
+#example-element > .tile { grid-area: auto; }

@@ -1,0 +1,22 @@
+/* Three columns, each 90px tall: the text does not fit in one row of them. */
+.stage {
+  width: min(100%, 420px);
+}
+#example-element {
+  padding: 14px;
+  column-count: 3;
+  column-height: 90px;
+  column-gap: 14px;
+  column-rule: 1.5px solid color-mix(in oklab, var(--a1) 55%, transparent);
+  overflow: clip;
+  font-size: 12px;
+  line-height: 1.45;
+}
+p {
+  margin: 0 0 0.7em;
+}
+.note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

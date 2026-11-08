@@ -1,0 +1,13 @@
+corner-inline-start-shape: bevel;
+
+corner-inline-start-shape: scoop;
+
+corner-inline-start-shape: notch;
+
+corner-inline-start-shape: bevel notch;
+
+corner-inline-start-shape: bevel notch;
+direction: rtl;
+
+corner-inline-start-shape: bevel notch;
+writing-mode: vertical-rl;

@@ -1,0 +1,34 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* The gradient goes from pink to green. color-interpolation on the gradient sets the colour space its
+   in-between colours are mixed in: sRGB (the default) passes through a dull middle, linearRGB through a
+   lighter one. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+.bar {
+  fill: url(#example-element);
+}
+
+.first {
+  stop-color: var(--a2);
+}
+
+.last {
+  stop-color: var(--a5);
+}
+
+text {
+  fill: var(--muted);
+  font-size: 9px;
+}
+
+.end {
+  text-anchor: end;
+}

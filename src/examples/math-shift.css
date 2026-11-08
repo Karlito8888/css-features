@@ -1,0 +1,20 @@
+.card {
+  width: min(100%, 340px);
+  padding: 22px 20px;
+}
+
+/* math-shift: compact is the "cramped" style, used under a fraction bar or a root sign: a superscript
+   sits lower in it to leave room above. The first x squared stays in the normal style as a reference. */
+math {
+  font-size: 64px;
+}
+
+.ref {
+  math-shift: normal;
+}
+
+.note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

@@ -1,0 +1,36 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* A line with five vertices. marker-start draws a marker on the first one only, marker-mid on the three
+   in between and marker-end on the last. Markers scale with the stroke width (3 here) and follow the
+   line: the arrow turns with it, and auto-start-reverse makes it point outwards at the start. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#example-element {
+  fill: none;
+  stroke: color-mix(in oklab, var(--ink) 55%, transparent);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+#dot circle {
+  fill: var(--a2);
+}
+
+#arrow path {
+  fill: var(--a1);
+}
+
+#square rect {
+  fill: var(--a4);
+}
+
+#diamond path {
+  fill: var(--a5);
+}

@@ -1,0 +1,16 @@
+/* The other corners keep a round 56px radius, so the one this property reshapes is easy to find. */
+.stage {
+  width: min(100%, 240px);
+}
+#example-element {
+  width: 100%;
+  height: 150px;
+  border: 4px solid var(--a4);
+  border-radius: 56px;
+  font-size: 13px;
+}
+.note {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}

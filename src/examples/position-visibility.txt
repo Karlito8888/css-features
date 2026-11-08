@@ -1,0 +1,14 @@
+.tip { position-visibility: always; }
+.stage { --note: "always: every tip stays shown"; }
+
+.tip { position-visibility: anchor-visible; }
+.stage { --note: "anchor-visible: A is hidden, its anchor is clipped"; }
+
+.tip { position-visibility: no-overflow; }
+.stage { --note: "no-overflow: B is hidden, it overflows its cell"; }
+
+.tip { position-visibility: anchor-valid; }
+.stage { --note: "anchor-valid: D is hidden, its anchor is missing"; }
+
+.tip { position-visibility: anchor-visible no-overflow; }
+.stage { --note: "anchor-visible no-overflow: A and B are hidden"; }

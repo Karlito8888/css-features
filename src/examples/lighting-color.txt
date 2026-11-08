@@ -1,0 +1,9 @@
+lighting-color: var(--a1);
+
+lighting-color: var(--a2);
+
+lighting-color: var(--a4);
+
+lighting-color: var(--a5);
+
+lighting-color: var(--a3);

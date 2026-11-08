@@ -1,0 +1,13 @@
+.card {
+  width: min(100%, 340px);
+  padding: 20px;
+}
+
+/* feTurbulence makes a rough height map, feDiffuseLighting lights it from the top left with a distant
+   light. lighting-color is the colour of that light: bumps facing the light get it in full, the others
+   fall to black. */
+svg {
+  display: block;
+  width: 100%;
+  overflow: visible;
+}

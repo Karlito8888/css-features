@@ -1,0 +1,7 @@
+interest-delay-start: normal
+
+interest-delay-start: 0s
+
+interest-delay-start: 1s
+
+interest-delay-start: 2s

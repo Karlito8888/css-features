@@ -1,0 +1,66 @@
+body {
+  align-content: start;
+}
+
+.card {
+  width: min(100%, 340px);
+  padding: 16px 18px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+#example-element {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--stage);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+}
+
+input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--stage);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+}
+
+[popover] {
+  max-width: 220px;
+  margin: 6px 0;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ink);
+  color: var(--card);
+  font-size: 13px;
+  line-height: 1.4;
+  inset: auto;
+  position-area: bottom span-right;
+  position-try-fallbacks: flip-block;
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}

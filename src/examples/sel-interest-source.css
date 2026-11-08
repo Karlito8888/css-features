@@ -1,0 +1,74 @@
+body {
+  align-content: start;
+}
+
+#example-element {
+  width: min(100%, 340px);
+  padding: 16px 18px;
+  font-size: 15px;
+}
+
+.line {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.sub {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.people {
+  display: flex;
+  gap: 10px;
+}
+
+.who {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--stage);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.25s;
+}
+
+[popover] {
+  margin: 8px 0;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  inset: auto;
+  position-area: bottom span-right;
+  position-try-fallbacks: flip-block;
+  box-shadow: 0 18px 40px -24px rgb(15 23 42 / 0.45);
+}
+
+[popover] b,
+[popover] span {
+  display: block;
+}
+
+[popover] span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cap {
+  width: min(100%, 340px);
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.cap code {
+  color: var(--ink);
+}

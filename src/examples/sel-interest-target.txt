@@ -1,0 +1,5 @@
+.bar:interest-target { background: var(--grad); }
+
+.bars:has(:interest-target) .bar:not(:interest-target) { opacity: 0.25; }
+
+.bar:interest-target::after { content: attr(data-value); position: absolute; inset: auto 0 100%; margin-bottom: 4px; color: var(--ink); font-size: 12px; font-weight: 700; text-align: center; }

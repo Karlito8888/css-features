@@ -1,0 +1,5 @@
+.who:interest-source { border-color: transparent; color: #fff; background: var(--grad); }
+
+.who:interest-source { scale: 1.15; box-shadow: 0 0 0 3px var(--card), 0 0 0 6px var(--a2); }
+
+.people:has(:interest-source) .who:not(:interest-source) { opacity: 0.35; filter: grayscale(1); }

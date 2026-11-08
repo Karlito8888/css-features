@@ -1,0 +1,7 @@
+interest-delay: normal
+
+interest-delay: 0s
+
+interest-delay: 1.5s 0s
+
+interest-delay: 0s 2s

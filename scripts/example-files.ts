@@ -25,5 +25,10 @@ export async function readExample(dir: string, id: string): Promise<Example | nu
   const html = await read("html");
   if (!html) return null;
   const txt = await read("txt");
-  return { html, css: await read("css"), js: await read("js"), choices: txt ? splitChoices(txt) : null };
+  return {
+    html,
+    css: await read("css"),
+    js: await read("js"),
+    choices: txt ? splitChoices(txt) : null,
+  };
 }

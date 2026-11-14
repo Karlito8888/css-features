@@ -5,10 +5,10 @@ Layout, commands and reasons are in the root `AGENTS.md`, which subagents do not
 read it by path.
 
 - **Quoted, never written.** Feature definitions, syntax, summaries, examples, status, support
-  and the Modern CSS list come only from the official sources through `bun run sync`. Never
+  and the Modern CSS list come only from the official sources through `vp run sync`. Never
   hand-edit `data/features.json` or `data/sources.json`, never write a description or an
   example from memory. Fix a wrong value in `scripts/sync.ts`, then re-run the sync. Two
-  exceptions are hand-written, and both load no external resource and pass `bun run validate`
+  exceptions are hand-written, and both load no external resource and pass `vp run validate`
   (W3C Nu HTML Checker, HTML errors only; the `interestfor` attribute, still an open HTML pull
   request, is the one tolerated error) after any change:
   - the modern showcases in `src/showcases/`, which must use at least one reference key of their
@@ -24,10 +24,10 @@ read it by path.
     `.card`, `.tile`), never hard-coded white or black text or backgrounds outside it: the
     preview follows the light and dark themes. Fit a 330 px wide frame. Images are CSS gradients
     or inline SVG. Check syntax and values against `data/features.json` and BCD, never from
-    memory. Each example passes `bun run check-examples <id>` (headless Chrome) after any change.
+    memory. Each example passes `vp run check-examples <id>` (headless Chrome) after any change.
 - **No em dash** in any UI text, showcase or example.
-- **Full Bun.** `bun add` / `bun install` only, `bun.lock` is the one lockfile.
-- **The gate is `bun run check`** (`astro check && astro build`), zero errors, run before
+- **Vite+, Bun underneath.** `vp add` / `vp install` only, `bun.lock` the one lockfile.
+- **The gate is `vp run gate`** (`astro check && vp check && astro build`), zero errors, run before
   claiming anything works; a UI change is also checked in a browser.
 - **Content English only**, site copy included. Static output only: no server code, no
   analytics, no cookie.

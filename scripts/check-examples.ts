@@ -31,7 +31,8 @@ const BATCH = 20;
 const MEASURE_HEIGHT = 640;
 const SHEET_HEIGHT = 480;
 /** Selectors that never match in a still frame: they need the reader to act on the page (hover, select text, find in page...) or a printer (@page). */
-const INTERACTIVE = /:(hover|active|focus|focus-visible|focus-within|visited|target|target-current|user-invalid|user-valid|autofill|fullscreen|picture-in-picture|playing|paused|seeking|buffering|stalled|muted|volume-locked|popover-open|modal|interest-source|interest-target|snapped(-[a-z]+)?|active-view-transition(-type)?|selection|target-text|search-text|spelling-error|grammar-error)(?![\w-])|@page\b/;
+const INTERACTIVE =
+  /:(hover|active|focus|focus-visible|focus-within|visited|target|target-current|user-invalid|user-valid|autofill|fullscreen|picture-in-picture|playing|paused|seeking|buffering|stalled|muted|volume-locked|popover-open|modal|interest-source|interest-target|snapped(-[a-z]+)?|active-view-transition(-type)?|selection|target-text|search-text|spelling-error|grammar-error)(?![\w-])|@page\b/;
 
 type Row = { choice: number; supported: boolean; value: string; overflow: number };
 type Result = { key: string; errors: string[]; rows: Row[] };
@@ -64,7 +65,9 @@ function probe(key: string, choices: string[], declared: typeof declarations) {
   // A rule block may restyle any element or pseudo-element: compare the computed style of all of them.
   const everything = () =>
     [...document.body.querySelectorAll("*")]
-      .flatMap((e) => [null, "::before", "::after", "::marker"].map((pseudo) => getComputedStyle(e, pseudo)))
+      .flatMap((e) =>
+        [null, "::before", "::after", "::marker"].map((pseudo) => getComputedStyle(e, pseudo)),
+      )
       .map((cs) => [...cs].map((p) => cs.getPropertyValue(p)).join(";"))
       .join("|");
   const fingerprint = (c: string) => {
@@ -80,21 +83,32 @@ function probe(key: string, choices: string[], declared: typeof declarations) {
   // The standalone document carries the first block already: take it out first.
   document.querySelector("style[data-choice]")?.remove();
   settle();
-  const baseline = el && choices.some(isBlock) ? [{ choice: -1, supported: true, value: everything(), overflow: 0 }] : [];
+  const baseline =
+    el && choices.some(isBlock)
+      ? [{ choice: -1, supported: true, value: everything(), overflow: 0 }]
+      : [];
   const rows = el
     ? (choices.length ? choices : [""]).map((c, i) => {
         if (isBlock(c)) style.textContent = c;
         else if (c) el.style.cssText = c;
         settle();
         const root = document.documentElement;
-        return { choice: i, supported: !c || supported(c), value: c ? fingerprint(c) : "", overflow: root.scrollWidth - root.clientWidth };
+        return {
+          choice: i,
+          supported: !c || supported(c),
+          value: c ? fingerprint(c) : "",
+          overflow: root.scrollWidth - root.clientWidth,
+        };
       })
     : [];
   rows.unshift(...baseline);
   parent.postMessage({ key, errors, rows }, "*");
 }
 
-const harness = (frames: { key: string; width: number; doc: string }[], height: number) => `<!doctype html><meta charset="utf-8">
+const harness = (
+  frames: { key: string; width: number; doc: string }[],
+  height: number,
+) => `<!doctype html><meta charset="utf-8">
 <style>body{margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}iframe{border:0;height:${height}px}#out{display:none}</style>
 <pre id="out"></pre>
 <script>
@@ -108,7 +122,17 @@ addEventListener("message", (e) => {
 ${frames.map((f) => `<iframe data-key="${f.key}" style="width:${f.width}px" srcdoc="${f.doc.replace(/&/g, "&amp;").replace(/"/g, "&quot;")}"></iframe>`).join("\n")}`;
 
 const chrome = async (args: string[]) => {
-  const proc = Bun.spawn([CHROME, "--headless", "--disable-gpu", "--hide-scrollbars", `--user-data-dir=${profile}`, ...args], { stdout: "pipe", stderr: "ignore" });
+  const proc = Bun.spawn(
+    [
+      CHROME,
+      "--headless",
+      "--disable-gpu",
+      "--hide-scrollbars",
+      `--user-data-dir=${profile}`,
+      ...args,
+    ],
+    { stdout: "pipe", stderr: "ignore" },
+  );
   const out = await new Response(proc.stdout).text();
   await proc.exited;
   return out;
@@ -122,21 +146,51 @@ let failures = 0;
 
 for (let start = 0; start < ids.length; start += BATCH) {
   const batch = ids.slice(start, start + BATCH);
-  const examples = new Map(await Promise.all(batch.map(async (id) => [id, (await readExample(DIR, id))!] as const)));
+  const examples = new Map(
+    await Promise.all(batch.map(async (id) => [id, (await readExample(DIR, id))!] as const)),
+  );
   /** A frame of the harness: measured with every choice (choice null), or showing one choice for the sheet. */
   const frame = (id: string, width: number, dark: boolean, choice: number | null) => {
     const example = examples.get(id)!;
     const key = `${id} ${width}px ${dark ? "dark" : "light"}`;
-    if (choice !== null) return { key, width, doc: standaloneDocument({ ...example, choices: example.choices && [example.choices[choice]] }, id, writtenCss(dark)) };
+    if (choice !== null)
+      return {
+        key,
+        width,
+        doc: standaloneDocument(
+          { ...example, choices: example.choices && [example.choices[choice]] },
+          id,
+          writtenCss(dark),
+        ),
+      };
     const script = `<script>(${probe.toString()})(${JSON.stringify(key)}, ${JSON.stringify(example.choices ?? [])}, ${declarations.toString()});</script>`;
-    return { key, width, doc: standaloneDocument(example, id, writtenCss(dark)).replace(/<\/body>/, `${script}</body>`) };
+    return {
+      key,
+      width,
+      doc: standaloneDocument(example, id, writtenCss(dark)).replace(
+        /<\/body>/,
+        `${script}</body>`,
+      ),
+    };
   };
 
   const page = `${OUT}/harness-${process.pid}.html`;
-  await Bun.write(page, harness(batch.flatMap((id) => FRAMES.map((f) => frame(id, f.width, f.dark, null))), MEASURE_HEIGHT));
+  await Bun.write(
+    page,
+    harness(
+      batch.flatMap((id) => FRAMES.map((f) => frame(id, f.width, f.dark, null))),
+      MEASURE_HEIGHT,
+    ),
+  );
   const dom = await chrome(["--virtual-time-budget=60000", "--dump-dom", `file://${page}`]);
   const json = dom.match(/<pre id="out">([\s\S]*?)<\/pre>/)?.[1] || "[]";
-  const results: Result[] = JSON.parse(json.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&amp;/g, "&"));
+  const results: Result[] = JSON.parse(
+    json
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&quot;/g, '"')
+      .replace(/&amp;/g, "&"),
+  );
 
   for (const id of batch) {
     const problems = new Set<string>();
@@ -154,14 +208,20 @@ for (let start = 0; start < ids.length; start += BATCH) {
       const supported = r.rows.filter((row) => row.supported);
       for (const row of r.rows) {
         if (!row.supported) unsupported.add(row.choice + 1);
-        if (row.overflow > 0) problems.add(`${key}: choice ${row.choice + 1} overflows by ${row.overflow}px`);
+        if (row.overflow > 0)
+          problems.add(`${key}: choice ${row.choice + 1} overflows by ${row.overflow}px`);
         // A rule that only matches on interaction cannot change a still frame: listed, not failed.
         if (row.choice >= 0 && INTERACTIVE.test(texts[row.choice] ?? "")) {
           interactive.add(row.choice + 1);
           continue;
         }
-        const twin = supported.find((o) => o.choice < row.choice && row.supported && row.value && o.value === row.value);
-        if (twin) problems.add(`${key}: choice ${row.choice + 1} ${twin.choice < 0 ? "changes nothing" : `computes like choice ${twin.choice + 1}`}`);
+        const twin = supported.find(
+          (o) => o.choice < row.choice && row.supported && row.value && o.value === row.value,
+        );
+        if (twin)
+          problems.add(
+            `${key}: choice ${row.choice + 1} ${twin.choice < 0 ? "changes nothing" : `computes like choice ${twin.choice + 1}`}`,
+          );
       }
     }
     failures += problems.size ? 1 : 0;
@@ -175,9 +235,17 @@ for (let start = 0; start < ids.length; start += BATCH) {
 
     const choices = examples.get(id)!.choices?.length ?? 1;
     const shot = `${OUT}/${id}.html`;
-    const rows = Array.from({ length: choices }, (_, i) => [frame(id, 330, false, i), frame(id, 330, true, i), frame(id, 600, false, i)]);
+    const rows = Array.from({ length: choices }, (_, i) => [
+      frame(id, 330, false, i),
+      frame(id, 330, true, i),
+      frame(id, 600, false, i),
+    ]);
     await Bun.write(shot, harness(rows.flat(), SHEET_HEIGHT));
-    await chrome([`--window-size=1276,${choices * (SHEET_HEIGHT + 8)}`, `--screenshot=${OUT}/${id}.png`, `file://${shot}`]);
+    await chrome([
+      `--window-size=1276,${choices * (SHEET_HEIGHT + 8)}`,
+      `--screenshot=${OUT}/${id}.png`,
+      `file://${shot}`,
+    ]);
     await rm(shot);
   }
   await rm(page);

@@ -17,7 +17,12 @@ const base = EditorView.theme({
 
 export type Editor = { set: (value: string) => void; focus: () => void };
 
-export function createEditor(parent: HTMLElement, lang: keyof typeof LANGUAGES, doc: string, onChange: (value: string) => void): Editor {
+export function createEditor(
+  parent: HTMLElement,
+  lang: keyof typeof LANGUAGES,
+  doc: string,
+  onChange: (value: string) => void,
+): Editor {
   const theme = new Compartment();
   const view = new EditorView({
     parent,

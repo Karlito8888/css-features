@@ -19,10 +19,10 @@ Every description is quoted from the official sources, nothing is paraphrased:
 Requires [Bun](https://bun.sh) and Node 22.23.4 or later.
 
 ```bash
-bun install
-bun run sync   # refresh data/ from the sources
-bun run dev    # http://localhost:4341
-bun run check  # type-check and build to dist/
+vp install
+vp run sync   # refresh data/ from the sources
+vp run dev    # http://localhost:4341
+vp run gate   # type-check, lint, format check and build to dist/
 ```
 
 ## Licence

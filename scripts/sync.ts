@@ -16,7 +16,17 @@ import { $ } from "bun";
 import { mkdtemp, readdir, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import type { Baseline, Data, Descriptor, Example, Feature, Kind, Modern, Module, Sources } from "../src/data";
+import type {
+  Baseline,
+  Data,
+  Descriptor,
+  Example,
+  Feature,
+  Kind,
+  Modern,
+  Module,
+  Sources,
+} from "../src/data";
 
 const MDN = "https://developer.mozilla.org/en-US/docs/";
 const MDN_CSS = "files/en-us/web/css/reference";
@@ -34,11 +44,16 @@ async function get(url: string): Promise<Response> {
 }
 
 /** Download an npm package tarball and return the parsed JSON of one file inside it. */
-async function npmJson(pkg: string, file: string, dir: string): Promise<{ version: string; json: unknown }> {
+async function npmJson(
+  pkg: string,
+  file: string,
+  dir: string,
+): Promise<{ version: string; json: unknown }> {
   const meta: unknown = await (await get(`https://registry.npmjs.org/${pkg}/latest`)).json();
   const tarball = at(meta, ["dist", "tarball"]);
   const version = at(meta, ["version"]);
-  if (typeof tarball !== "string" || typeof version !== "string") throw new Error(`npm metadata of ${pkg} has no tarball`);
+  if (typeof tarball !== "string" || typeof version !== "string")
+    throw new Error(`npm metadata of ${pkg} has no tarball`);
   const tgz = join(dir, `${pkg.replace(/\W/g, "_")}.tgz`);
   await Bun.write(tgz, await get(tarball));
   const out = join(dir, pkg.replace(/\W/g, "_"));
@@ -46,9 +61,11 @@ async function npmJson(pkg: string, file: string, dir: string): Promise<{ versio
   return { version, json: await Bun.file(join(out, "package", file)).json() };
 }
 
-const isRecord = (v: unknown): v is Record<string, unknown> => typeof v === "object" && v !== null && !Array.isArray(v);
+const isRecord = (v: unknown): v is Record<string, unknown> =>
+  typeof v === "object" && v !== null && !Array.isArray(v);
 const str = (v: unknown): string | null => (typeof v === "string" && v.trim() ? v.trim() : null);
-const strs = (v: unknown): string[] => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : []);
+const strs = (v: unknown): string[] =>
+  Array.isArray(v) ? v.filter((x): x is string => typeof x === "string") : [];
 
 /** Read a nested property of untyped JSON; undefined as soon as a step is not an object. */
 function at(value: unknown, path: string[]): unknown {
@@ -57,11 +74,18 @@ function at(value: unknown, path: string[]): unknown {
 }
 
 function escape(s: string): string {
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 function slugify(s: string): string {
-  return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return s
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 // ------------------------------------------------------------------ webref
@@ -77,25 +101,56 @@ const WEBREF_KINDS: [string, Kind][] = [
 
 /** Feature id: properties keep their name, the other kinds get a prefix so ids never collide. */
 function featureId(name: string, kind: Kind): string {
-  if (kind === "property") return name === "--*" ? "custom-properties" : name.replace(/^-/, "prefix-");
-  const prefix = { "at-rule": "at", selector: "sel", function: "fn", type: "type", property: "" }[kind];
+  if (kind === "property")
+    return name === "--*" ? "custom-properties" : name.replace(/^-/, "prefix-");
+  const prefix = { "at-rule": "at", selector: "sel", function: "fn", type: "type", property: "" }[
+    kind
+  ];
   if (kind === "selector" && !/[a-z]/i.test(name)) {
-    const combinators: Record<string, string> = { " ": "descendant", ">": "child", "+": "next-sibling", "~": "subsequent-sibling", "||": "column", "*": "universal" };
+    const combinators: Record<string, string> = {
+      " ": "descendant",
+      ">": "child",
+      "+": "next-sibling",
+      "~": "subsequent-sibling",
+      "||": "column",
+      "*": "universal",
+    };
     return `sel-${combinators[name] ?? slugify(name) ?? "combinator"}`;
   }
-  const base = slugify(name.replace(/^::/, "pseudo-element-").replace(/^:/, "").replace(/^@/, "").replace(/^</, "").replace(/>$/, "").replace(/\(\)$/, ""));
+  const base = slugify(
+    name
+      .replace(/^::/, "pseudo-element-")
+      .replace(/^:/, "")
+      .replace(/^@/, "")
+      .replace(/^</, "")
+      .replace(/>$/, "")
+      .replace(/\(\)$/, ""),
+  );
   return `${prefix}-${base}`;
 }
 
 function definitionOf(raw: Raw) {
-  const keys = ["initial", "appliesTo", "inherited", "percentages", "computedValue", "canonicalOrder", "animationType"] as const;
+  const keys = [
+    "initial",
+    "appliesTo",
+    "inherited",
+    "percentages",
+    "computedValue",
+    "canonicalOrder",
+    "animationType",
+  ] as const;
   if (!keys.some((k) => str(raw[k]))) return null;
   return Object.fromEntries(keys.map((k) => [k, str(raw[k])])) as Feature["definition"];
 }
 
 /** Merge the webref entries of one kind by name: a function defined for several scopes becomes one feature. */
-function readWebref(webref: unknown): Omit<Feature, "compat" | "mdn" | "status" | "support" | "baseline" | "example" | "modern">[] {
-  const out = new Map<string, Omit<Feature, "compat" | "mdn" | "status" | "support" | "baseline" | "example" | "modern">>();
+function readWebref(
+  webref: unknown,
+): Omit<Feature, "compat" | "mdn" | "status" | "support" | "baseline" | "example" | "modern">[] {
+  const out = new Map<
+    string,
+    Omit<Feature, "compat" | "mdn" | "status" | "support" | "baseline" | "example" | "modern">
+  >();
   for (const [key, kind] of WEBREF_KINDS) {
     const list = at(webref, [key]);
     if (!Array.isArray(list)) throw new Error(`webref css.json has no ${key}`);
@@ -108,19 +163,27 @@ function readWebref(webref: unknown): Omit<Feature, "compat" | "mdn" | "status" 
       while (kind === "type" && out.has(id) && out.get(id)!.name !== name) id += "-";
       const scope = strs(raw.for);
       const syntax = str(raw.syntax);
-      const scopedSyntax = syntax && scope.length ? `/* for ${scope.join(", ")} */\n${syntax}` : syntax;
+      const scopedSyntax =
+        syntax && scope.length ? `/* for ${scope.join(", ")} */\n${syntax}` : syntax;
       const existing = out.get(id);
       if (existing) {
         // ::cue and ::cue() are one feature with two forms: the syntax lists both.
-        if (existing.name.replace(/\(\)$/, "") !== name.replace(/\(\)$/, "")) throw new Error(`Feature id "${id}" is shared by ${existing.name} and ${name}`);
-        if (scopedSyntax) existing.syntax = [existing.syntax, scopedSyntax].filter(Boolean).join("\n\n");
+        if (existing.name.replace(/\(\)$/, "") !== name.replace(/\(\)$/, ""))
+          throw new Error(`Feature id "${id}" is shared by ${existing.name} and ${name}`);
+        if (scopedSyntax)
+          existing.syntax = [existing.syntax, scopedSyntax].filter(Boolean).join("\n\n");
         existing.for = [...new Set([...existing.for, ...scope])];
         continue;
       }
       const descriptors: Descriptor[] = (Array.isArray(raw.descriptors) ? raw.descriptors : [])
         .filter(isRecord)
         .filter((d) => typeof d.name === "string" && typeof d.href === "string")
-        .map((d) => ({ name: d.name as string, href: d.href as string, initial: str(d.initial), syntax: str(d.syntax) }));
+        .map((d) => ({
+          name: d.name as string,
+          href: d.href as string,
+          initial: str(d.initial),
+          syntax: str(d.syntax),
+        }));
       out.set(id, {
         id,
         name,
@@ -142,7 +205,13 @@ function readWebref(webref: unknown): Omit<Feature, "compat" | "mdn" | "status" 
 
 // ------------------------------------------------------------------ web-specs
 
-type Spec = { title: string; series: string; nightly: string; release: Module["release"]; urls: string[] };
+type Spec = {
+  title: string;
+  series: string;
+  nightly: string;
+  release: Module["release"];
+  urls: string[];
+};
 
 function readSpecs(index: unknown): Spec[] {
   if (!Array.isArray(index)) throw new Error("web-specs index is not an array");
@@ -152,15 +221,21 @@ function readSpecs(index: unknown): Spec[] {
     const series = at(s, ["series", "shortname"]);
     const title = at(s, ["series", "title"]);
     const nightly = at(s, ["series", "nightlyUrl"]) ?? at(s, ["nightly", "url"]);
-    if (typeof series !== "string" || typeof title !== "string" || typeof nightly !== "string") continue;
+    if (typeof series !== "string" || typeof title !== "string" || typeof nightly !== "string")
+      continue;
     const releaseUrl = at(s, ["release", "url"]);
     const releaseStatus = at(s, ["release", "status"]);
     out.push({
       title,
       series,
       nightly,
-      release: typeof releaseUrl === "string" && typeof releaseStatus === "string" ? { url: releaseUrl, status: releaseStatus } : null,
-      urls: [str(at(s, ["nightly", "url"])), ...strs(at(s, ["nightly", "alternateUrls"]))].filter((u): u is string => !!u),
+      release:
+        typeof releaseUrl === "string" && typeof releaseStatus === "string"
+          ? { url: releaseUrl, status: releaseStatus }
+          : null,
+      urls: [str(at(s, ["nightly", "url"])), ...strs(at(s, ["nightly", "alternateUrls"]))].filter(
+        (u): u is string => !!u,
+      ),
     });
   }
   return out;
@@ -172,7 +247,8 @@ function specFor(specs: Spec[], href: string): Spec {
   let best: { spec: Spec; length: number } | null = null;
   for (const spec of specs) {
     for (const u of spec.urls) {
-      if (base.startsWith(u) && (!best || u.length > best.length)) best = { spec, length: u.length };
+      if (base.startsWith(u) && (!best || u.length > best.length))
+        best = { spec, length: u.length };
     }
   }
   if (!best) throw new Error(`No specification in web-specs for ${href}`);
@@ -181,7 +257,13 @@ function specFor(specs: Spec[], href: string): Spec {
 
 // ------------------------------------------------------------------ MDN
 
-type MdnPage = { slug: string; name: string; compat: string | null; summary: string; example: Example | null };
+type MdnPage = {
+  slug: string;
+  name: string;
+  compat: string | null;
+  summary: string;
+  example: Example | null;
+};
 
 /** Links to MDN pages by feature name (cssxref macro), filled once the pages are read. */
 let mdnByName = new Map<string, string>();
@@ -190,7 +272,8 @@ let mdnByName = new Map<string, string>();
 function mdInline(src: string): string {
   const slots: string[] = [];
   const keep = (fragment: string) => `\u0000${slots.push(fragment) - 1}\u0000`;
-  const code = (s: string) => `<code>${escape(s.replace(/&lt;/g, "<").replace(/&gt;/g, ">"))}</code>`;
+  const code = (s: string) =>
+    `<code>${escape(s.replace(/&lt;/g, "<").replace(/&gt;/g, ">"))}</code>`;
 
   let s = src.replace(/\{\{\s*(\w+)\s*\((.*?)\)\s*\}\}/g, (_, name: string, rawArgs: string) => {
     const args = [...rawArgs.matchAll(/"([^"]*)"/g)].map((a) => a[1]);
@@ -199,15 +282,20 @@ function mdInline(src: string): string {
     if (macro === "cssxref") {
       const target = args[0].replace(/&lt;/g, "<").replace(/&gt;/g, ">");
       const label = code(args.length > 1 ? args[1] : args[0]);
-      const url = mdnByName.get(target) ?? mdnByName.get(`<${target}>`) ?? mdnByName.get(`${target}()`);
+      const url =
+        mdnByName.get(target) ?? mdnByName.get(`<${target}>`) ?? mdnByName.get(`${target}()`);
       return keep(url ? `<a href="${escape(url)}">${label}</a>` : label);
     }
     if (macro === "htmlelement") {
       const tag = args[0].toLowerCase();
-      return keep(`<a href="${MDN}Web/HTML/Reference/Elements/${tag}"><code>&lt;${escape(tag)}&gt;</code></a>`);
+      return keep(
+        `<a href="${MDN}Web/HTML/Reference/Elements/${tag}"><code>&lt;${escape(tag)}&gt;</code></a>`,
+      );
     }
     if (macro === "glossary") {
-      return keep(`<a href="${MDN}Glossary/${args[0].replace(/ /g, "_")}">${escape(args.at(-1)!)}</a>`);
+      return keep(
+        `<a href="${MDN}Glossary/${args[0].replace(/ /g, "_")}">${escape(args.at(-1)!)}</a>`,
+      );
     }
     return keep(code(args[0]));
   });
@@ -218,8 +306,11 @@ function mdInline(src: string): string {
   });
   s = s.replace(/`([^`]+)`/g, (_, c: string) => keep(code(c)));
   s = s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  s = s.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/(?<!\w)_(.+?)_(?!\w)/g, "<em>$1</em>");
-  while (s.includes("\u0000")) s = s.replace(/\u0000(\d+)\u0000/g, (_, i: string) => slots[Number(i)]);
+  s = s
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/(?<!\w)_(.+?)_(?!\w)/g, "<em>$1</em>");
+  while (s.includes("\u0000"))
+    s = s.replace(/\u0000(\d+)\u0000/g, (_, i: string) => slots[Number(i)]);
   return s.replace(/\s+/g, " ").trim();
 }
 
@@ -230,8 +321,12 @@ const ASSETS = /(?<=["'(\s,])\/shared-assets\//g;
 function mdnExample(body: string): Example | null {
   const fence = /^```(\w+)([^\n]*)\n([\s\S]*?)^```/gm;
   const all = [...body.matchAll(fence)];
-  let blocks = all.filter((m) => / interactive-example(?![\w-])/.test(m[2])).map((m) => [m[1], m[3]]);
-  const choices = all.filter((m) => m[2].includes("interactive-example-choice")).map((m) => m[3].trim());
+  let blocks = all
+    .filter((m) => / interactive-example(?![\w-])/.test(m[2]))
+    .map((m) => [m[1], m[3]]);
+  const choices = all
+    .filter((m) => m[2].includes("interactive-example-choice"))
+    .map((m) => m[3].trim());
   if (!blocks.length && body.includes("\n## Examples")) {
     const section = body.split("\n## Examples")[1].split("\n## ")[0];
     for (const chunk of section.split("\n### ")) {
@@ -245,35 +340,68 @@ function mdnExample(body: string): Example | null {
   const out: Partial<Record<"html" | "css" | "js", string>> = {};
   for (const [lang, code] of blocks) {
     if (lang !== "html" && lang !== "css" && lang !== "js") continue;
-    out[lang] = [out[lang], code.trim()].filter(Boolean).join("\n\n").replace(ASSETS, "https://developer.mozilla.org/shared-assets/");
+    out[lang] = [out[lang], code.trim()]
+      .filter(Boolean)
+      .join("\n\n")
+      .replace(ASSETS, "https://developer.mozilla.org/shared-assets/");
   }
-  return out.html ? { html: out.html, css: out.css ?? null, js: out.js ?? null, choices: choices.length ? choices : null } : null;
+  return out.html
+    ? {
+        html: out.html,
+        css: out.css ?? null,
+        js: out.js ?? null,
+        choices: choices.length ? choices : null,
+      }
+    : null;
 }
 
 /** Every page of MDN's CSS reference, indexed by browser-compat key and by feature name. */
-async function readMdn(root: string): Promise<{ byCompat: Map<string, MdnPage>; byName: Map<string, MdnPage> }> {
+async function readMdn(
+  root: string,
+): Promise<{ byCompat: Map<string, MdnPage>; byName: Map<string, MdnPage> }> {
   const byCompat = new Map<string, MdnPage>();
   const byName = new Map<string, MdnPage>();
   const pages: { front: string; body: string }[] = [];
   // Pages nest (values/gradient/linear-gradient, values/color_value/rgb): walk the whole reference.
-  for (const entry of await readdir(join(root, MDN_CSS), { withFileTypes: true, recursive: true })) {
-    if (!entry.isFile() || entry.name !== "index.md" || entry.parentPath === join(root, MDN_CSS)) continue;
-    const [, front, ...rest] = (await Bun.file(join(entry.parentPath, entry.name)).text()).split("---");
+  for (const entry of await readdir(join(root, MDN_CSS), {
+    withFileTypes: true,
+    recursive: true,
+  })) {
+    if (!entry.isFile() || entry.name !== "index.md" || entry.parentPath === join(root, MDN_CSS))
+      continue;
+    const [, front, ...rest] = (await Bun.file(join(entry.parentPath, entry.name)).text()).split(
+      "---",
+    );
     pages.push({ front, body: rest.join("---") });
   }
   // Names first, so the cssxref links of summaries can resolve to any page.
   const meta = pages.map(({ front }) => {
     const slug = front.match(/^slug: (.+)$/m)![1].trim();
-    const short = front.match(/^short-title: (.+)$/m)?.[1] ?? front.match(/^title: "?`([^`]+)`/m)?.[1] ?? front.match(/^title: (.+)$/m)![1];
+    const short =
+      front.match(/^short-title: (.+)$/m)?.[1] ??
+      front.match(/^title: "?`([^`]+)`/m)?.[1] ??
+      front.match(/^title: (.+)$/m)![1];
     const name = short.trim().replace(/^"|"$/g, "");
-    const compat = front.match(/^browser-compat:\s*(\S+)$/m)?.[1] ?? front.match(/^browser-compat:\s*\n\s+- (\S+)/m)?.[1] ?? null;
+    const compat =
+      front.match(/^browser-compat:\s*(\S+)$/m)?.[1] ??
+      front.match(/^browser-compat:\s*\n\s+- (\S+)/m)?.[1] ??
+      null;
     return { slug, name, compat };
   });
   mdnByName = new Map(meta.map((m) => [m.name, MDN + m.slug]));
   pages.forEach(({ body }, i) => {
     const { slug, name, compat } = meta[i];
-    const paragraph = body.trim().split("\n\n").find((p) => p.trim() && !/^\s*(\{\{|#|>|```|<)/.test(p));
-    const page: MdnPage = { slug, name, compat, summary: paragraph ? mdInline(paragraph) : "", example: mdnExample(body) };
+    const paragraph = body
+      .trim()
+      .split("\n\n")
+      .find((p) => p.trim() && !/^\s*(\{\{|#|>|```|<)/.test(p));
+    const page: MdnPage = {
+      slug,
+      name,
+      compat,
+      summary: paragraph ? mdInline(paragraph) : "",
+      example: mdnExample(body),
+    };
     if (compat && !byCompat.has(compat)) byCompat.set(compat, page);
     if (!byName.has(name)) byName.set(name, page);
   });
@@ -302,7 +430,16 @@ function supportLabel(statement: unknown): string {
   const first: unknown = Array.isArray(statement) ? statement[0] : statement;
   if (!isRecord(first)) return "?";
   const added = first.version_added;
-  let label = added === true ? "Yes" : added === false ? "No" : added === "preview" ? "Preview" : typeof added === "string" ? added : "?";
+  let label =
+    added === true
+      ? "Yes"
+      : added === false
+        ? "No"
+        : added === "preview"
+          ? "Preview"
+          : typeof added === "string"
+            ? added
+            : "?";
   if (first.flags) label += " (flag)";
   if (typeof first.prefix === "string") label += ` (${first.prefix} prefix)`;
   if (typeof first.version_removed === "string") label += `, removed in ${first.version_removed}`;
@@ -318,12 +455,22 @@ const COMPAT_NAMESPACE: Partial<Record<Kind, string>> = {
 
 /** The BCD key a webref feature most likely maps to, when MDN does not name it. */
 function guessCompat(bcd: unknown, name: string, kind: Kind): string | null {
-  const bare = name.replace(/^::?/, "").replace(/^@/, "").replace(/^</, "").replace(/>$/, "").replace(/\(\)$/, "");
+  const bare = name
+    .replace(/^::?/, "")
+    .replace(/^@/, "")
+    .replace(/^</, "")
+    .replace(/>$/, "")
+    .replace(/\(\)$/, "");
   const candidates = {
     property: [`css.properties.${name === "--*" ? "custom-property" : name}`],
     "at-rule": [`css.at-rules.${bare}`],
     selector: [`css.selectors.${bare}`],
-    function: [`css.types.${bare}`, `css.types.color.${bare}`, `css.types.image.gradient.${bare}`, `css.types.basic-shape.${bare}`],
+    function: [
+      `css.types.${bare}`,
+      `css.types.color.${bare}`,
+      `css.types.image.gradient.${bare}`,
+      `css.types.basic-shape.${bare}`,
+    ],
     type: [`css.types.${bare}`],
   }[kind];
   return candidates.find((k) => isRecord(at(bcd, [...k.split("."), "__compat"]))) ?? null;
@@ -341,7 +488,12 @@ function baselineIndex(features: unknown): Map<string, Baseline> {
     const level = status.baseline;
     if (level !== "high" && level !== "low" && level !== false) continue;
     for (const key of strs(f.compat_features)) {
-      out.set(key, { feature: id, status: level, lowDate: str(status.baseline_low_date), highDate: str(status.baseline_high_date) });
+      out.set(key, {
+        feature: id,
+        status: level,
+        lowDate: str(status.baseline_low_date),
+        highDate: str(status.baseline_high_date),
+      });
     }
   }
   return out;
@@ -353,16 +505,30 @@ function releaseDate(bcd: unknown, browser: string, version: string): string | n
 }
 
 /** The Modern CSS gallery: web-features features of the CSS platform that moved in MODERN_SINCE or later. */
-function readModern(features: unknown, groups: unknown, bcd: unknown, compatToId: Map<string, string>, exampleIds: Set<string>): Modern[] {
-  if (!isRecord(features) || !isRecord(groups)) throw new Error("web-features data has no features or groups");
+function readModern(
+  features: unknown,
+  groups: unknown,
+  bcd: unknown,
+  compatToId: Map<string, string>,
+  exampleIds: Set<string>,
+): Modern[] {
+  if (!isRecord(features) || !isRecord(groups))
+    throw new Error("web-features data has no features or groups");
   const groupName = (id: string) => str(at(groups, [id, "name"]));
-  const underCss = (id: string | null): boolean => id === "css" || (!!id && underCss(str(at(groups, [id, "parent"]))));
+  const underCss = (id: string | null): boolean =>
+    id === "css" || (!!id && underCss(str(at(groups, [id, "parent"]))));
   const out: Modern[] = [];
   for (const [id, f] of Object.entries(features)) {
     if (!isRecord(f) || f.kind !== "feature" || f.discouraged) continue;
     const compat = strs(f.compat_features);
     // A CSS feature: filed under the CSS group tree, or naming at least one CSS compat key.
-    if (!strs(f.group).concat(str(f.group) ?? []).some(underCss) && !compat.some((k) => k.startsWith("css."))) continue;
+    if (
+      !strs(f.group)
+        .concat(str(f.group) ?? [])
+        .some(underCss) &&
+      !compat.some((k) => k.startsWith("css."))
+    )
+      continue;
     const status = f.status;
     if (!isRecord(status)) continue;
     const level = status.baseline;
@@ -394,7 +560,14 @@ function readModern(features: unknown, groups: unknown, bcd: unknown, compatToId
       }
       return null;
     };
-    const keys = [...new Set(compat.filter((k) => k.startsWith("css.")).map(owner).filter((k): k is string => !!k))];
+    const keys = [
+      ...new Set(
+        compat
+          .filter((k) => k.startsWith("css."))
+          .map(owner)
+          .filter((k): k is string => !!k),
+      ),
+    ];
     const supportRaw = at(status, ["support"]);
     const support = Object.fromEntries(BROWSERS.map((b) => [b, str(at(supportRaw, [b])) ?? "No"]));
     out.push({
@@ -444,7 +617,8 @@ async function main() {
       // is of this kind. Functions and types are left alone, their pages point at property values.
       const named = mdn.byName.get(row.name) ?? null;
       const ownKind = COMPAT_NAMESPACE[row.kind];
-      const page = named && (!ownKind || !named.compat || named.compat.startsWith(ownKind)) ? named : null;
+      const page =
+        named && (!ownKind || !named.compat || named.compat.startsWith(ownKind)) ? named : null;
       const compat = page?.compat ?? guessCompat(bcd.json, row.name, row.kind);
       // Grammar productions nobody documents (<]-token>...) stay out: a type needs an MDN page or a BCD entry.
       if (row.kind === "type" && !page && !compat) continue;
@@ -463,24 +637,53 @@ async function main() {
       if (compat && !compatToId.has(compat)) compatToId.set(compat, feature.id);
       const spec = specFor(specs, row.spec);
       const slug = slugify(spec.series);
-      if (!modules.has(slug)) modules.set(slug, { slug, series: spec.series, title: spec.title, spec: spec.nightly, release: spec.release, features: [] });
+      if (!modules.has(slug))
+        modules.set(slug, {
+          slug,
+          series: spec.series,
+          title: spec.title,
+          spec: spec.nightly,
+          release: spec.release,
+          features: [],
+        });
       modules.get(slug)!.features.push(feature);
       features.push(feature);
     }
 
     const exampleIds = new Set(features.filter((f) => f.example).map((f) => f.id));
-    const modern = readModern(at(webFeatures.json, ["features"]), at(webFeatures.json, ["groups"]), bcd.json, compatToId, exampleIds);
+    const modern = readModern(
+      at(webFeatures.json, ["features"]),
+      at(webFeatures.json, ["groups"]),
+      bcd.json,
+      compatToId,
+      exampleIds,
+    );
     const byId = new Map(features.map((f) => [f.id, f]));
     for (const m of modern) for (const key of m.keys) byId.get(key)!.modern.push(m.id);
 
-    const kindRank: Record<Kind, number> = { property: 0, "at-rule": 1, selector: 2, function: 3, type: 4 };
-    for (const m of modules.values()) m.features.sort((a, b) => kindRank[a.kind] - kindRank[b.kind] || a.name.localeCompare(b.name));
+    const kindRank: Record<Kind, number> = {
+      property: 0,
+      "at-rule": 1,
+      selector: 2,
+      function: 3,
+      type: 4,
+    };
+    for (const m of modules.values())
+      m.features.sort(
+        (a, b) => kindRank[a.kind] - kindRank[b.kind] || a.name.localeCompare(b.name),
+      );
     const sortTitle = (m: Module) => m.title.replace(/^CSS /, "");
     const sorted = [...modules.values()].sort((a, b) => sortTitle(a).localeCompare(sortTitle(b)));
 
     const data: Data = { modules: sorted, modern, modernSince: MODERN_SINCE };
     const mdnCommit = (await $`git -C ${mdnRoot} log -1 --format=%cs\ %h`.text()).trim();
-    const sources: Sources = { webref: webref.version, webSpecs: webSpecs.version, mdn: mdnCommit, bcd: bcd.version, webFeatures: webFeatures.version };
+    const sources: Sources = {
+      webref: webref.version,
+      webSpecs: webSpecs.version,
+      mdn: mdnCommit,
+      bcd: bcd.version,
+      webFeatures: webFeatures.version,
+    };
     await Bun.write("data/features.json", JSON.stringify(data, null, 1) + "\n");
     await Bun.write("data/sources.json", JSON.stringify(sources, null, 2) + "\n");
 

@@ -6,10 +6,20 @@ import sourcesJson from "../data/sources.json";
 
 export type Kind = "property" | "at-rule" | "selector" | "function" | "type";
 
-export type Baseline = { feature: string; status: "high" | "low" | false; lowDate: string | null; highDate: string | null };
+export type Baseline = {
+  feature: string;
+  status: "high" | "low" | false;
+  lowDate: string | null;
+  highDate: string | null;
+};
 
 /** html, css and js come from MDN; choices are the "interactive-example-choice" blocks, declarations applied to #example-element. */
-export type Example = { html: string; css: string | null; js: string | null; choices: string[] | null };
+export type Example = {
+  html: string;
+  css: string | null;
+  js: string | null;
+  choices: string[] | null;
+};
 
 /** The CSS property definition table, as the spec writes it (webref). */
 export type Definition = {
@@ -22,7 +32,12 @@ export type Definition = {
   animationType: string | null;
 };
 
-export type Descriptor = { name: string; href: string; initial: string | null; syntax: string | null };
+export type Descriptor = {
+  name: string;
+  href: string;
+  initial: string | null;
+  syntax: string | null;
+};
 
 export type Feature = {
   id: string;
@@ -77,7 +92,13 @@ export type Modern = {
 
 export type Data = { modules: Module[]; modern: Modern[]; modernSince: string };
 
-export type Sources = { webref: string; webSpecs: string; mdn: string; bcd: string; webFeatures: string };
+export type Sources = {
+  webref: string;
+  webSpecs: string;
+  mdn: string;
+  bcd: string;
+  webFeatures: string;
+};
 
 // The JSON is produced by our own sync script against these types.
 export const data = featuresJson as Data;
@@ -105,7 +126,9 @@ export const featureCount = allFeatures.length;
 
 export const moduleUrl = (m: Module) => `/${m.slug}/`;
 
-const featureModule = new Map(data.modules.flatMap((m) => m.features.map((f) => [f.id, m] as const)));
+const featureModule = new Map(
+  data.modules.flatMap((m) => m.features.map((f) => [f.id, m] as const)),
+);
 export const featureUrl = (f: Feature) => `${moduleUrl(featureModule.get(f.id)!)}#${f.id}`;
 export const featureById = new Map(allFeatures.map((f) => [f.id, f]));
 

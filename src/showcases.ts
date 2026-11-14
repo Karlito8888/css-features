@@ -4,7 +4,11 @@
 
 import { featureById, type Example, type Modern } from "./data";
 
-const FILES = import.meta.glob<string>("./showcases/*.{html,css,js}", { query: "?raw", import: "default", eager: true });
+const FILES = import.meta.glob<string>("./showcases/*.{html,css,js}", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 
 export type Showcase = { example: Example; used: Set<string> };
 
@@ -34,9 +38,13 @@ export function showcaseFor(modern: Modern): Showcase | null {
   const source = [html, example.css, example.js].filter(Boolean).join("\n");
   const used = new Set(modern.keys.filter((id) => keyPattern(id).test(source)));
   if (modern.keys.length && !used.size) {
-    throw new Error(`Showcase "${modern.id}" uses none of ${modern.keys.map((id) => featureById.get(id)!.name).join(", ")}`);
+    throw new Error(
+      `Showcase "${modern.id}" uses none of ${modern.keys.map((id) => featureById.get(id)!.name).join(", ")}`,
+    );
   }
   return { example, used };
 }
 
-export const showcaseIds = new Set(Object.keys(FILES).map((f) => f.replace(/^\.\/showcases\/|\.(html|css|js)$/g, "")));
+export const showcaseIds = new Set(
+  Object.keys(FILES).map((f) => f.replace(/^\.\/showcases\/|\.(html|css|js)$/g, "")),
+);

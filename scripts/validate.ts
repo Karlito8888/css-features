@@ -16,7 +16,13 @@ import { FOLDERS, exampleIds, readExample } from "./example-files";
 const CHECKER = process.env.CHECKER ?? "https://validator.w3.org/nu/?out=json";
 const INTERESTFOR = /^Attribute “interestfor” not allowed on element “[^”]+” at this point\.$/;
 
-type Message = { type: string; subType?: string; message: string; lastLine?: number; extract?: string };
+type Message = {
+  type: string;
+  subType?: string;
+  message: string;
+  lastLine?: number;
+  extract?: string;
+};
 const wanted = process.argv.slice(2);
 let errors = 0;
 
@@ -29,7 +35,10 @@ for (const { dir, base } of FOLDERS) {
       await Bun.sleep(1000);
       res = await fetch(CHECKER, {
         method: "POST",
-        headers: { "Content-Type": "text/html; charset=utf-8", "User-Agent": "css-features-validate" },
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "User-Agent": "css-features-validate",
+        },
         body: doc,
       });
       if (res.status !== 429 || attempt === 5) break;
@@ -38,9 +47,13 @@ for (const { dir, base } of FOLDERS) {
     if (!res.ok) throw new Error(`Checker answered HTTP ${res.status} for ${dir}/${id}`);
     const { messages } = (await res.json()) as { messages: Message[] };
     const tolerated = (m: Message) => m.message.startsWith("CSS:") || INTERESTFOR.test(m.message);
-    const failed = messages.filter((m) => (m.type === "error" || m.subType === "fatal") && !tolerated(m));
+    const failed = messages.filter(
+      (m) => (m.type === "error" || m.subType === "fatal") && !tolerated(m),
+    );
     errors += failed.length;
-    console.log(`${failed.length ? "✗" : "✓"} ${dir}/${id}: ${failed.length} HTML errors, ${messages.length - failed.length} other messages`);
+    console.log(
+      `${failed.length ? "✗" : "✓"} ${dir}/${id}: ${failed.length} HTML errors, ${messages.length - failed.length} other messages`,
+    );
     for (const m of messages) {
       const kind = tolerated(m) ? "tolerated" : `${m.type}${m.subType ? `/${m.subType}` : ""}`;
       console.log(`    ${kind} line ${m.lastLine ?? "?"}: ${m.message}`);

@@ -3,20 +3,20 @@
 Static site at `https://css.charmaweb.com`: every CSS property, at-rule, selector, function
 and type the W3C specifications define, with a live editable example, its definition table,
 syntax, browser support and Baseline status, plus a Modern CSS gallery of the features that
-moved recently, each one illustrated live. Astro 7, TypeScript, Bun, hand-written CSS. Sibling
+moved recently, each one illustrated live. Astro 7, TypeScript, Vite+ (`vp`, Bun underneath), hand-written CSS. Sibling
 of `~/Bureau/html` (`Karlito8888/html-elements`), same mechanics. Remote
 `Karlito8888/css-features`, branch `main`.
 
 ## Commands
 
 ```bash
-bun run sync             # download the sources, rewrite data/features.json and data/sources.json
-bun run validate [id...] # send every showcase and reference example (or the named ones) to the W3C Nu HTML Checker (network; run by hand, not in CI; CHECKER=http://localhost:8888/?out=json targets a local vnu.jar)
-bun run check-examples [id...] # headless Chrome check of the reference examples, contact sheets in /tmp/css-examples-check/ (EXAMPLES_DIR=<folder> checks drafts outside the repo)
-bun scripts/preview.ts <id>   # a showcase or reference example as a standalone document in /tmp, to open in a browser
-bun run dev              # http://localhost:4341
-bun run check            # the gate: astro check && astro build
-bun run preview          # serve dist/ on 4341 (daemonized: `bunx astro preview stop`)
+vp run sync             # download the sources, rewrite data/features.json and data/sources.json
+vp run validate [id...] # send every showcase and reference example (or the named ones) to the W3C Nu HTML Checker (network; run by hand, not in CI; CHECKER=http://localhost:8888/?out=json targets a local vnu.jar)
+vp run check-examples [id...] # headless Chrome check of the reference examples, contact sheets in /tmp/css-examples-check/ (EXAMPLES_DIR=<folder> checks drafts outside the repo)
+bun scripts/preview.ts <id>   # a showcase or reference example as a standalone document in /tmp, to open in a browser (Bun APIs: stays on bun)
+vp run dev              # http://localhost:4341
+vp run gate             # the gate: astro check && vp check && astro build (vp check formats with Oxfmt and lints with Oxlint from vite.config.ts; .astro files are covered by astro check only)
+vp run preview          # serve dist/ on 4341 (daemonized: `vpx astro preview stop`)
 ```
 
 ## Data
@@ -88,7 +88,7 @@ plus optional `.css` and `.js`, loaded by `src/showcases.ts`. The build fails wh
 none of its feature's reference keys (`keyPattern`: `name:` for a property, `@name`, the selector
 text, `name(` for a function); the keys it uses are solid chips under the demo, the others dashed.
 Every showcase says inside the frame, through `@supports not (...)`, when the browser lacks the
-feature. `bun run validate` checks their HTML with the Nu checker; its CSS messages are printed
+feature. `vp run validate` checks their HTML with the Nu checker; its CSS messages are printed
 and tolerated, since the checker's CSS parser lags behind modern CSS, and so is its one rejection
 of the `interestfor` attribute, which Chrome ships while its HTML pull request
 (whatwg/html#11006) is still open. Features without a showcase
@@ -103,7 +103,7 @@ choices (one per blank-line separated paragraph), loaded by `src/examples.ts`. T
 shared skin (`src/standalone-document.ts`) that follows the site theme through `light-dark()`,
 and their bar says "Written for this site". The build fails when an example never writes its
 feature (`keyPattern`). A feature without one keeps its MDN example. The contract they obey is
-in `.omp/RULES.md`; `bun run check-examples` proves it in headless Chrome at 330 and 900 px,
+in `.omp/RULES.md`; `vp run check-examples` proves it in headless Chrome at 330 and 900 px,
 light and dark: no page error, no horizontal overflow, every supported choice changes the
 computed style (declared properties, or for rule blocks every element against no choice). Rule
 blocks whose selector cannot match a still frame (`:hover`, `:focus`, `::selection`, media

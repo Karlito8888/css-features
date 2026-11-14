@@ -7,7 +7,11 @@ import { featureById, type Example } from "./data";
 import { keyPattern } from "./showcases";
 import { splitChoices } from "./standalone-document";
 
-const FILES = import.meta.glob<string>("./examples/*.{html,css,txt}", { query: "?raw", import: "default", eager: true });
+const FILES = import.meta.glob<string>("./examples/*.{html,css,txt}", {
+  query: "?raw",
+  import: "default",
+  eager: true,
+});
 for (const file of Object.keys(FILES)) {
   const id = file.replace(/^\.\/examples\/|\.\w+$/g, "");
   if (!featureById.has(id)) throw new Error(`${file}: no feature has the id "${id}"`);
@@ -18,7 +22,12 @@ export function writtenExample(id: string): Example | null {
   const html = read("html");
   if (!html) return null;
   const txt = read("txt");
-  const example: Example = { html, css: read("css"), js: null, choices: txt ? splitChoices(txt) : null };
+  const example: Example = {
+    html,
+    css: read("css"),
+    js: null,
+    choices: txt ? splitChoices(txt) : null,
+  };
   if (!keyPattern(id).test([html, example.css, ...(example.choices ?? [])].join("\n"))) {
     throw new Error(`Example "${id}" never uses ${featureById.get(id)!.name}`);
   }

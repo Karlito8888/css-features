@@ -4,7 +4,8 @@ import type { Example } from "./data";
 // standalone documents the scripts build (validate, preview, check-examples).
 
 /** Modern showcases: a neutral page. */
-export const SHOWCASE_CSS = "body{margin:16px;font-family:system-ui,sans-serif;color:#1b1b1b;background:#fff}";
+export const SHOWCASE_CSS =
+  "body{margin:16px;font-family:system-ui,sans-serif;color:#1b1b1b;background:#fff}";
 
 // Reference examples written for this site: a stage that follows the site theme, a palette and
 // a few shared classes (.tile, .card) so each example only writes what its feature needs.
@@ -19,7 +20,8 @@ body{margin:0;min-height:320px;display:grid;place-items:center;padding:28px;font
 .tile:nth-child(4n+4){--grad:linear-gradient(135deg,var(--a5),var(--a3))}`;
 
 /** The skin of a written example, in the light or dark theme. */
-export const writtenCss = (dark: boolean) => `:root{color-scheme:${dark ? "dark" : "light"}}${WRITTEN_CSS}`;
+export const writtenCss = (dark: boolean) =>
+  `:root{color-scheme:${dark ? "dark" : "light"}}${WRITTEN_CSS}`;
 
 /** The value choices of a written example (its .txt): one block per blank-line separated paragraph. */
 export const splitChoices = (text: string) => text.split(/\n\s*\n/);
@@ -56,15 +58,26 @@ export function declarations(code: string): string[] {
  * The complete document an example becomes, with its first value choice applied as the page does
  * (declarations inline on #example-element, a choice holding "{" as a style element).
  */
-export function standaloneDocument({ html, css, js, choices }: Example, title: string, base: string): string {
+export function standaloneDocument(
+  { html, css, js, choices }: Example,
+  title: string,
+  base: string,
+): string {
   if (/<html[\s>]/i.test(html)) {
-    if (css || js) throw new Error("A full-document example keeps its CSS and JS inside its own HTML");
+    if (css || js)
+      throw new Error("A full-document example keeps its CSS and JS inside its own HTML");
     return html;
   }
   const first = choices?.[0];
   const choiceStyle = first?.includes("{") ? `<style data-choice>${first}</style>` : "";
-  if (first && !choiceStyle) html = html.replace('id="example-element"', `$& style="${first.replace(/&/g, "&amp;").replace(/"/g, "&quot;")}"`);
+  if (first && !choiceStyle)
+    html = html.replace(
+      'id="example-element"',
+      `$& style="${first.replace(/&/g, "&amp;").replace(/"/g, "&quot;")}"`,
+    );
   const script = js ? `<script>${js}</script>` : "";
-  const body = /<body[\s>]/i.test(html) ? html.replace(/<\/body>/i, `${script}</body>`) : `<body>${html}${script}</body>`;
+  const body = /<body[\s>]/i.test(html)
+    ? html.replace(/<\/body>/i, `${script}</body>`)
+    : `<body>${html}${script}</body>`;
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><style>${base}</style>${css ? `<style>${css}</style>` : ""}${choiceStyle}</head>${body}</html>`;
 }

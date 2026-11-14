@@ -10,7 +10,8 @@ import { isDark, onThemeChange } from "./theme";
 type Lang = "html" | "css" | "js";
 type Source = Record<Lang, string | null> & { choices: string[] | null };
 
-const SANDBOX = "allow-scripts allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox";
+const SANDBOX =
+  "allow-scripts allow-forms allow-modals allow-popups allow-popups-to-escape-sandbox";
 // The base styles of MDN's interactive examples (mdn/dex, cloud-function/src/internal/play), so
 // the examples render as on MDN. "choice" examples center one element in a 300 px stage;
 // "tabbed" examples are plain documents. Showcases and written examples use src/standalone-document.ts.
@@ -56,22 +57,30 @@ function choiceAgent(id: string, choices: string[], split: typeof declarations) 
     if (typeof data.choice === "string") apply(data.choice);
   };
   apply(choices[0]);
-  parent.postMessage({ example: id, port: true, unsupported: choices.map((c) => !supported(c)) }, "*", [channel.port2]);
+  parent.postMessage(
+    { example: id, port: true, unsupported: choices.map((c) => !supported(c)) },
+    "*",
+    [channel.port2],
+  );
 }
 
 function srcdoc(source: Source, id: string, base: string): string {
   const html = source.html ?? "";
   const fullDocument = /<html[\s>]|<!doctype/i.test(html);
   // The preview reports its height tagged with its example id so the page can size the frame.
-  const resize = `<script>new ResizeObserver(() => parent.postMessage({ previewHeight: Math.ceil(document.documentElement.getBoundingClientRect().height), example: ${JSON.stringify(id)} }, "*")).observe(document.documentElement);<\/script>`;
-  const agent = source.choices ? `<script>(${choiceAgent.toString()})(${JSON.stringify(id)}, ${JSON.stringify(source.choices)}, ${declarations.toString()});<\/script>` : "";
+  const resize = `<script>new ResizeObserver(() => parent.postMessage({ previewHeight: Math.ceil(document.documentElement.getBoundingClientRect().height), example: ${JSON.stringify(id)} }, "*")).observe(document.documentElement);</script>`;
+  const agent = source.choices
+    ? `<script>(${choiceAgent.toString()})(${JSON.stringify(id)}, ${JSON.stringify(source.choices)}, ${declarations.toString()});</script>`
+    : "";
   return (
     // about:srcdoc as base keeps "#id" links inside the preview: a srcdoc frame otherwise resolves
     // them against this page, and a click loads the whole site into the frame.
-    (fullDocument ? "" : `<!doctype html><meta charset="utf-8"><base href="about:srcdoc"><style>${base}</style>`) +
+    (fullDocument
+      ? ""
+      : `<!doctype html><meta charset="utf-8"><base href="about:srcdoc"><style>${base}</style>`) +
     (source.css ? `<style>${source.css}</style>` : "") +
     html +
-    (source.js ? `<script>${source.js}<\/script>` : "") +
+    (source.js ? `<script>${source.js}</script>` : "") +
     resize +
     agent
   );
@@ -79,11 +88,26 @@ function srcdoc(source: Source, id: string, base: string): string {
 
 function combined(source: Source, choice: number): string {
   const chosen = source.choices?.[choice];
-  const css = [source.css, chosen && (chosen.includes("{") ? chosen : `#example-element {\n  ${chosen.replace(/\n/g, "\n  ")}\n}`)].filter(Boolean).join("\n\n");
-  return [source.html, css && `<style>\n${css}\n</style>`, source.js && `<script>\n${source.js}\n<\/script>`].filter(Boolean).join("\n\n");
+  const css = [
+    source.css,
+    chosen &&
+      (chosen.includes("{") ? chosen : `#example-element {\n  ${chosen.replace(/\n/g, "\n  ")}\n}`),
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+  return [
+    source.html,
+    css && `<style>\n${css}\n</style>`,
+    source.js && `<script>\n${source.js}\n</script>`,
+  ]
+    .filter(Boolean)
+    .join("\n\n");
 }
 
-const handlers = new Map<string, (data: Record<string, unknown>, ports: readonly MessagePort[]) => void>();
+const handlers = new Map<
+  string,
+  (data: Record<string, unknown>, ports: readonly MessagePort[]) => void
+>();
 
 function setup(root: HTMLElement) {
   const id = root.dataset.example!;
@@ -142,7 +166,11 @@ function setup(root: HTMLElement) {
       frame.style.height = `${Math.min(Math.max(data.previewHeight, 140), maxHeight)}px`;
     }
     if (Array.isArray(data.unsupported)) {
-      choiceButtons.forEach((b, i) => (data.unsupported as boolean[])[i] ? b.setAttribute("data-unsupported", "") : b.removeAttribute("data-unsupported"));
+      choiceButtons.forEach((b, i) =>
+        (data.unsupported as boolean[])[i]
+          ? b.setAttribute("data-unsupported", "")
+          : b.removeAttribute("data-unsupported"),
+      );
     }
   });
 
@@ -213,6 +241,12 @@ for (const root of document.querySelectorAll<HTMLElement>("[data-example]")) set
 // Every preview posts messages tagged with its example id; route them to that example.
 window.addEventListener("message", (e) => {
   const data: unknown = e.data;
-  if (typeof data !== "object" || data === null || !("example" in data) || typeof data.example !== "string") return;
+  if (
+    typeof data !== "object" ||
+    data === null ||
+    !("example" in data) ||
+    typeof data.example !== "string"
+  )
+    return;
   handlers.get(data.example)?.(data as Record<string, unknown>, e.ports);
 });

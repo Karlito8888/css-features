@@ -5,7 +5,8 @@ and type the W3C specifications define, with a live editable example, its defini
 syntax, browser support and Baseline status, plus a Modern CSS gallery of the features that
 moved recently, each one illustrated live. Astro 7, TypeScript, Vite+ (`vp`, Bun underneath), hand-written CSS. Sibling
 of `~/Bureau/html` (`Karlito8888/html-elements`), same mechanics. Remote
-`Karlito8888/css-features`, branch `main`.
+`Karlito8888/css-features`, branch `main`. Project card (identity and structural decisions
+only): `~/.omp/agent/bank/css-features.md`.
 
 ## Commands
 

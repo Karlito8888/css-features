@@ -12495,7 +12495,7 @@
      "compat": "css.properties.block-size",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size",
-      "summary": "The <strong><code>block-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">block axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size\"><code>inline-size</code></a>, which defines the other dimension of the element."
+      "summary": "The <strong><code>block-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">block axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size\"><code>inline-size</code></a>, which defines the other dimension of the element."
      },
      "status": {
       "deprecated": false,
@@ -13070,7 +13070,7 @@
      "compat": "css.properties.inline-size",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size",
-      "summary": "The <strong><code>inline-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">inline axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size\"><code>block-size</code></a>, which defines the other dimension of the element."
+      "summary": "The <strong><code>inline-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">inline axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size\"><code>block-size</code></a>, which defines the other dimension of the element."
      },
      "status": {
       "deprecated": false,
@@ -13362,7 +13362,7 @@
      "compat": "css.properties.max-width",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/max-width",
-      "summary": "The <strong><code>max-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a> property from becoming larger than the value specified by <code>max-width</code>."
+      "summary": "The <strong><code>max-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a> property from becoming larger than the value specified by <code>max-width</code>."
      },
      "status": {
       "deprecated": false,
@@ -13688,7 +13688,7 @@
      "compat": "css.properties.min-width",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-width",
-      "summary": "The <strong><code>min-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a> property from becoming smaller than the value specified for <code>min-width</code>."
+      "summary": "The <strong><code>min-width</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum width of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a> property from becoming smaller than the value specified for <code>min-width</code>."
      },
      "status": {
       "deprecated": false,
@@ -14585,7 +14585,7 @@
      "compat": null,
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/generic-family",
-      "summary": "The <strong><code>&lt;generic-family&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents the keyword values for generic font families used in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font\"><code>font</code></a> shorthand and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a> longhand properties. The <code>&lt;generic-family&gt;</code> represents one or more locally-installed fonts belonging to that category of fonts."
+      "summary": "The <strong><code>&lt;generic-family&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents the keyword values for generic font families used in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font\"><code>font</code></a> shorthand and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a> longhand properties. The <code>&lt;generic-family&gt;</code> represents one or more locally-installed fonts belonging to that category of fonts."
      },
      "status": {
       "deprecated": false,
@@ -17760,7 +17760,7 @@
      "compat": "css.properties.-webkit-text-fill-color",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-fill-color",
-      "summary": "The <strong><code>-webkit-text-fill-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the fill <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/color\"><code>color</code></a> property is used."
+      "summary": "The <strong><code>-webkit-text-fill-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the fill <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color\"><code>color</code></a> property is used."
      },
      "status": {
       "deprecated": false,
@@ -17894,7 +17894,7 @@
      "compat": "css.properties.-webkit-text-stroke-color",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/-webkit-text-stroke-color",
-      "summary": "The <strong><code>-webkit-text-stroke-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the stroke <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/color\"><code>color</code></a> property is used."
+      "summary": "The <strong><code>-webkit-text-stroke-color</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property specifies the stroke <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value\">color</a> of characters of text. If this property is not set, the value of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/color\"><code>color</code></a> property is used."
      },
      "status": {
       "deprecated": false,
@@ -23611,7 +23611,7 @@
      "compat": "css.properties.font-style",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-style",
-      "summary": "The <strong><code>font-style</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets whether a font should be styled with a normal, italic, or oblique face from its <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a>."
+      "summary": "The <strong><code>font-style</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets whether a font should be styled with a normal, italic, or oblique face from its <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -24476,7 +24476,7 @@
      "compat": "css.properties.font-weight",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight",
-      "summary": "The <strong><code>font-weight</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the weight (or boldness) of the font. The weights available depend on the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a> that is currently set."
+      "summary": "The <strong><code>font-weight</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the weight (or boldness) of the font. The weights available depend on the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a> that is currently set."
      },
      "status": {
       "deprecated": false,
@@ -29748,7 +29748,7 @@
      "compat": "css.types.string",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/string",
-      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
+      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58404,7 +58404,7 @@
      "compat": "css.types.length",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length",
-      "summary": "The <strong><code>&lt;length&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a distance value. Lengths can be used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-width\"><code>border-width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow\"><code>text-shadow</code></a>."
+      "summary": "The <strong><code>&lt;length&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a distance value. Lengths can be used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-width\"><code>border-width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow\"><code>text-shadow</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58498,7 +58498,7 @@
      "compat": "css.types.percentage",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/percentage",
-      "summary": "The <strong><code>&lt;percentage&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a percentage value. It is often used to define a size as relative to an element's parent object. Numerous properties can use percentages, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>."
+      "summary": "The <strong><code>&lt;percentage&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a percentage value. It is often used to define a size as relative to an element's parent object. Numerous properties can use percentages, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58663,7 +58663,7 @@
      "compat": "css.types.string",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/string",
-      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
+      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
      },
      "status": {
       "deprecated": false,

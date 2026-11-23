@@ -689,7 +689,10 @@
    "series": "animation-triggers",
    "title": "Animation Triggers",
    "spec": "https://drafts.csswg.org/animation-triggers/",
-   "release": null,
+   "release": {
+    "url": "https://www.w3.org/TR/animation-triggers-1/",
+    "status": "First Public Working Draft"
+   },
    "features": [
     {
      "id": "animation-trigger",
@@ -4413,14 +4416,14 @@
      "kind": "property",
      "spec": "https://drafts.csswg.org/css-ui-4/#propdef-outline-offset",
      "extended": [],
-     "syntax": "<length>",
+     "syntax": "<length> | inset",
      "prose": null,
      "definition": {
       "initial": "0",
       "appliesTo": "all elements",
       "inherited": "no",
       "percentages": "N/A",
-      "computedValue": "absolute length",
+      "computedValue": "absolute length or inset keyword.",
       "canonicalOrder": "per grammar",
       "animationType": "by computed value"
      },
@@ -4676,7 +4679,7 @@
       "chrome": "54",
       "edge": "79",
       "firefox": "69",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "54",
       "safari_ios": "3 (-webkit- prefix)"
      },
@@ -5153,14 +5156,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-block-end-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -5458,14 +5468,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-block-start-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -5943,14 +5960,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-bottom-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -7037,14 +7061,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-inline-end-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -7338,14 +7369,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-inline-start-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -7763,14 +7801,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-left-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -8171,14 +8216,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-right-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -8775,14 +8827,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.properties.border-top-radius",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "No",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -9361,16 +9420,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -9455,16 +9514,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -9582,16 +9641,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -9673,16 +9732,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -9731,16 +9790,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -9822,16 +9881,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -9913,16 +9972,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10007,16 +10066,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10101,16 +10160,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10195,16 +10254,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10289,16 +10348,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10349,16 +10408,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10440,16 +10499,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10531,16 +10590,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10658,16 +10717,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10749,16 +10808,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -10807,16 +10866,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "Preview",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "corner-shape",
@@ -12495,7 +12554,7 @@
      "compat": "css.properties.block-size",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size",
-      "summary": "The <strong><code>block-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">block axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size\"><code>inline-size</code></a>, which defines the other dimension of the element."
+      "summary": "The <strong><code>block-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">block axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size\"><code>inline-size</code></a>, which defines the other dimension of the element."
      },
      "status": {
       "deprecated": false,
@@ -13070,7 +13129,7 @@
      "compat": "css.properties.inline-size",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/inline-size",
-      "summary": "The <strong><code>inline-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">inline axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size\"><code>block-size</code></a>, which defines the other dimension of the element."
+      "summary": "The <strong><code>inline-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property defines the size of an element's block along the <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/Grid_Axis\">inline axis</a>. If the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/writing-mode\"><code>writing-mode</code></a> is horizontal, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>; if the writing mode is vertical, it corresponds to the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>. A related property is <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/block-size\"><code>block-size</code></a>, which defines the other dimension of the element."
      },
      "status": {
       "deprecated": false,
@@ -13104,6 +13163,61 @@
      },
      "modern": [
       "anchor-positioning"
+     ]
+    },
+    {
+     "id": "interpolate-size",
+     "name": "interpolate-size",
+     "kind": "property",
+     "spec": "https://drafts.csswg.org/css-sizing-4/#propdef-interpolate-size",
+     "extended": [],
+     "syntax": "numeric-only | allow-keywords",
+     "prose": null,
+     "definition": {
+      "initial": "numeric-only",
+      "appliesTo": "all elements",
+      "inherited": "yes",
+      "percentages": "n/a",
+      "computedValue": "as specified",
+      "canonicalOrder": "per grammar",
+      "animationType": "not animatable"
+     },
+     "longhands": [],
+     "legacyAliasOf": null,
+     "descriptors": [],
+     "for": [],
+     "compat": "css.properties.interpolate-size",
+     "mdn": {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/interpolate-size",
+      "summary": "The <strong><code>interpolate-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property allows you to enable <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations\">animations</a> and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions\">transitions</a> between a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length-percentage\"><code>&lt;length-percentage&gt;</code></a> value and an <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/intrinsic_size\">intrinsic size</a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/fit-content\"><code>fit-content</code></a>, or <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max-content\"><code>max-content</code></a>."
+     },
+     "status": {
+      "deprecated": false,
+      "experimental": true,
+      "standardTrack": true
+     },
+     "support": {
+      "chrome": "129",
+      "edge": "129",
+      "firefox": "No",
+      "safari": "Preview",
+      "chrome_android": "129",
+      "safari_ios": "No"
+     },
+     "baseline": {
+      "feature": "interpolate-size",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
+     "example": {
+      "html": "<section tabindex=\"0\">\n  <header>\n    <h2>Tanuki</h2>\n  </header>\n  <main>\n    <p>Tanuki is the silent phantom of MDN.</p>\n    <ul>\n      <li><strong>Height</strong>: 3.03m</li>\n      <li><strong>Weight</strong>: 160kg</li>\n      <li><strong>Tech Fu</strong>: 7</li>\n      <li><strong>Bad Jokes</strong>: 9</li>\n    </ul>\n  </main>\n</section>",
+      "css": "* {\n  box-sizing: border-box;\n}\n\nsection {\n  font-family: \"Helvetica\", \"Arial\", sans-serif;\n  width: 175px;\n  border-radius: 5px;\n  background: #eeeeee;\n  box-shadow:\n    inset 1px 1px 4px rgb(255 255 255 / 0.5),\n    inset -1px -1px 4px rgb(0 0 0 / 0.5);\n}\n\nheader {\n  padding: 0.7rem;\n  border-bottom: 2px solid #cccccc;\n}\n\nmain {\n  padding: 10px;\n}\n\nh2 {\n  margin: 0;\n  font-weight: normal;\n  font-size: 1.1rem;\n  text-align: center;\n  letter-spacing: 1px;\n}\n\np,\nli {\n  font-size: 0.8rem;\n  line-height: 1.5;\n}\n\np {\n  margin-top: 0;\n}\n\n:root {\n  interpolate-size: allow-keywords;\n}\n\nsection {\n  height: 2.5rem;\n  overflow: hidden;\n  transition: height ease 1s;\n}\n\nsection:hover,\nsection:focus {\n  height: max-content;\n}",
+      "js": null,
+      "choices": null
+     },
+     "modern": [
+      "interpolate-size"
      ]
     },
     {
@@ -13194,7 +13308,7 @@
      "compat": "css.properties.max-height",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/max-height",
-      "summary": "The <strong><code>max-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a> property from becoming larger than the value specified for <code>max-height</code>."
+      "summary": "The <strong><code>max-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the maximum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a> property from becoming larger than the value specified for <code>max-height</code>."
      },
      "status": {
       "deprecated": false,
@@ -13487,7 +13601,7 @@
      "compat": "css.properties.min-height",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/min-height",
-      "summary": "The <strong><code>min-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a> property from becoming smaller than the value specified for <code>min-height</code>."
+      "summary": "The <strong><code>min-height</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the minimum height of an element. It prevents the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Property_value_processing#used_value\">used value</a> of the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a> property from becoming smaller than the value specified for <code>min-height</code>."
      },
      "status": {
       "deprecated": false,
@@ -13829,6 +13943,53 @@
      "modern": [
       "anchor-positioning",
       "stretch"
+     ]
+    },
+    {
+     "id": "fn-calc-size",
+     "name": "calc-size()",
+     "kind": "function",
+     "spec": "https://drafts.csswg.org/css-sizing-4/#funcdef-calc-size",
+     "extended": [],
+     "syntax": "calc-size( <calc-size-basis>, <calc-sum> )",
+     "prose": "The calc-size() function allows math and transition/animation to be performed on these sizes in a safe, well-defined way. Its syntax is as follows:",
+     "definition": null,
+     "longhands": [],
+     "legacyAliasOf": null,
+     "descriptors": [],
+     "for": [],
+     "compat": "css.types.calc-size",
+     "mdn": {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc-size",
+      "summary": "The <strong><code>calc-size()</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Functions\">function</a> allows you to perform calculations on <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/intrinsic_size\">intrinsic size</a> values such as <code>auto</code>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/fit-content\"><code>fit-content</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max-content\"><code>max-content</code></a>; this is not supported by the regular <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc\"><code>calc()</code></a> function."
+     },
+     "status": {
+      "deprecated": false,
+      "experimental": true,
+      "standardTrack": true
+     },
+     "support": {
+      "chrome": "129",
+      "edge": "129",
+      "firefox": "No",
+      "safari": "No",
+      "chrome_android": "129",
+      "safari_ios": "No"
+     },
+     "baseline": {
+      "feature": "calc-size",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
+     "example": {
+      "html": "<section>\n  <h2>Favorite quote</h2>\n\n  <p>\n    Fashion is something so ugly it has to be changed every fifteen minutes.\n  </p>\n</section>",
+      "css": "* {\n  box-sizing: border-box;\n}\n\nsection {\n  font-family: \"Helvetica\", \"Arial\", sans-serif;\n  border: 1px solid black;\n}\n\nh2 {\n  margin: 0;\n  font-weight: normal;\n  font-size: 1.1rem;\n  text-align: center;\n  letter-spacing: 1px;\n}\n\np {\n  font-size: 0.8rem;\n}\n\nsection {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n\n  width: calc-size(fit-content, size + 6rem);\n  height: calc-size(auto, size * 2);\n}",
+      "js": null,
+      "choices": null
+     },
+     "modern": [
+      "calc-size"
      ]
     }
    ]
@@ -14585,7 +14746,7 @@
      "compat": null,
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/generic-family",
-      "summary": "The <strong><code>&lt;generic-family&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents the keyword values for generic font families used in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font\"><code>font</code></a> shorthand and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a> longhand properties. The <code>&lt;generic-family&gt;</code> represents one or more locally-installed fonts belonging to that category of fonts."
+      "summary": "The <strong><code>&lt;generic-family&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents the keyword values for generic font families used in the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font\"><code>font</code></a> shorthand and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a> longhand properties. The <code>&lt;generic-family&gt;</code> represents one or more locally-installed fonts belonging to that category of fonts."
      },
      "status": {
       "deprecated": false,
@@ -15131,7 +15292,12 @@
       "chrome_android": "18",
       "safari_ios": "2"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "hsl",
+      "status": "high",
+      "lowDate": "2020-01-15",
+      "highDate": "2022-07-15"
+     },
      "example": null,
      "modern": []
     },
@@ -15316,9 +15482,9 @@
      },
      "baseline": {
       "feature": "light-dark",
-      "status": "low",
+      "status": "high",
       "lowDate": "2024-05-13",
-      "highDate": null
+      "highDate": "2026-11-13"
      },
      "example": {
       "html": "<h1><code>light-dark()</code> CSS function</h1>\n<section>\n  <h2>Automatic</h2>\n  <p>This section will react to the users system or user agent setting.</p>\n</section>\n<section class=\"light\">\n  <h2>Light</h2>\n  <p>\n    This section will be light due to the <code>color-scheme: light;</code>.\n  </p>\n</section>\n<section class=\"dark\">\n  <h2>Dark</h2>\n  <p>This section will be dark due to the <code>color-scheme: dark;</code>.</p>\n</section>",
@@ -17749,7 +17915,7 @@
       "appliesTo": "all elements",
       "inherited": "yes",
       "percentages": "N/A",
-      "computedValue": "an RGBA color",
+      "computedValue": "computed color",
       "canonicalOrder": "per grammar",
       "animationType": "by computed value type"
      },
@@ -17883,7 +18049,7 @@
       "appliesTo": "all elements",
       "inherited": "yes",
       "percentages": "N/A",
-      "computedValue": "an RGBA color",
+      "computedValue": "computed color",
       "canonicalOrder": "per grammar",
       "animationType": "by computed value type"
      },
@@ -18242,6 +18408,31 @@
      "spec": "https://compat.spec.whatwg.org/#at-ruledef--webkit-keyframes",
      "extended": [],
      "syntax": null,
+     "prose": null,
+     "definition": null,
+     "longhands": [],
+     "legacyAliasOf": null,
+     "descriptors": [],
+     "for": [],
+     "compat": null,
+     "mdn": null,
+     "status": {
+      "deprecated": false,
+      "experimental": false,
+      "standardTrack": true
+     },
+     "support": null,
+     "baseline": null,
+     "example": null,
+     "modern": []
+    },
+    {
+     "id": "sel-pseudo-element-webkit-input-placeholder",
+     "name": "::-webkit-input-placeholder",
+     "kind": "selector",
+     "spec": "https://compat.spec.whatwg.org/#selectordef--webkit-input-placeholder",
+     "extended": [],
+     "syntax": "::-webkit-input-placeholder",
      "prose": null,
      "definition": null,
      "longhands": [],
@@ -18674,7 +18865,7 @@
      "kind": "at-rule",
      "spec": "https://drafts.csswg.org/css-conditional-5/#at-ruledef-container",
      "extended": [],
-     "syntax": "@container <container-condition># { <rule-list> }",
+     "syntax": "@container <container-query-list> { <rule-list> }",
      "prose": "The @container rule is a conditional group rule whose condition contains a container query, which is a boolean combination of container size queries and/or container style queries. Style declarations within the @container rule are filtered by its condition to only match when the container query is true for their element’s query container.",
      "definition": null,
      "longhands": [],
@@ -18985,6 +19176,12 @@
        "href": "https://drafts.csswg.org/mediaqueries-5/#descdef-media-pointer",
        "initial": null,
        "syntax": "none | coarse | fine"
+      },
+      {
+       "name": "prefers-bold-text",
+       "href": "https://drafts.csswg.org/mediaqueries-5/#descdef-media-prefers-bold-text",
+       "initial": null,
+       "syntax": "no-preference | bold"
       },
       {
        "name": "prefers-color-scheme",
@@ -23611,7 +23808,7 @@
      "compat": "css.properties.font-style",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-style",
-      "summary": "The <strong><code>font-style</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets whether a font should be styled with a normal, italic, or oblique face from its <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a>."
+      "summary": "The <strong><code>font-style</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets whether a font should be styled with a normal, italic, or oblique face from its <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -24476,7 +24673,7 @@
      "compat": "css.properties.font-weight",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-weight",
-      "summary": "The <strong><code>font-weight</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the weight (or boldness) of the font. The weights available depend on the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a> that is currently set."
+      "summary": "The <strong><code>font-weight</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property sets the weight (or boldness) of the font. The weights available depend on the <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a> that is currently set."
      },
      "status": {
       "deprecated": false,
@@ -25441,9 +25638,16 @@
       "chrome_android": "No",
       "safari_ios": "No"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "field-content",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
      "example": null,
-     "modern": []
+     "modern": [
+      "field-content"
+     ]
     },
     {
      "id": "sel-pseudo-element-field-separator",
@@ -26366,14 +26570,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.at-rules.apply",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "141 (flag)",
+      "edge": "141 (flag)",
+      "firefox": "No",
+      "safari": "No",
+      "chrome_android": "141 (flag)",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -26391,14 +26602,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.at-rules.contents",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "141 (flag)",
+      "edge": "141 (flag)",
+      "firefox": "No",
+      "safari": "No",
+      "chrome_android": "141 (flag)",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -26409,7 +26627,7 @@
      "kind": "at-rule",
      "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-function",
      "extended": [],
-     "syntax": "@function <function-token> <function-parameter>#? ) [ returns <css-type> ]? { <declaration-rule-list> }",
+     "syntax": "@function <function-token> <function-parameter>#? ','? ) [ returns <css-type> ]? { <declaration-rule-list> }",
      "prose": null,
      "definition": null,
      "longhands": [],
@@ -26430,16 +26648,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "139",
       "edge": "139",
       "firefox": "No",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "139",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "function",
@@ -26463,21 +26681,28 @@
      "kind": "at-rule",
      "spec": "https://drafts.csswg.org/css-mixins-1/#at-ruledef-mixin",
      "extended": [],
-     "syntax": "@mixin [<function-token> <function-parameter>#? ) | <ident-token> ] { <block-contents> }",
+     "syntax": "@mixin [<function-token> <function-parameter>#? ','? ) | <ident-token> ] { <block-contents> }",
      "prose": null,
      "definition": null,
      "longhands": [],
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.at-rules.mixin",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "141 (flag)",
+      "edge": "141 (flag)",
+      "firefox": "No",
+      "safari": "No",
+      "chrome_android": "141 (flag)",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -26495,14 +26720,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.at-rules.private",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "141 (flag)",
+      "edge": "141 (flag)",
+      "firefox": "No",
+      "safari": "No",
+      "chrome_android": "141 (flag)",
+      "safari_ios": "No"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -27427,7 +27659,7 @@
       "highDate": "2019-09-07"
      },
      "example": {
-      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    London. Noel term lately over, and the Lord George sitting in Lincoln's Inn\n    Hall. Great May weather. As much mud in the streets as if the waters had but\n    newly retired from the face of the earth, and it would not be weird to meet\n    an platypus, two feet long or so, waddling like an lizard up Morgan Hill.\n  </p>\n</section>",
+      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    London. Noel term lately over, and the Lord George sitting in Lincoln's Inn\n    Hall. Great May weather. As much mud in the streets as if the waters had but\n    newly retired from the face of the earth, and it would not be weird to meet\n    a platypus, two feet long or so, waddling like a lizard up Morgan Hill.\n  </p>\n</section>",
       "css": "#example-element {\n  columns: 6;\n  column-rule-width: thick;\n  column-rule-color: teal;\n  gap: 7px;\n}",
       "js": null,
       "choices": [
@@ -27450,7 +27682,7 @@
      "prose": null,
      "definition": {
       "initial": "normal",
-      "appliesTo": "grid containers and multicol containers",
+      "appliesTo": "grid containers, multicol containers, and grid lanes containers",
       "inherited": "no",
       "percentages": "n/a",
       "computedValue": "as specified",
@@ -27546,7 +27778,7 @@
       "highDate": "2019-09-07"
      },
      "example": {
-      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    London. Noel term lately over, and the Lord George sitting in Lincoln's Inn\n    Hall. Great May weather. As much mud in the streets as if the waters had but\n    newly retired from the face of the earth, and it would not be weird to meet\n    an platypus, two feet long or so, waddling like an lizard up Morgan Hill.\n  </p>\n</section>",
+      "html": "<section id=\"default-example\">\n  <p id=\"example-element\">\n    London. Noel term lately over, and the Lord George sitting in Lincoln's Inn\n    Hall. Great May weather. As much mud in the streets as if the waters had but\n    newly retired from the face of the earth, and it would not be weird to meet\n    a platypus, two feet long or so, waddling like a lizard up Morgan Hill.\n  </p>\n</section>",
       "css": "#example-element {\n  columns: 6;\n  column-rule-style: solid;\n  column-rule-color: teal;\n  gap: 7px;\n}",
       "js": null,
       "choices": [
@@ -28318,7 +28550,7 @@
      "compat": "css.properties.row-rule-inset-junction-end",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/row-rule-inset-junction-end",
-      "summary": "The <strong><code>row-rule-inset-junction-end</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property can be used to offset the end edge of row rule segments that are <a href=\"#understanding_junction_end\">junction endpoints</a>, that is, endpoints at gap junctions where rule segments intersect."
+      "summary": "The <strong><code>row-rule-inset-junction-end</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property can be used to offset the end edge of row rule segments that are <a href=\"#understanding_junction_endpoints\">junction endpoints</a>, that is, endpoints at gap junctions where rule segments intersect."
      },
      "status": {
       "deprecated": false,
@@ -28379,7 +28611,7 @@
      "compat": "css.properties.row-rule-inset-junction-start",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/row-rule-inset-junction-start",
-      "summary": "The <strong><code>row-rule-inset-junction-start</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property can be used to offset the start edge of row rule segments that are <a href=\"#understanding_junction_start\">junction endpoints</a>; that is, endpoints at gap junctions where rule segments intersect."
+      "summary": "The <strong><code>row-rule-inset-junction-start</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property can be used to offset the start edge of row rule segments that are <a href=\"#understanding_junction_endpoints\">junction endpoints</a>; that is, endpoints at gap junctions where rule segments intersect."
      },
      "status": {
       "deprecated": false,
@@ -28537,7 +28769,7 @@
      "prose": null,
      "definition": {
       "initial": "normal",
-      "appliesTo": "grid containers and multicol containers",
+      "appliesTo": "grid containers, multicol containers, and grid lanes containers",
       "inherited": "no",
       "percentages": "n/a",
       "computedValue": "as specified",
@@ -28905,7 +29137,8 @@
       "animationType": "see individual properties"
      },
      "longhands": [
-      "column-rule-inset-cap"
+      "column-rule-inset-cap",
+      "row-rule-inset-cap"
      ],
      "legacyAliasOf": null,
      "descriptors": [],
@@ -29018,7 +29251,8 @@
       "animationType": "see individual properties"
      },
      "longhands": [
-      "column-rule-inset-junction"
+      "column-rule-inset-junction",
+      "row-rule-inset-junction"
      ],
      "legacyAliasOf": null,
      "descriptors": [],
@@ -29253,7 +29487,8 @@
       "animationType": "see individual properties"
      },
      "longhands": [
-      "column-rule-visibility-items"
+      "column-rule-visibility-items",
+      "row-rule-visibility-items"
      ],
      "legacyAliasOf": null,
      "descriptors": [],
@@ -29596,7 +29831,7 @@
      "kind": "property",
      "spec": "https://drafts.csswg.org/css-content-3/#propdef-quotes",
      "extended": [],
-     "syntax": "auto | none | bikeshed-this | [ <string> <string> ]+",
+     "syntax": "auto | none | [ <string> <string> ]+",
      "prose": null,
      "definition": {
       "initial": "auto",
@@ -29748,7 +29983,7 @@
      "compat": "css.types.string",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/string",
-      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
+      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -30148,10 +30383,10 @@
      "support": {
       "chrome": "No",
       "edge": "No",
-      "firefox": "No",
-      "safari": "26.4",
+      "firefox": "Preview",
+      "safari": "27.2",
       "chrome_android": "No",
-      "safari_ios": "26.4"
+      "safari_ios": "27.2"
      },
      "baseline": {
       "feature": "grid-lanes",
@@ -31209,7 +31444,7 @@
    "spec": "https://drafts.csswg.org/css-image-animation/",
    "release": {
     "url": "https://www.w3.org/TR/css-image-animation-1/",
-    "status": "First Public Working Draft"
+    "status": "Working Draft"
    },
    "features": [
     {
@@ -31252,7 +31487,7 @@
      "spec": "https://drafts.csswg.org/css-image-animation-1/#selectordef-animated-image",
      "extended": [],
      "syntax": ":animated-image",
-     "prose": "The :animated-image pseudo-class matches elements representing a declarative image where a animated image has been loaded. For the animated-image pseudo-class to match, the image must not only be in a format that is capable of animation, but must also be an actually animated image.",
+     "prose": "The :animated-image pseudo-class matches elements representing a declarative image where an animated image has been loaded. For the animated-image pseudo-class to match, the image must not only be in a format that is capable of animation, but must also be an actually animated image.",
      "definition": null,
      "longhands": [],
      "legacyAliasOf": null,
@@ -31579,16 +31814,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "104",
       "edge": "104",
       "firefox": "No",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "104",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "object-view-box",
@@ -31965,6 +32200,7 @@
       "choices": [
        "background: radial-gradient(#e66465, #9198e5);",
        "background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c);",
+       "background: radial-gradient(ellipse 75% 50% at 15% 85%, #ffff00, transparent);",
        "background: radial-gradient(\n  circle at 100%,\n  #333333,\n  #333333 50%,\n  #eeeeee 75%,\n  #333333 75%\n);",
        "background:\n  radial-gradient(ellipse at top, #e66465, transparent),\n  radial-gradient(ellipse at bottom, #4d9f0c, transparent);"
       ]
@@ -33155,7 +33391,7 @@
      "kind": "function",
      "spec": "https://drafts.csswg.org/css-link-params-1/#funcdef-param",
      "extended": [],
-     "syntax": "param( <param-spec> , <declaration-value>? )",
+     "syntax": "param( <param-spec> [ ':' <declaration-value>? ]? )",
      "prose": "All three methods of setting link parameters share the same syntax for defining a parameter, using the param() function:",
      "definition": null,
      "longhands": [],
@@ -36848,9 +37084,16 @@
       "chrome_android": "156",
       "safari_ios": "No"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "navigation-source",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
      "example": null,
-     "modern": []
+     "modern": [
+      "navigation-source"
+     ]
     },
     {
      "id": "fn-url-pattern",
@@ -37051,7 +37294,7 @@
      "kind": "property",
      "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-line-clamp",
      "extended": [],
-     "syntax": "none | [<'max-lines'> || <'block-ellipsis'>] -webkit-legacy?",
+     "syntax": "none | [<integer [1,∞]> || auto || <'block-ellipsis'>] -webkit-legacy?",
      "prose": null,
      "definition": {
       "initial": "none",
@@ -37108,7 +37351,7 @@
      "kind": "property",
      "spec": "https://drafts.csswg.org/css-overflow-4/#propdef-max-lines",
      "extended": [],
-     "syntax": "auto || <integer [1,∞]>",
+     "syntax": "<integer [1,∞]> || auto",
      "prose": null,
      "definition": {
       "initial": "auto",
@@ -40711,7 +40954,7 @@
      "kind": "at-rule",
      "spec": "https://drafts.css-houdini.org/css-properties-values-api-1/#at-ruledef-property",
      "extended": [],
-     "syntax": "@property <custom-property-name># { <declaration-list> }",
+     "syntax": "@property <custom-property-name># { <declaration-list> } | @property <custom-property-name> <css-type>? [: <declaration-value>? ]? ;",
      "prose": null,
      "definition": null,
      "longhands": [],
@@ -41170,9 +41413,9 @@
       "chrome": "86",
       "edge": "86",
       "firefox": "68",
-      "safari": "11.1",
+      "safari": "27.3",
       "chrome_android": "86",
-      "safari_ios": "11.3"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "marker",
@@ -41971,7 +42214,7 @@
      "kind": "property",
      "spec": "https://w3c.github.io/svgwg/svg2-draft/painting.html#ColorInterpolationProperty",
      "extended": [],
-     "syntax": "auto | sRGB | linearRGB",
+     "syntax": "auto | sRGB | linearRGB | <color-interpolation-method>",
      "prose": null,
      "definition": {
       "initial": "sRGB",
@@ -42588,7 +42831,7 @@
      "kind": "property",
      "spec": "https://w3c.github.io/svgwg/svg2-draft/geometry.html#RProperty",
      "extended": [],
-     "syntax": "<length-percentage>",
+     "syntax": "<length-percentage [0,∞]>",
      "prose": null,
      "definition": {
       "initial": "0",
@@ -42641,7 +42884,7 @@
      "kind": "property",
      "spec": "https://w3c.github.io/svgwg/svg2-draft/geometry.html#RxProperty",
      "extended": [],
-     "syntax": "<length-percentage> | auto",
+     "syntax": "<length-percentage [0,∞]> | auto",
      "prose": null,
      "definition": {
       "initial": "auto",
@@ -42694,7 +42937,7 @@
      "kind": "property",
      "spec": "https://w3c.github.io/svgwg/svg2-draft/geometry.html#RyProperty",
      "extended": [],
-     "syntax": "<length-percentage> | auto",
+     "syntax": "<length-percentage [0,∞]> | auto",
      "prose": null,
      "definition": {
       "initial": "auto",
@@ -44774,7 +45017,9 @@
        "scroll-snap-type: x proximity;"
       ]
      },
-     "modern": []
+     "modern": [
+      "scroll-snap-type-pair"
+     ]
     },
     {
      "id": "sel-snapped",
@@ -48511,9 +48756,9 @@
      },
      "baseline": {
       "feature": "state",
-      "status": "low",
+      "status": "high",
       "lowDate": "2024-05-17",
-      "highDate": null
+      "highDate": "2026-11-17"
      },
      "example": null,
      "modern": [
@@ -49692,7 +49937,9 @@
        "clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);"
       ]
      },
-     "modern": []
+     "modern": [
+      "shapes-polygon-round"
+     ]
     },
     {
      "id": "fn-rect",
@@ -51326,9 +51573,9 @@
       "chrome": "109",
       "edge": "109",
       "firefox": "137",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "109",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "hyphenate-limit-chars",
@@ -51408,14 +51655,19 @@
       "standardTrack": true
      },
      "support": {
-      "chrome": "No",
+      "chrome": "16 (-webkit- prefix), removed in 30",
       "edge": "No",
       "firefox": "No",
-      "safari": "Preview",
-      "chrome_android": "No",
-      "safari_ios": "No"
+      "safari": "27.3",
+      "chrome_android": "18 (-webkit- prefix), removed in 30",
+      "safari_ios": "27.3"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "hyphenate-limit-lines",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
      "example": null,
      "modern": []
     },
@@ -51989,6 +52241,39 @@
      ]
     },
     {
+     "id": "text-autospace-size",
+     "name": "text-autospace-size",
+     "kind": "property",
+     "spec": "https://drafts.csswg.org/css-text-4/#propdef-text-autospace-size",
+     "extended": [],
+     "syntax": "<number [0,∞]>",
+     "prose": null,
+     "definition": {
+      "initial": "0.125",
+      "appliesTo": "text",
+      "inherited": "yes",
+      "percentages": "N/A",
+      "computedValue": "the specified number",
+      "canonicalOrder": "per grammar",
+      "animationType": "by computed value type"
+     },
+     "longhands": [],
+     "legacyAliasOf": null,
+     "descriptors": [],
+     "for": [],
+     "compat": null,
+     "mdn": null,
+     "status": {
+      "deprecated": false,
+      "experimental": false,
+      "standardTrack": true
+     },
+     "support": null,
+     "baseline": null,
+     "example": null,
+     "modern": []
+    },
+    {
      "id": "text-fit",
      "name": "text-fit",
      "kind": "property",
@@ -52243,7 +52528,7 @@
       "appliesTo": "text",
       "inherited": "yes",
       "percentages": "N/A",
-      "computedValue": "specified keyword(s)",
+      "computedValue": "the keyword auto, the keyword trim-all, or three keywords, one per controlled position (start, adjacent, end)",
       "canonicalOrder": "per grammar",
       "animationType": "discrete"
      },
@@ -52680,11 +52965,16 @@
       "chrome": "No",
       "edge": "No",
       "firefox": "No",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "No",
       "safari_ios": "No"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "white-space-trim",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
      "example": null,
      "modern": []
     },
@@ -52963,11 +53253,16 @@
       "chrome": "No",
       "edge": "No",
       "firefox": "No",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "No",
       "safari_ios": "No"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "wrap-inside",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
      "example": null,
      "modern": []
     }
@@ -53141,11 +53436,16 @@
       "chrome": "157",
       "edge": "157",
       "firefox": "146",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "157",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "text-decoration-inset",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
      "example": {
       "html": "<section id=\"default-example\">\n  <p id=\"example-element\">Karmadrome</p>\n</section>",
       "css": "#example-element {\n  font: 2.5em sans-serif;\n  text-decoration: underline 0.3em limegreen;\n}",
@@ -53158,7 +53458,9 @@
        "text-decoration-inset: -2ex 10vw;"
       ]
      },
-     "modern": []
+     "modern": [
+      "text-decoration-inset"
+     ]
     },
     {
      "id": "text-decoration-line",
@@ -56137,65 +56439,10 @@
    "title": "CSS Values and Units",
    "spec": "https://drafts.csswg.org/css-values/",
    "release": {
-    "url": "https://www.w3.org/TR/css-values-5/",
+    "url": "https://www.w3.org/TR/css-values-4/",
     "status": "Working Draft"
    },
    "features": [
-    {
-     "id": "interpolate-size",
-     "name": "interpolate-size",
-     "kind": "property",
-     "spec": "https://drafts.csswg.org/css-values-5/#propdef-interpolate-size",
-     "extended": [],
-     "syntax": "numeric-only | allow-keywords",
-     "prose": null,
-     "definition": {
-      "initial": "numeric-only",
-      "appliesTo": "all elements",
-      "inherited": "yes",
-      "percentages": "n/a",
-      "computedValue": "as specified",
-      "canonicalOrder": "per grammar",
-      "animationType": "not animatable"
-     },
-     "longhands": [],
-     "legacyAliasOf": null,
-     "descriptors": [],
-     "for": [],
-     "compat": "css.properties.interpolate-size",
-     "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/interpolate-size",
-      "summary": "The <strong><code>interpolate-size</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> property allows you to enable <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Animations\">animations</a> and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Transitions\">transitions</a> between a <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length-percentage\"><code>&lt;length-percentage&gt;</code></a> value and an <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/intrinsic_size\">intrinsic size</a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/fit-content\"><code>fit-content</code></a>, or <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max-content\"><code>max-content</code></a>."
-     },
-     "status": {
-      "deprecated": false,
-      "experimental": true,
-      "standardTrack": true
-     },
-     "support": {
-      "chrome": "129",
-      "edge": "129",
-      "firefox": "No",
-      "safari": "No",
-      "chrome_android": "129",
-      "safari_ios": "No"
-     },
-     "baseline": {
-      "feature": "interpolate-size",
-      "status": false,
-      "lowDate": null,
-      "highDate": null
-     },
-     "example": {
-      "html": "<section tabindex=\"0\">\n  <header>\n    <h2>Tanuki</h2>\n  </header>\n  <main>\n    <p>Tanuki is the silent phantom of MDN.</p>\n    <ul>\n      <li><strong>Height</strong>: 3.03m</li>\n      <li><strong>Weight</strong>: 160kg</li>\n      <li><strong>Tech Fu</strong>: 7</li>\n      <li><strong>Bad Jokes</strong>: 9</li>\n    </ul>\n  </main>\n</section>",
-      "css": "* {\n  box-sizing: border-box;\n}\n\nsection {\n  font-family: \"Helvetica\", \"Arial\", sans-serif;\n  width: 175px;\n  border-radius: 5px;\n  background: #eeeeee;\n  box-shadow:\n    inset 1px 1px 4px rgb(255 255 255 / 0.5),\n    inset -1px -1px 4px rgb(0 0 0 / 0.5);\n}\n\nheader {\n  padding: 0.7rem;\n  border-bottom: 2px solid #cccccc;\n}\n\nmain {\n  padding: 10px;\n}\n\nh2 {\n  margin: 0;\n  font-weight: normal;\n  font-size: 1.1rem;\n  text-align: center;\n  letter-spacing: 1px;\n}\n\np,\nli {\n  font-size: 0.8rem;\n  line-height: 1.5;\n}\n\np {\n  margin-top: 0;\n}\n\n:root {\n  interpolate-size: allow-keywords;\n}\n\nsection {\n  height: 2.5rem;\n  overflow: hidden;\n  transition: height ease 1s;\n}\n\nsection:hover,\nsection:focus {\n  height: max-content;\n}",
-      "js": null,
-      "choices": null
-     },
-     "modern": [
-      "interpolate-size"
-     ]
-    },
     {
      "id": "fn-abs",
      "name": "abs()",
@@ -56511,64 +56758,24 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.types.calc-mix",
      "mdn": null,
-     "status": {
-      "deprecated": false,
-      "experimental": false,
-      "standardTrack": true
-     },
-     "support": null,
-     "baseline": null,
-     "example": null,
-     "modern": []
-    },
-    {
-     "id": "fn-calc-size",
-     "name": "calc-size()",
-     "kind": "function",
-     "spec": "https://drafts.csswg.org/css-values-5/#funcdef-calc-size",
-     "extended": [],
-     "syntax": "calc-size( <calc-size-basis>, <calc-sum> )",
-     "prose": "The calc-size() function allows math and transition/animation to be performed on these sizes in a safe, well-defined way. Its syntax is as follows:",
-     "definition": null,
-     "longhands": [],
-     "legacyAliasOf": null,
-     "descriptors": [],
-     "for": [],
-     "compat": "css.types.calc-size",
-     "mdn": {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc-size",
-      "summary": "The <strong><code>calc-size()</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Functions\">function</a> allows you to perform calculations on <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/intrinsic_size\">intrinsic size</a> values such as <code>auto</code>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/fit-content\"><code>fit-content</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/max-content\"><code>max-content</code></a>; this is not supported by the regular <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/calc\"><code>calc()</code></a> function."
-     },
      "status": {
       "deprecated": false,
       "experimental": true,
       "standardTrack": true
      },
      "support": {
-      "chrome": "129",
-      "edge": "129",
+      "chrome": "No",
+      "edge": "No",
       "firefox": "No",
-      "safari": "No",
-      "chrome_android": "129",
-      "safari_ios": "No"
+      "safari": "27.3",
+      "chrome_android": "No",
+      "safari_ios": "27.3"
      },
-     "baseline": {
-      "feature": "calc-size",
-      "status": false,
-      "lowDate": null,
-      "highDate": null
-     },
-     "example": {
-      "html": "<section>\n  <h2>Favorite quote</h2>\n\n  <p>\n    Fashion is something so ugly it has to be changed every fifteen minutes.\n  </p>\n</section>",
-      "css": "* {\n  box-sizing: border-box;\n}\n\nsection {\n  font-family: \"Helvetica\", \"Arial\", sans-serif;\n  border: 1px solid black;\n}\n\nh2 {\n  margin: 0;\n  font-weight: normal;\n  font-size: 1.1rem;\n  text-align: center;\n  letter-spacing: 1px;\n}\n\np {\n  font-size: 0.8rem;\n}\n\nsection {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n\n  width: calc-size(fit-content, size + 6rem);\n  height: calc-size(auto, size * 2);\n}",
-      "js": null,
-      "choices": null
-     },
-     "modern": [
-      "calc-size"
-     ]
+     "baseline": null,
+     "example": null,
+     "modern": []
     },
     {
      "id": "fn-calc",
@@ -56933,14 +57140,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.types.ident",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "27.3",
+      "chrome_android": "No",
+      "safari_ios": "27.3"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -56965,16 +57179,16 @@
      },
      "status": {
       "deprecated": false,
-      "experimental": true,
+      "experimental": false,
       "standardTrack": true
      },
      "support": {
       "chrome": "137",
       "edge": "137",
       "firefox": "No",
-      "safari": "No",
+      "safari": "27.3",
       "chrome_android": "137",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
      "baseline": {
       "feature": "if",
@@ -57006,14 +57220,21 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.types.inherit",
      "mdn": null,
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "27.3",
+      "chrome_android": "No",
+      "safari_ios": "27.3"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -57248,9 +57469,9 @@
      },
      "baseline": {
       "feature": "round-mod-rem",
-      "status": "low",
+      "status": "high",
       "lowDate": "2024-05-17",
-      "highDate": null
+      "highDate": "2026-11-17"
      },
      "example": null,
      "modern": [
@@ -57375,11 +57596,16 @@
       "chrome": "No",
       "edge": "No",
       "firefox": "No",
-      "safari": "Preview",
+      "safari": "27.3",
       "chrome_android": "No",
-      "safari_ios": "No"
+      "safari_ios": "27.3"
      },
-     "baseline": null,
+     "baseline": {
+      "feature": "random-item",
+      "status": false,
+      "lowDate": null,
+      "highDate": null
+     },
      "example": null,
      "modern": []
     },
@@ -57409,7 +57635,7 @@
      "support": {
       "chrome": "156",
       "edge": "156",
-      "firefox": "Preview",
+      "firefox": "161",
       "safari": "26.2",
       "chrome_android": "156",
       "safari_ios": "26.2"
@@ -57490,9 +57716,9 @@
      },
      "baseline": {
       "feature": "round-mod-rem",
-      "status": "low",
+      "status": "high",
       "lowDate": "2024-05-17",
-      "highDate": null
+      "highDate": "2026-11-17"
      },
      "example": null,
      "modern": [
@@ -57532,9 +57758,9 @@
      },
      "baseline": {
       "feature": "round-mod-rem",
-      "status": "low",
+      "status": "high",
       "lowDate": "2024-05-17",
-      "highDate": null
+      "highDate": "2026-11-17"
      },
      "example": {
       "html": "<div class=\"box box-1\">height: 100px</div>\n<div class=\"box box-2\">up 101px (125px)</div>\n<div class=\"box box-3\">down 122px (100px)</div>\n<div class=\"box box-4\">to-zero 120px (100px)</div>\n<div class=\"box box-5\">nearest 117px (125px)</div>",
@@ -58288,17 +58514,24 @@
      "legacyAliasOf": null,
      "descriptors": [],
      "for": [],
-     "compat": null,
+     "compat": "css.types.ident",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/ident",
       "summary": "The <strong><code>&lt;ident&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> denotes an arbitrary unquoted string of characters used as an <a href=\"https://developer.mozilla.org/en-US/docs/Glossary/identifier\">identifier</a>."
      },
      "status": {
       "deprecated": false,
-      "experimental": false,
+      "experimental": true,
       "standardTrack": true
      },
-     "support": null,
+     "support": {
+      "chrome": "No",
+      "edge": "No",
+      "firefox": "No",
+      "safari": "27.3",
+      "chrome_android": "No",
+      "safari_ios": "27.3"
+     },
      "baseline": null,
      "example": null,
      "modern": []
@@ -58404,7 +58637,7 @@
      "compat": "css.types.length",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/length",
-      "summary": "The <strong><code>&lt;length&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a distance value. Lengths can be used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-width\"><code>border-width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow\"><code>text-shadow</code></a>."
+      "summary": "The <strong><code>&lt;length&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a distance value. Lengths can be used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/border-width\"><code>border-width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/text-shadow\"><code>text-shadow</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58498,7 +58731,7 @@
      "compat": "css.types.percentage",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/percentage",
-      "summary": "The <strong><code>&lt;percentage&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a percentage value. It is often used to define a size as relative to an element's parent object. Numerous properties can use percentages, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>."
+      "summary": "The <strong><code>&lt;percentage&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a percentage value. It is often used to define a size as relative to an element's parent object. Numerous properties can use percentages, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/width\"><code>width</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/height\"><code>height</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/margin\"><code>margin</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/padding\"><code>padding</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-size\"><code>font-size</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58583,7 +58816,7 @@
      "compat": "css.types.ratio",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/ratio",
-      "summary": "The <strong><code>&lt;ratio&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> describes the proportional relationship between two values. It mostly represents the aspect ratio, which relates width to height. For example, the <code>&lt;ratio&gt;</code> is used as a value for the <code>aspect-ratio</code> media feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media\"><code>@media</code></a> media queries, the <code>aspect-ratio</code> size feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@container\"><code>@container</code></a> container queries, and as a value for the CSS <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/aspect-ratio\"><code>aspect-ratio</code></a> property."
+      "summary": "The <strong><code>&lt;ratio&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> describes the proportional relationship between two values. It mostly represents the aspect ratio, which relates width to height. For example, the <code>&lt;ratio&gt;</code> is used as a value for the <code>aspect-ratio</code> media feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media\"><code>@media</code></a> media queries, the <code>aspect-ratio</code> size feature in <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@container\"><code>@container</code></a> container queries, and as a value for the CSS <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/aspect-ratio\"><code>aspect-ratio</code></a> property."
      },
      "status": {
       "deprecated": false,
@@ -58663,7 +58896,7 @@
      "compat": "css.types.string",
      "mdn": {
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/string",
-      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@font-palette-values/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
+      "summary": "The <strong><code>&lt;string&gt;</code></strong> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS\">CSS</a> <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/Data_types\">data type</a> represents a sequence of characters. Strings are used in numerous CSS properties, such as <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/content\"><code>content</code></a>, <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/font-family\"><code>font-family</code></a>, and <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/quotes\"><code>quotes</code></a>."
      },
      "status": {
       "deprecated": false,
@@ -58792,7 +59025,12 @@
       "lowDate": "2016-09-20",
       "highDate": "2019-03-20"
      },
-     "example": null,
+     "example": {
+      "html": "<p>This has a background image</p>",
+      "css": "p {\n  font: 2rem sans-serif;\n  border: 1px dashed;\n\n  background-image: url(\"data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cpath%20d%3D'M5%2C100L100%2C100%20L100%2C5L5%2C5z'%20fill%3D'pink'%2F%3E%3C%2Fsvg%3E\");\n}",
+      "js": null,
+      "choices": null
+     },
      "modern": []
     }
    ]
@@ -59051,7 +59289,7 @@
      "support": {
       "chrome": "126",
       "edge": "126",
-      "firefox": "No",
+      "firefox": "Preview",
       "safari": "18.2",
       "chrome_android": "126",
       "safari_ios": "18.2"
@@ -59456,9 +59694,9 @@
      },
      "baseline": {
       "feature": "zoom",
-      "status": "low",
+      "status": "high",
       "lowDate": "2024-05-14",
-      "highDate": null
+      "highDate": "2026-11-14"
      },
      "example": {
       "html": "<p class=\"small\">Small</p>\n<p class=\"normal\">Normal</p>\n<p class=\"big\">Big</p>",
@@ -60010,6 +60248,138 @@
  ],
  "modern": [
   {
+   "id": "media-pseudos",
+   "name": "Media element pseudo-classes",
+   "description": "The <code>:playing</code>, <code>:paused</code>, <code>:seeking</code>, <code>:buffering</code>, <code>:stalled</code>, <code>:muted</code>, and <code>:volume-locked</code> CSS pseudo-classes match <code>&#x3C;audio></code> and <code>&#x3C;video></code> elements based on their state.",
+   "group": "Media elements",
+   "spec": [
+    "https://drafts.csswg.org/selectors-4/#resource-pseudos",
+    "https://html.spec.whatwg.org/multipage/semantics-other.html#pseudo-classes"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-11-17",
+   "support": {
+    "chrome": "158",
+    "edge": "No",
+    "firefox": "150",
+    "safari": "15.4",
+    "chrome_android": "158",
+    "safari_ios": "15.4"
+   },
+   "keys": [
+    "sel-buffering",
+    "sel-muted",
+    "sel-paused",
+    "sel-playing",
+    "sel-seeking",
+    "sel-stalled",
+    "sel-volume-locked"
+   ],
+   "exampleOf": null
+  },
+  {
+   "id": "anchor-positioning",
+   "name": "Anchor positioning",
+   "description": "Anchor positioning places an element based on the position of another element. For example, you can place a tooltip next to the content it references.",
+   "group": "Anchor positioning",
+   "spec": [
+    "https://drafts.csswg.org/css-anchor-position-1/#anchoring"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-11-03",
+   "support": {
+    "chrome": "157",
+    "edge": "157",
+    "firefox": "No",
+    "safari": "27",
+    "chrome_android": "157",
+    "safari_ios": "27"
+   },
+   "keys": [
+    "at-position-try",
+    "align-items",
+    "align-self",
+    "anchor-name",
+    "anchor-scope",
+    "block-size",
+    "bottom",
+    "height",
+    "inline-size",
+    "inset-block-end",
+    "inset-block-start",
+    "inset-block",
+    "inset-inline-end",
+    "inset-inline-start",
+    "inset-inline",
+    "inset",
+    "justify-items",
+    "justify-self",
+    "left",
+    "margin-block-end",
+    "margin-block-start",
+    "margin-block",
+    "margin-bottom",
+    "margin-inline-end",
+    "margin-inline-start",
+    "margin-inline",
+    "margin-left",
+    "margin-right",
+    "margin-top",
+    "margin",
+    "max-block-size",
+    "max-height",
+    "max-inline-size",
+    "max-width",
+    "min-block-size",
+    "min-height",
+    "min-inline-size",
+    "min-width",
+    "place-items",
+    "place-self",
+    "position-anchor",
+    "position-area",
+    "position-try",
+    "position-try-fallbacks",
+    "position-try-order",
+    "position-visibility",
+    "right",
+    "top",
+    "width",
+    "fn-anchor",
+    "fn-anchor-size"
+   ],
+   "exampleOf": "at-position-try"
+  },
+  {
+   "id": "text-decoration-inset",
+   "name": "text-decoration-inset",
+   "description": "The <code>text-decoration-inset</code> CSS property offsets the start and end point of a text decoration. You can use this to shorten, lengthen, or shift the position of an underline, overline, or line-through.",
+   "group": "Text",
+   "spec": [
+    "https://drafts.csswg.org/css-text-decor-4/#text-decoration-inset-property"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-11-03",
+   "support": {
+    "chrome": "157",
+    "edge": "157",
+    "firefox": "146",
+    "safari": "No",
+    "chrome_android": "157",
+    "safari_ios": "No"
+   },
+   "keys": [
+    "text-decoration-inset"
+   ],
+   "exampleOf": "text-decoration-inset"
+  },
+  {
    "id": "scroll-driven-animations",
    "name": "Scroll-driven animations",
    "description": "The <code>animation-timeline</code>, <code>scroll-timeline</code>, and <code>view-timeline</code> CSS properties advance animations based on the user's scroll position.",
@@ -60049,6 +60419,82 @@
    "exampleOf": "animation-range"
   },
   {
+   "id": "field-content",
+   "name": "::field-content",
+   "description": "The <code>::field-content</code> CSS pseudo-element selects the portion of an <code>&#x3C;input></code> element that contains editable text.",
+   "group": "Selectors",
+   "spec": [
+    "https://drafts.csswg.org/css-forms-1/#selectordef-field-content"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-10-26",
+   "support": {
+    "chrome": "No",
+    "edge": "No",
+    "firefox": "No",
+    "safari": "27.2",
+    "chrome_android": "No",
+    "safari_ios": "No"
+   },
+   "keys": [
+    "sel-pseudo-element-field-content"
+   ],
+   "exampleOf": null
+  },
+  {
+   "id": "grid-lanes",
+   "name": "Grid lanes",
+   "description": "The <code>display: grid-lanes</code> and <code>display: inline-grid-lanes</code> CSS declarations create a layout where items are tightly packed in parallel lanes. Items are placed one by one in the lane that has the most available space. Also known as masonry.",
+   "group": "Layout",
+   "spec": [
+    "https://drafts.csswg.org/css-grid-3/"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-10-26",
+   "support": {
+    "chrome": "No",
+    "edge": "No",
+    "firefox": "No",
+    "safari": "27.2",
+    "chrome_android": "No",
+    "safari_ios": "27.2"
+   },
+   "keys": [
+    "display",
+    "fit-tolerance"
+   ],
+   "exampleOf": "display"
+  },
+  {
+   "id": "navigation-source",
+   "name": ":navigation-source",
+   "description": "The <code>:navigation-source</code> CSS pseudo-class matches the element that triggered the current navigation, such as a link, form, or button.",
+   "group": "Navigation",
+   "spec": [
+    "https://drafts.csswg.org/css-navigation-1/#navigation-source-pseudo-class"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-10-20",
+   "support": {
+    "chrome": "156",
+    "edge": "156",
+    "firefox": "No",
+    "safari": "No",
+    "chrome_android": "156",
+    "safari_ios": "No"
+   },
+   "keys": [
+    "sel-navigation-source"
+   ],
+   "exampleOf": null
+  },
+  {
    "id": "random-function",
    "name": "random()",
    "description": "The <code>random()</code> CSS function chooses a random numeric value within a specified range. This allows for dynamic, randomized styling using CSS.",
@@ -60072,6 +60518,31 @@
     "fn-random"
    ],
    "exampleOf": "fn-random"
+  },
+  {
+   "id": "scroll-snap-type-pair",
+   "name": "scroll-snap-type: pair",
+   "description": "The <code>scroll-snap-type: pair</code> CSS declaration snaps scrolling to a single element in both the X and Y axes. You can use this to snap to scattered points of interest on a 2D plane.",
+   "group": "Scrolling",
+   "spec": [
+    "https://drafts.csswg.org/css-scroll-snap-1/#valdef-scroll-snap-type-pair"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-10-20",
+   "support": {
+    "chrome": "156",
+    "edge": "156",
+    "firefox": "No",
+    "safari": "No",
+    "chrome_android": "156",
+    "safari_ios": "No"
+   },
+   "keys": [
+    "scroll-snap-type"
+   ],
+   "exampleOf": "scroll-snap-type"
   },
   {
    "id": "margin-trim",
@@ -60223,81 +60694,6 @@
     "fn-alpha"
    ],
    "exampleOf": "fn-alpha"
-  },
-  {
-   "id": "anchor-positioning",
-   "name": "Anchor positioning",
-   "description": "Anchor positioning places an element based on the position of another element. For example, you can place a tooltip next to the content it references.",
-   "group": "Anchor positioning",
-   "spec": [
-    "https://drafts.csswg.org/css-anchor-position-1/#anchoring"
-   ],
-   "status": false,
-   "lowDate": null,
-   "highDate": null,
-   "since": "2026-09-14",
-   "support": {
-    "chrome": "No",
-    "edge": "No",
-    "firefox": "No",
-    "safari": "27",
-    "chrome_android": "No",
-    "safari_ios": "27"
-   },
-   "keys": [
-    "at-position-try",
-    "align-items",
-    "align-self",
-    "anchor-name",
-    "anchor-scope",
-    "block-size",
-    "bottom",
-    "height",
-    "inline-size",
-    "inset-block-end",
-    "inset-block-start",
-    "inset-block",
-    "inset-inline-end",
-    "inset-inline-start",
-    "inset-inline",
-    "inset",
-    "justify-items",
-    "justify-self",
-    "left",
-    "margin-block-end",
-    "margin-block-start",
-    "margin-block",
-    "margin-bottom",
-    "margin-inline-end",
-    "margin-inline-start",
-    "margin-inline",
-    "margin-left",
-    "margin-right",
-    "margin-top",
-    "margin",
-    "max-block-size",
-    "max-height",
-    "max-inline-size",
-    "max-width",
-    "min-block-size",
-    "min-height",
-    "min-inline-size",
-    "min-width",
-    "place-items",
-    "place-self",
-    "position-anchor",
-    "position-area",
-    "position-try",
-    "position-try-fallbacks",
-    "position-try-order",
-    "position-visibility",
-    "right",
-    "top",
-    "width",
-    "fn-anchor",
-    "fn-anchor-size"
-   ],
-   "exampleOf": "at-position-try"
   },
   {
    "id": "anchor-positioning-transforms",
@@ -60958,6 +61354,31 @@
    "exampleOf": "at-supports"
   },
   {
+   "id": "shapes-polygon-round",
+   "name": "polygon() round keyword",
+   "description": "The <code>polygon()</code> CSS function accepts the <code>round</code> keyword and a <code>&#x3C;length></code> value that rounds every vertex of the polygon. You can use it to make rounded shapes without computing Bézier curves by hand.",
+   "group": "Clipping, shapes, and masking",
+   "spec": [
+    "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-polygon"
+   ],
+   "status": false,
+   "lowDate": null,
+   "highDate": null,
+   "since": "2026-06-30",
+   "support": {
+    "chrome": "150",
+    "edge": "150",
+    "firefox": "No",
+    "safari": "No",
+    "chrome_android": "150",
+    "safari_ios": "No"
+   },
+   "keys": [
+    "fn-polygon"
+   ],
+   "exampleOf": "fn-polygon"
+  },
+  {
    "id": "url-referrer-policy",
    "name": "referrer-policy() for url()",
    "description": "The <code>url()</code> CSS function accepts a <code>referrer-policy()</code> modifier to choose which referrer to send when requesting the URL.  For example, `url(\"https://example.com\" referrer-policy(no-referrer)) does not send a referrer to the URL.",
@@ -61376,38 +61797,6 @@
    "exampleOf": "text-decoration-skip-ink"
   },
   {
-   "id": "media-pseudos",
-   "name": "Media element pseudo-classes",
-   "description": "The <code>:playing</code>, <code>:paused</code>, <code>:seeking</code>, <code>:buffering</code>, <code>:stalled</code>, <code>:muted</code>, and <code>:volume-locked</code> CSS pseudo-classes match <code>&#x3C;audio></code> and <code>&#x3C;video></code> elements based on their state.",
-   "group": "Media elements",
-   "spec": [
-    "https://drafts.csswg.org/selectors-4/#resource-pseudos",
-    "https://html.spec.whatwg.org/multipage/semantics-other.html#pseudo-classes"
-   ],
-   "status": false,
-   "lowDate": null,
-   "highDate": null,
-   "since": "2026-04-21",
-   "support": {
-    "chrome": "No",
-    "edge": "No",
-    "firefox": "150",
-    "safari": "15.4",
-    "chrome_android": "No",
-    "safari_ios": "15.4"
-   },
-   "keys": [
-    "sel-buffering",
-    "sel-muted",
-    "sel-paused",
-    "sel-playing",
-    "sel-seeking",
-    "sel-stalled",
-    "sel-volume-locked"
-   ],
-   "exampleOf": null
-  },
-  {
    "id": "overscroll-behavior",
    "name": "overscroll-behavior",
    "description": "The <code>overscroll-behavior</code> CSS property disables default scrolling behaviors when the edges of a scrolling area are reached.",
@@ -61585,32 +61974,6 @@
     "sel-pseudo-element-highlight"
    ],
    "exampleOf": "sel-pseudo-element-highlight"
-  },
-  {
-   "id": "grid-lanes",
-   "name": "Grid lanes",
-   "description": "The <code>display: grid-lanes</code> and <code>display: inline-grid-lanes</code> CSS declarations create a layout where items are tightly packed in parallel lanes. Items are placed one by one in the lane that has the most available space. Also known as masonry.",
-   "group": "Layout",
-   "spec": [
-    "https://drafts.csswg.org/css-grid-3/"
-   ],
-   "status": false,
-   "lowDate": null,
-   "highDate": null,
-   "since": "2026-03-24",
-   "support": {
-    "chrome": "No",
-    "edge": "No",
-    "firefox": "No",
-    "safari": "No",
-    "chrome_android": "No",
-    "safari_ios": "No"
-   },
-   "keys": [
-    "display",
-    "fit-tolerance"
-   ],
-   "exampleOf": "display"
   },
   {
    "id": "font-family-math",
@@ -62315,7 +62678,7 @@
    "id": "text-wrap-pretty",
    "name": "text-wrap: pretty",
    "description": "The <code>text-wrap: pretty</code> CSS declaration prioritizes better layout over speed when text is broken into multiple lines.",
-   "group": "Text wrap",
+   "group": "Text wrapping and hyphenation",
    "spec": [
     "https://drafts.csswg.org/css-text-4/#valdef-text-wrap-style-pretty"
    ],
@@ -62642,7 +63005,7 @@
    "id": "hyphenate-limit-chars",
    "name": "Hyphenate limit chars",
    "description": "The <code>hyphenate-limit-chars</code> CSS property sets the number of characters in a word before it is hyphenated and the minimum number of characters on either side of the hyphen.",
-   "group": "Text wrap",
+   "group": "Text wrapping and hyphenation",
    "spec": [
     "https://drafts.csswg.org/css-text-4/#hyphenate-char-limits"
    ],
@@ -63021,7 +63384,7 @@
    "id": "text-wrap",
    "name": "text-wrap",
    "description": "The <code>text-wrap</code> CSS property sets how lines break in text that overflows the container. It is a shorthand for <code>text-wrap-style</code> and <code>text-wrap-mode</code>.",
-   "group": "Text wrap",
+   "group": "Text wrapping and hyphenation",
    "spec": [
     "https://drafts.csswg.org/css-text-4/#text-wrap-shorthand"
    ],
@@ -63397,9 +63760,9 @@
    "spec": [
     "https://html.spec.whatwg.org/multipage/custom-elements.html#custom-state-pseudo-class"
    ],
-   "status": "low",
+   "status": "high",
    "lowDate": "2024-05-17",
-   "highDate": null,
+   "highDate": "2026-11-17",
    "since": "2024-05-17",
    "support": {
     "chrome": "125",
@@ -63422,9 +63785,9 @@
    "spec": [
     "https://drafts.csswg.org/css-values-4/#round-func"
    ],
-   "status": "low",
+   "status": "high",
    "lowDate": "2024-05-17",
-   "highDate": null,
+   "highDate": "2026-11-17",
    "since": "2024-05-17",
    "support": {
     "chrome": "125",
@@ -63449,9 +63812,9 @@
    "spec": [
     "https://drafts.csswg.org/css-viewport/#zoom-property"
    ],
-   "status": "low",
+   "status": "high",
    "lowDate": "2024-05-14",
-   "highDate": null,
+   "highDate": "2026-11-14",
    "since": "2024-05-14",
    "support": {
     "chrome": "1",
@@ -63474,9 +63837,9 @@
    "spec": [
     "https://drafts.csswg.org/css-color-5/#light-dark"
    ],
-   "status": "low",
+   "status": "high",
    "lowDate": "2024-05-13",
-   "highDate": null,
+   "highDate": "2026-11-13",
    "since": "2024-05-13",
    "support": {
     "chrome": "123",
@@ -63495,13 +63858,13 @@
    "id": "text-wrap-balance",
    "name": "text-wrap: balance",
    "description": "The <code>text-wrap: balance</code> CSS declaration balances the length of each line when text is broken into multiple lines. Also known as headline balancing.",
-   "group": "Text wrap",
+   "group": "Text wrapping and hyphenation",
    "spec": [
     "https://drafts.csswg.org/css-text-4/#valdef-text-wrap-style-balance"
    ],
-   "status": "low",
+   "status": "high",
    "lowDate": "2024-05-13",
-   "highDate": null,
+   "highDate": "2026-11-13",
    "since": "2024-05-13",
    "support": {
     "chrome": "114",
@@ -64243,7 +64606,7 @@
    "id": "word-break-auto-phrase",
    "name": "word-break: auto-phrase",
    "description": "The <code>word-break: auto-phrase</code> CSS declaration specifies that wrapping should occur at natural phrase boundaries, especially in CJK languages.",
-   "group": "Text wrap",
+   "group": "Text wrapping and hyphenation",
    "spec": [
     "https://drafts.csswg.org/css-text-4/#valdef-word-break-auto-phrase"
    ],
@@ -64372,7 +64735,7 @@
    "id": "hyphenate-character",
    "name": "Hyphenate character",
    "description": "The <code>hyphenate-character</code> CSS property sets the character or string to use at the end of a line before a line break.",
-   "group": "Text wrap",
+   "group": "Text wrapping and hyphenation",
    "spec": [
     "https://drafts.csswg.org/css-text-4/#hyphenate-character"
    ],

@@ -131,6 +131,13 @@ account, custom domain `css.charmaweb.com`, deployed by `.github/workflows/deplo
 push to `main` (secret `CLOUDFLARE_API_TOKEN`, variable `CLOUDFLARE_ACCOUNT_ID`, same setup as
 html-elements). `.github/workflows/sync.yml` runs the sync every Monday and opens a pull request.
 
+`public/_headers` sets the security headers and the immutable cache of `/_astro/*`. The preview
+frames are `srcdoc` documents, which inherit the page's Content-Security-Policy: MDN examples load
+images, fonts, stylesheets and media from `https:` hosts, the paint() example a worklet from
+`https://mdn.github.io/houdini-examples/`, and the `<base href="about:srcdoc">` of each preview
+needs `about:` in `base-uri`. An example that loads a script from another host needs it added to
+`script-src`.
+
 ## Licences
 
 Code MIT (`LICENSE`). Content quotes the W3C CSS specifications (© W3C, W3C Software and Document
